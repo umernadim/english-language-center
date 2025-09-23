@@ -1,0 +1,84 @@
+english-language-center/
+│
+├── index.html                 # Home page
+├── about.html                 # About page
+├── contact.html               # Contact page
+├── vocabulary.html            # Vocabulary list
+├── grammar.html               # Grammar lessons list
+├── grammar-detail.html        # Single grammar lesson
+├── tests.html                 # Tests list (cards + Google Forms links for now)
+├── test-detail.html           # (Future) Native test page
+├── events.html                # Events & announcements
+├── register-event.html        # Event registration form
+├── gallery.html               # Gallery page
+├── testimonials.html          # Testimonials page
+├── blog.html                  # Blog list
+├── blog-detail.html           # Single blog post
+│
+├── admin/                     # Admin dashboard (protected later with PHP session)
+│   ├── admin-login.html
+│   ├── admin-dashboard.html
+│   ├── admin-add-test.html
+│   ├── admin-manage-tests.html
+│   ├── admin-add-blog.html
+│   ├── admin-manage-blog.html
+│   ├── admin-add-vocab.html
+│   ├── admin-manage-vocab.html
+│   ├── admin-add-grammar.html
+│   ├── admin-manage-grammar.html
+│   ├── admin-manage-events.html
+│   ├── admin-manage-gallery.html
+│   └── admin-manage-testimonials.html
+│
+├── assets/                    # Frontend assets
+│   ├── css/
+│   │   ├── style.css          # Main stylesheet
+│   │   └── admin.css          # Admin-specific styles
+│   │
+│   ├── js/
+│   │   ├── main.js            # General site scripts
+│   │   ├── tests.js           # JS logic for online tests
+│   │   └── admin.js           # Scripts for admin dashboard
+│   │
+│   ├── images/                # All images
+│   │   ├── gallery/
+│   │   ├── events/
+│   │   ├── testimonials/
+│   │   ├── blog/
+│   │   └── icons/
+│   │
+│   └── fonts/                 # Custom fonts (if needed)
+│
+├── backend/                   # PHP backend files
+│   ├── config.php             # Database connection
+│   │
+│   ├── auth/                  # Authentication scripts
+│   │   ├── login.php
+│   │   └── logout.php
+│   │
+│   ├── controllers/           # Handle form actions & DB CRUD
+│   │   ├── blogController.php
+│   │   ├── vocabController.php
+│   │   ├── grammarController.php
+│   │   ├── testController.php
+│   │   ├── eventController.php
+│   │   ├── galleryController.php
+│   │   └── testimonialController.php
+│   │
+│   ├── models/                # Database queries
+│   │   ├── blogModel.php
+│   │   ├── vocabModel.php
+│   │   ├── grammarModel.php
+│   │   ├── testModel.php
+│   │   ├── eventModel.php
+│   │   ├── galleryModel.php
+│   │   └── testimonialModel.php
+│   │
+│   └── uploads/               # Uploaded images/files
+│       ├── blog/
+│       ├── gallery/
+│       └── testimonials/
+│
+└── sql/                       # Database schema and seeds
+    ├── schema.sql             # CREATE TABLE statements
+    └── seed.sql               # Sample data (optional)
