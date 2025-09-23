@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Baloo+Bhaijaan+2:wght@400..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap');
 
 :root {
-    --text-color: #333333;
+    --text-color-d: #333333;
+    --text-color-l: #ffff;
     --btn-color: #42A5F5;
     --bg-color-l: #E0E0E0;
     --bg-color-d: #ADB5BD;
-    --text-bg-color: #f9f9f9;
     --background-color: #fffafa; 
     --baloo-bhaijan: "Roboto", sans-serif;
     --satisfy-font: "Satisfy", cursive;
@@ -25,64 +25,80 @@ body {
     width: 100%;
     overflow-x: hidden;
     font-family: var(--baloo-bhaijan);
+    padding: 10px 30px;
 }
 
-/* Navbar Styles */
-#nav-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 6rem 1rem 6rem;
-    background: linear-gradient(to right, #054b92, #336699);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: white;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-    max-height: 80px;
-    overflow: hidden;
-    opacity: 1;
-    position: fixed;
-    z-index: 999;
+
+/* code for navbar */
+.nav-container {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 0 2.4rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(2deg, #199be1, #f2fcfe);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-#left-part {
-    display: flex;
-    align-items: center;
+.nav-container h2 {
+  font-family: var(--satisfy-font);
+  font-size: 1.8vw;
+  /* color: #FFD700; */
 }
 
-#left-part h2 {
-    font-size: 25px;
-    font-family: var(--satisfy-font);
-    color: #FFD700;
+.nav-container .center{
+  display: flex;
+  gap: 24px;
+  align-items: center;
 }
 
-#center-part {
-    display: flex;
-    justify-content: center;
+.nav-container a {
+  text-decoration: none;
+  color: var(--text-color-d);
+  font-size: 1.3vw;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-#center-part ul {
-    display: flex;
-    list-style: none;
+/* Underline animation */
+.nav-container .center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #5a5959;
+  transition: width 0.3s ease;
 }
 
-#center-part li {
-    margin: 0 15px;
+.nav-container a:hover {
+  color: #5a5959;
 }
 
-#center-part a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s, transform 0.3s;
+.nav-container a:hover::after {
+  width: 100%;
 }
 
-#center-part a:hover {
-    color: #FFD700;
-    transform: translateY(-2px);
+.nav-container .login-btn {
+    background: #333333;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-#menu-btn {
-    display: none;
+.nav-container .login-btn a {
+  color: #ffff;
+  font-weight: 600;
+}
+
+.nav-container .login-btn:hover {
+  background: #242424;
 }
