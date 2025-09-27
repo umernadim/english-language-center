@@ -142,6 +142,25 @@ body {
 }
 
 
+/* navbar bg-color after hero section  */
+#nav-container.scrolled {
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+#nav-container.scrolled h2,
+#nav-container.scrolled .links a,
+#nav-container.scrolled #menuBtn i {
+    color: var(--text-color-d);
+}
+
+#nav-container.scrolled .links a::after {
+    background: var(--text-color-2);
+}
+
+
+
+
 /* responsive design for navbar  */
 @media (max-width: 768px) {
     #nav-container {
@@ -351,7 +370,6 @@ body {
 }
 
 
-
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
     #hero-wrapper {
@@ -391,4 +409,100 @@ body {
     .nav-arrow.right {
         right: -30px;
     }
+}
+
+
+
+/* code for about section  */
+#about-sect {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5vw 6vw;
+    overflow: hidden;
+    position: relative;
+}
+
+#about-vdo {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+#about-vdo video {
+    width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#about-text {
+    flex: 1;
+    padding-left: 2rem;
+}
+
+#about-text h2 {
+    font-size: 2.5vw;
+    color: var(--text-color);
+    margin-bottom: 0.7rem;
+}
+
+#about-text p {
+    font-size: 1.3vw;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+#about-text i {
+    color: var(--btn-color);
+}
+
+#about-text a {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about-sect {
+        flex-direction: column;
+        text-align: left;
+        padding: 10vw 7vw;
+    }
+
+    #about-vdo {
+        padding-right: 0;
+        padding-left: 0;
+        margin-top: 2rem;
+        order: 2;
+    }
+
+    #about-text {
+        padding-right: 0;
+        padding-left: 0;
+        order: 1;
+    }
+
+    #about-text h2 {
+        font-size: 6vw;
+        color: var(--text-color);
+        margin-bottom: 0.7rem;
+    }
+
+    #about-text p {
+        font-size: 4vw;
+    }
+
+    #about-vdo {
+        width: 100%;
+    }
+
+    #about-vdo video {
+        width: 100%;
+    }
+}
+
+
+#activity-sect{
+    min-height: 100vh;
+    width: 100%;
+    background: #000;
 }

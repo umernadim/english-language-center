@@ -75,3 +75,16 @@ function carouselHandler() {
 }
 
 carouselHandler();
+
+
+const nav = document.getElementById("nav-container");
+const hero = document.getElementById("hero-sect");
+
+window.addEventListener("scroll", () => {
+  const heroBottom = hero.offsetHeight;
+  if (window.scrollY > heroBottom - '80%') {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
