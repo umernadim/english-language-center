@@ -4,23 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <div id="main">
-      <!-- code for hero section  -->
+      <!-- navbar for smaller screen  -->
+      <div id="ns-container">
+        <aside class="links">
+          <!-- <h2>Hope English Language Center</h2> -->
+          <h4>
+            <a href=""><i class="ri-home-4-line"></i> Home</a>
+          </h4>
+          <h4>
+            <a href=""><i class="ri-article-line"></i> Blogs</a>
+          </h4>
+          <h4>
+            <a href=""><i class="ri-book-2-line"></i> Grammar</a>
+          </h4>
+          <h4>
+            <a href=""><i class="ri-book-open-line"></i> Vocabulary</a>
+          </h4>
+          <h4>
+            <a href=""><i class="ri-quill-pen-line"></i> Grammar Quiz</a>
+          </h4>
+          <h4>
+            <a href=""><i class="ri-information-line"></i> About</a>
+          </h4>
+          <h4>
+            <a href=""><i class="ri-phone-line"></i> Contact Us</a>
+          </h4>
+        </aside>
+      </div>
 
+      <!-- code for hero section  -->
       <section id="hero-sect">
+        <!-- navbar for larger screen  -->
         <nav id="nav-container">
-          <h2>hope english language center</h2>
+          <h2 id="logo">hope english language center</h2>
           <div class="links">
             <h4><a href="">Home</a></h4>
             <h4><a href="">About</a></h4>
             <h4><a href="">Contact us</a></h4>
             <h4><a href="">Blogs</a></h4>
           </div>
+          <button id="menuBtn">
+            <i class="ri-menu-3-line"></i>
+          </button>
         </nav>
-
         <div id="hero-wrapper">
           <!-- Hero Text -->
           <div class="hero-text">
@@ -64,10 +98,9 @@
               <div class="card">
                 <img src="assets/images/carousel/img9.jpg" alt="" />
               </div>
-
-
-
-
+              <div class="card">
+                <img src="assets/images/carousel/img10.jpg" alt="" />
+              </div>
             </div>
             <button class="nav-arrow right">›</button>
           </div>

@@ -39,6 +39,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9999;
 }
 
 #nav-container h2 {
@@ -81,6 +82,92 @@ body {
     width: 100%;
 }
 
+/* code for  menubtn  */
+#nav-container #menuBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+#nav-container #menuBtn i {
+    color: var(--text-color-l);
+    font-size: 1.8vw;
+}
+
+#nav-container #menuBtn i:hover {
+    color: #f9efbe;
+}
+
+/* code for smaller screen navbar  */
+#ns-container {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    background-color: #33333346;
+    transition: left 0.3s ease-in-out;
+    z-index: 9999;
+}
+
+#ns-container.active {
+    left: 0;
+}
+
+#ns-container .links {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 10rem 2rem;
+    gap: 1.5rem;
+    background-color: var(--background-color);
+}
+
+#ns-container .links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-color-d);
+    font-size: 5.2vw;
+    transition: color 0.3s ease;
+}
+
+#ns-container .links a i {
+    font-size: 1.4rem;
+    font-weight: 100;
+}
+
+
+/* responsive design for navbar  */
+@media (max-width: 768px) {
+    #nav-container {
+        padding: 10vw 5vw;
+    }
+
+    #nav-container h2 {
+        width: 200px;
+        font-size: 6vw !important;
+        letter-spacing: 2px;
+        margin-left: 4vw;
+        transition: all 0.3s ease;
+    }
+
+    #nav-container .links {
+        display: none;
+    }
+
+    #nav-container #menuBtn {
+        display: block;
+    }
+
+    #nav-container #menuBtn i {
+        font-size: 1.8rem;
+    }
+}
 
 
 /* ===== Hero Section ===== */
@@ -104,7 +191,6 @@ body {
     padding: 0 6vw;
 }
 
-/* Hero text */
 .hero-text {
     width: 35%;
     color: #fff;
@@ -181,6 +267,7 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     transition: all 0.8s ease;
+    border: 4px solid var(--text-color-l);
 }
 
 .card img {
@@ -203,8 +290,8 @@ body {
 .card.left-1 img,
 .card.left-2 img,
 .card.right-1 img,
-.card.right-2 img   {
-	filter: grayscale(50%);
+.card.right-2 img {
+    filter: grayscale(50%);
 }
 
 .card.left-2 {
@@ -265,24 +352,13 @@ body {
 
 
 
-
-
 /* ===== Responsive Design ===== */
-@media (max-width: 1024px) {
-    .hero-text h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-}
-
 @media (max-width: 768px) {
     #hero-wrapper {
         flex-direction: column;
-        gap: 3rem;
         text-align: center;
+        padding: 0 7vw;
+        padding-top: 30vw;
     }
 
     .hero-text {
@@ -295,7 +371,7 @@ body {
     }
 
     .hero-text p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .carousel-container {
@@ -314,37 +390,5 @@ body {
 
     .nav-arrow.right {
         right: -30px;
-    }
-}
-
-@media (max-width: 480px) {
-    #nav-container h2 {
-        font-size: 1.2rem;
-    }
-
-    .links {
-        gap: 1rem;
-    }
-
-    .hero-text h1 {
-        font-size: 1.6rem;
-    }
-
-    .hero-text p {
-        font-size: 0.9rem;
-    }
-
-    #login-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-
-    .carousel-container {
-        height: 250px;
-    }
-
-    .card {
-        width: 140px;
-        height: 200px;
     }
 }
