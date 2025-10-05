@@ -3,9 +3,9 @@
 
 :root {
     --text-color-d: #333333;
-    --text-color-l: #ffff;
-    /* --text-color-2: #fcdb32; */
-    --text-color-2: #ffcc00;
+    --txt-color-l: #ffff;
+    --txt-hover-color: #f9efbe;
+    --txt-color2: #003366;
     --btn-color: #42A5F5;
     --bg-color-l: #E0E0E0;
     --bg-color-d: #ADB5BD;
@@ -20,85 +20,94 @@
     box-sizing: border-box;
 }
 
+/* code for scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
 
-html,
-body {
+::-webkit-scrollbar-thumb {
+    background: rgb(169, 168, 168);
+    border-radius: 10px;
+}
+
+body{
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
     font-family: var(--baloo-bhaijan);
 }
 
-/* code for navbar  */
-#nav-container {
+
+/* ===== NAVBAR ===== */
+nav {
     display: flex;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 2.5vw 6vw 1vw;
+    padding: 1.4rem 2.6rem;
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
-#nav-container h2 {
+nav.active {
+    background: none;
+    backdrop-filter: blur(0);
+    box-shadow: none;
+}
+
+nav h3 {
+    font-size: 1.4rem;
+    color: var(--txt-color2);
+    letter-spacing: 0.5px;
     font-family: var(--satisfy-font);
-    font-size: 2vw;
-    text-transform: capitalize;
-    color: var(--text-color-l);
 }
 
-#nav-container .links {
-    display: flex;
-    gap: 2vw;
-}
-
-#nav-container .links a {
+nav .links a {
+    margin-left: 2rem;
     text-decoration: none;
-    color: var(--text-color-l);
-    font-size: 1.34vw;
-    padding: 4px;
+    color: var(--txt-color2);
+    font-weight: 500;
     position: relative;
     transition: color 0.3s ease;
+    font-size: 1.15rem;
 }
 
-#nav-container .links a::after {
-    content: "";
-    width: 0;
-    height: 2.5px;
+nav .links a::after {
+    content: '';
     position: absolute;
-    bottom: 0;
     left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #D18002;
     transition: width 0.3s ease;
-    background: #f9efbe;
 }
 
-#nav-container .links a:hover {
-    color: #f9efbe;
+nav .links a:hover {
+    /*color: #007bff;*/
+    color: #bc7501;
 }
 
-#nav-container .links a:hover::after {
+nav .links a:hover::after {
     width: 100%;
 }
 
-/* code for  menubtn  */
-#nav-container #menuBtn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+nav #menuBtn {
+    font-size: 1.5rem;
+    color: var(--txt-color2);
     display: none;
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
 }
 
-#nav-container #menuBtn i {
-    color: var(--text-color-l);
-    font-size: 1.8vw;
-}
 
-#nav-container #menuBtn i:hover {
-    color: #f9efbe;
-}
 
 /* code for smaller screen navbar  */
 #ns-container {
@@ -107,9 +116,9 @@ body {
     left: -100%;
     height: 100vh;
     width: 100%;
-    background-color: #33333346;
-    transition: left 0.3s ease-in-out;
-    z-index: 9999;
+    z-index: 999;
+    background-color: #3e3d3d92;
+    transition: all 0.3s ease-in-out;
 }
 
 #ns-container.active {
@@ -118,12 +127,13 @@ body {
 
 #ns-container .links {
     height: 100%;
-    width: 80%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     padding: 10rem 2rem;
     gap: 1.5rem;
     background-color: var(--background-color);
+    backdrop-filter: (15px);
 }
 
 #ns-container .links a {
@@ -131,7 +141,7 @@ body {
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: var(--text-color-d);
+    color: var(--txt-color2);
     font-size: 5.2vw;
     transition: color 0.3s ease;
 }
@@ -142,275 +152,122 @@ body {
 }
 
 
-/* navbar bg-color after hero section  */
-#nav-container.scrolled {
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+/* code for hero section */
+#hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5%;
+    overflow-x: hidden;
 }
 
-#nav-container.scrolled h2,
-#nav-container.scrolled .links a,
-#nav-container.scrolled #menuBtn i {
+/* Background image carousel */
+#hero-section .background-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 75%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(90%);
+    transition: opacity 1s ease-in-out;
+}
+
+#hero-section .text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 3rem 4rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    /* animation: fadeIn 1.2s ease forwards; */
+}
+
+#hero-section .text h2 {
+    font-size: 2.3rem;
+    color: var(--txt-color2);
+    margin-bottom: 1.3rem;
+    line-height: 1.2;
+}
+
+#hero-section .text p {
+    font-size: 1.2rem;
     color: var(--text-color-d);
+    line-height: 1.6;
 }
 
-#nav-container.scrolled .links a::after {
-    background: var(--text-color-2);
+/* ANIMATION  */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-
-
-
-/* responsive design for navbar  */
+/* RESPONSIVENESSS code for hero section  */
 @media (max-width: 768px) {
-    #nav-container {
-        padding: 10vw 5vw;
+
+    nav {
+        padding: 1.2rem 1.3rem;
     }
 
-    #nav-container h2 {
+    nav h3 {
+        font-size: 1.3rem;
         width: 200px;
-        font-size: 6vw !important;
-        letter-spacing: 2px;
-        margin-left: 4vw;
-        transition: all 0.3s ease;
     }
 
-    #nav-container .links {
-        display: none;
-    }
-
-    #nav-container #menuBtn {
+    nav #menuBtn {
+        font-size: 1.7rem;
         display: block;
     }
 
-    #nav-container #menuBtn i {
-        font-size: 1.8rem;
-    }
-}
-
-
-/* ===== Hero Section ===== */
-#hero-sect {
-    min-height: 100vh;
-    width: 100%;
-    background: linear-gradient(180deg, #1c92d9, #f2fcfe);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-#hero-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4vw;
-    width: 100%;
-    margin-top: 60px;
-    padding: 0 6vw;
-}
-
-.hero-text {
-    width: 35%;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.hero-text h1 {
-    font-size: 3vw;
-    margin-bottom: 1rem;
-    font-family: var(--satisfy-font);
-    color: var(--text-color-l);
-}
-
-.hero-text span {
-    /* color: #ffdf6c; */
-    color: var(--text-color-2);
-}
-
-.hero-text p {
-    font-size: 1.3vw;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    color: var(--text-color-l);
-}
-
-#login-btn {
-    padding: 0.8rem 1.8rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 50px;
-    background: #ffdf6c;
-    color: #333;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#login-btn:hover {
-    background: #f9d551;
-}
-
-
-/* code for carousel  */
-
-.carousel-container {
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
-    position: relative;
-    perspective: 1000px;
-    margin: 50px auto;
-}
-
-.carousel-track {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease;
-}
-
-.card {
-    position: absolute;
-    width: 200px;
-    height: 280px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    transition: all 0.8s ease;
-    border: 4px solid var(--text-color-l);
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card.center {
-    z-index: 10;
-    transform: scale(1.1) translateZ(0);
-}
-
-.card.left-1 {
-    z-index: 5;
-    transform: translateX(-200px) scale(0.9) translateZ(-100px);
-    opacity: 0.9;
-}
-
-.card.left-1 img,
-.card.left-2 img,
-.card.right-1 img,
-.card.right-2 img {
-    filter: grayscale(50%);
-}
-
-.card.left-2 {
-    z-index: 1;
-    transform: translateX(-400px) scale(0.8) translateZ(-300px);
-    opacity: 0.7;
-}
-
-.card.right-1 {
-    z-index: 5;
-    transform: translateX(200px) scale(0.9) translateZ(-100px);
-    opacity: 0.9;
-}
-
-.card.right-2 {
-    z-index: 1;
-    transform: translateX(400px) scale(0.8) translateZ(-300px);
-    opacity: 0.7;
-}
-
-.card.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.nav-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 20;
-    font-size: 1.5rem;
-    border: none;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.nav-arrow:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.nav-arrow.left {
-    left: 20px;
-}
-
-.nav-arrow.right {
-    right: 20px;
-}
-
-
-/* ===== Responsive Design ===== */
-@media (max-width: 768px) {
-    #hero-wrapper {
-        flex-direction: column;
-        text-align: center;
-        padding: 0 7vw;
-        padding-top: 30vw;
+    nav .links {
+        display: none;
     }
 
-    .hero-text {
+    #hero-section {
+        display: block;
+        padding-left: 0;
+        min-height: 100%;
+    }
+
+    /* Background image carousel */
+    #hero-section .background-img {
         width: 100%;
-        align-items: center;
     }
 
-    .hero-text h1 {
+    #hero-section .text {
+        width: 100%;
+        border-radius: 0;
+        padding: 2.5rem 2rem;
+        backdrop-filter: blur(1px);
+        display: block;
+        margin-top: 550px;
+    }
+
+    #hero-section .text h2 {
         font-size: 2rem;
+        margin-bottom: 1.3rem;
+        line-height: 1.2;
     }
 
-    .hero-text p {
-        font-size: 1.1rem;
+    #hero-section .text p {
+        font-size: 1.3rem;
+        line-height: 1.4;
+        color: black;
     }
 
-    .carousel-container {
-        max-width: 90%;
-        height: 300px;
-    }
-
-    .card {
-        width: 160px;
-        height: 220px;
-    }
-
-    .nav-arrow.left {
-        left: -30px;
-    }
-
-    .nav-arrow.right {
-        right: -30px;
-    }
 }
-
 
 
 /* code for about section  */
@@ -441,13 +298,13 @@ body {
 
 #about-text h2 {
     font-size: 2.5vw;
-    color: var(--text-color);
+    color: var(--txt-color-d);
     margin-bottom: 0.7rem;
 }
 
 #about-text p {
     font-size: 1.3vw;
-    color: var(--text-color);
+    color: var(--txt-color-d);
     line-height: 1.6;
 }
 
@@ -501,8 +358,8 @@ body {
 }
 
 
-#activity-sect{
+#activity-sect {
     min-height: 100vh;
     width: 100%;
-    background: #000;
+    background: #cc9c9c;
 }
