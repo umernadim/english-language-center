@@ -529,17 +529,12 @@ nav #menuBtn {
 #testimonial-section {
     width: 100%;
     min-height: 100vh;
-    /* background: #EDF2F8; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* background: linear-gradient(135deg,
-            #e0f3ff 0%,
-            #fdfbfb 50%,
-            #fff6eb 100%); */
-            background: #F8FAFB;
-    padding: 4rem 0;
+    background: #F8FAFB;
+    padding: 4rem 0 2rem;
 }
 
 #testimonial-section h2 {
@@ -560,12 +555,8 @@ nav #menuBtn {
 }
 
 #testimonial-section .eachdiv {
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     border-radius: 0.8rem;
-        /* background: linear-gradient(135deg,
-            #e0f3ff 0%,
-            #fdfbfb 50%,
-            #fff6eb 100%); */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -670,11 +661,89 @@ nav #menuBtn {
     #testimonial-section .attribution {
         position: relative;
     }
+
+    #testimonial-section .review h4 {
+    font-size: 1.2rem;
+}
+
 }
 
 
+/* code for CTA section  */
+#cta-section {
+    min-height: 65vh;
+    width: 100%;
+  /* background: linear-gradient(135deg, #e0f3ff 0%, #fdfbfb 50%, #fff6eb 100%); */
+  /* background: rgb(230, 178, 118); */
+  /* padding: 4rem 2rem; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.cta-container {
+  /* max-width: 900px; */
+  /* background-color: #ffffffcc; */
+  /* padding: 3rem 2rem; */
+  /* border-radius: 20px; */
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); */
+  height: 100%;
+  width: 100%;
+}
 
+.cta-container h2 {
+  font-size: 2rem;
+  color: var(--txt-color2);
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.cta-container p {
+  color: var(--text-color-d);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: var(--btn-color);
+  color: var(--txt-color-l);
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: var(--btn-hover-color);
+}
+
+@media screen and (max-width: 768px) {
+    #cta-section {
+    min-height: 55vh;
+}
+
+.cta-container {
+  padding: 1.2rem;
+}
+
+.cta-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.cta-container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  padding: 0.9rem 2rem;
+    font-size: 1.2rem;
+}
+}
 
 
 
