@@ -1660,3 +1660,222 @@ footer .footer-bottom-links li a:hover {
         font-size: 0.95rem;
     }
 }
+
+
+/* code for team members  */
+#our-team {
+    width: 100%;
+    padding: 5rem 8%;
+    text-align: center;
+}
+
+#our-team h2 {
+    font-size: 2.3rem;
+    color: var(--txt-color2);
+    margin-bottom: 0.5rem;
+}
+
+.team-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: var(--text-color-d);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.team-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.team-card h3 {
+    color: var(--txt-color2);
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.team-card .role {
+    opacity: 0.5;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+}
+
+.team-card .desc {
+    color: var(--text-color-d);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #our-team {
+        padding: 4rem 6%;
+    }
+
+    .team-card img {
+        height: 200px;
+    }
+}
+
+/* code for the achievement section  */
+#achievements {
+    background: #F8FAFC;
+    padding: 5rem 8%;
+    text-align: center;
+}
+
+#achievements h2 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--txt-color2);
+    margin-bottom: 0.5rem;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.achievement-card {
+    background: #fff;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.achievement-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.achievement-content {
+    padding: 1.2rem 1.5rem;
+}
+
+.achievement-content h3 {
+    font-size: 1.2rem;
+    color: var(--txt-color2);
+    margin-bottom: 0.6rem;
+}
+
+.achievement-content p {
+    font-size: 1rem;
+    color: var(--text-color-d);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    #achievements {
+        padding: 4rem 5%;
+    }
+    #achievements h2 {
+    font-size: 1.8rem;
+}
+}
+
+
+/* code for CTA section  */
+.join-journey {
+  /* background: linear-gradient(to right, #e3f2fd, #fef7e5); */
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 12px;
+  margin: 80px auto;
+  max-width: 1100px;
+  /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); */
+}
+
+.join-container h2 {
+  font-size: 2.2rem;
+  color: var(--txt-color2);
+  margin-bottom: 15px;
+}
+
+.join-container p {
+  font-size: 1.1rem;
+  color: var(--text-color-d);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.join-container span {
+  color: #007acc;
+  font-weight: 600;
+}
+
+.join-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #007acc;
+  color: var(--txt-color-l);
+}
+
+.primary-btn:hover {
+  background-color: #005fa3;
+}
+
+.secondary-btn {
+  border: 2px solid #007acc;
+  color: #007acc;
+  background: transparent;
+}
+
+.secondary-btn:hover {
+  background-color: #007acc;
+  color: var(--txt-color-l);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .join-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .join-container p {
+    font-size: 1rem;
+  }
+}
