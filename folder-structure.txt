@@ -4,12 +4,8 @@ english-language-center/
 ├── about.html                 # About page
 ├── contact.html               # Contact page
 ├── vocabulary.html            # Vocabulary list
-├── grammar.html               # Grammar lessons list
-├── grammar-detail.html        # Single grammar lesson
 ├── tests.html                 # Tests list (cards + Google Forms links for now)
 ├── test-detail.html           # (Future) Native test page
-├── events.html                # Events & announcements
-├── register-event.html        # Event registration form
 ├── gallery.html               # Gallery page
 ├── testimonials.html          # Testimonials page
 ├── blog.html                  # Blog list
@@ -23,10 +19,6 @@ english-language-center/
 │   ├── admin-add-blog.html
 │   ├── admin-manage-blog.html
 │   ├── admin-add-vocab.html
-│   ├── admin-manage-vocab.html
-│   ├── admin-add-grammar.html
-│   ├── admin-manage-grammar.html
-│   ├── admin-manage-events.html
 │   ├── admin-manage-gallery.html
 │   └── admin-manage-testimonials.html
 │
@@ -42,7 +34,6 @@ english-language-center/
 │   │
 │   ├── images/                # All images
 │   │   ├── gallery/
-│   │   ├── events/
 │   │   ├── testimonials/
 │   │   ├── blog/
 │   │   └── icons/
@@ -59,16 +50,12 @@ english-language-center/
 │   ├── controllers/           # Handle form actions & DB CRUD
 │   │   ├── blogController.php
 │   │   ├── vocabController.php
-│   │   ├── grammarController.php
 │   │   ├── testController.php
-│   │   ├── eventController.php
 │   │   ├── galleryController.php
 │   │   └── testimonialController.php
 │   │
 │   ├── models/                # Database queries
 │   │   ├── blogModel.php
-│   │   ├── vocabModel.php
-│   │   ├── grammarModel.php
 │   │   ├── testModel.php
 │   │   ├── eventModel.php
 │   │   ├── galleryModel.php
