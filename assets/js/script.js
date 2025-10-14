@@ -35,7 +35,7 @@ function carouselHandler() {
   }, 5000);
 }
 
-carouselHandler();
+// carouselHandler();
 
 // function to handle FAQ section
 function faqHandler() {
@@ -50,15 +50,18 @@ function faqHandler() {
 }
 faqHandler();
 
-// Simple form submission handler for newsletter
-document
-  .querySelector(".newsletter-btn")
-  .addEventListener("click", function () {
-    const emailInput = document.querySelector(".newsletter-input input");
-    if (emailInput.value) {
-      alert("Thank you for subscribing to our newsletter!");
-      emailInput.value = "";
-    } else {
-      alert("Please enter your email address.");
+function searchFilterHandler() {
+  const searchInput = document.getElementById("searchInput");
+  const testGrid = document.getElementById("testGrid");
+  const cards = testGrid.getElementsByClassName("test-card");
+
+  searchInput.addEventListener("keyup", function () {
+    const filter = this.value.toLowerCase();
+    for (let card of cards) {
+      const title = card.querySelector("h3").textContent.toLowerCase();
+      card.style.display = title.includes(filter) ? "block" : "none";
     }
   });
+}
+
+searchFilterHandler();
