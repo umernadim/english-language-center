@@ -28,14 +28,17 @@ function carouselHandler() {
   const images = document.querySelectorAll(".background-img");
   let current = 0;
 
+  
   setInterval(() => {
-    images[current].style.opacity = 0;
-    current = (current + 1) % images.length;
-    images[current].style.opacity = 1;
-  }, 5000);
+      images[current].style.opacity = 0;
+      current = (current + 1) % images.length;
+      images[current].style.opacity = 1;
+    }, 5000);
 }
 
 // carouselHandler();
+window.addEventListener("load", carouselHandler);
+
 
 // function to handle FAQ section
 function faqHandler() {
@@ -53,15 +56,15 @@ faqHandler();
 function searchFilterHandler() {
   const searchInput = document.getElementById("searchInput");
   const testGrid = document.getElementById("testGrid");
-  const cards = testGrid.getElementsByClassName("test-card");
-
-  searchInput.addEventListener("keyup", function () {
-    const filter = this.value.toLowerCase();
-    for (let card of cards) {
-      const title = card.querySelector("h3").textContent.toLowerCase();
-      card.style.display = title.includes(filter) ? "block" : "none";
-    }
-  });
+  const cards = testGrid.querySelectorAll(".test-card");
+    
+    searchInput.addEventListener("keyup", function () {
+      const filter = this.value.toLowerCase();
+      for (let card of cards) {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = title.includes(filter) ? "block" : "none";
+      }
+    });
 }
 
 searchFilterHandler();
