@@ -4,7 +4,8 @@
 :root {
     --text-color-d: #555;
     --txt-color-l: #ffff;
-    --txt-hover-color: #007bff;
+    /* --txt-hover-color: #007bff; */
+    --txt-hover-color: #0860b8;
     --txt-color2: #003366;
     --btn-color: linear-gradient(135deg, #4e9eff, #267ae7);
     --btn-hover-color: linear-gradient(135deg, #5ca7ff, #3c85e0);
@@ -1766,8 +1767,10 @@ textarea:focus {
     }
 }
 
-
-/* code for test page  */
+/* ========================
+     code for test page  
+========================= */
+/* Code for Test Hero Section */
 #B-hero-sec .test-header {
     position: relative;
     text-align: center;
@@ -1888,36 +1891,40 @@ textarea:focus {
 
 
 
-/* code for footer section */
-.footer-container {
-    height: 100%;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
+/* ===========================
+    Code for footer section 
+============================== */
 footer {
+    min-height: 100vh;
+    width: 100%;
     background: linear-gradient(135deg, #1a2a6c, #2c3e50);
     color: var(--txt-color-l);
     padding: 4rem 0 0;
     margin-top: 4rem;
 }
 
-.footer-container .footer-content {
+footer .footer-container {
+    height: 100%;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2.5rem;
     padding-bottom: 3rem;
 }
 
-.footer-container .footer-column h3 {
+footer .footer-column h3 {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 10px;
 }
 
-.footer-container .footer-column h3:after {
+footer .footer-column h3:after {
     content: '';
     position: absolute;
     width: 50px;
@@ -1928,21 +1935,21 @@ footer {
     border-radius: 2px;
 }
 
-.footer-container .footer-column p {
+footer .footer-column p {
     color: #ddd;
     margin-bottom: 1.5rem;
     font-size: 1rem;
 }
 
-.footer-container .footer-links {
+footer .footer-links {
     list-style: none;
 }
 
-.footer-container .footer-links li {
+footer .footer-links li {
     margin-bottom: 0.8rem;
 }
 
-.footer-links li a {
+footer .footer-links li a {
     color: #ddd;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -1950,56 +1957,56 @@ footer {
     align-items: center;
 }
 
-.footer-links li a i {
+footer .footer-links li a i {
     margin-right: 8px;
     font-size: 1rem;
     color: #4e9eff;
 }
 
-.footer-container .footer-links li a:hover {
+footer .footer-links li a:hover {
     color: #4e9eff;
     padding-left: 5px;
 }
 
-.footer-container .contact-info {
+footer .contact-info {
     list-style: none;
 }
 
-.footer-container .contact-info li {
+footer .contact-info li {
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
 }
 
-.footer-container .contact-info li i {
+footer .contact-info li i {
     margin-right: 12px;
     color: #4e9eff;
     font-size: 1.3rem;
     margin-top: 4px;
 }
 
-.footer-container .contact-info li span {
+footer .contact-info li span {
     color: #ddd;
 }
 
-.footer-container .recent-posts {
+footer .recent-posts {
     list-style: none;
 }
 
-.footer-container .recent-post-item {
+footer .recent-post-item {
     display: flex;
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-container .recent-post-item:last-child {
+footer .recent-post-item:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
 }
 
-.footer-container .post-thumb {
+footer .post-thumb {
     width: 70px;
     height: 70px;
     border-radius: 6px;
@@ -2008,21 +2015,21 @@ footer {
     flex-shrink: 0;
 }
 
-.footer-container .post-thumb img {
+footer .post-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.footer-container .post-content {
+footer .post-content {
     flex: 1;
 }
 
-.footer-container .post-title {
+footer .post-title {
     margin-bottom: 5px;
 }
 
-.footer-container .post-title a {
+footer .post-title a {
     color: var(--txt-color-l);
     text-decoration: none;
     font-weight: 500;
@@ -2030,39 +2037,39 @@ footer {
     transition: all 0.3s ease;
 }
 
-.footer-container .post-title a:hover {
+footer .post-title a:hover {
     color: #4e9eff;
 }
 
-.footer-container .post-meta {
+footer .post-meta {
     display: flex;
     align-items: center;
     color: #aaa;
     font-size: 0.85rem;
 }
 
-.footer-container .post-meta i {
+footer .post-meta i {
     margin-right: 5px;
     font-size: 0.8rem;
 }
 
-.footer-container .post-date {
+footer .post-date {
     margin-right: 15px;
     display: flex;
     align-items: center;
 }
 
-.footer-container .post-comments {
+footer .post-comments {
     display: flex;
     align-items: center;
 }
 
-.footer-container .social-links {
+footer .social-links {
     display: flex;
     margin-top: 1.5rem;
 }
 
-.footer-container .social-links a {
+footer .social-links a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2076,25 +2083,25 @@ footer {
     text-decoration: none;
 }
 
-.footer-container .social-links a:hover {
+footer .social-links a:hover {
     background: #4e9eff;
     transform: translateY(-3px);
 }
 
-.footer-container .newsletter-form {
+footer .newsletter-form {
     margin-top: 1.5rem;
 }
 
-.footer-container .newsletter-form p {
+footer .newsletter-form p {
     margin-bottom: 1rem;
 }
 
-.footer-container .newsletter-input {
+footer .newsletter-input {
     display: flex;
     margin-bottom: 1rem;
 }
 
-.footer-container .newsletter-input input {
+footer .newsletter-input input {
     flex: 1;
     padding: 0.8rem 1rem;
     border: none;
@@ -2103,8 +2110,8 @@ footer {
     font-size: 1rem;
 }
 
-.footer-container .newsletter-btn {
-    background: #4e9eff;
+footer .newsletter-btn {
+    background: var(--btn-color);
     color: var(--txt-color-l);
     border: none;
     padding: 0 1.2rem;
@@ -2114,8 +2121,8 @@ footer {
     font-weight: 600;
 }
 
-.footer-container .newsletter-btn:hover {
-    background: #267ae7;
+footer .newsletter-btn:hover {
+    background: var(--btn-hover-color);
 }
 
 footer .footer-bottom {
@@ -2187,13 +2194,32 @@ footer .footer-bottom-links li a:hover {
 }
 
 
-/* code for blogs page  */
-/* code for blog banner section  */
 
+/* =========================z===
+        code for blogs page  
+=========================z====== */
+/* code for blog banner section  */
+#B-hero-sec .blog-header {
+    position: relative;
+    text-align: center;
+    color: var(--txt-color2);
+    margin-top: 0;
+    background: linear-gradient(135deg,
+            #e0f3ff 0%,
+            #fdfbfb 50%,
+            #fff6eb 100%);
+}
+
+#B-hero-sec .blog-header h1 {
+    color: var(--txt-color2);
+}
+
+#B-hero-sec .blog-header p {
+    color: var(--text-color-d);
+}
 
 
 /* code for blogs section  */
-
 #blogs-section {
     min-height: 100vh;
     width: 100%;
@@ -2203,7 +2229,7 @@ footer .footer-bottom-links li a:hover {
 #blogs-section .blog-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
     padding: 2rem 0 5rem;
 }
 
@@ -2282,7 +2308,8 @@ footer .footer-bottom-links li a:hover {
 }
 
 #blogs-section .post-title a:hover {
-    color: #0860b8;
+    /* color: #0860b8; */
+    color: var(--txt-hover-color);
 }
 
 #blogs-section .post-excerpt {
@@ -2313,14 +2340,14 @@ footer .footer-bottom-links li a:hover {
     gap: 2.5rem;
 }
 
-#blogs-section .sidebar-widget {
+.blog-sidebar .sidebar-widget {
     background: #fff;
     border-radius: 8px;
     padding: 1.8rem;
     box-shadow: 0 10px 14px rgba(0, 0, 0, 0.1);
 }
 
-#blogs-section .widget-title {
+.blog-sidebar .widget-title {
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.8rem;
@@ -2329,7 +2356,7 @@ footer .footer-bottom-links li a:hover {
     position: relative;
 }
 
-#blogs-section .widget-title:after {
+.blog-sidebar .widget-title:after {
     content: '';
     position: absolute;
     width: 50px;
@@ -2340,11 +2367,11 @@ footer .footer-bottom-links li a:hover {
 }
 
 /* Search Widget */
-#blogs-section .search-form {
+.blog-sidebar .search-form {
     display: flex;
 }
 
-#blogs-section .search-input {
+.blog-sidebar .search-input {
     flex: 1;
     padding: 0.8rem 1rem;
     border: 2px solid #ccc;
@@ -2353,11 +2380,11 @@ footer .footer-bottom-links li a:hover {
     outline: none;
 }
 
-#blogs-section .search-input:focus {
+.blog-sidebar .search-input:focus {
     border-color: #007acc;
 }
 
-#blogs-section .search-button {
+.blog-sidebar .search-button {
     /* border: 2px solid var(--btn-color); */
     background: var(--btn-color);
     color: #fff;
@@ -2368,33 +2395,33 @@ footer .footer-bottom-links li a:hover {
     transition: background 0.3s ease;
 }
 
-#blogs-section .search-button i {
+.blog-sidebar .search-button i {
     font-size: 1.15rem;
 }
 
-#blogs-section .search-button:hover {
+.blog-sidebar .search-button:hover {
     background: var(--btn-hover-color);
 }
 
 /* Recent Posts Widget */
-#blogs-section .recent-posts {
+.blog-sidebar .recent-posts {
     list-style: none;
 }
 
-#blogs-section .recent-post {
+.blog-sidebar .recent-post {
     display: flex;
     margin-bottom: 1.2rem;
     padding-bottom: 1.2rem;
     border-bottom: 1px solid #E0E0E0;
 }
 
-#blogs-section .recent-post:last-child {
+.blog-sidebar.recent-post:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
 }
 
-#blogs-section .recent-post-image {
+.blog-sidebar .recent-post-image {
     width: 80px;
     height: 80px;
     border-radius: 4px;
@@ -2403,29 +2430,30 @@ footer .footer-bottom-links li a:hover {
     flex-shrink: 0;
 }
 
-#blogs-section .recent-post-image img {
+.blog-sidebar .recent-post-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-#blogs-section .recent-post-content h4 {
+.blog-sidebar .recent-post-content h4 {
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
     line-height: 1.4;
 }
 
-#blogs-section .recent-post-content h4 a {
+.blog-sidebar .recent-post-content h4 a {
     color: var(--txt-color2);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-#blogs-section .recent-post-content h4 a:hover {
-    color: #007acc;
+.blog-sidebar .recent-post-content h4 a:hover {
+    /* color: #007acc; */
+    color: var(--txt-hover-color);
 }
 
-#blogs-section .recent-post-date {
+.blog-sidebar .recent-post-date {
     font-size: 0.8rem;
     color: var(--text-color-d);
 }
@@ -2461,8 +2489,8 @@ footer .footer-bottom-links li a:hover {
 
 
 
-
-/* code for blogs detail page 
+/*==========================
+ code for blog detail page 
 ============================
  Blog Detail Hero Section */
 #B-hero-sec .blog-detail-header {
@@ -2640,14 +2668,14 @@ footer .footer-bottom-links li a:hover {
     gap: 2.5rem;
 }
 
-.sidebar-widget {
+.blog-sidebar .sidebar-widget {
     background: #fff;
     border-radius: 8px;
     padding: 1.8rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-.widget-title {
+.blog-sidebar .widget-title {
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.8rem;
@@ -2656,7 +2684,7 @@ footer .footer-bottom-links li a:hover {
     position: relative;
 }
 
-.widget-title:after {
+.blog-sidebar .widget-title:after {
     content: '';
     position: absolute;
     width: 50px;
@@ -2666,57 +2694,25 @@ footer .footer-bottom-links li a:hover {
     left: 0;
 }
 
-/* Search Widget */
-.search-form {
-    display: flex;
-}
-
-.search-input {
-    flex: 1;
-    padding: 0.8rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    font-size: 1rem;
-}
-
-.search-button {
-    background: var(--btn-color);
-    color: white;
-    border: none;
-    padding: 0 1.2rem;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.search-button i{
-    font-size: 1.1rem;
-}
-
-.search-button:hover {
-    background: var(--btn-hover-color);
-}
-
-
 /* Recent Posts Widget */
-.recent-posts {
+.blog-sidebar .recent-posts {
     list-style: none;
 }
 
-.recent-post {
+.blog-sidebar .recent-post {
     display: flex;
     margin-bottom: 1.2rem;
     padding-bottom: 1.2rem;
     border-bottom: 1px solid #E0E0E0;
 }
 
-.recent-post:last-child {
+.blog-sidebar .recent-post:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
 }
 
-.recent-post-image {
+.blog-sidebar .recent-post-image {
     width: 80px;
     height: 80px;
     border-radius: 4px;
@@ -2725,39 +2721,73 @@ footer .footer-bottom-links li a:hover {
     flex-shrink: 0;
 }
 
-.recent-post-image img {
+.blog-sidebar .recent-post-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.recent-post-content h4 {
+.blog-sidebar .recent-post-content h4 {
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
     line-height: 1.4;
 }
 
-.recent-post-content h4 a {
+.blog-sidebar .recent-post-content h4 a {
     color: var(--txt-color2);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.recent-post-content h4 a:hover {
+.blog-sidebar .recent-post-content h4 a:hover {
     color: #007acc;
 }
 
-.recent-post-date {
+.blog-sidebar .recent-post-date {
     font-size: 0.8rem;
     color: var(--text-light);
 }
 
+/* Categories Widget */
+.blog-sidebar .categories-list {
+    list-style: none;
+}
+
+.blog-sidebar .categories-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.blog-sidebar .categories-list li:last-child {
+    border-bottom: none;
+}
+
+.blog-sidebar .categories-list a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-sidebar .categories-list a:hover {
+    color: var(--primary);
+}
+
+.blog-sidebar .category-count {
+    background: var(--light);
+    color: var(--text-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
 /* Newsletter Widget */
-.newsletter-form {
+.blog-sidebar .newsletter-form {
     margin-top: 1rem;
 }
 
-.newsletter-input {
+.blog-sidebar .newsletter-input {
     width: 100%;
     padding: 0.8rem 1rem;
     border: 1px solid var(--border);
@@ -2766,7 +2796,7 @@ footer .footer-bottom-links li a:hover {
     font-size: 1rem;
 }
 
-.newsletter-button {
+.blog-sidebar .newsletter-button {
     width: 100%;
     background: var(--primary);
     color: white;
@@ -2778,6 +2808,7 @@ footer .footer-bottom-links li a:hover {
     transition: background 0.3s ease;
 }
 
-.newsletter-button:hover {
+.blog-sidebar .newsletter-button:hover {
     background: var(--primary-light);
 }
+

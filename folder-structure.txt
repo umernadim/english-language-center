@@ -5,7 +5,6 @@ english-language-center/
 ├── contact.html               # Contact page
 ├── vocabulary.html            # Vocabulary list
 ├── tests.html                 # Tests list (cards + Google Forms links for now)
-├── test-detail.html           # (Future) Native test page
 ├── gallery.html               # Gallery page
 ├── testimonials.html          # Testimonials page
 ├── blog.html                  # Blog list
