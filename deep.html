@@ -1,950 +1,1442 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Detail | Hope Language Center</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
 
-        :root {
-            --primary: #2271b1;
-            --primary-light: #4299e1;
-            --secondary: #2d3748;
-            --accent: #e53e3e;
-            --light: #f7fafc;
-            --dark: #2d3748;
-            --text: #4a5568;
-            --text-light: #718096;
-            --border: #e2e8f0;
-            --white: #ffffff;
-            --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
+      :root {
+        --primary: #2271b1;
+        --primary-light: #4299e1;
+        --secondary: #2d3748;
+        --accent: #e53e3e;
+        --light: #f7fafc;
+        --dark: #2d3748;
+        --text: #4a5568;
+        --text-light: #718096;
+        --border: #e2e8f0;
+        --white: #ffffff;
+        --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
 
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-        }
+      body {
+        background-color: var(--light);
+        color: var(--text);
+        line-height: 1.6;
+      }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-        /* Header Styles */
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+      /* Header Styles */
+      header {
+        background: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 0;
-        }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 0;
+      }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
 
-        .nav-links li {
-            margin-left: 2rem;
-        }
+      .nav-links li {
+        margin-left: 2rem;
+      }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+      }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+      .nav-links a:hover {
+        color: var(--primary);
+      }
 
-        .nav-links a.active {
-            color: var(--primary);
-        }
+      .nav-links a.active {
+        color: var(--primary);
+      }
 
-        .nav-links a.active:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background: var(--primary);
-            bottom: -5px;
-            left: 0;
-        }
+      .nav-links a.active:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: var(--primary);
+        bottom: -5px;
+        left: 0;
+      }
 
-        /* Blog Detail Hero Section */
-        .blog-detail-hero {
-            background: linear-gradient(rgba(34, 113, 177, 0.9), rgba(34, 113, 177, 0.9)), 
-                        url('https://images.unsplash.com/photo-1497636577773-f1231844b336?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-            margin-bottom: 3rem;
+      /* Blog Detail Hero Section */
+      .blog-detail-hero {
+        background: linear-gradient(
+            rgba(34, 113, 177, 0.9),
+            rgba(34, 113, 177, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1497636577773-f1231844b336?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .blog-detail-hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .blog-detail-hero .post-meta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        gap: 1.5rem;
+      }
+
+      .blog-detail-hero .post-meta span {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+      }
+
+      .blog-detail-hero .post-meta i {
+        margin-right: 0.5rem;
+      }
+
+      /* Main Blog Detail Layout */
+      .blog-detail-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        padding: 2rem 0 5rem;
+      }
+
+      /* Blog Content */
+      .blog-detail-content {
+        background: var(--white);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .featured-image {
+        height: 400px;
+        overflow: hidden;
+      }
+
+      .featured-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .blog-detail-body {
+        padding: 2.5rem;
+      }
+
+      .blog-detail-body h2 {
+        font-size: 1.8rem;
+        margin: 2rem 0 1rem;
+        color: var(--dark);
+        line-height: 1.4;
+      }
+
+      .blog-detail-body h3 {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 1rem;
+        color: var(--dark);
+      }
+
+      .blog-detail-body p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+
+      .blog-detail-body blockquote {
+        border-left: 4px solid var(--primary);
+        padding-left: 1.5rem;
+        margin: 2rem 0;
+        font-style: italic;
+        color: var(--text-light);
+        font-size: 1.2rem;
+      }
+
+      .blog-detail-body ul,
+      .blog-detail-body ol {
+        margin: 1.5rem 0;
+        padding-left: 2rem;
+      }
+
+      .blog-detail-body li {
+        margin-bottom: 0.8rem;
+        line-height: 1.6;
+      }
+
+      .blog-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .tag {
+        background: var(--light);
+        color: var(--text);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .tag:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      /* Author Bio */
+      .author-bio {
+        background: var(--light);
+        border-radius: 8px;
+        padding: 2rem;
+        margin-top: 3rem;
+        display: flex;
+        gap: 1.5rem;
+        box-shadow: var(--shadow);
+      }
+
+      .author-avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .author-info h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        color: var(--dark);
+      }
+
+      .author-info p {
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* Comments Section */
+      .comments-section {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .comments-section h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+        position: relative;
+        display: inline-block;
+      }
+
+      .comments-section h3:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: var(--primary);
+        bottom: -8px;
+        left: 0;
+      }
+
+      .comments-count {
+        color: var(--text-light);
+        font-size: 1rem;
+        font-weight: normal;
+      }
+
+      .comments-list {
+        margin-bottom: 3rem;
+      }
+
+      .comment {
+        display: flex;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .comment:last-child {
+        border-bottom: none;
+      }
+
+      .comment-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .comment-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .comment-content {
+        flex: 1;
+      }
+
+      .comment-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.8rem;
+      }
+
+      .comment-author {
+        font-weight: 600;
+        color: var(--dark);
+      }
+
+      .comment-date {
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+
+      .comment-text {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .comment-reply {
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .comment-reply:hover {
+        color: var(--primary-light);
+      }
+
+      .comment-reply i {
+        margin-right: 0.3rem;
+      }
+
+      .comment-replies {
+        margin-left: 3rem;
+        margin-top: 1.5rem;
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--border);
+      }
+
+      /* Comment Form */
+      .comment-form {
+        background: var(--light);
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .comment-form h4 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group label {
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 0.5rem;
+      }
+
+      .form-control {
+        padding: 0.8rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.1);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background: var(--primary-light);
+      }
+
+      /* Navigation */
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        color: var(--text);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        max-width: 45%;
+      }
+
+      .nav-link:hover {
+        color: var(--primary);
+      }
+
+      .nav-link.prev {
+        text-align: left;
+      }
+
+      .nav-link.next {
+        text-align: right;
+        flex-direction: row-reverse;
+        margin-left: auto;
+      }
+
+      .nav-link i {
+        margin: 0 0.5rem;
+      }
+
+      /* Sidebar */
+      .blog-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+
+      .sidebar-widget {
+        background: var(--white);
+        border-radius: 8px;
+        padding: 1.8rem;
+        box-shadow: var(--shadow);
+      }
+
+      .widget-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 2px solid var(--border);
+        color: var(--dark);
+        position: relative;
+      }
+
+      .widget-title:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 2px;
+        background: var(--primary);
+        bottom: -2px;
+        left: 0;
+      }
+
+      /* Search Widget */
+      .search-form {
+        display: flex;
+      }
+
+      .search-input {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: 4px 0 0 4px;
+        font-size: 1rem;
+      }
+
+      .search-button {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0 1.2rem;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .search-button:hover {
+        background: var(--primary-light);
+      }
+
+      /* Categories Widget */
+      .categories-list {
+        list-style: none;
+      }
+
+      .categories-list li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .categories-list li:last-child {
+        border-bottom: none;
+      }
+
+      .categories-list a {
+        color: var(--text);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .categories-list a:hover {
+        color: var(--primary);
+      }
+
+      .category-count {
+        background: var(--light);
+        color: var(--text-light);
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+      }
+
+      /* Recent Posts Widget */
+      .recent-posts {
+        list-style: none;
+      }
+
+      .recent-post {
+        display: flex;
+        margin-bottom: 1.2rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .recent-post:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .recent-post-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-right: 1rem;
+        flex-shrink: 0;
+      }
+
+      .recent-post-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .recent-post-content h4 {
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+
+      .recent-post-content h4 a {
+        color: var(--dark);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .recent-post-content h4 a:hover {
+        color: var(--primary);
+      }
+
+      .recent-post-date {
+        font-size: 0.8rem;
+        color: var(--text-light);
+      }
+
+      /* Newsletter Widget */
+      .newsletter-form {
+        margin-top: 1rem;
+      }
+
+      .newsletter-input {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .newsletter-button {
+        width: 100%;
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.8rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s ease;
+      }
+
+      .newsletter-button:hover {
+        background: var(--primary-light);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 4rem 0 0;
+        margin-top: 4rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2.5rem;
+        padding-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-column h3:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: var(--primary);
+        bottom: 0;
+        left: 0;
+        border-radius: 2px;
+      }
+
+      .footer-column p {
+        color: #ddd;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-links li a {
+        color: #ddd;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+      }
+
+      .footer-links li a i {
+        margin-right: 8px;
+        font-size: 0.9rem;
+        color: var(--primary);
+      }
+
+      .footer-links li a:hover {
+        color: var(--primary);
+        padding-left: 5px;
+      }
+
+      .social-links {
+        display: flex;
+        margin-top: 1.5rem;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+        color: white;
+        text-decoration: none;
+      }
+
+      .social-links a:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 1.5rem 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .copyright {
+        color: #ddd;
+        font-size: 0.95rem;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .blog-detail-container {
+          grid-template-columns: 1fr;
+          gap: 2rem;
         }
 
         .blog-detail-hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+          font-size: 2.3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          padding: 1rem 0;
+        }
+
+        .nav-links {
+          margin-top: 1rem;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .nav-links li {
+          margin: 0.5rem 1rem;
+        }
+
+        .blog-detail-hero {
+          padding: 3rem 0;
+        }
+
+        .blog-detail-hero h1 {
+          font-size: 2rem;
         }
 
         .blog-detail-hero .post-meta {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1.5rem;
-            font-size: 1rem;
-            gap: 1.5rem;
+          flex-direction: column;
+          gap: 0.8rem;
         }
 
-        .blog-detail-hero .post-meta span {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-        }
-
-        .blog-detail-hero .post-meta i {
-            margin-right: 0.5rem;
-        }
-
-        /* Main Blog Detail Layout */
-        .blog-detail-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            padding: 2rem 0 5rem;
-        }
-
-        /* Blog Content */
-        .blog-detail-content {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .featured-image {
-            height: 400px;
-            overflow: hidden;
-        }
-
-        .featured-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .blog-detail-body {
-            padding: 2.5rem;
-        }
-
-        .blog-detail-body h2 {
-            font-size: 1.8rem;
-            margin: 2rem 0 1rem;
-            color: var(--dark);
-            line-height: 1.4;
-        }
-
-        .blog-detail-body h3 {
-            font-size: 1.5rem;
-            margin: 1.5rem 0 1rem;
-            color: var(--dark);
-        }
-
-        .blog-detail-body p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .blog-detail-body blockquote {
-            border-left: 4px solid var(--primary);
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            font-style: italic;
-            color: var(--text-light);
-            font-size: 1.2rem;
-        }
-
-        .blog-detail-body ul, .blog-detail-body ol {
-            margin: 1.5rem 0;
-            padding-left: 2rem;
-        }
-
-        .blog-detail-body li {
-            margin-bottom: 0.8rem;
-            line-height: 1.6;
-        }
-
-        .blog-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .tag {
-            background: var(--light);
-            color: var(--text);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .tag:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Author Bio */
         .author-bio {
-            background: var(--light);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-top: 3rem;
-            display: flex;
-            gap: 1.5rem;
-            box-shadow: var(--shadow);
+          flex-direction: column;
+          text-align: center;
         }
 
         .author-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
+          margin: 0 auto;
         }
 
-        .author-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .author-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .author-info p {
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
         .post-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
+          flex-direction: column;
+          gap: 1.5rem;
         }
 
         .nav-link {
-            display: flex;
-            align-items: center;
-            color: var(--text);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            max-width: 45%;
+          max-width: 100%;
         }
 
-        .nav-link:hover {
-            color: var(--primary);
+        .form-row {
+          grid-template-columns: 1fr;
+          gap: 0;
         }
 
-        .nav-link.prev {
-            text-align: left;
+        .comment-replies {
+          margin-left: 1.5rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .featured-image {
+          height: 250px;
         }
 
-        .nav-link.next {
-            text-align: right;
-            flex-direction: row-reverse;
-            margin-left: auto;
+        .blog-detail-body {
+          padding: 1.5rem;
         }
 
-        .nav-link i {
-            margin: 0 0.5rem;
-        }
-
-        /* Sidebar */
-        .blog-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
-
-        .sidebar-widget {
-            background: var(--white);
-            border-radius: 8px;
-            padding: 1.8rem;
-            box-shadow: var(--shadow);
-        }
-
-        .widget-title {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 2px solid var(--border);
-            color: var(--dark);
-            position: relative;
-        }
-
-        .widget-title:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 2px;
-            background: var(--primary);
-            bottom: -2px;
-            left: 0;
-        }
-
-        /* Search Widget */
-        .search-form {
-            display: flex;
-        }
-
-        .search-input {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 4px 0 0 4px;
-            font-size: 1rem;
-        }
-
-        .search-button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0 1.2rem;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .search-button:hover {
-            background: var(--primary-light);
-        }
-
-        /* Categories Widget */
-        .categories-list {
-            list-style: none;
-        }
-
-        .categories-list li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .categories-list li:last-child {
-            border-bottom: none;
-        }
-
-        .categories-list a {
-            color: var(--text);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .categories-list a:hover {
-            color: var(--primary);
-        }
-
-        .category-count {
-            background: var(--light);
-            color: var(--text-light);
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-
-        /* Recent Posts Widget */
-        .recent-posts {
-            list-style: none;
+        .blog-detail-body h2 {
+          font-size: 1.5rem;
         }
 
         .recent-post {
-            display: flex;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .recent-post:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
+          flex-direction: column;
         }
 
         .recent-post-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-right: 1rem;
-            flex-shrink: 0;
+          width: 100%;
+          height: 150px;
+          margin-right: 0;
+          margin-bottom: 1rem;
         }
 
-        .recent-post-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .comment {
+          flex-direction: column;
+          gap: 1rem;
         }
 
-        .recent-post-content h4 {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-            line-height: 1.4;
+        .comment-avatar {
+          align-self: flex-start;
         }
-
-        .recent-post-content h4 a {
-            color: var(--dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .recent-post-content h4 a:hover {
-            color: var(--primary);
-        }
-
-        .recent-post-date {
-            font-size: 0.8rem;
-            color: var(--text-light);
-        }
-
-        /* Newsletter Widget */
-        .newsletter-form {
-            margin-top: 1rem;
-        }
-
-        .newsletter-input {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-
-        .newsletter-button {
-            width: 100%;
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.8rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .newsletter-button:hover {
-            background: var(--primary-light);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 4rem 0 0;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            padding-bottom: 3rem;
-        }
-
-        .footer-column h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background: var(--primary);
-            bottom: 0;
-            left: 0;
-            border-radius: 2px;
-        }
-
-        .footer-column p {
-            color: #ddd;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links li a {
-            color: #ddd;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-links li a i {
-            margin-right: 8px;
-            font-size: 0.9rem;
-            color: var(--primary);
-        }
-
-        .footer-links li a:hover {
-            color: var(--primary);
-            padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-            color: white;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 1.5rem 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .copyright {
-            color: #ddd;
-            font-size: 0.95rem;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .blog-detail-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .blog-detail-hero h1 {
-                font-size: 2.3rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 1rem 0;
-            }
-            
-            .nav-links {
-                margin-top: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .nav-links li {
-                margin: 0.5rem 1rem;
-            }
-            
-            .blog-detail-hero {
-                padding: 3rem 0;
-            }
-            
-            .blog-detail-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .blog-detail-hero .post-meta {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-            
-            .author-bio {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .author-avatar {
-                margin: 0 auto;
-            }
-            
-            .post-navigation {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .nav-link {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .featured-image {
-                height: 250px;
-            }
-            
-            .blog-detail-body {
-                padding: 1.5rem;
-            }
-            
-            .blog-detail-body h2 {
-                font-size: 1.5rem;
-            }
-            
-            .recent-post {
-                flex-direction: column;
-            }
-            
-            .recent-post-image {
-                width: 100%;
-                height: 150px;
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">Hope Language Center</div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="blog.html" class="active">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">Hope Language Center</div>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- Blog Detail Hero Section -->
     <section class="blog-detail-hero">
-        <div class="container">
-            <h1>5 Effective Strategies for Accelerated Language Learning</h1>
-            <div class="post-meta">
-                <span><i class="ri-calendar-fill"></i> October 15, 2023</span>
-                <span><i class="ri-user-fill"></i> Sarah Johnson</span>
-                <span><i class="ri-folder-fill"></i> Learning Tips</span>
-                <span><i class="ri-time-fill"></i> 8 min read</span>
-            </div>
+      <div class="container">
+        <h1>5 Effective Strategies for Accelerated Language Learning</h1>
+        <div class="post-meta">
+          <span><i class="ri-calendar-fill"></i> October 15, 2023</span>
+          <span><i class="ri-user-fill"></i> Sarah Johnson</span>
+          <span><i class="ri-folder-fill"></i> Learning Tips</span>
+          <span><i class="ri-time-fill"></i> 8 min read</span>
         </div>
+      </div>
     </section>
 
     <!-- Main Blog Detail Content -->
     <div class="container">
-        <div class="blog-detail-container">
-            <!-- Blog Content -->
-            <div class="blog-detail-content">
-                <div class="featured-image">
-                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Language Learning">
-                </div>
-                
-                <div class="blog-detail-body">
-                    <p>Learning a new language can be a challenging yet rewarding journey. Whether you're preparing for travel, career advancement, or personal enrichment, implementing effective strategies can significantly accelerate your progress. In this comprehensive guide, we'll explore five powerful techniques that have helped thousands of students achieve fluency faster.</p>
-                    
-                    <h2>1. Immerse Yourself in the Language</h2>
-                    <p>Immersion is one of the most effective ways to learn a language quickly. By surrounding yourself with the target language, you force your brain to adapt and process information more efficiently.</p>
-                    
-                    <p>Consider these immersion techniques:</p>
-                    <ul>
-                        <li>Change your device languages to the target language</li>
-                        <li>Listen to music, podcasts, and radio in the language</li>
-                        <li>Watch movies and TV shows with subtitles</li>
-                        <li>Label objects around your home with their foreign names</li>
-                    </ul>
-                    
-                    <blockquote>
-                        "Language immersion doesn't require traveling abroad. You can create an immersive environment right where you are with consistent daily practice."
-                    </blockquote>
-                    
-                    <h2>2. Implement Spaced Repetition</h2>
-                    <p>Spaced repetition is a learning technique that involves increasing intervals of time between subsequent reviews of previously learned material. This method leverages the psychological spacing effect, helping information move from short-term to long-term memory.</p>
-                    
-                    <p>Popular tools for spaced repetition include:</p>
-                    <ol>
-                        <li>Anki (digital flashcards)</li>
-                        <li>Memrise (vocabulary building)</li>
-                        <li>Physical flashcards with a Leitner system</li>
-                    </ol>
-                    
-                    <h2>3. Practice Active Recall</h2>
-                    <p>Active recall is the process of actively retrieving information from memory rather than passively reviewing it. This strengthens neural pathways and improves retention.</p>
-                    
-                    <p>Effective active recall strategies:</p>
-                    <ul>
-                        <li>Test yourself regularly on vocabulary and grammar</li>
-                        <li>Try to recall words before looking them up</li>
-                        <li>Explain grammar concepts to someone else</li>
-                        <li>Write summaries of what you've learned without references</li>
-                    </ul>
-                    
-                    <h2>4. Focus on High-Frequency Vocabulary</h2>
-                    <p>Not all words are created equal. Research shows that learning the most common 1,000 words in a language can help you understand about 80% of everyday conversations.</p>
-                    
-                    <p>Prioritize vocabulary that:</p>
-                    <ul>
-                        <li>Appears frequently in daily conversations</li>
-                        <li>Is relevant to your personal interests and needs</li>
-                        <li>Forms the foundation for more complex concepts</li>
-                    </ul>
-                    
-                    <h2>5. Engage in Meaningful Communication</h2>
-                    <p>Language is ultimately a tool for communication. Regular practice with native speakers or fellow learners is crucial for developing fluency and confidence.</p>
-                    
-                    <p>Ways to practice communication:</p>
-                    <ul>
-                        <li>Language exchange partners (in-person or online)</li>
-                        <li>Tutoring sessions with native speakers</li>
-                        <li>Joining language learning communities</li>
-                        <li>Recording yourself speaking and analyzing your pronunciation</li>
-                    </ul>
-                    
-                    <p>By implementing these five strategies consistently, you'll notice significant improvements in your language acquisition speed and retention. Remember that consistency is more important than intensity—regular practice, even in small doses, yields better long-term results than occasional intensive study sessions.</p>
-                    
-                    <div class="blog-tags">
-                        <a href="#" class="tag">Language Learning</a>
-                        <a href="#" class="tag">Study Techniques</a>
-                        <a href="#" class="tag">Vocabulary</a>
-                        <a href="#" class="tag">Fluency</a>
-                    </div>
-                    
-                    <!-- Author Bio -->
-                    <div class="author-bio">
-                        <div class="author-avatar">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sarah Johnson">
-                        </div>
-                        <div class="author-info">
-                            <h3>Sarah Johnson</h3>
-                            <p>Sarah is the Director of Language Education at Hope Language Center with over 10 years of experience in language instruction. She specializes in accelerated learning techniques and has helped thousands of students achieve fluency in multiple languages.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Post Navigation -->
-                    <div class="post-navigation">
-                        <a href="#" class="nav-link prev">
-                            <i class="ri-arrow-left-line"></i>
-                            <div>
-                                <span>Previous Post</span>
-                                <h4>Common Grammar Mistakes and How to Avoid Them</h4>
-                            </div>
-                        </a>
-                        <a href="#" class="nav-link next">
-                            <i class="ri-arrow-right-line"></i>
-                            <div>
-                                <span>Next Post</span>
-                                <h4>The Importance of Cultural Understanding in Language Learning</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+      <div class="blog-detail-container">
+        <!-- Blog Content -->
+        <div class="blog-detail-content">
+          <div class="featured-image">
+            <img
+              src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Language Learning"
+            />
+          </div>
+
+          <div class="blog-detail-body">
+            <p>
+              Learning a new language can be a challenging yet rewarding
+              journey. Whether you're preparing for travel, career advancement,
+              or personal enrichment, implementing effective strategies can
+              significantly accelerate your progress. In this comprehensive
+              guide, we'll explore five powerful techniques that have helped
+              thousands of students achieve fluency faster.
+            </p>
+
+            <h2>1. Immerse Yourself in the Language</h2>
+            <p>
+              Immersion is one of the most effective ways to learn a language
+              quickly. By surrounding yourself with the target language, you
+              force your brain to adapt and process information more
+              efficiently.
+            </p>
+
+            <p>Consider these immersion techniques:</p>
+            <ul>
+              <li>Change your device languages to the target language</li>
+              <li>Listen to music, podcasts, and radio in the language</li>
+              <li>Watch movies and TV shows with subtitles</li>
+              <li>Label objects around your home with their foreign names</li>
+            </ul>
+
+            <blockquote>
+              "Language immersion doesn't require traveling abroad. You can
+              create an immersive environment right where you are with
+              consistent daily practice."
+            </blockquote>
+
+            <h2>2. Implement Spaced Repetition</h2>
+            <p>
+              Spaced repetition is a learning technique that involves increasing
+              intervals of time between subsequent reviews of previously learned
+              material. This method leverages the psychological spacing effect,
+              helping information move from short-term to long-term memory.
+            </p>
+
+            <p>Popular tools for spaced repetition include:</p>
+            <ol>
+              <li>Anki (digital flashcards)</li>
+              <li>Memrise (vocabulary building)</li>
+              <li>Physical flashcards with a Leitner system</li>
+            </ol>
+
+            <h2>3. Practice Active Recall</h2>
+            <p>
+              Active recall is the process of actively retrieving information
+              from memory rather than passively reviewing it. This strengthens
+              neural pathways and improves retention.
+            </p>
+
+            <p>Effective active recall strategies:</p>
+            <ul>
+              <li>Test yourself regularly on vocabulary and grammar</li>
+              <li>Try to recall words before looking them up</li>
+              <li>Explain grammar concepts to someone else</li>
+              <li>Write summaries of what you've learned without references</li>
+            </ul>
+
+            <h2>4. Focus on High-Frequency Vocabulary</h2>
+            <p>
+              Not all words are created equal. Research shows that learning the
+              most common 1,000 words in a language can help you understand
+              about 80% of everyday conversations.
+            </p>
+
+            <p>Prioritize vocabulary that:</p>
+            <ul>
+              <li>Appears frequently in daily conversations</li>
+              <li>Is relevant to your personal interests and needs</li>
+              <li>Forms the foundation for more complex concepts</li>
+            </ul>
+
+            <h2>5. Engage in Meaningful Communication</h2>
+            <p>
+              Language is ultimately a tool for communication. Regular practice
+              with native speakers or fellow learners is crucial for developing
+              fluency and confidence.
+            </p>
+
+            <p>Ways to practice communication:</p>
+            <ul>
+              <li>Language exchange partners (in-person or online)</li>
+              <li>Tutoring sessions with native speakers</li>
+              <li>Joining language learning communities</li>
+              <li>
+                Recording yourself speaking and analyzing your pronunciation
+              </li>
+            </ul>
+
+            <p>
+              By implementing these five strategies consistently, you'll notice
+              significant improvements in your language acquisition speed and
+              retention. Remember that consistency is more important than
+              intensity—regular practice, even in small doses, yields better
+              long-term results than occasional intensive study sessions.
+            </p>
+
+            <div class="blog-tags">
+              <a href="#" class="tag">Language Learning</a>
+              <a href="#" class="tag">Study Techniques</a>
+              <a href="#" class="tag">Vocabulary</a>
+              <a href="#" class="tag">Fluency</a>
             </div>
 
-            <!-- Sidebar -->
-            <aside class="blog-sidebar">
-                <!-- Search Widget -->
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Search</h3>
-                    <form class="search-form">
-                        <input type="text" class="search-input" placeholder="Search...">
-                        <button type="submit" class="search-button">
-                            <i class="ri-search-line"></i>
-                        </button>
-                    </form>
+            <!-- Author Bio -->
+            <div class="author-bio">
+              <div class="author-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                  alt="Sarah Johnson"
+                />
+              </div>
+              <div class="author-info">
+                <h3>Sarah Johnson</h3>
+                <p>
+                  Sarah is the Director of Language Education at Hope Language
+                  Center with over 10 years of experience in language
+                  instruction. She specializes in accelerated learning
+                  techniques and has helped thousands of students achieve
+                  fluency in multiple languages.
+                </p>
+              </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section">
+              <h3>Comments <span class="comments-count">(3)</span></h3>
+
+              <div class="comments-list">
+                <!-- Comment 1 -->
+                <div class="comment">
+                  <div class="comment-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                      alt="Michael Chen"
+                    />
+                  </div>
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <span class="comment-author">Michael Chen</span>
+                      <span class="comment-date">October 16, 2023</span>
+                    </div>
+                    <p class="comment-text">
+                      These strategies have completely transformed my approach
+                      to learning Spanish. The spaced repetition technique
+                      especially helped me retain vocabulary much better than
+                      traditional methods. Thank you for sharing these insights!
+                    </p>
+                    <a href="#" class="comment-reply"
+                      ><i class="ri-reply-line"></i> Reply</a
+                    >
+                  </div>
                 </div>
 
-                <!-- Categories Widget -->
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Categories</h3>
-                    <ul class="categories-list">
-                        <li><a href="#">Learning Tips <span class="category-count">12</span></a></li>
-                        <li><a href="#">Grammar <span class="category-count">8</span></a></li>
-                        <li><a href="#">Vocabulary <span class="category-count">15</span></a></li>
-                        <li><a href="#">Culture <span class="category-count">6</span></a></li>
-                        <li><a href="#">Study Resources <span class="category-count">10</span></a></li>
-                    </ul>
+                <!-- Comment 2 -->
+                <div class="comment">
+                  <div class="comment-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                      alt="Emma Rodriguez"
+                    />
+                  </div>
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <span class="comment-author">Emma Rodriguez</span>
+                      <span class="comment-date">October 18, 2023</span>
+                    </div>
+                    <p class="comment-text">
+                      I've been struggling with French for months, but the
+                      active recall method mentioned here has made a huge
+                      difference. Instead of just reviewing my notes, I'm now
+                      testing myself regularly, and it's helping the information
+                      stick.
+                    </p>
+                    <a href="#" class="comment-reply"
+                      ><i class="ri-reply-line"></i> Reply</a
+                    >
+
+                    <!-- Reply to Comment 2 -->
+                    <div class="comment-replies">
+                      <div class="comment">
+                        <div class="comment-avatar">
+                          <img
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="David Kim"
+                          />
+                        </div>
+                        <div class="comment-content">
+                          <div class="comment-header">
+                            <span class="comment-author">David Kim</span>
+                            <span class="comment-date">October 19, 2023</span>
+                          </div>
+                          <p class="comment-text">
+                            I completely agree, Emma! Active recall has been a
+                            game-changer for my German studies too. Have you
+                            tried combining it with the spaced repetition apps
+                            mentioned in the article?
+                          </p>
+                          <a href="#" class="comment-reply"
+                            ><i class="ri-reply-line"></i> Reply</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <!-- Recent Posts Widget -->
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Recent Posts</h3>
-                    <ul class="recent-posts">
-                        <li class="recent-post">
-                            <div class="recent-post-image">
-                                <img src="https://images.unsplash.com/photo-1542662565-7e4b66bae529?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Recent Post">
-                            </div>
-                            <div class="recent-post-content">
-                                <h4><a href="#">How to Build a Study Routine That Works</a></h4>
-                                <div class="recent-post-date">Sep 25, 2023</div>
-                            </div>
-                        </li>
-                        <li class="recent-post">
-                            <div class="recent-post-image">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&500&q=80" alt="Recent Post">
-                            </div>
-                            <div class="recent-post-content">
-                                <h4><a href="#">The Benefits of Learning a Second Language</a></h4>
-                                <div class="recent-post-date">Sep 18, 2023</div>
-                            </div>
-                        </li>
-                        <li class="recent-post">
-                            <div class="recent-post-image">
-                                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&500&q=80" alt="Recent Post">
-                            </div>
-                            <div class="recent-post-content">
-                                <h4><a href="#">Overcoming Language Learning Plateaus</a></h4>
-                                <div class="recent-post-date">Sep 10, 2023</div>
-                            </div>
-                        </li>
-                    </ul>
+                <!-- Comment 3 -->
+                <div class="comment">
+                  <div class="comment-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+                      alt="Alex Turner"
+                    />
+                  </div>
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <span class="comment-author">Alex Turner</span>
+                      <span class="comment-date">October 20, 2023</span>
+                    </div>
+                    <p class="comment-text">
+                      The high-frequency vocabulary tip is spot on. I wasted so
+                      much time trying to memorize obscure words when I should
+                      have focused on the most common ones first. This article
+                      has completely changed my study approach.
+                    </p>
+                    <a href="#" class="comment-reply"
+                      ><i class="ri-reply-line"></i> Reply</a
+                    >
+                  </div>
                 </div>
+              </div>
 
-                <!-- Newsletter Widget -->
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Newsletter</h3>
-                    <p>Subscribe to get language learning tips and resources delivered to your inbox.</p>
-                    <form class="newsletter-form">
-                        <input type="email" class="newsletter-input" placeholder="Your email address">
-                        <button type="submit" class="newsletter-button">Subscribe</button>
-                    </form>
+              <!-- Comment Form -->
+              <div class="comment-form">
+                <h4>Leave a Comment</h4>
+                <form id="commentForm">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="name">Your Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Your Email</label>
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="comment">Your Comment</label>
+                    <textarea
+                      id="comment"
+                      class="form-control"
+                      rows="5"
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="submit-btn">Post Comment</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Post Navigation -->
+            <div class="post-navigation">
+              <a href="#" class="nav-link prev">
+                <i class="ri-arrow-left-line"></i>
+                <div>
+                  <span>Previous Post</span>
+                  <h4>Common Grammar Mistakes and How to Avoid Them</h4>
                 </div>
-            </aside>
+              </a>
+              <a href="#" class="nav-link next">
+                <i class="ri-arrow-right-line"></i>
+                <div>
+                  <span>Next Post</span>
+                  <h4>
+                    The Importance of Cultural Understanding in Language
+                    Learning
+                  </h4>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar">
+          <!-- Search Widget -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Search</h3>
+            <form class="search-form">
+              <input type="text" class="search-input" placeholder="Search..." />
+              <button type="submit" class="search-button">
+                <i class="ri-search-line"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Categories Widget -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Categories</h3>
+            <ul class="categories-list">
+              <li>
+                <a href="#"
+                  >Learning Tips <span class="category-count">12</span></a
+                >
+              </li>
+              <li>
+                <a href="#">Grammar <span class="category-count">8</span></a>
+              </li>
+              <li>
+                <a href="#"
+                  >Vocabulary <span class="category-count">15</span></a
+                >
+              </li>
+              <li>
+                <a href="#">Culture <span class="category-count">6</span></a>
+              </li>
+              <li>
+                <a href="#"
+                  >Study Resources <span class="category-count">10</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Recent Posts Widget -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Recent Posts</h3>
+            <ul class="recent-posts">
+              <li class="recent-post">
+                <div class="recent-post-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1542662565-7e4b66bae529?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="Recent Post"
+                  />
+                </div>
+                <div class="recent-post-content">
+                  <h4>
+                    <a href="#">How to Build a Study Routine That Works</a>
+                  </h4>
+                  <div class="recent-post-date">Sep 25, 2023</div>
+                </div>
+              </li>
+              <li class="recent-post">
+                <div class="recent-post-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&500&q=80"
+                    alt="Recent Post"
+                  />
+                </div>
+                <div class="recent-post-content">
+                  <h4>
+                    <a href="#">The Benefits of Learning a Second Language</a>
+                  </h4>
+                  <div class="recent-post-date">Sep 18, 2023</div>
+                </div>
+              </li>
+              <li class="recent-post">
+                <div class="recent-post-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&500&q=80"
+                    alt="Recent Post"
+                  />
+                </div>
+                <div class="recent-post-content">
+                  <h4><a href="#">Overcoming Language Learning Plateaus</a></h4>
+                  <div class="recent-post-date">Sep 10, 2023</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter Widget -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Newsletter</h3>
+            <p>
+              Subscribe to get language learning tips and resources delivered to
+              your inbox.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your email address"
+              />
+              <button type="submit" class="newsletter-button">Subscribe</button>
+            </form>
+          </div>
+        </aside>
+      </div>
     </div>
 
     <!-- Footer -->
     <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Hope Language Center</h3>
+            <p>
+              We provide comprehensive language education to help you achieve
+              fluency and cultural understanding. Join our community of language
+              learners today!
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+              <a href="#"><i class="ri-instagram-fill"></i></a>
+              <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#"><i class="ri-arrow-right-s-line"></i> Home</a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-arrow-right-s-line"></i> About Us</a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-arrow-right-s-line"></i> Courses</a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-arrow-right-s-line"></i> Blog</a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-arrow-right-s-line"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#"
+                  ><i class="ri-map-pin-fill"></i> 123 Language Street, City</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="ri-phone-fill"></i> +1 (555) 123-4567</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="ri-mail-fill"></i> info@hopelanguage.com</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="ri-time-fill"></i> Mon-Fri: 9AM-8PM</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Hope Language Center</h3>
-                    <p>We provide comprehensive language education to help you achieve fluency and cultural understanding. Join our community of language learners today!</p>
-                    <div class="social-links">
-                        <a href="#"><i class="ri-facebook-fill"></i></a>
-                        <a href="#"><i class="ri-twitter-fill"></i></a>
-                        <a href="#"><i class="ri-instagram-fill"></i></a>
-                        <a href="#"><i class="ri-linkedin-fill"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Home</a></li>
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> About Us</a></li>
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Courses</a></li>
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Blog</a></li>
-                        <li><a href="#"><i class="ri-arrow-right-s-line"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="ri-map-pin-fill"></i> 123 Language Street, City</a></li>
-                        <li><a href="#"><i class="ri-phone-fill"></i> +1 (555) 123-4567</a></li>
-                        <li><a href="#"><i class="ri-mail-fill"></i> info@hopelanguage.com</a></li>
-                        <li><a href="#"><i class="ri-time-fill"></i> Mon-Fri: 9AM-8PM</a></li>
-                    </ul>
-                </div>
-            </div>
+          <p class="copyright">
+            &copy; 2023 Hope Language Center. All rights reserved.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p class="copyright">&copy; 2023 Hope Language Center. All rights reserved.</p>
-            </div>
-        </div>
+      </div>
     </footer>
 
     <script>
-        // Simple newsletter form submission
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('.newsletter-input').value;
-            if(email) {
-                alert('Thank you for subscribing to our newsletter!');
-                this.reset();
-            } else {
-                alert('Please enter your email address.');
-            }
+      // Comment form submission
+      document
+        .getElementById("commentForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const comment = document.getElementById("comment").value;
+
+          if (name && email && comment) {
+            alert(
+              "Thank you for your comment! It will be reviewed before appearing on the site."
+            );
+            this.reset();
+          } else {
+            alert("Please fill in all fields before submitting your comment.");
+          }
         });
 
-        // Search form submission
-        document.querySelector('.search-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const query = this.querySelector('.search-input').value;
-            if(query) {
-                alert(`Searching for: ${query}`);
-            } else {
-                alert('Please enter a search term.');
-            }
+      // Simple newsletter form submission
+      document
+        .querySelector(".newsletter-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = this.querySelector(".newsletter-input").value;
+          if (email) {
+            alert("Thank you for subscribing to our newsletter!");
+            this.reset();
+          } else {
+            alert("Please enter your email address.");
+          }
+        });
+
+      // Search form submission
+      document
+        .querySelector(".search-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const query = this.querySelector(".search-input").value;
+          if (query) {
+            alert(`Searching for: ${query}`);
+          } else {
+            alert("Please enter a search term.");
+          }
         });
     </script>
-</body>
+  </body>
 </html>

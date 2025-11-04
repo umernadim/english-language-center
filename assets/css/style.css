@@ -1974,7 +1974,7 @@ footer .contact-info {
 }
 
 footer .contact-info li {
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     display: flex;
     align-items: center;
 }
@@ -2512,12 +2512,12 @@ footer .footer-bottom-links li a:hover {
     padding-left: 2rem;
 }
 
-.blog-detail-body li {
+.blog-detail-body .blog-detail-body li {
     margin-bottom: 0.8rem;
     line-height: 1.6;
 }
 
-.blog-tags {
+.blog-detail-body .blog-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
@@ -2526,7 +2526,7 @@ footer .footer-bottom-links li a:hover {
     border-top: 1px solid #ccc;
 }
 
-.tag {
+.blog-detail-body .tag {
     background: #e5f0fc;
     color: var(--text-color-d);
     padding: 0.5rem 1rem;
@@ -2536,9 +2536,195 @@ footer .footer-bottom-links li a:hover {
     transition: all 0.3s ease;
 }
 
-.tag:hover {
+.blog-detail-body .tag:hover {
     background: #d1e6fc;
 }
+
+/* Comments Section */
+.blog-detail-body .comments-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #E0E0E0;
+}
+
+.blog-detail-body .comments-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--txt-color2);
+    position: relative;
+    display: inline-block;
+}
+
+.blog-detail-body .comments-section h3:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: var(--btn-color);
+    bottom: -8px;
+    left: 0;
+}
+
+.blog-detail-body .comments-count {
+    color: var(--text-color-d);
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.blog-detail-body .comments-list {
+    margin-bottom: 3rem;
+}
+
+.blog-detail-body .comment {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.blog-detail-body .comment:last-child {
+    border-bottom: none;
+}
+
+.blog-detail-body .comment-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.blog-detail-body .comment-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-detail-body .comment-content {
+    flex: 1;
+}
+
+.blog-detail-body .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.blog-detail-body .comment-author {
+    font-weight: 600;
+    color: var(--text-color-d);
+}
+
+.blog-detail-body .comment-date {
+    font-size: 0.9rem;
+    color: var(--text-color-d);
+}
+
+.blog-detail-body .comment-text {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.blog-detail-body .comment-reply {
+    color: var(--txt-color-d);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.blog-detail-body .comment-reply:hover {
+    color: var(--txt-hover-color);
+}
+
+.blog-detail-body .comment-reply i {
+    margin-right: 0.3rem;
+}
+
+.blog-detail-body .comment-replies {
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid #E0E0E0;
+}
+
+/* Comment Form */
+.comment-form {
+    background: #F8FAFB;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.comment-form h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--txt-color2);
+}
+
+.comment-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.comment-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form .form-group label {
+    font-weight: 600;
+    color: var(--text-color-d);
+    margin-bottom: 0.5rem;
+}
+
+.comment-form .form-control {
+    padding: 0.8rem 1rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.comment-form .form-control:focus {
+    outline: none;
+    border-color: #4e9eff;
+}
+
+.comment-form textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.comment-form .submit-btn {
+    background: var(--btn-color);
+    color: var(--txt-color-l);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.comment-form .submit-btn:hover {
+    background: var(--btn-hover-color);
+}
+
+
+
+
+
+
+
+
+
 
 /* Navigation */
 .post-navigation {
@@ -2660,7 +2846,7 @@ footer .footer-bottom-links li a:hover {
 
 .blog-sidebar .recent-post-date {
     font-size: 0.8rem;
-    color: var(--txt-color-l);
+    color: var(--txt-color-d);
 }
 
 /* Categories Widget */
