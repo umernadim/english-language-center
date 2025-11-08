@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <section id="vocabulary-section">
+      <div class="vocab-container">
+        <h2>Vocabulary Builder</h2>
+        <p>Expand your English vocabulary with meanings and examples.</p>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search any word..."
+          />
+          <button id="searchBtn">Search</button>
+        </div>
+
+        <div id="vocabList" class="vocab-list">
+          <!-- Words will load here -->
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const vocabList = document.getElementById("vocabList");
+      const predefinedWords = [
+        "confidence",
+        "ambition",
+        "gratitude",
+        "curiosity",
+        "empathy",
+        "courage",
+        "success",
+        "anger",
+      ];
+
+      document.addEventListener("DOMContentLoaded", () => {
+        loadPredefinedWords();
+      });
+
+      document.getElementById("searchBtn").addEventListener("click", getWord);
+      document
+        .getElementById("searchInput")
+        .addEventListener("keypress", (e) => {
+          if (e.key === "Enter") getWord();
+        });
+
+      async function loadPredefinedWords() {
+        vocabList.innerHTML = "<p>Loading vocabulary...</p>";
+        let content = "";
+
+        for (let word of predefinedWords) {
+          const data = await fetchWordData(word);
+          if (data) content += renderWord(data);
+        }
+
+        vocabList.innerHTML = content;
+      }
+
+      async function getWord() {
+        const query = document.getElementById("searchInput").value.trim();
+        if (!query) return;
+
+        vocabList.insertAdjacentHTML(
+          "afterbegin",
+          `<p>Searching for "${query}"...</p>`
+        );
+
+        const data = await fetchWordData(query);
+        if (data) {
+          const newItem = renderWord(data);
+          vocabList.insertAdjacentHTML("afterbegin", newItem);
+        } else {
+          vocabList.insertAdjacentHTML(
+            "afterbegin",
+            `<p>❌ Word not found.</p>`
+          );
+        }
+      }
+
+      async function fetchWordData(word) {
+        try {
+          const res = await fetch(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+          );
+          if (!res.ok) throw new Error("Not found");
+          const data = await res.json();
+          return data[0];
+        } catch (err) {
+          console.error(err);
+          return null;
+        }
+      }
+
+      function renderWord(wordData) {
+        const meaning =
+          wordData.meanings[0]?.definitions[0]?.definition ||
+          "No meaning available";
+        const example = wordData.meanings[0]?.definitions[0]?.example || "—";
+        const partOfSpeech = wordData.meanings[0]?.partOfSpeech || "";
+
+        return `
+    <div class="vocab-item">
+      <h3>${wordData.word}</h3>
+      <span>${partOfSpeech}</span>
+      <p><strong>Meaning:</strong> ${meaning}</p>
+      <p><strong>Example:</strong> ${example}</p>
+    </div>
+  `;
+      }
+    </script>
+  </body>
+</html>
