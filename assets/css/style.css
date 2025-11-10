@@ -747,10 +747,6 @@ nav #menuBtn {
     text-align: center;
     color: var(--txt-color2);
     margin-top: 0;
-    /* background: linear-gradient(135deg,
-            #e0f3ff 0%,
-            #fdfbfb 50%,
-            #fff6eb 100%); */
     background: linear-gradient(rgba(0, 0, 0, 0.75)),
         url(/assets/images/carousel/img1.jpg);
     background-size: cover;
@@ -3162,6 +3158,25 @@ footer .footer-bottom-links li a:hover {
 /*****************************
     Vocabulary Page
 *****************************/
+/* code for vocabulary banner  */
+#B-hero-sec .vocab-header {
+    position: relative;
+    text-align: center;
+    color: var(--txt-color2);
+    margin-top: 0;
+    background: linear-gradient(135deg,
+            #e0f3ff 0%,
+            #fdfbfb 50%,
+            #fff6eb 100%);
+}
+
+#B-hero-sec .vocab-header h1 {
+    color: var(--txt-color2);
+}
+
+#B-hero-sec .vocab-header p {
+    color: var(--text-color-d);
+}
 
 /* Code for Vocabulary Container */
 #vocab-container {
@@ -3169,7 +3184,7 @@ footer .footer-bottom-links li a:hover {
     grid-template-columns: 1fr 300px;
     gap: 3rem;
     padding: 4rem 8%;
-    background: #F6F9FB;
+    background: #f6f9fb2c;
 }
 
 /* Code for Search and Filter Section */
@@ -3214,31 +3229,11 @@ footer .footer-bottom-links li a:hover {
     background: var(--btn-hover-color);
 }
 
-/* .filter-options {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    background: white;
-    border: 1px solid #E0E0E0;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.filter-btn.active {
-    background: #007acc;
-    color: white;
-    border-color: #007acc;
-} */
-
 /* Vocabulary List */
 #vocab-container .vocab-list {
     display: grid;
     gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 #vocab-container .vocab-card {
@@ -3319,6 +3314,19 @@ footer .footer-bottom-links li a:hover {
 #vocab-container .synonym-tag:hover {
     background: var(--txt-hover-color);
     color: var(--txt-color-l);
+}
+
+#vocab-container #loadMoreBtn{
+    outline: none;
+    border: none;
+    background: var(--btn-color);
+    color: var(--txt-color-l);
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out;
+}
+
+#vocab-container #loadMoreBtn:hover{
+    background: var(--btn-hover-color);
 }
 
 /* Sidebar */
