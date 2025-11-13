@@ -3287,6 +3287,7 @@ footer .footer-bottom-links li a:hover {
 
 #vocab-container .vocab-example {
     background: #F7FAFC;
+    color: var(--text-color-d);
     padding: 1rem;
     border-radius: 4px;
     font-style: italic;
@@ -3505,4 +3506,99 @@ footer .footer-bottom-links li a:hover {
 
 #vocab-container .word-of-day .vocab-phonetic {
     color: rgba(255, 255, 255, 0.8);
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Code for Vocabulary Container */
+#vocab-container {
+    grid-template-columns: 1fr;
+    padding: 3rem 5%;
+}
+
+/* Code for Search and Filter Section */
+#vocab-container .search-section {
+    padding: 1rem;
+}
+
+#vocab-container .search-form {
+    flex-direction: column;
+}
+
+#vocab-container .search-input {
+    padding: 0.6rem 0.8rem;
+    font-size: 1.1rem;
+}
+
+
+#vocab-container .search-button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Vocabulary List */
+#vocab-container .vocab-list {
+    gap: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+#vocab-container .vocab-card {
+    padding: 1.3rem;
+}
+
+#vocab-container .vocab-type {
+    font-size: 0.9rem;
+}
+
+#vocab-container .vocab-definition {
+    line-height: 1.3;
+}
+
+#vocab-container .vocab-example {
+    padding: 0.8rem;
+}
+
+#vocab-container .vocab-synonyms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+#vocab-container #loadMoreBtn{
+    font-size: 1.05rem;
+}
+
+/* Sidebar */
+#vocab-container .vocab-sidebar {
+    gap: 1.5rem;
+}
+
+#vocab-container .sidebar-widget {
+    padding: 1.3rem;
+}
+
+#vocab-container .widget-title {
+    margin-bottom: 1rem;
+}
+
+#vocab-container .recent-word {
+    padding: 0.8rem 0;
+    font-size: 1rem;
+}
+
+#vocab-container .category-count {
+    font-size: 0.85rem;
+}
+
+/* Word of the Day */
+#vocab-container .word-of-day {
+    padding: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+#vocab-container .word-of-day h3 i {
+    font-weight: 400;
+}
+
 }
