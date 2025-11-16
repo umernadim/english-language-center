@@ -78,11 +78,17 @@ nav.active {
     box-shadow: none;
 }
 
+nav.active h3{
+    color: var(--text-color-d);
+}
+
 nav h3 {
     font-size: 1.4rem;
     color: var(--txt-color2);
     letter-spacing: 0.5px;
     font-family: var(--satisfy-font);
+    animation: navAnime 4s ease forwards;
+
 }
 
 nav .links a {
@@ -93,6 +99,8 @@ nav .links a {
     position: relative;
     transition: color 0.3s ease;
     font-size: 1rem;
+    animation: navAnime 3s ease forwards;
+
 }
 
 nav .links a::after {
@@ -120,6 +128,16 @@ nav #menuBtn {
     display: none;
     z-index: 9999;
     transition: all 0.3s ease-in-out;
+}
+
+@keyframes navAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -167,16 +185,18 @@ nav #menuBtn {
     flex-direction: column;
     padding: 10rem 2rem;
     gap: 1.5rem;
-    background-color: var(--background-color);
+    background: var(--background-color);
     backdrop-filter: (15px);
 }
 
 #ns-container .links a {
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: var(--txt-color-d);
+    color: var(--text-color-d);
     font-size: 5.2vw;
     transition: color 0.3s ease;
 }
@@ -184,7 +204,7 @@ nav #menuBtn {
 #ns-container .links a i {
     font-size: 1.4rem;
     font-weight: 100;
-    color: var(--txt-color2);
+    color: var(--text-color-d);
 }
 
 
@@ -271,15 +291,18 @@ nav #menuBtn {
         backdrop-filter: blur(1px);
         display: block;
         margin-top: 550px;
+        /* background: none; */
     }
 
     #hero-section .text h2 {
         font-size: 1.9rem;
         margin-bottom: 1.3rem;
         line-height: 1.2;
+        /* display: none; */
     }
 
     #hero-section .text p {
+        /* display: none; */
         font-size: 1.05rem;
         line-height: 1.4;
         color: var(--text-color-d);
@@ -643,7 +666,7 @@ nav #menuBtn {
 
 /* code for CTA section  */
 #cta-section {
-    min-height: 60vh;
+    min-height: 55vh;
     width: 100%;
     text-align: center;
     display: flex;
