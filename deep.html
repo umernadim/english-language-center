@@ -1,755 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vocabulary | Hope Language Center</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Testimonials | Hope Language Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      :root {
-        --primary: #2271b1;
-        --primary-light: #4299e1;
-        --secondary: #2d3748;
-        --accent: #e53e3e;
-        --light: #f7fafc;
-        --dark: #2d3748;
-        --text: #4a5568;
-        --text-light: #718096;
-        --border: #e2e8f0;
-        --white: #ffffff;
-        --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        --success: #48bb78;
-      }
-
-      body {
-        background-color: var(--light);
-        color: var(--text);
-        line-height: 1.6;
-      }
-
-      .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      /* Header Styles */
-      header {
-        background: var(--white);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.2rem 0;
-      }
-
-      .logo {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--primary);
-      }
-
-      .nav-links {
-        display: flex;
-        list-style: none;
-      }
-
-      .nav-links li {
-        margin-left: 2rem;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--dark);
-        font-weight: 500;
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .nav-links a:hover {
-        color: var(--primary);
-      }
-
-      .nav-links a.active {
-        color: var(--primary);
-      }
-
-      .nav-links a.active:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background: var(--primary);
-        bottom: -5px;
-        left: 0;
-      }
-
-      /* Hero Section */
-      .vocab-hero {
-        background: linear-gradient(
-            rgba(34, 113, 177, 0.9),
-            rgba(34, 113, 177, 0.9)
-          ),
-          url("https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80");
-        background-size: cover;
-        background-position: center;
-        color: white;
-        padding: 4rem 0;
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .vocab-hero h1 {
-        font-size: 2.8rem;
-        margin-bottom: 1rem;
-        font-weight: 700;
-      }
-
-      .vocab-hero p {
-        font-size: 1.2rem;
-        max-width: 700px;
-        margin: 0 auto;
-        opacity: 0.9;
-      }
-
-      /* Main Content */
-      .vocab-container {
-        display: grid;
-        grid-template-columns: 1fr 300px;
-        gap: 3rem;
-        padding: 2rem 0 5rem;
-      }
-
-      /* Search and Filter Section */
-      .search-section {
-        background: var(--white);
-        border-radius: 8px;
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-        box-shadow: var(--shadow);
-      }
-
-      .search-form {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .search-input {
-        flex: 1;
-        padding: 0.8rem 1rem;
-        border: 1px solid var(--border);
-        border-radius: 4px;
-        font-size: 1rem;
-      }
-
-      .search-button {
-        background: var(--primary);
-        color: white;
-        border: none;
-        padding: 0 1.5rem;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-      }
-
-      .search-button:hover {
-        background: var(--primary-light);
-      }
-
-      .filter-options {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      .filter-btn {
-        background: var(--light);
-        border: 1px solid var(--border);
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .filter-btn.active {
-        background: var(--primary);
-        color: white;
-        border-color: var(--primary);
-      }
-
-      /* Vocabulary List */
-      .vocab-list {
-        display: grid;
-        gap: 1.5rem;
-      }
-
-      .vocab-card {
-        background: var(--white);
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: var(--shadow);
-        transition: all 0.3s ease;
-        border-left: 4px solid var(--primary);
-      }
-
-      .vocab-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .vocab-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 1rem;
-      }
-
-      .vocab-word {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--dark);
-      }
-
-      .vocab-phonetic {
-        color: var(--text-light);
-        font-style: italic;
-        margin-top: 0.3rem;
-      }
-
-      .vocab-type {
-        background: var(--light);
-        color: var(--primary);
-        padding: 0.3rem 0.8rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 600;
-      }
-
-      .vocab-definition {
-        margin-bottom: 1rem;
-        line-height: 1.6;
-      }
-
-      .vocab-example {
-        background: var(--light);
-        padding: 1rem;
-        border-radius: 4px;
-        font-style: italic;
-        border-left: 3px solid var(--primary);
-        margin-bottom: 1rem;
-      }
-
-      .vocab-synonyms {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 1rem;
-      }
-
-      .synonym-tag {
-        background: var(--light);
-        color: var(--text);
-        padding: 0.3rem 0.7rem;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-
-      .synonym-tag:hover {
-        background: var(--primary);
-        color: white;
-      }
-
-      /* Sidebar */
-      .vocab-sidebar {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .sidebar-widget {
-        background: var(--white);
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: var(--shadow);
-      }
-
-      .widget-title {
-        font-size: 1.3rem;
-        margin-bottom: 1.5rem;
-        padding-bottom: 0.8rem;
-        border-bottom: 2px solid var(--border);
-        color: var(--dark);
-        position: relative;
-      }
-
-      .widget-title:after {
-        content: "";
-        position: absolute;
-        width: 50px;
-        height: 2px;
-        background: var(--primary);
-        bottom: -2px;
-        left: 0;
-      }
-
-      /* Recent Words Widget */
-      .recent-words {
-        list-style: none;
-      }
-
-      .recent-word {
-        padding: 0.8rem 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .recent-word:last-child {
-        border-bottom: none;
-      }
-
-      .recent-word a {
-        color: var(--text);
-        text-decoration: none;
-        transition: color 0.3s ease;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .recent-word a:hover {
-        color: var(--primary);
-      }
-
-      /* Categories Widget */
-      .categories-list {
-        list-style: none;
-      }
-
-      .categories-list li {
-        padding: 0.8rem 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .categories-list li:last-child {
-        border-bottom: none;
-      }
-
-      .categories-list a {
-        color: var(--text);
-        text-decoration: none;
-        transition: color 0.3s ease;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .categories-list a:hover {
-        color: var(--primary);
-      }
-
-      .category-count {
-        background: var(--light);
-        color: var(--text-light);
-        padding: 0.2rem 0.6rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
-      }
-
-      /* Loading State */
-      .loading {
-        text-align: center;
-        padding: 2rem;
-        color: var(--text-light);
-      }
-
-      .loading-spinner {
-        width: 40px;
-        height: 40px;
-        border: 4px solid var(--border);
-        border-top: 4px solid var(--primary);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 1rem;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      /* Error State */
-      .error-message {
-        background: #fed7d7;
-        color: #c53030;
-        padding: 1rem;
-        border-radius: 4px;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-
-      /* Success State */
-      .success-message {
-        background: #c6f6d5;
-        color: #276749;
-        padding: 1rem;
-        border-radius: 4px;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-
-      /* Word of the Day */
-      .word-of-day {
-        background: linear-gradient(
-          135deg,
-          var(--primary),
-          var(--primary-light)
-        );
-        color: white;
-        border-radius: 8px;
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 10;
-      }
-
-      .word-of-day h3 {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .word-of-day h3 i {
-        font-size: 1.4rem;
-      }
-
-      .word-of-day .vocab-word {
-        color: white;
-        font-size: 1.8rem;
-      }
-
-      .word-of-day .vocab-phonetic {
-        color: rgba(255, 255, 255, 0.8);
-      }
-
-      /* Footer */
-      footer {
-        background: var(--dark);
-        color: white;
-        padding: 4rem 0 0;
-        margin-top: 4rem;
-      }
-
-      .footer-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2.5rem;
-        padding-bottom: 3rem;
-      }
-
-      .footer-column h3 {
-        font-size: 1.4rem;
-        margin-bottom: 1.5rem;
-        position: relative;
-        padding-bottom: 10px;
-      }
-
-      .footer-column h3:after {
-        content: "";
-        position: absolute;
-        width: 50px;
-        height: 3px;
-        background: var(--primary);
-        bottom: 0;
-        left: 0;
-        border-radius: 2px;
-      }
-
-      .footer-column p {
-        color: #ddd;
-        margin-bottom: 1.5rem;
-        font-size: 1rem;
-      }
-
-      .footer-links {
-        list-style: none;
-      }
-
-      .footer-links li {
-        margin-bottom: 0.8rem;
-      }
-
-      .footer-links li a {
-        color: #ddd;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-      }
-
-      .footer-links li a i {
-        margin-right: 8px;
-        font-size: 0.9rem;
-        color: var(--primary);
-      }
-
-      .footer-links li a:hover {
-        color: var(--primary);
-        padding-left: 5px;
-      }
-
-      .social-links {
-        display: flex;
-        margin-top: 1.5rem;
-      }
-
-      .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 38px;
-        height: 38px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        margin-right: 10px;
-        transition: all 0.3s ease;
-        color: white;
-        text-decoration: none;
-      }
-
-      .social-links a:hover {
-        background: var(--primary);
-        transform: translateY(-3px);
-      }
-
-      .footer-bottom {
-        background: rgba(0, 0, 0, 0.2);
-        padding: 1.5rem 0;
-        text-align: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .copyright {
-        color: #ddd;
-        font-size: 0.95rem;
-      }
-
-      /* Responsive Styles */
-      @media (max-width: 992px) {
-        .vocab-container {
-          grid-template-columns: 1fr;
-          gap: 2rem;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .vocab-hero h1 {
-          font-size: 2.3rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .navbar {
-          flex-direction: column;
-          padding: 1rem 0;
-        }
-
-        .nav-links {
-          margin-top: 1rem;
-          flex-wrap: wrap;
-          justify-content: center;
+        :root {
+            --primary: #2271b1;
+            --primary-light: #4299e1;
+            --secondary: #2d3748;
+            --accent: #e53e3e;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --text: #4a5568;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --white: #ffffff;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --success: #48bb78;
         }
 
-        .nav-links li {
-          margin: 0.5rem 1rem;
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
         }
 
-        .vocab-hero {
-          padding: 3rem 0;
+        .testimonials-section {
+            width: 100%;
+            max-width: 1200px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow);
         }
 
-        .vocab-hero h1 {
-          font-size: 2rem;
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .vocab-hero p {
-          font-size: 1rem;
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
         }
 
-        .search-form {
-          flex-direction: column;
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
 
-        .search-button {
-          padding: 0.8rem 1rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .vocab-header {
-          flex-direction: column;
-          gap: 0.5rem;
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .vocab-type {
-          align-self: flex-start;
+        /* Testimonials Container */
+        .testimonials-container {
+            position: relative;
+            overflow: hidden;
         }
-      }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            flex: 0 0 100%;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+
+        .testimonial-content {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-content:before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1.5rem;
+            border: 3px solid var(--primary);
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .course-info {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Navigation */
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-light);
+            transform: scale(1.1);
+        }
+
+        .nav-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 768px) {
+            .testimonial-card {
+                flex: 0 0 50%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .testimonial-card {
+                flex: 0 0 33.333%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .testimonials-section {
+                padding: 2rem 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .testimonial-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .testimonial-author {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="container">
-        <nav class="navbar">
-          <div class="logo">Hope Language Center</div>
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="vocabulary.html" class="active">Vocabulary</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-
-
-    <!-- Main Content -->
-    <div class="container">
-      <div class="vocab-container">
-        <!-- Main Content -->
-        <div class="vocab-main">
-          <!-- Word of the Day -->
-          <div class="word-of-day" id="wordOfDay">
-            <h3><i class="ri-lightbulb-flash-line"></i> Word of the Day</h3>
-            <div class="loading">
-              <div class="loading-spinner"></div>
-              <p>Loading word of the day...</p>
-            </div>
-          </div>
-
-          <!-- Search and Filter Section -->
-          <div class="search-section">
-            <form class="search-form" id="searchForm">
-              <input
-                type="text"
-                class="search-input"
-                id="searchInput"
-                placeholder="Search for any English word..."
-              />
-              <button type="submit" class="search-button">
-                <i class="ri-search-line"></i> Search
-              </button>
-            </form>
-            <div class="filter-options">
-              <button class="filter-btn active" data-category="all">
-                All Words
-              </button>
-              <button class="filter-btn" data-category="common">
-                Common Words
-              </button>
-              <button class="filter-btn" data-category="advanced">
-                Advanced Words
-              </button>
-            </div>
-          </div>
-
-          <!-- Vocabulary List -->
-          <div class="vocab-list" id="vocabList">
-            <div class="loading">
-              <div class="loading-spinner"></div>
-              <p>Loading vocabulary words...</p>
-            </div>
-          </div>
+</head>
+<body>
+  
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2>What Our Students Say</h2>
+            <p>Hear from our students about their language learning journey and experiences at Hope Language Center</p>
         </div>
 
-        <!-- Sidebar -->
-        <aside class="vocab-sidebar">
-          <!-- Recent Words Widget -->
-          <div class="sidebar-widget">
-            <h3 class="widget-title">Recently Searched</h3>
-            <ul class="recent-words" id="recentWords">
-              <li class="recent-word">
-                <a href="#" data-word="language">
-                  <span>Language</span>
-                </a>
-              </li>
-              <li class="recent-word">
-                <a href="#" data-word="communication">
-                  <span>Communication</span>
-                </a>
-              </li>
-              <li class="recent-word">
-                <a href="#" data-word="fluency">
-                  <span>Fluency</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div class="testimonials-container">
+            <div class="testimonials-track" id="testimonialsTrack">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">The Spanish course completely transformed my ability to communicate. The teachers are patient and the curriculum is well-structured. I went from zero to conversational in just three months!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sarah Johnson">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Spanish Student</p>
+                                <span class="course-info">Beginner to Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-          <!-- Categories Widget -->
-          <div class="sidebar-widget">
-            <h3 class="widget-title">Word Categories</h3>
-            <ul class="categories-list">
-              <li>
-                <a href="#" data-category="education"
-                  >Education <span class="category-count">24</span></a
-                >
-              </li>
-              <li>
-                <a href="#" data-category="business"
-                  >Business <span class="category-count">18</span></a
-                >
-              </li>
-              <li>
-                <a href="#" data-category="technology"
-                  >Technology <span class="category-count">12</span></a
-                >
-              </li>
-              <li>
-                <a href="#" data-category="travel"
-                  >Travel <span class="category-count">15</span></a
-                >
-              </li>
-            </ul>
-          </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">I've tried several language schools, but Hope Language Center stands out. The small class sizes and cultural immersion activities made learning Japanese enjoyable and effective.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Michael Chen">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>Japanese Student</p>
+                                <span class="course-info">6-Month Intensive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-          <!-- Tips Widget -->
-          <div class="sidebar-widget">
-            <h3 class="widget-title">Learning Tips</h3>
-            <p>
-              Try to learn 5 new words each day and use them in sentences. This
-              helps with retention and practical application.
-            </p>
-          </div>
-        </aside>
-      </div>
-    </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">The flexibility of online classes combined with the expertise of the instructors made it possible for me to learn French while working full-time. I'm now confidently planning my trip to Paris!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Emily Rodriguez">
+                            </div>
+                            <div class="author-info">
+                                <h4>Emily Rodriguez</h4>
+                                <p>French Student</p>
+                                <span class="course-info">Online Program</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Footer -->
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">The German course helped me advance my career. The business German module was particularly useful for my work with international clients. Highly recommended for professionals!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="David Kim">
+                            </div>
+                            <div class="author-info">
+                                <h4>David Kim</h4>
+                                <p>German Student</p>
+                                <span class="course-info">Business German</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <script src="assets/js/vocabulary.js"></script>
-  </body>
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">As a complete beginner, I was nervous about learning Mandarin. But the supportive environment and patient teachers made the process enjoyable. I can now have basic conversations!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Lisa Wang">
+                            </div>
+                            <div class="author-info">
+                                <h4>Lisa Wang</h4>
+                                <p>Mandarin Student</p>
+                                <span class="course-info">Beginner Level</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="testimonial-nav">
+                <button class="nav-btn" id="prevBtn">
+                    <i class="ri-arrow-left-line"></i>
+                </button>
+                
+                <div class="nav-dots" id="navDots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+                
+                <button class="nav-btn" id="nextBtn">
+                    <i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Student Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5,000+</div>
+                <div class="stat-label">Students Taught</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Languages Offered</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('testimonialsTrack');
+            const cards = document.querySelectorAll('.testimonial-card');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const navDots = document.getElementById('navDots');
+            
+            let currentIndex = 0;
+            const cardCount = cards.length;
+            
+            // Calculate how many cards to show based on screen width
+            function getCardsPerView() {
+                if (window.innerWidth >= 992) return 3;
+                if (window.innerWidth >= 768) return 2;
+                return 1;
+            }
+            
+            let cardsPerView = getCardsPerView();
+            
+            // Create navigation dots
+            function createDots() {
+                navDots.innerHTML = '';
+                const dotCount = Math.ceil(cardCount / cardsPerView);
+                
+                for (let i = 0; i < dotCount; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToSlide(i));
+                    navDots.appendChild(dot);
+                }
+            }
+            
+            // Update slide position
+            function updateSlidePosition() {
+                const cardWidth = 100 / cardsPerView;
+                track.style.transform = `translateX(-${currentIndex * cardWidth}%)`;
+                
+                // Update active dot
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+            
+            // Go to specific slide
+            function goToSlide(index) {
+                const maxIndex = Math.ceil(cardCount / cardsPerView) - 1;
+                currentIndex = Math.max(0, Math.min(index, maxIndex));
+                updateSlidePosition();
+            }
+            
+            // Next slide
+            function nextSlide() {
+                const maxIndex = Math.ceil(cardCount / cardsPerView) - 1;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateSlidePosition();
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                const maxIndex = Math.ceil(cardCount / cardsPerView) - 1;
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = maxIndex;
+                }
+                updateSlidePosition();
+            }
+            
+            // Handle window resize
+            function handleResize() {
+                cardsPerView = getCardsPerView();
+                createDots();
+                updateSlidePosition();
+            }
+            
+            // Initialize
+            createDots();
+            updateSlidePosition();
+            
+            // Event listeners
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            window.addEventListener('resize', handleResize);
+            
+            // Auto-advance slides (optional)
+            let slideInterval = setInterval(nextSlide, 5000);
+            
+            // Pause auto-advance on hover
+            track.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            track.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+    </script>
+</body>
 </html>
