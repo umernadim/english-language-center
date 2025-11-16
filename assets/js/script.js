@@ -21,7 +21,9 @@ function navbarHandler() {
   });
 }
 
-navbarHandler();
+// navbarHandler();
+window.addEventListener("load", navbarHandler);
+
 
 // code for carousel
 function carouselHandler() {
@@ -72,7 +74,8 @@ function testimonialhandler() {
   
 }
 
-testimonialhandler();
+// testimonialhandler();
+window.addEventListener("load", testimonialhandler);
 
 
 // function to handle FAQ section
@@ -86,7 +89,8 @@ function faqHandler() {
     });
   });
 }
-faqHandler();
+// faqHandler();
+window.addEventListener("load", faqHandler);
 
 // function to handle test search bar
 function searchFilterHandler() {
@@ -103,4 +107,6 @@ function searchFilterHandler() {
   });
 }
 
-searchFilterHandler();
+// searchFilterHandler();
+window.addEventListener("load", searchFilterHandler);
+
