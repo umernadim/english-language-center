@@ -4,22 +4,20 @@ english-language-center/
 ├── about.html                 # About page
 ├── contact.html               # Contact page
 ├── vocabulary.html            # Vocabulary list
-├── tests.html                 # Tests list (cards + Google Forms links for now)
+├── quiz.html                  # Tests list (cards + Google Forms links for now)
 ├── gallery.html               # Gallery page
-├── testimonials.html          # Testimonials page
+├── courses.html               # courses page
 ├── blog.html                  # Blog list
 ├── blog-detail.html           # Single blog post
 │
 ├── admin/                     # Admin dashboard (protected later with PHP session)
 │   ├── admin-login.html
 │   ├── admin-dashboard.html
-│   ├── admin-add-test.html
-│   ├── admin-manage-tests.html
+│   ├── admin-add-quiz.html
+│   ├── admin-manage-quiz.html
 │   ├── admin-add-blog.html
 │   ├── admin-manage-blog.html
-│   ├── admin-add-vocab.html
 │   ├── admin-manage-gallery.html
-│   └── admin-manage-testimonials.html
 │
 ├── assets/                    # Frontend assets
 │   ├── css/

@@ -4,15 +4,14 @@
 :root {
     --text-color-d: #3b3b3b;
     --txt-color-l: #ffff;
-    /* --txt-hover-color: #007bff; */
     --txt-hover-color: #0860b8;
     --txt-color2: #003366;
     --btn-color: linear-gradient(135deg, #4e9eff, #267ae7);
     --btn-hover-color: linear-gradient(135deg, #5ca7ff, #3c85e0);
     --bg-color-l: #E0E0E0;
-    --bg-color-d: #ADB5BD;
-    --background-color: #fffafa;
-    --baloo-bhaijan: "Roboto", sans-serif;
+    --bg-color-d: #F8FAFB;
+    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);;
+    --roboto: "Roboto", sans-serif;
     --satisfy-font: "Satisfy", cursive;
 }
 
@@ -48,7 +47,7 @@
 body {
     height: 100%;
     width: 100%;
-    font-family: var(--baloo-bhaijan);
+    font-family: var(--roboto);
 }
 
 
@@ -384,7 +383,7 @@ nav #menuBtn {
 
 /* code for course section  */
 #course-section {
-    background: #f8fafb;
+    background: var(--bg-color-d);
     padding: 5rem 10%;
     text-align: center;
 }
@@ -417,7 +416,7 @@ nav #menuBtn {
     background: #fff;
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--box-shadow);
     transition: all 0.3s ease;
     text-align: left;
     position: relative;
@@ -446,6 +445,7 @@ nav #menuBtn {
     font-size: 0.98rem;
     background: var(--btn-color);
     /* background: var(--btn-color); */
+    box-shadow: var(--box-shadow);
 }
 
 #course-section #learn-more:hover {
@@ -454,7 +454,7 @@ nav #menuBtn {
 
 #course-section .course-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
 }
 
 
@@ -554,7 +554,7 @@ nav #menuBtn {
 #testimonial-sect {
     padding: 4rem 6%;
     text-align: center;
-    background-color: #F8FAFB;
+    background: var(--bg-color-d);
 }
 
 #testimonial-sect h2 {
@@ -581,15 +581,24 @@ nav #menuBtn {
     display: none;
 }
 
-.tm-scroll-wrapper.grabbing {
-    cursor: grabbing;
+.scroll-hint {
+  text-align: center;
+  font-size: 1rem;
+  color: #888;
+  margin-top: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
 
 .tm-container {
     display: flex;
     gap: 1.5rem;
     width: max-content;
-    padding: 1rem;
+    padding: 2rem 1rem;
     scroll-snap-type: x mandatory;
 }
 
@@ -986,14 +995,19 @@ nav #menuBtn {
     }
 
     .all-courses h2 {
-        font-size: 2rem;
+        font-size: 2.1rem;
+        max-width: 240px;
     }
 
     .course-list {
         /* grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-
+    
     .course-item {
+        width: 320px;
         padding: 2rem 1.5rem;
     }
 
@@ -1018,7 +1032,7 @@ nav #menuBtn {
 /* code for activities section  */
 #activity-section {
     /* background-color: #f9fbff; */
-    background-color: #F8FAFB;
+    background-color: var(--bg-color-d);
     padding: 80px 0;
     text-align: center;
 }
@@ -1835,7 +1849,7 @@ textarea:focus {
 }
 
 #test-page .test-card:hover {
-    transform: translateY(-5px);
+    /* transform: translateY(-5px); */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
@@ -1850,6 +1864,7 @@ textarea:focus {
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
     line-height: 1.5;
+    user-select: none;
 }
 
 #test-page .test-btn {
@@ -1861,6 +1876,7 @@ textarea:focus {
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s ease;
+    box-shadow: var(--box-shadow);
 }
 
 #test-page .test-btn:hover {
@@ -2271,12 +2287,12 @@ footer .footer-bottom-links li a:hover {
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
 }
 
 #blogs-section .blog-post:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.09);
 }
 
 #blogs-section .post-image {
@@ -2359,46 +2375,6 @@ footer .footer-bottom-links li a:hover {
 #blogs-section .read-more:hover {
     background: var(--btn-hover-color);
 }
-
-/* Sidebar */
-/* Search Widget */
-/* .search-form {
-    display: flex;
-}
-
- .search-input {
-    flex: 1;
-    padding: 0.8rem 1rem;
-    border: 2px solid #E0E0E0;
-    border-radius: 50px 0 0 50px;
-    font-size: 1rem;
-    outline: none;
-    background: none;
-    max-width: 380px;
-}
-
- .search-input:focus {
-    border-color: #007acc;
-}
-
- .search-button {
-    background: var(--btn-color);
-    color: #fff;
-    border: none;
-    padding: 0 1.1rem;
-    border-radius: 0 50px 50px 0;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.search-button i {
-    font-size: 1.15rem;
-}
-
-.search-button:hover {
-    background: var(--btn-hover-color);
-} */
-
 
 /* Pagination */
 #blogs-section .pagination {
@@ -2716,7 +2692,7 @@ footer .footer-bottom-links li a:hover {
 
 /* Comment Form */
 .comment-form {
-    background: #F8FAFB;
+    background: var(--bg-color-d);
     border-radius: 8px;
     padding: 2rem;
 }
@@ -2827,7 +2803,12 @@ footer .footer-bottom-links li a:hover {
     background: #fff;
     border-radius: 8px;
     padding: 1.8rem;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease-in-out;
+}
+
+.blog-sidebar .sidebar-widget:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .blog-sidebar .widget-title {
