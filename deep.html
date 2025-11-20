@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Testimonials | Hope Language Center</title>
+    <title>Admin Panel | Hope Language Center</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
         * {
@@ -14,516 +14,1050 @@
         }
 
         :root {
-            --primary: #2271b1;
-            --primary-light: #4299e1;
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --primary-dark: #3a0ca3;
             --secondary: #2d3748;
-            --accent: #e53e3e;
-            --light: #f7fafc;
+            --accent: #f72585;
+            --success: #4cc9f0;
+            --warning: #f8961e;
+            --danger: #e63946;
+            --light: #f8f9fa;
             --dark: #2d3748;
             --text: #4a5568;
             --text-light: #718096;
             --border: #e2e8f0;
             --white: #ffffff;
-            --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            --success: #48bb78;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --sidebar-width: 260px;
         }
 
         body {
-            background-color: var(--light);
+            background-color: #f1f5f9;
             color: var(--text);
             line-height: 1.6;
             display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            padding: 2rem 1rem;
         }
 
-        .testimonials-section {
-            width: 100%;
-            max-width: 1200px;
+        /* Sidebar Styles */
+        .sidebar {
+            width: var(--sidebar-width);
             background: var(--white);
-            border-radius: 12px;
-            padding: 3rem 2rem;
             box-shadow: var(--shadow);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            z-index: 1000;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2:after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Testimonials Container */
-        .testimonials-container {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonials-track {
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
             display: flex;
-            transition: transform 0.5s ease;
+            align-items: center;
+            gap: 1rem;
         }
 
-        .testimonial-card {
-            flex: 0 0 100%;
-            padding: 0 1rem;
-            box-sizing: border-box;
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
         }
 
-        .testimonial-content {
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .sidebar-menu {
+            padding: 1rem 0;
+        }
+
+        .menu-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-title {
+            padding: 0.5rem 1.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-light);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .menu-items {
+            list-style: none;
+        }
+
+        .menu-item {
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .menu-item:hover {
             background: var(--light);
-            border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow);
-            position: relative;
+            color: var(--primary);
+        }
+
+        .menu-item.active {
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            border-left-color: var(--primary);
+        }
+
+        .menu-item i {
+            font-size: 1.2rem;
+            width: 24px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 1.5rem;
             transition: all 0.3s ease;
         }
 
-        .testimonial-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .testimonial-content:before {
-            content: "";
-            position: absolute;
-            top: 20px;
-            left: 25px;
-            font-size: 4rem;
-            color: var(--primary);
-            opacity: 0.2;
-            font-family: Georgia, serif;
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--text);
+        /* Top Bar */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
             margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            box-shadow: var(--shadow);
         }
 
-        .testimonial-author {
+        .page-title h1 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .page-title p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .top-bar-actions {
             display: flex;
             align-items: center;
+            gap: 1.5rem;
         }
 
-        .author-avatar {
-            width: 70px;
-            height: 70px;
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 0.7rem 1rem 0.7rem 2.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            width: 250px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .notification-icon {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .notification-icon:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--danger);
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 1.5rem;
-            border: 3px solid var(--primary);
+            border: 2px solid var(--primary-light);
         }
 
-        .author-avatar img {
+        .user-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .author-info h4 {
-            font-size: 1.3rem;
+        .user-info h4 {
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .user-info p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Dashboard Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .stat-icon.students {
+            background: linear-gradient(135deg, #4361ee, #4895ef);
+        }
+
+        .stat-icon.courses {
+            background: linear-gradient(135deg, #f72585, #b5179e);
+        }
+
+        .stat-icon.teachers {
+            background: linear-gradient(135deg, #4cc9f0, #4895ef);
+        }
+
+        .stat-icon.revenue {
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+        }
+
+        .stat-info h3 {
+            font-size: 1.8rem;
             color: var(--dark);
             margin-bottom: 0.3rem;
         }
 
-        .author-info p {
+        .stat-info p {
             color: var(--text-light);
-            font-size: 1rem;
-        }
-
-        .course-info {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
             font-size: 0.9rem;
-            margin-top: 0.5rem;
         }
 
-        /* Navigation */
-        .testimonial-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 2rem;
-            gap: 1rem;
-        }
-
-        .nav-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .stat-trend {
             display: flex;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
+            gap: 0.3rem;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
         }
 
-        .nav-btn:hover {
-            background: var(--primary-light);
-            transform: scale(1.1);
+        .trend-up {
+            color: #22c55e;
         }
 
-        .nav-dots {
+        .trend-down {
+            color: var(--danger);
+        }
+
+        /* Content Sections */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .content-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+        }
+
+        .card-actions {
             display: flex;
             gap: 0.5rem;
         }
 
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--border);
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            background: var(--light);
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        td {
+            font-size: 0.9rem;
+        }
+
+        .status {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status.active {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+        }
+
+        .status.pending {
+            background: rgba(248, 150, 30, 0.1);
+            color: #f59e0b;
+        }
+
+        .status.inactive {
+            background: rgba(100, 116, 139, 0.1);
+            color: #64748b;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .dot.active {
+        .action-btn.edit {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        .action-btn.edit:hover {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .action-btn.delete {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
+
+        .action-btn.delete:hover {
+            background: #ef4444;
+            color: white;
+        }
+
+        /* Activity Feed */
+        .activity-list {
+            list-style: none;
+        }
+
+        .activity-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .activity-icon.student {
             background: var(--primary);
-            transform: scale(1.2);
         }
 
-        /* Stats Section */
-        .stats-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 1px solid var(--border);
+        .activity-icon.teacher {
+            background: var(--accent);
         }
 
-        .stat-item {
-            text-align: center;
+        .activity-icon.course {
+            background: var(--success);
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
+        .activity-content h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
         }
 
-        .stat-label {
+        .activity-content p {
+            font-size: 0.8rem;
             color: var(--text-light);
-            font-size: 1rem;
         }
 
-        /* Responsive Styles */
-        @media (min-width: 768px) {
-            .testimonial-card {
-                flex: 0 0 50%;
+        .activity-time {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        @media (min-width: 992px) {
-            .testimonial-card {
-                flex: 0 0 33.333%;
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 70px;
+            }
+            
+            .sidebar .logo-text,
+            .sidebar .menu-title,
+            .sidebar .menu-item span {
+                display: none;
+            }
+            
+            .main-content {
+                margin-left: 70px;
+            }
+            
+            .search-box input {
+                width: 180px;
+            }
+            
+            .user-info {
+                display: none;
             }
         }
 
         @media (max-width: 576px) {
-            .testimonials-section {
-                padding: 2rem 1rem;
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
             
-            .section-header h2 {
-                font-size: 2rem;
-            }
-            
-            .testimonial-content {
-                padding: 2rem 1.5rem;
-            }
-            
-            .testimonial-author {
+            .top-bar {
                 flex-direction: column;
-                text-align: center;
+                align-items: flex-start;
+                gap: 1rem;
             }
             
-            .author-avatar {
-                margin-right: 0;
-                margin-bottom: 1rem;
+            .top-bar-actions {
+                width: 100%;
+                justify-content: space-between;
             }
             
-            .stats-section {
-                grid-template-columns: repeat(2, 1fr);
+            .search-box {
+                flex: 1;
+            }
+            
+            .search-box input {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-  
-    <section class="testimonials-section">
-        <div class="section-header">
-            <h2>What Our Students Say</h2>
-            <p>Hear from our students about their language learning journey and experiences at Hope Language Center</p>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">HLC</div>
+            <div class="logo-text">Hope Language Center</div>
         </div>
-
-        <div class="testimonials-container">
-            <div class="testimonials-track" id="testimonialsTrack">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">The Spanish course completely transformed my ability to communicate. The teachers are patient and the curriculum is well-structured. I went from zero to conversational in just three months!</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sarah Johnson">
-                            </div>
-                            <div class="author-info">
-                                <h4>Sarah Johnson</h4>
-                                <p>Spanish Student</p>
-                                <span class="course-info">Beginner to Advanced</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">I've tried several language schools, but Hope Language Center stands out. The small class sizes and cultural immersion activities made learning Japanese enjoyable and effective.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Michael Chen">
-                            </div>
-                            <div class="author-info">
-                                <h4>Michael Chen</h4>
-                                <p>Japanese Student</p>
-                                <span class="course-info">6-Month Intensive</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">The flexibility of online classes combined with the expertise of the instructors made it possible for me to learn French while working full-time. I'm now confidently planning my trip to Paris!</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Emily Rodriguez">
-                            </div>
-                            <div class="author-info">
-                                <h4>Emily Rodriguez</h4>
-                                <p>French Student</p>
-                                <span class="course-info">Online Program</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 4 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">The German course helped me advance my career. The business German module was particularly useful for my work with international clients. Highly recommended for professionals!</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="David Kim">
-                            </div>
-                            <div class="author-info">
-                                <h4>David Kim</h4>
-                                <p>German Student</p>
-                                <span class="course-info">Business German</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 5 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">As a complete beginner, I was nervous about learning Mandarin. But the supportive environment and patient teachers made the process enjoyable. I can now have basic conversations!</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Lisa Wang">
-                            </div>
-                            <div class="author-info">
-                                <h4>Lisa Wang</h4>
-                                <p>Mandarin Student</p>
-                                <span class="course-info">Beginner Level</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        
+        <div class="sidebar-menu">
+            <div class="menu-section">
+                <div class="menu-title">Main</div>
+                <ul class="menu-items">
+                    <li>
+                        <a href="#" class="menu-item active">
+                            <i class="ri-dashboard-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="ri-user-line"></i>
+                            <span>Students</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="ri-book-line"></i>
+                            <span>Courses</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="ri-team-line"></i>
+                            <span>Teachers</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-
-            <!-- Navigation -->
-            <div class="testimonial-nav">
-                <button class="nav-btn" id="prevBtn">
-                    <i class="ri-arrow-left-line"></i>
-                </button>
-                
-                <div class="nav-dots" id="navDots">
-                    <!-- Dots will be generated by JavaScript -->
-                </div>
-                
-                <button class="nav-btn" id="nextBtn">
-                    <i class="ri-arrow-right-line"></i>
-                </button>
+            
+            <div class="menu-section">
+                <div class="menu-title">Content</div>
+                <ul class="menu-items">
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="ri-article-line"></i>
+                            <span>Blog Posts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="ri-file-text-line"></i>
+                            <span>Vocabulary</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="ri-chat-quote-line"></i>
+                            <span>Testimonials</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="menu-section">
+                <div class="menu-title">System</div>
+                <ul class="menu-items">
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="ri-settings-3-line"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="ri-user-settings-line"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            <i class="ri-bar-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </aside>
 
-        <!-- Stats Section -->
-        <div class="stats-section">
-            <div class="stat-item">
-                <div class="stat-number">98%</div>
-                <div class="stat-label">Student Satisfaction</div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="page-title">
+                <h1>Dashboard</h1>
+                <p>Welcome back, Admin! Here's what's happening today.</p>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">5,000+</div>
-                <div class="stat-label">Students Taught</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">12</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">6</div>
-                <div class="stat-label">Languages Offered</div>
+            
+            <div class="top-bar-actions">
+                <div class="search-box">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                
+                <div class="user-menu">
+                    <div class="notification-icon">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Admin">
+                        </div>
+                        <div class="user-info">
+                            <h4>John Anderson</h4>
+                            <p>Administrator</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const track = document.getElementById('testimonialsTrack');
-            const cards = document.querySelectorAll('.testimonial-card');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const navDots = document.getElementById('navDots');
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon students">
+                    <i class="ri-user-line"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>1,248</h3>
+                    <p>Total Students</p>
+                    <div class="stat-trend trend-up">
+                        <i class="ri-arrow-up-line"></i>
+                        <span>12% from last month</span>
+                    </div>
+                </div>
+            </div>
             
-            let currentIndex = 0;
-            const cardCount = cards.length;
+            <div class="stat-card">
+                <div class="stat-icon courses">
+                    <i class="ri-book-line"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>24</h3>
+                    <p>Active Courses</p>
+                    <div class="stat-trend trend-up">
+                        <i class="ri-arrow-up-line"></i>
+                        <span>3 new this month</span>
+                    </div>
+                </div>
+            </div>
             
-            // Calculate how many cards to show based on screen width
-            function getCardsPerView() {
-                if (window.innerWidth >= 992) return 3;
-                if (window.innerWidth >= 768) return 2;
-                return 1;
-            }
+            <div class="stat-card">
+                <div class="stat-icon teachers">
+                    <i class="ri-team-line"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>18</h3>
+                    <p>Teachers</p>
+                    <div class="stat-trend trend-up">
+                        <i class="ri-arrow-up-line"></i>
+                        <span>2 new hires</span>
+                    </div>
+                </div>
+            </div>
             
-            let cardsPerView = getCardsPerView();
-            
-            // Create navigation dots
-            function createDots() {
-                navDots.innerHTML = '';
-                const dotCount = Math.ceil(cardCount / cardsPerView);
+            <div class="stat-card">
+                <div class="stat-icon revenue">
+                    <i class="ri-money-dollar-circle-line"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>$24,580</h3>
+                    <p>Total Revenue</p>
+                    <div class="stat-trend trend-up">
+                        <i class="ri-arrow-up-line"></i>
+                        <span>8% from last month</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Recent Students -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <h3>Recent Students</h3>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">
+                                <i class="ri-download-line"></i>
+                                Export
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="ri-add-line"></i>
+                                Add Student
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Course</th>
+                                    <th>Join Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <div style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden;">
+                                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Student" style="width: 100%; height: 100%; object-fit: cover;">
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 600;">Sarah Johnson</div>
+                                                <div style="font-size: 0.8rem; color: var(--text-light);">sarah@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Spanish Advanced</td>
+                                    <td>Oct 15, 2023</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <div class="action-btn edit">
+                                                <i class="ri-edit-line"></i>
+                                            </div>
+                                            <div class="action-btn delete">
+                                                <i class="ri-delete-bin-line"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <div style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden;">
+                                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Student" style="width: 100%; height: 100%; object-fit: cover;">
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 600;">Michael Chen</div>
+                                                <div style="font-size: 0.8rem; color: var(--text-light);">michael@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Japanese Intermediate</td>
+                                    <td>Oct 10, 2023</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <div class="action-btn edit">
+                                                <i class="ri-edit-line"></i>
+                                            </div>
+                                            <div class="action-btn delete">
+                                                <i class="ri-delete-bin-line"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <div style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden;">
+                                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Student" style="width: 100%; height: 100%; object-fit: cover;">
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 600;">Emily Rodriguez</div>
+                                                <div style="font-size: 0.8rem; color: var(--text-light);">emily@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>French Beginner</td>
+                                    <td>Oct 5, 2023</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <div class="action-btn edit">
+                                                <i class="ri-edit-line"></i>
+                                            </div>
+                                            <div class="action-btn delete">
+                                                <i class="ri-delete-bin-line"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 
-                for (let i = 0; i < dotCount; i++) {
-                    const dot = document.createElement('div');
-                    dot.classList.add('dot');
-                    if (i === 0) dot.classList.add('active');
-                    dot.addEventListener('click', () => goToSlide(i));
-                    navDots.appendChild(dot);
-                }
-            }
+                <!-- Course Management -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <h3>Course Management</h3>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">
+                                <i class="ri-add-line"></i>
+                                New Course
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Course Name</th>
+                                    <th>Language</th>
+                                    <th>Students</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Spanish for Beginners</td>
+                                    <td>Spanish</td>
+                                    <td>42</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <div class="action-btn edit">
+                                                <i class="ri-edit-line"></i>
+                                            </div>
+                                            <div class="action-btn delete">
+                                                <i class="ri-delete-bin-line"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Advanced Japanese</td>
+                                    <td>Japanese</td>
+                                    <td>28</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <div class="action-btn edit">
+                                                <i class="ri-edit-line"></i>
+                                            </div>
+                                            <div class="action-btn delete">
+                                                <i class="ri-delete-bin-line"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Business French</td>
+                                    <td>French</td>
+                                    <td>15</td>
+                                    <td><span class="status inactive">Inactive</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <div class="action-btn edit">
+                                                <i class="ri-edit-line"></i>
+                                            </div>
+                                            <div class="action-btn delete">
+                                                <i class="ri-delete-bin-line"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
             
-            // Update slide position
-            function updateSlidePosition() {
-                const cardWidth = 100 / cardsPerView;
-                track.style.transform = `translateX(-${currentIndex * cardWidth}%)`;
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Recent Activity -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <h3>Recent Activity</h3>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">
+                                <i class="ri-refresh-line"></i>
+                                Refresh
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <ul class="activity-list">
+                        <li class="activity-item">
+                            <div class="activity-icon student">
+                                <i class="ri-user-add-line"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>New Student Registration</h4>
+                                <p>Sarah Johnson registered for Spanish Advanced course</p>
+                                <div class="activity-time">10 minutes ago</div>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon teacher">
+                                <i class="ri-user-star-line"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Teacher Assignment</h4>
+                                <p>Maria Gonzalez assigned to Spanish Intermediate class</p>
+                                <div class="activity-time">2 hours ago</div>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon course">
+                                <i class="ri-book-mark-line"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Course Published</h4>
+                                <p>New "Business German" course is now available</p>
+                                <div class="activity-time">5 hours ago</div>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon student">
+                                <i class="ri-award-line"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Course Completion</h4>
+                                <p>Michael Chen completed Japanese Beginner course</p>
+                                <div class="activity-time">Yesterday</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
                 
-                // Update active dot
-                const dots = document.querySelectorAll('.dot');
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex);
-                });
-            }
-            
-            // Go to specific slide
-            function goToSlide(index) {
-                const maxIndex = Math.ceil(cardCount / cardsPerView) - 1;
-                currentIndex = Math.max(0, Math.min(index, maxIndex));
-                updateSlidePosition();
-            }
-            
-            // Next slide
-            function nextSlide() {
-                const maxIndex = Math.ceil(cardCount / cardsPerView) - 1;
-                if (currentIndex < maxIndex) {
-                    currentIndex++;
-                } else {
-                    currentIndex = 0;
-                }
-                updateSlidePosition();
-            }
-            
-            // Previous slide
-            function prevSlide() {
-                const maxIndex = Math.ceil(cardCount / cardsPerView) - 1;
-                if (currentIndex > 0) {
-                    currentIndex--;
-                } else {
-                    currentIndex = maxIndex;
-                }
-                updateSlidePosition();
-            }
-            
-            // Handle window resize
-            function handleResize() {
-                cardsPerView = getCardsPerView();
-                createDots();
-                updateSlidePosition();
-            }
-            
-            // Initialize
-            createDots();
-            updateSlidePosition();
-            
-            // Event listeners
-            prevBtn.addEventListener('click', prevSlide);
-            nextBtn.addEventListener('click', nextSlide);
-            window.addEventListener('resize', handleResize);
-            
-            // Auto-advance slides (optional)
-            let slideInterval = setInterval(nextSlide, 5000);
-            
-            // Pause auto-advance on hover
-            track.addEventListener('mouseenter', () => {
-                clearInterval(slideInterval);
-            });
-            
-            track.addEventListener('mouseleave', () => {
-                slideInterval = setInterval(nextSlide, 5000);
-            });
-        });
-    </script>
+                <!-- Quick Actions -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <h3>Quick Actions</h3>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <button class="btn btn-outline" style="justify-content: center; padding: 1rem;">
+                            <i class="ri-user-add-line" style="font-size: 1.2rem;"></i>
+                            <span>Add Student</span>
+                        </button>
+                        <button class="btn btn-outline" style="justify-content: center; padding: 1rem;">
+                            <i class="ri-book-add-line" style="font-size: 1.2rem;"></i>
+                            <span>Create Course</span>
+                        </button>
+                        <button class="btn btn-outline" style="justify-content: center; padding: 1rem;">
+                            <i class="ri-calendar-event-line" style="font-size: 1.2rem;"></i>
+                            <span>Schedule Class</span>
+                        </button>
+                        <button class="btn btn-outline" style="justify-content: center; padding: 1rem;">
+                            <i class="ri-bar-chart-box-line" style="font-size: 1.2rem;"></i>
+                            <span>View Reports</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
-</html>
+</html
