@@ -34,7 +34,7 @@ function carouselHandler() {
     images[current].style.opacity = 0;
     current = (current + 1) % images.length;
     images[current].style.opacity = 1;
-  }, 5000);
+  }, 3000);
 }
 
 window.addEventListener("load", carouselHandler);
