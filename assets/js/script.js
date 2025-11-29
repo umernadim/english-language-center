@@ -37,7 +37,7 @@ function carouselHandler() {
   }, 3000);
 }
 
-// window.addEventListener("load", carouselHandler);
+window.addEventListener("load", carouselHandler);
 
 // testimonial handler
 function testimonialhandler() {
