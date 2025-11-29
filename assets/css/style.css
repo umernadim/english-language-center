@@ -227,7 +227,7 @@ nav #menuBtn {
     width: 75%;
     object-fit: cover;
     z-index: 1;
-    filter: brightness(90%);
+    /* filter: brightness(90%); */
     transition: opacity 1s ease-in-out;
     border-bottom-left-radius: 100px;
 
@@ -281,6 +281,8 @@ nav #menuBtn {
 
     #hero-section .background-img {
         width: 100%;
+        border-bottom-left-radius: 0;
+
     }
 
     #hero-section .text {
@@ -290,18 +292,18 @@ nav #menuBtn {
         backdrop-filter: blur(1px);
         display: block;
         margin-top: 550px;
-        /* background: none; */
+        background: none;
     }
 
     #hero-section .text h2 {
         font-size: 1.9rem;
         margin-bottom: 1.3rem;
         line-height: 1.2;
-        /* display: none; */
+        display: none;
     }
 
     #hero-section .text p {
-        /* display: none; */
+        display: none;
         font-size: 1.05rem;
         line-height: 1.4;
         color: var(--text-color-d);
@@ -658,7 +660,7 @@ nav #menuBtn {
 
 @media (max-width: 768px) {
     #testimonial-sect h2 {
-        font-size: 2.3rem;
+        font-size: 2rem;
         line-height: 1;
         margin-bottom: 0.5rem;
     }
@@ -1201,7 +1203,9 @@ nav #menuBtn {
 
 
 
-/* code for about us page  */
+/****************************
+    Code for About Us Page  
+*****************************/
 #B-hero-sec .about-header {
     position: relative;
     text-align: center;
@@ -1335,13 +1339,16 @@ nav #menuBtn {
     font-size: 1.3rem;
     color: var(--txt-color2);
     margin: 1rem 0 0.5rem;
+    font-weight: 500;
 }
 
 .value-card p {
     font-size: 1rem;
     color: var(--text-color-d);
-    padding: 0 1rem 1.5rem;
-    line-height: 1.6;
+    padding: 0 1.5rem 2rem;
+    line-height: 1.4;
+    font-weight: 400;
+    opacity: 0.8;
 }
 
 /* Responsive */
@@ -1493,12 +1500,14 @@ nav #menuBtn {
     font-size: 1.2rem;
     color: var(--txt-color2);
     margin-bottom: 0.6rem;
+    font-weight: 600;
 }
 
 .achievement-content p {
     font-size: 1rem;
     color: var(--text-color-d);
     line-height: 1.6;
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
