@@ -753,8 +753,8 @@ nav #menuBtn {
     text-align: center;
     color: var(--txt-color2);
     margin-top: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.75)),
-        url(/assets/images/carousel/img1.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.62)),
+        url(/assets/images/carousel/img2.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -1216,7 +1216,7 @@ nav #menuBtn {
             #e0f3ff 0%,
             #fdfbfb 50%,
             #fff6eb 100%); */
-    background: linear-gradient(rgba(0, 0, 0, 0.75)),
+    background: linear-gradient(rgba(0, 0, 0, 0.62)),
         url(/assets/images/carousel/img6.jpg);
     background-size: cover;
     background-position: center;
@@ -1606,14 +1606,16 @@ nav #menuBtn {
 }
 
 
-/* code for the Contact page  */
+/************************************
+    Code for the Contact page  
+ ************************************/
 #B-hero-sec .contact-header {
     position: relative;
     text-align: center;
     color: var(--txt-color2);
     margin-top: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.75)),
-        url(/assets/images/carousel/img9.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.6)),
+        url(/assets/images/carousel/img4.jpg);
     background-size: cover;
     background-position: center;
 }
