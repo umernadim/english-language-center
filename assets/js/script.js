@@ -24,7 +24,6 @@ function navbarHandler() {
 // navbarHandler();
 window.addEventListener("load", navbarHandler);
 
-
 // // code for carousel
 // function carouselHandler() {
 //   const images = document.querySelectorAll(".background-img");
@@ -38,7 +37,6 @@ window.addEventListener("load", navbarHandler);
 // }
 
 // window.addEventListener("load", carouselHandler);
-
 
 function carouselHandler() {
   let images;
@@ -58,44 +56,62 @@ function carouselHandler() {
 
 window.addEventListener("load", carouselHandler);
 
+
+// Learning Cards
+// Add click effect to cards
+function learningCardsHandler() {
+  const cards = document.querySelectorAll('.learn-card');
+  cards.forEach((card) => {
+    card.addEventListener("click", function () {
+      this.style.transform = "scale(0.98)";
+      setTimeout(() => {
+        this.style.transform = "";
+      }, 150);
+    });
+  });
+}
+
+learningCardsHandler();
+
+
+
+
+
 // testimonial handler
 function testimonialhandler() {
-  const scrollWrapper = document.querySelector('.tm-scroll-wrapper');
+  const scrollWrapper = document.querySelector(".tm-scroll-wrapper");
   let isDown = false;
   let startX;
   let scrollLeft;
 
-  scrollWrapper.addEventListener('mousedown', (e) => {
+  scrollWrapper.addEventListener("mousedown", (e) => {
     isDown = true;
-    scrollWrapper.classList.add('grabbing');
+    scrollWrapper.classList.add("grabbing");
     startX = e.pageX - scrollWrapper.offsetLeft;
     scrollLeft = scrollWrapper.scrollLeft;
   });
 
-  scrollWrapper.addEventListener('mouseleave', () => {
+  scrollWrapper.addEventListener("mouseleave", () => {
     isDown = false;
-    scrollWrapper.classList.remove('grabbing');
+    scrollWrapper.classList.remove("grabbing");
   });
 
-  scrollWrapper.addEventListener('mouseup', () => {
+  scrollWrapper.addEventListener("mouseup", () => {
     isDown = false;
-    scrollWrapper.classList.remove('grabbing');
+    scrollWrapper.classList.remove("grabbing");
   });
 
-  scrollWrapper.addEventListener('mousemove', (e) => {
+  scrollWrapper.addEventListener("mousemove", (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - scrollWrapper.offsetLeft;
     const walk = (x - startX) * 2; // scroll speed
     scrollWrapper.scrollLeft = scrollLeft - walk;
   });
-
-  
 }
 
 // testimonialhandler();
 window.addEventListener("load", testimonialhandler);
-
 
 // function to handle FAQ section
 function faqHandler() {
@@ -128,4 +144,3 @@ function searchFilterHandler() {
 
 // searchFilterHandler();
 window.addEventListener("load", searchFilterHandler);
-

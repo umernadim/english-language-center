@@ -1,112 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Panel</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f6f8;
-}
-
-.admin-container {
-  display: flex;
-  min-height: 100vh;
-}
-
-.sidebar {
-  width: 220px;
-  background-color: #2e2e2e;
-  color: white;
-  padding: 20px;
-}
-
-.sidebar h2 {
-  margin-bottom: 20px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li {
-  margin: 15px 0;
-  cursor: pointer;
-}
-
-.sidebar li i {
-  margin-right: 10px;
-}
-
-.main-content {
-  flex: 1;
-  padding: 20px;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logout-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-#dashboard {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.card {
-  background-color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  font-size: 1rem;
-}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Center - What You'll Learn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .learn-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 4px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            bottom: -10px;
+            left: 15%;
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 25px auto 0;
+            line-height: 1.6;
+        }
+        
+        .learn-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .learn-card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .learn-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+        }
+        
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-icon:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            70% { transform: scale(1.2); opacity: 0; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+        
+        .card-1 .card-icon {
+            background: linear-gradient(135deg, #34d399, #10b981);
+        }
+        
+        .card-2 .card-icon {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+        }
+        
+        .card-3 .card-icon {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        }
+        
+        .card-4 .card-icon {
+            background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+        }
+        
+        .learn-card h3 {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+        
+        .learn-card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .checkmark {
+            color: #10b981;
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+        
+        .features-list {
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            margin-top: 15px;
+        }
+        
+        .features-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .highlight {
+            display: inline-block;
+            padding: 5px 12px;
+            background-color: #dbeafe;
+            color: #1e40af;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+        
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+        
+        .cta-button:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .cta-button:hover:after {
+            left: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .learn-cards {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .learn-section {
+                padding: 20px 10px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .learn-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="admin-container">
-    <aside class="sidebar">
-      <h2>Admin Panel</h2>
-      <ul>
-        <li><i class="fas fa-chalkboard-teacher"></i> Teachers</li>
-        <li><i class="fas fa-blog"></i> Blogs</li>
-        <li><i class="fas fa-question-circle"></i> Quizzes</li>
-        <li><i class="fas fa-comments"></i> Feedback</li>
-        <li><i class="fas fa-comment-dots"></i> Blog Comments</li>
-      </ul>
-    </aside>
+    <section class="learn-section">
+        <div class="section-header">
+            <h2>What You'll Learn</h2>
+            <p>Our comprehensive language program is designed to take you from complete beginner to confident speaker. Here's what you'll master with our proven methodology.</p>
+        </div>
+        
+        <div class="learn-cards">
+            <div class="learn-card card-1">
+                <div class="card-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>Beginner Friendly</h3>
+                <p>Start from scratch with our structured approach designed for absolute beginners. No prior knowledge needed.</p>
+                <ul class="features-list">
+                    <li><span class="checkmark">✓</span> Step-by-step learning path</li>
+                    <li><span class="checkmark">✓</span> Interactive exercises for basics</li>
+                    <li><span class="checkmark">✓</span> Patient, supportive instructors</li>
+                </ul>
+                <div class="highlight">Start from zero, finish as a hero</div>
+            </div>
+            
+            <div class="learn-card card-2">
+                <div class="card-icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <h3>Speaking Confidence</h3>
+                <p>Overcome hesitation and fear of speaking with our confidence-building exercises and supportive environment.</p>
+                <ul class="features-list">
+                    <li><span class="checkmark">✓</span> Daily speaking practice</li>
+                    <li><span class="checkmark">✓</span> Pronunciation correction</li>
+                    <li><span class="checkmark">✓</span> Public speaking simulations</li>
+                </ul>
+                <div class="highlight">Speak with confidence in any situation</div>
+            </div>
+            
+            <div class="learn-card card-3">
+                <div class="card-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>Grammar + Vocabulary</h3>
+                <p>Build a strong foundation with essential grammar rules and a practical vocabulary of 2000+ words.</p>
+                <ul class="features-list">
+                    <li><span class="checkmark">✓</span> Contextual grammar lessons</li>
+                    <li><span class="checkmark">✓</span> Themed vocabulary sets</li>
+                    <li><span class="checkmark">✓</span> Memory techniques for retention</li>
+                </ul>
+                <div class="highlight">Solid foundation for fluency</div>
+            </div>
+            
+            <div class="learn-card card-4">
+                <div class="card-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>Real-life Conversations</h3>
+                <p>Practice realistic dialogues for everyday situations, travel, work, and social interactions.</p>
+                <ul class="features-list">
+                    <li><span class="checkmark">✓</span> Role-play scenarios</li>
+                    <li><span class="checkmark">✓</span> Cultural context integration</li>
+                    <li><span class="checkmark">✓</span> Native speaker interactions</li>
+                </ul>
+                <div class="highlight">Ready for real-world communication</div>
+            </div>
+        </div>
+        
+        <div class="cta-container">
+            <a href="#" class="cta-button">Start Your Language Journey Today</a>
+        </div>
+    </section>
 
-    <main class="main-content">
-      <header>
-        <h1>Welcome, Admin</h1>
-        <button class="logout-btn">Logout</button>
-      </header>
-
-      <section id="dashboard">
-        <div class="card">Total Teachers: <span>12</span></div>
-        <div class="card">Total Blogs: <span>34</span></div>
-        <div class="card">Total Quizzes: <span>20</span></div>
-        <div class="card">Feedbacks: <span>15</span></div>
-        <div class="card">Pending Comments: <span>5</span></div>
-      </section>
-    </main>
-  </div>
-
-  <script src="js/main.js"></script>
+    <script>
+        // Add interactive animations when scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.learn-card');
+            
+            // Add staggered animation on load
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+            
+            // Add click effect to cards
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // Add hover effect to CTA button
+            const ctaButton = document.querySelector('.cta-button');
+            ctaButton.addEventListener('mouseenter', function() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                this.style.background = `linear-gradient(to right, ${color}, ${color}99)`;
+            });
+            
+            ctaButton.addEventListener('mouseleave', function() {
+                this.style.background = 'linear-gradient(to right, #3b82f6, #8b5cf6)';
+            });
+        });
+    </script>
 </body>
 </html>
