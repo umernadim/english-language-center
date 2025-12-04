@@ -4,6 +4,8 @@
 :root {
     --text-color-d: #3b3b3b;
     --txt-color-l: #ffff;
+    --txt-color-xl: #475569;
+    --li-color: #64748b;
     --txt-hover-color: #0860b8;
     /* --heading-color: #003366; */
     --heading-color: #1e3a8a;
@@ -493,7 +495,7 @@ nav #menuBtn {
 }
 
 #learn-section .learn-card p {
-    color: #64748b;
+    color: var(--txt-color-xl);
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -509,7 +511,7 @@ nav #menuBtn {
     text-align: left;
     width: 100%;
     margin-top: 15px;
-    color: var(--text-color-d);
+    color: var(--li-color);
 }
 
 #learn-section .features-list li {
@@ -911,165 +913,179 @@ nav #menuBtn {
 }
 
 
-/* code for about section  */
-/* #about-section {
-    padding: 6rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#about-section .about-container {
-    max-width: 900px;
-    width: 90%;
-    text-align: center;
-}
-
-#about-section .about-title {
-    font-size: 2.8rem;
-    font-weight: 800;
-    color: var(--heading-color);
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-}
-
-#about-section .about-text {
-    font-size: 1.1rem;
-    color: var(--text-color-d);
-    line-height: 1.6;
-    margin-bottom: 1.8rem;
-    text-align: justify;
-}
-
-#about-section .about-stats {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-}
-
-#about-section .stat {
-    text-align: center;
-}
-
-#about-section .stat h3 {
-    font-size: 2rem;
-    color: var(--txt-hover-color);
-    margin-bottom: 0.4rem;
-}
-
-#about-section .stat p {
-    color: var(--text-color-d);
-    font-size: 1rem;
-}
-
-@media (max-width: 768px) {
-    #about-section .about-title {
-        font-size: 2.2rem;
-    }
-
-    #about-section .about-text {
-        font-size: 1rem;
-    }
-
-    #about-section .about-stats {
-        flex-direction: column;
-        gap: 2rem;
-    }
-} */
-
-
-
 
 /* code for course section  */
-/* #course-section {
-    background: var(--bg-color-d);
-    padding: 5rem 8%;
+#course-section {
+    padding: 3rem 8%;
     text-align: center;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-color-d);
 }
 
-.section-title {
+#course-section .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 3rem;
     color: var(--heading-color);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
 }
 
 #course-section .intro-text {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: var(--text-color-d);
-    color: var(--text-color-d);
-    margin-bottom: 3rem;
-    max-width: 700px;
+    margin-bottom: 4rem;
+    max-width: 800px;
     margin-inline: auto;
-    line-height: 1.6;
+    line-height: 1.5;
+    position: relative;
+    padding: 0 20px;
 }
 
 #course-section .course-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
 }
 
 #course-section .course-card {
     background: #fff;
-    border-radius: 15px;
-    padding: 2rem;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
     box-shadow: var(--box-shadow);
-    transition: all 0.3s ease;
     text-align: left;
     position: relative;
+    border-top: 5px solid;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s ease !important;
+}
+
+#course-section .course-card:nth-child(1) {
+    border-color: #3b82f6;
+}
+
+#course-section .course-card:nth-child(2) {
+    border-color: #10b981;
+}
+
+#course-section .course-card:nth-child(3) {
+    border-color: #f59e0b;
 }
 
 #course-section .course-card h3 {
     color: var(--heading-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 #course-section .course-card p {
-    color: var(--text-color-d);
-    line-height: 1.5;
+    color: var(--txt-color-xl);
+    line-height: 1.6;
     margin-bottom: 1.5rem;
+    flex-grow: 1;
+    position: relative;
 }
 
-#course-section .course-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+.course-features {
+    list-style: none;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid #E0E0E0;
+}
+
+.course-features li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    color: var(--li-color);
+}
+
+.course-features i {
+    margin-right: 10px;
+    color: #10b981;
+    font-size: 1.1rem;
+}
+
+#course-section .course-card:nth-child(1):hover {
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+}
+
+#course-section .course-card:nth-child(2):hover {
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.184);
+}
+
+#course-section .course-card:nth-child(3):hover {
+    box-shadow: 0 15px 35px rgba(245, 159, 11, 0.103);
 }
 
 
+/* Decorative elements */
+.decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    background: #3b82f6;
+    top: 20%;
+    left: 5%;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    background: #8b5cf6;
+    bottom: 10%;
+    right: 5%;
+}
+
+/* Responsiveness for Course Section  */
 @media screen and (max-width: 768px) {
     #course-section {
-        padding: 3rem 10%;
+        padding: 5rem 6%;
     }
 
-    .section-title {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 0.6rem;
+    #course-section .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
     }
 
-    .underline {
-        margin: 0 auto 2rem auto;
+    #course-section .course-container {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #course-section .intro-text {
-        max-width: 360px;
+        font-size: 1.1rem;
+        padding: 0 10px;
     }
 
-    #course-section .course-card h3 {
-        margin-bottom: 1rem;
+    .circle-1 {
+        top: 16%;
+        left: -5%;
     }
 
-} */
+    .circle-2 {
+        bottom: 7%;
+        right: -5%;
+    }
 
-
-
-
-
-
+}
 
 
 
@@ -1499,14 +1515,14 @@ nav #menuBtn {
     color: var(--heading-color);
 }
 
-.course-list {
+.all-courses .course-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
 }
 
-.course-item {
+.all-courses .course-item {
     background: #fff;
     border-radius: 16px;
     padding: 2rem;
@@ -1519,16 +1535,16 @@ nav #menuBtn {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.course-item:hover {
+.all-courses .course-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
 
-.course-item:hover:before {
+.all-courses .course-item:hover:before {
     transform: scaleX(1);
 }
 
-.course-icon {
+.all-courses .course-icon {
     width: 60px;
     height: 60px;
     border-radius: 12px;
@@ -1541,13 +1557,13 @@ nav #menuBtn {
     font-size: 1.8rem;
 }
 
-.course-item h3 {
+.all-courses .course-item h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--heading-color);
 }
 
-.course-item p {
+.all-courses .course-item p {
     font-size: 1.05rem;
     color: var(--txt-color-d);
     line-height: 1.7;
@@ -1563,30 +1579,30 @@ nav #menuBtn {
         max-width: 240px;
     }
 
-    .course-list {
+    .all-courses .course-list {
         /* grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); */
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .course-item {
+    .all-courses .course-item {
         width: 320px;
         padding: 2rem 1.5rem;
     }
 
-    .course-icon {
+    .all-courses .course-icon {
         width: 50px;
         height: 50px;
         border-radius: 10px;
         font-size: 1.5rem;
     }
 
-    .course-item h3 {
+    .all-courses .course-item h3 {
         font-size: 1.4rem;
     }
 
-    .course-item p {
+    .all-courses .course-item p {
         font-size: 1rem;
         line-height: 1.5;
     }
