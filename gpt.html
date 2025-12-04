@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Center - What You'll Learn</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Language Center - Enhanced Courses Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <style>
+        :root {
+            --bg-color-d: #f8fafc;
+            --heading-color: #1e3a8a;
+            --text-color-d: #475569;
+            --text-color-l: #64748b;
+            --primary-color: #3b82f6;
+            --secondary-color: #8b5cf6;
+            --accent-color: #10b981;
+            --card-bg: #ffffff;
+            --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +27,7 @@
         }
         
         body {
-            background-color: #f8fafc;
-            color: #333;
+            background-color: #f1f5f9;
             padding: 20px;
             min-height: 100vh;
             display: flex;
@@ -23,186 +35,259 @@
             align-items: center;
         }
         
-        .learn-section {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .section-header {
+        #course-section {
+            background: var(--bg-color-d);
+            padding: 5rem 8%;
             text-align: center;
-            margin-bottom: 60px;
+            border-radius: 24px;
+            max-width: 1400px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
         }
         
-        .section-header h2 {
-            font-size: 2.8rem;
-            color: #1e3a8a;
-            margin-bottom: 15px;
+        #course-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6, #10b981);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+            color: var(--heading-color);
+            font-weight: 800;
             position: relative;
             display: inline-block;
         }
         
-        .section-header h2:after {
+        .section-title:after {
             content: '';
             position: absolute;
-            width: 70%;
+            width: 120px;
             height: 4px;
             background: linear-gradient(to right, #3b82f6, #8b5cf6);
-            bottom: -10px;
-            left: 15%;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 2px;
         }
         
-        .section-header p {
-            font-size: 1.2rem;
-            color: #64748b;
-            max-width: 700px;
-            margin: 25px auto 0;
-            line-height: 1.6;
+        .underline {
+            height: 4px;
+            width: 80px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
         }
         
-        .learn-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .learn-card {
-            background: white;
-            border-radius: 16px;
-            padding: 35px 25px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+        #course-section .intro-text {
+            font-size: 1.3rem;
+            color: var(--text-color-d);
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-inline: auto;
+            line-height: 1.7;
             position: relative;
+            padding: 0 20px;
+        }
+        
+        #course-section .intro-text:before, #course-section .intro-text:after {
+            content: '"';
+            font-size: 3rem;
+            color: #cbd5e1;
+            position: absolute;
+            font-family: Georgia, serif;
+        }
+        
+        #course-section .intro-text:before {
+            top: -15px;
+            left: 0;
+        }
+        
+        #course-section .intro-text:after {
+            bottom: -30px;
+            right: 0;
+        }
+        
+        #course-section .course-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        #course-section .course-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            box-shadow: var(--box-shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: left;
+            position: relative;
+            border-top: 5px solid;
             overflow: hidden;
-            text-align: center;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            height: 100%;
         }
         
-        .learn-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+        #course-section .course-card:nth-child(1) {
+            border-color: #3b82f6;
         }
         
-        .card-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 25px;
-            font-size: 2.2rem;
-            color: white;
-            position: relative;
-            z-index: 2;
+        #course-section .course-card:nth-child(2) {
+            border-color: #10b981;
         }
         
-        .card-icon:after {
+        #course-section .course-card:nth-child(3) {
+            border-color: #8b5cf6;
+        }
+        
+        #course-section .course-card:nth-child(4) {
+            border-color: #f59e0b;
+        }
+        
+        #course-section .course-card:before {
             content: '';
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            z-index: -1;
-            animation: pulse 2s infinite;
+            height: 5px;
+            background: inherit;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
         }
         
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.8; }
-            70% { transform: scale(1.2); opacity: 0; }
-            100% { transform: scale(1.2); opacity: 0; }
+        #course-section .course-card:hover:before {
+            transform: scaleX(1);
         }
         
-        .card-1 .card-icon {
-            background: linear-gradient(135deg, #34d399, #10b981);
-        }
-        
-        .card-2 .card-icon {
-            background: linear-gradient(135deg, #60a5fa, #3b82f6);
-        }
-        
-        .card-3 .card-icon {
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-        }
-        
-        .card-4 .card-icon {
-            background: linear-gradient(135deg, #a78bfa, #8b5cf6);
-        }
-        
-        .learn-card h3 {
-            font-size: 1.5rem;
-            color: #1e3a8a;
-            margin-bottom: 15px;
-        }
-        
-        .learn-card p {
-            color: #64748b;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .checkmark {
-            color: #10b981;
-            font-size: 1.2rem;
-            margin-right: 8px;
-        }
-        
-        .features-list {
-            list-style: none;
-            text-align: left;
-            width: 100%;
-            margin-top: 15px;
-        }
-        
-        .features-list li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .highlight {
+        .course-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
             display: inline-block;
-            padding: 5px 12px;
-            background-color: #dbeafe;
-            color: #1e40af;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-top: 10px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 1.8rem;
         }
         
-        .cta-container {
-            text-align: center;
-            margin-top: 60px;
+        .course-card:nth-child(1) .course-icon {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .course-card:nth-child(2) .course-icon {
+            background: linear-gradient(135deg, #10b981, #34d399);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .course-card:nth-child(3) .course-icon {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+        }
+        
+        .course-card:nth-child(4) .course-icon {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+        }
+        
+        #course-section .course-card h3 {
+            color: var(--heading-color);
+            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        #course-section .course-card p {
+            color: var(--text-color-d);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+            position: relative;
+        }
+        
+        .quotes {
+            color: #cbd5e1;
+            font-size: 1.8rem;
+            position: absolute;
+        }
+        
+        .ri-double-quotes-l {
+            top: -10px;
+            left: -5px;
+        }
+        
+        .ri-double-quotes-r {
+            bottom: -15px;
+            right: -5px;
+        }
+        
+        .course-features {
+            list-style: none;
+            margin-top: auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .course-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            color: var(--text-color-l);
+        }
+        
+        .course-features i {
+            margin-right: 10px;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+        
+        #course-section .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .cta-btn-cont {
+            margin-top: 2rem;
         }
         
         .cta-button {
-            display: inline-block;
-            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 16px 40px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            border-radius: 50px;
+            padding: 18px 45px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 12px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+            border: none;
+            cursor: pointer;
             position: relative;
             overflow: hidden;
         }
         
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
-        }
-        
-        .cta-button:active {
-            transform: translateY(-1px);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+            background: linear-gradient(to right, #2563eb, #7c3aed);
         }
         
         .cta-button:after {
@@ -213,126 +298,303 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
+            transition: 0.6s;
         }
         
         .cta-button:hover:after {
             left: 100%;
         }
         
-        @media (max-width: 768px) {
-            .learn-cards {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-            
-            .section-header h2 {
-                font-size: 2.2rem;
+        .cta-button i {
+            margin-left: 10px;
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Course badges */
+        .course-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Decorative elements */
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            background: var(--primary-color);
+            top: 10%;
+            left: 5%;
+        }
+        
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            background: var(--secondary-color);
+            bottom: 10%;
+            right: 5%;
+        }
+        
+        /* Stats bar */
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--heading-color);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: var(--text-color-l);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        @media screen and (max-width: 1200px) {
+            #course-section {
+                padding: 4rem 5%;
             }
         }
         
-        @media (max-width: 480px) {
-            .learn-section {
-                padding: 20px 10px;
+        @media screen and (max-width: 992px) {
+            #course-section .course-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
             }
             
-            .section-header h2 {
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            #course-section {
+                padding: 3rem 5%;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            #course-section .course-container {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            #course-section .intro-text {
+                font-size: 1.1rem;
+                padding: 0 10px;
+            }
+            
+            .stats-bar {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stat-item {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .section-title {
                 font-size: 1.8rem;
             }
             
-            .learn-card {
-                padding: 25px 20px;
+            #course-section .course-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            #course-section .course-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+                width: 100%;
+                max-width: 300px;
             }
         }
+        
+        /* Animation for cards on load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .course-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+        
+        .course-card:nth-child(1) { animation-delay: 0.1s; }
+        .course-card:nth-child(2) { animation-delay: 0.2s; }
+        .course-card:nth-child(3) { animation-delay: 0.3s; }
+        .course-card:nth-child(4) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <section class="learn-section">
-        <div class="section-header">
-            <h2>What You'll Learn</h2>
-            <p>Our comprehensive language program is designed to take you from complete beginner to confident speaker. Here's what you'll master with our proven methodology.</p>
+    <section id="course-section">
+        <!-- Decorative elements -->
+        <div class="decorative-circle circle-1"></div>
+        <div class="decorative-circle circle-2"></div>
+        
+        <h2 class="section-title">Our Courses & Programs</h2>
+        <div class="underline"></div>
+        <p class="intro-text">
+            Explore our carefully designed courses that empower learners to
+            communicate confidently, think critically, and lead with purpose.
+        </p>
+
+        <div class="course-container">
+            <div class="course-card">
+                <div class="course-icon">
+                    <i class="ri-mic-line"></i>
+                </div>
+                <span class="course-badge">Most Popular</span>
+                <h3>Spoken English</h3>
+                <p>
+                    <i class="ri-double-quotes-l quotes"></i>
+                    Improve fluency, pronunciation, and confidence through interactive
+                    speaking sessions and real-life practice.
+                    <i class="ri-double-quotes-r quotes"></i>
+                </p>
+                <ul class="course-features">
+                    <li><i class="ri-checkbox-circle-fill"></i> Daily conversation practice</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Accent reduction techniques</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Real-world scenario training</li>
+                </ul>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">
+                    <i class="ri-book-open-line"></i>
+                </div>
+                <span class="course-badge">Foundation</span>
+                <h3>Grammar Mastery</h3>
+                <p>
+                    <i class="ri-double-quotes-l quotes"></i>
+                    Strengthen your foundation in English grammar with practical
+                    examples and engaging exercises that make learning enjoyable.
+                    <i class="ri-double-quotes-r quotes"></i>
+                </p>
+                <ul class="course-features">
+                    <li><i class="ri-checkbox-circle-fill"></i> Interactive grammar exercises</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Common error correction</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Contextual grammar application</li>
+                </ul>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">
+                    <i class="ri-global-line"></i>
+                </div>
+                <span class="course-badge">Advanced</span>
+                <h3>Advanced English</h3>
+                <p>
+                    <i class="ri-double-quotes-l quotes"></i>
+                    Master the language with our advanced course, perfect for
+                    professionals and academics seeking to refine communication, expand vocabulary.
+                    <i class="ri-double-quotes-r quotes"></i>
+                </p>
+                <ul class="course-features">
+                    <li><i class="ri-checkbox-circle-fill"></i> Business communication skills</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Academic writing techniques</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Professional presentation skills</li>
+                </ul>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">
+                    <i class="ri-team-line"></i>
+                </div>
+                <span class="course-badge">Leadership</span>
+                <h3>Youth Leadership Program</h3>
+                <p>
+                    <i class="ri-double-quotes-l quotes"></i>
+                    Develop leadership qualities, teamwork, and communication skills to
+                    succeed in both academic and professional life.
+                    <i class="ri-double-quotes-r quotes"></i>
+                </p>
+                <ul class="course-features">
+                    <li><i class="ri-checkbox-circle-fill"></i> Public speaking training</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Team collaboration exercises</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Critical thinking development</li>
+                </ul>
+            </div>
         </div>
         
-        <div class="learn-cards">
-            <div class="learn-card card-1">
-                <div class="card-icon">
-                    <i class="fas fa-seedling"></i>
-                </div>
-                <h3>Beginner Friendly</h3>
-                <p>Start from scratch with our structured approach designed for absolute beginners. No prior knowledge needed.</p>
-                <ul class="features-list">
-                    <li><span class="checkmark">✓</span> Step-by-step learning path</li>
-                    <li><span class="checkmark">✓</span> Interactive exercises for basics</li>
-                    <li><span class="checkmark">✓</span> Patient, supportive instructors</li>
-                </ul>
-                <div class="highlight">Start from zero, finish as a hero</div>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">2,500+</div>
+                <div class="stat-label">Students Trained</div>
             </div>
-            
-            <div class="learn-card card-2">
-                <div class="card-icon">
-                    <i class="fas fa-bullhorn"></i>
-                </div>
-                <h3>Speaking Confidence</h3>
-                <p>Overcome hesitation and fear of speaking with our confidence-building exercises and supportive environment.</p>
-                <ul class="features-list">
-                    <li><span class="checkmark">✓</span> Daily speaking practice</li>
-                    <li><span class="checkmark">✓</span> Pronunciation correction</li>
-                    <li><span class="checkmark">✓</span> Public speaking simulations</li>
-                </ul>
-                <div class="highlight">Speak with confidence in any situation</div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Success Rate</div>
             </div>
-            
-            <div class="learn-card card-3">
-                <div class="card-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <h3>Grammar + Vocabulary</h3>
-                <p>Build a strong foundation with essential grammar rules and a practical vocabulary of 2000+ words.</p>
-                <ul class="features-list">
-                    <li><span class="checkmark">✓</span> Contextual grammar lessons</li>
-                    <li><span class="checkmark">✓</span> Themed vocabulary sets</li>
-                    <li><span class="checkmark">✓</span> Memory techniques for retention</li>
-                </ul>
-                <div class="highlight">Solid foundation for fluency</div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Expert Trainers</div>
             </div>
-            
-            <div class="learn-card card-4">
-                <div class="card-icon">
-                    <i class="fas fa-comments"></i>
-                </div>
-                <h3>Real-life Conversations</h3>
-                <p>Practice realistic dialogues for everyday situations, travel, work, and social interactions.</p>
-                <ul class="features-list">
-                    <li><span class="checkmark">✓</span> Role-play scenarios</li>
-                    <li><span class="checkmark">✓</span> Cultural context integration</li>
-                    <li><span class="checkmark">✓</span> Native speaker interactions</li>
-                </ul>
-                <div class="highlight">Ready for real-world communication</div>
+            <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Years Experience</div>
             </div>
         </div>
         
-        <div class="cta-container">
-            <a href="#" class="cta-button">Start Your Language Journey Today</a>
+        <div class="cta-btn-cont">
+            <a href="courses.html" class="cta-button">Explore All Courses <i class="ri-arrow-right-line"></i></a>
         </div>
     </section>
 
     <script>
-        // Add interactive animations when scrolling
+        // Add interactive animations
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.learn-card');
+            const cards = document.querySelectorAll('.course-card');
             
-            // Add staggered animation on load
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 200 * index);
-            });
-            
-            // Add click effect to cards
+            // Add click animation to cards
             cards.forEach(card => {
                 card.addEventListener('click', function() {
                     this.style.transform = 'scale(0.98)';
@@ -342,15 +604,34 @@
                 });
             });
             
+            // Add hover effect to stats numbers
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const originalText = stat.textContent;
+                stat.textContent = '0';
+                
+                let counter = 0;
+                const target = parseInt(originalText);
+                const increment = target / 30;
+                
+                const updateCounter = () => {
+                    if (counter < target) {
+                        counter += increment;
+                        stat.textContent = Math.floor(counter) + (originalText.includes('+') ? '+' : '');
+                        setTimeout(updateCounter, 50);
+                    } else {
+                        stat.textContent = originalText;
+                    }
+                };
+                
+                // Start counter when stats are in viewport
+                setTimeout(updateCounter, 1000);
+            });
+            
             // Add hover effect to CTA button
             const ctaButton = document.querySelector('.cta-button');
             ctaButton.addEventListener('mouseenter', function() {
-                const letters = '0123456789ABCDEF';
-                let color = '#';
-                for (let i = 0; i < 6; i++) {
-                    color += letters[Math.floor(Math.random() * 16)];
-                }
-                this.style.background = `linear-gradient(to right, ${color}, ${color}99)`;
+                this.style.background = 'linear-gradient(to right, #8b5cf6, #3b82f6)';
             });
             
             ctaButton.addEventListener('mouseleave', function() {
