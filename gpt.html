@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Center - Enhanced Courses Section</title>
+    <title>Language Center - Enhanced Features Section</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <style>
         :root {
-            --bg-color-d: #f8fafc;
             --heading-color: #1e3a8a;
             --text-color-d: #475569;
-            --text-color-l: #64748b;
             --primary-color: #3b82f6;
             --secondary-color: #8b5cf6;
             --accent-color: #10b981;
-            --card-bg: #ffffff;
-            --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            --hover-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+            --light-bg: #f8fafc;
         }
         
         * {
@@ -28,426 +24,378 @@
         
         body {
             background-color: #f1f5f9;
-            padding: 20px;
+            padding: 40px 20px;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         
-        #course-section {
-            background: var(--bg-color-d);
-            padding: 5rem 8%;
-            text-align: center;
-            border-radius: 24px;
-            max-width: 1400px;
+        #feature-section {
             width: 100%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            max-width: 1400px;
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
             position: relative;
             overflow: hidden;
         }
         
-        #course-section:before {
-            content: '';
+        /* Decorative elements */
+        .decorative-dots {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, #3b82f6, #8b5cf6, #10b981);
+            width: 200px;
+            height: 200px;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .dots-1 {
+            top: 10%;
+            left: 5%;
+            background-image: radial-gradient(#3b82f6 3px, transparent 3px);
+            background-size: 20px 20px;
+        }
+        
+        .dots-2 {
+            bottom: 10%;
+            right: 5%;
+            background-image: radial-gradient(#8b5cf6 3px, transparent 3px);
+            background-size: 20px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
         .section-title {
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 0.8rem;
-            color: var(--heading-color);
+            margin-bottom: 5rem;
+        }
+        
+        .section-title h2 {
+            font-size: 3.2rem;
             font-weight: 800;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
             position: relative;
             display: inline-block;
         }
         
-        .section-title:after {
+        .section-title h2:after {
             content: '';
             position: absolute;
-            width: 120px;
-            height: 4px;
+            width: 80px;
+            height: 5px;
             background: linear-gradient(to right, #3b82f6, #8b5cf6);
             bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            border-radius: 2px;
+            border-radius: 3px;
         }
         
         .underline {
-            height: 4px;
-            width: 80px;
+            height: 5px;
+            width: 100px;
             background: linear-gradient(to right, #3b82f6, #8b5cf6);
             margin: 0 auto 2rem;
-            border-radius: 2px;
-        }
-        
-        #course-section .intro-text {
-            font-size: 1.3rem;
-            color: var(--text-color-d);
-            margin-bottom: 4rem;
-            max-width: 800px;
-            margin-inline: auto;
-            line-height: 1.7;
-            position: relative;
-            padding: 0 20px;
-        }
-        
-        #course-section .intro-text:before, #course-section .intro-text:after {
-            content: '"';
-            font-size: 3rem;
-            color: #cbd5e1;
-            position: absolute;
-            font-family: Georgia, serif;
-        }
-        
-        #course-section .intro-text:before {
-            top: -15px;
-            left: 0;
-        }
-        
-        #course-section .intro-text:after {
-            bottom: -30px;
-            right: 0;
-        }
-        
-        #course-section .course-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 4rem;
-        }
-        
-        #course-section .course-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 2.5rem 2rem;
-            box-shadow: var(--box-shadow);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-align: left;
-            position: relative;
-            border-top: 5px solid;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        #course-section .course-card:nth-child(1) {
-            border-color: #3b82f6;
-        }
-        
-        #course-section .course-card:nth-child(2) {
-            border-color: #10b981;
-        }
-        
-        #course-section .course-card:nth-child(3) {
-            border-color: #8b5cf6;
-        }
-        
-        #course-section .course-card:nth-child(4) {
-            border-color: #f59e0b;
-        }
-        
-        #course-section .course-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: inherit;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
-        }
-        
-        #course-section .course-card:hover:before {
-            transform: scaleX(1);
-        }
-        
-        .course-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin-bottom: 1.8rem;
-        }
-        
-        .course-card:nth-child(1) .course-icon {
-            background: linear-gradient(135deg, #3b82f6, #60a5fa);
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
-        }
-        
-        .course-card:nth-child(2) .course-icon {
-            background: linear-gradient(135deg, #10b981, #34d399);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
-        }
-        
-        .course-card:nth-child(3) .course-icon {
-            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
-        }
-        
-        .course-card:nth-child(4) .course-icon {
-            background: linear-gradient(135deg, #f59e0b, #fbbf24);
-            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
-        }
-        
-        #course-section .course-card h3 {
-            color: var(--heading-color);
-            margin-bottom: 1.2rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        #course-section .course-card p {
-            color: var(--text-color-d);
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-            position: relative;
-        }
-        
-        .quotes {
-            color: #cbd5e1;
-            font-size: 1.8rem;
-            position: absolute;
-        }
-        
-        .ri-double-quotes-l {
-            top: -10px;
-            left: -5px;
-        }
-        
-        .ri-double-quotes-r {
-            bottom: -15px;
-            right: -5px;
-        }
-        
-        .course-features {
-            list-style: none;
-            margin-top: auto;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e2e8f0;
-        }
-        
-        .course-features li {
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            color: var(--text-color-l);
-        }
-        
-        .course-features i {
-            margin-right: 10px;
-            color: var(--accent-color);
-            font-size: 1.1rem;
-        }
-        
-        #course-section .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--hover-shadow);
-        }
-        
-        .cta-btn-cont {
-            margin-top: 2rem;
-        }
-        
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 18px 45px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
-            border: none;
-            cursor: pointer;
+            border-radius: 3px;
             position: relative;
             overflow: hidden;
         }
         
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
-            background: linear-gradient(to right, #2563eb, #7c3aed);
-        }
-        
-        .cta-button:after {
+        .underline:after {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.6s;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+            animation: shimmer 3s infinite;
         }
         
-        .cta-button:hover:after {
-            left: 100%;
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
         
-        .cta-button i {
-            margin-left: 10px;
-            font-size: 1.4rem;
-            transition: transform 0.3s ease;
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
         }
         
-        .cta-button:hover i {
-            transform: translateX(5px);
-        }
-        
-        /* Course badges */
-        .course-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--accent-color);
-            color: white;
-            padding: 5px 12px;
+        .feature-card {
+            background: white;
             border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 1px solid #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
         }
         
-        /* Decorative elements */
-        .decorative-circle {
+        .feature-card:before {
+            content: '';
             position: absolute;
-            border-radius: 50%;
-            opacity: 0.05;
-            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
         }
         
-        .circle-1 {
+        .feature-card:hover:before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card:after {
+            content: '';
+            position: absolute;
             width: 200px;
             height: 200px;
-            background: var(--primary-color);
-            top: 10%;
-            left: 5%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0) 70%);
+            top: -100px;
+            right: -100px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
         
-        .circle-2 {
-            width: 150px;
-            height: 150px;
-            background: var(--secondary-color);
-            bottom: 10%;
-            right: 5%;
+        .feature-card:hover:after {
+            opacity: 1;
         }
         
-        /* Stats bar */
-        .stats-bar {
+        .icon-container {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
             display: flex;
-            justify-content: space-around;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        
+        .feature-card:nth-child(1) .icon-container {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.2));
+            color: #3b82f6;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+        }
+        
+        .feature-card:nth-child(2) .icon-container {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));
+            color: #10b981;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+        }
+        
+        .feature-card:nth-child(3) .icon-container {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.2));
+            color: #f59e0b;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.15);
+        }
+        
+        .feature-card:nth-child(4) .icon-container {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.2));
+            color: #8b5cf6;
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15);
+        }
+        
+        .feature-card:hover .icon-container {
+            transform: translateY(-10px) scale(1.1);
+        }
+        
+        .feature-card i {
+            font-size: 2.8rem;
+            transition: transform 0.4s ease;
+        }
+        
+        .feature-card:hover i {
+            transform: scale(1.1);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: var(--heading-color);
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        
+        .feature-card:hover h3 {
+            color: var(--primary-color);
+        }
+        
+        .feature-card p {
+            color: var(--text-color-d);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            max-width: 300px;
+        }
+        
+        .feature-number {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--heading-color);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-number {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Stats at the bottom */
+        .stats-container {
+            display: flex;
+            justify-content: center;
             flex-wrap: wrap;
-            margin-top: 4rem;
-            padding-top: 3rem;
+            gap: 4rem;
+            margin-top: 6rem;
+            padding-top: 4rem;
             border-top: 1px solid #e2e8f0;
         }
         
         .stat-item {
             text-align: center;
-            padding: 0 20px;
-            margin-bottom: 20px;
+            min-width: 180px;
         }
         
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
-            color: var(--heading-color);
-            margin-bottom: 5px;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .stat-number:after {
+            content: '+';
+            font-size: 2rem;
+            margin-left: 2px;
+            color: var(--secondary-color);
         }
         
         .stat-label {
-            color: var(--text-color-l);
-            font-size: 1rem;
+            color: var(--text-color-d);
+            font-size: 1.1rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        @media screen and (max-width: 1200px) {
-            #course-section {
-                padding: 4rem 5%;
-            }
-        }
-        
-        @media screen and (max-width: 992px) {
-            #course-section .course-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            #feature-section {
+                padding: 5rem 4%;
             }
             
-            .section-title {
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .features-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+            }
+            
+            .section-title h2 {
                 font-size: 2.5rem;
             }
+            
+            .stats-container {
+                gap: 3rem;
+            }
         }
         
-        @media screen and (max-width: 768px) {
-            #course-section {
-                padding: 3rem 5%;
+        @media (max-width: 768px) {
+            #feature-section {
+                padding: 4rem 3%;
             }
             
-            .section-title {
+            .section-title h2 {
                 font-size: 2.2rem;
             }
             
-            #course-section .course-container {
+            .features-container {
                 grid-template-columns: 1fr;
                 max-width: 500px;
-                margin-left: auto;
-                margin-right: auto;
+                margin: 0 auto;
             }
             
-            #course-section .intro-text {
-                font-size: 1.1rem;
-                padding: 0 10px;
+            .feature-card {
+                padding: 2.5rem 1.5rem;
             }
             
-            .stats-bar {
+            .stats-container {
                 flex-direction: column;
                 align-items: center;
+                gap: 2.5rem;
             }
             
             .stat-item {
-                margin-bottom: 30px;
+                min-width: 200px;
             }
         }
         
-        @media screen and (max-width: 480px) {
-            .section-title {
-                font-size: 1.8rem;
+        @media (max-width: 480px) {
+            #feature-section {
+                padding: 3rem 2%;
             }
             
-            #course-section .course-card {
-                padding: 2rem 1.5rem;
+            .section-title h2 {
+                font-size: 1.9rem;
             }
             
-            #course-section .course-card h3 {
+            .feature-card h3 {
                 font-size: 1.5rem;
             }
             
-            .cta-button {
-                padding: 15px 30px;
-                font-size: 1.1rem;
-                width: 100%;
-                max-width: 300px;
+            .icon-container {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .feature-card i {
+                font-size: 2.2rem;
             }
         }
         
@@ -455,7 +403,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -463,179 +411,163 @@
             }
         }
         
-        .course-card {
+        .feature-card {
             animation: fadeInUp 0.6s ease forwards;
             opacity: 0;
         }
         
-        .course-card:nth-child(1) { animation-delay: 0.1s; }
-        .course-card:nth-child(2) { animation-delay: 0.2s; }
-        .course-card:nth-child(3) { animation-delay: 0.3s; }
-        .course-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        /* Pulse animation for icons */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        
+        .icon-container {
+            animation: pulse 2s infinite;
+        }
+        
+        .feature-card:nth-child(1) .icon-container { animation-delay: 0.5s; }
+        .feature-card:nth-child(2) .icon-container { animation-delay: 1s; }
+        .feature-card:nth-child(3) .icon-container { animation-delay: 1.5s; }
+        .feature-card:nth-child(4) .icon-container { animation-delay: 2s; }
     </style>
 </head>
 <body>
-    <section id="course-section">
+    <section id="feature-section">
         <!-- Decorative elements -->
-        <div class="decorative-circle circle-1"></div>
-        <div class="decorative-circle circle-2"></div>
+        <div class="decorative-dots dots-1"></div>
+        <div class="decorative-dots dots-2"></div>
         
-        <h2 class="section-title">Our Courses & Programs</h2>
-        <div class="underline"></div>
-        <p class="intro-text">
-            Explore our carefully designed courses that empower learners to
-            communicate confidently, think critically, and lead with purpose.
-        </p>
-
-        <div class="course-container">
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="ri-mic-line"></i>
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Language Center</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="features-container">
+                <div class="feature-card">
+                    <div class="feature-number">01</div>
+                    <div class="icon-container">
+                        <i class="ri-presentation-fill"></i>
+                    </div>
+                    <h3>Expert Instructors</h3>
+                    <p>
+                        Learn from native speakers and certified language experts with
+                        years of teaching experience and proven success records.
+                    </p>
                 </div>
-                <span class="course-badge">Most Popular</span>
-                <h3>Spoken English</h3>
-                <p>
-                    <i class="ri-double-quotes-l quotes"></i>
-                    Improve fluency, pronunciation, and confidence through interactive
-                    speaking sessions and real-life practice.
-                    <i class="ri-double-quotes-r quotes"></i>
-                </p>
-                <ul class="course-features">
-                    <li><i class="ri-checkbox-circle-fill"></i> Daily conversation practice</li>
-                    <li><i class="ri-checkbox-circle-fill"></i> Accent reduction techniques</li>
-                    <li><i class="ri-checkbox-circle-fill"></i> Real-world scenario training</li>
-                </ul>
-            </div>
-
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="ri-book-open-line"></i>
+                <div class="feature-card">
+                    <div class="feature-number">02</div>
+                    <div class="icon-container">
+                        <i class="ri-macbook-line"></i>
+                    </div>
+                    <h3>Flexible Learning</h3>
+                    <p>
+                        Choose between in-person classes, online sessions, or a hybrid approach that perfectly fits your schedule and learning style.
+                    </p>
                 </div>
-                <span class="course-badge">Foundation</span>
-                <h3>Grammar Mastery</h3>
-                <p>
-                    <i class="ri-double-quotes-l quotes"></i>
-                    Strengthen your foundation in English grammar with practical
-                    examples and engaging exercises that make learning enjoyable.
-                    <i class="ri-double-quotes-r quotes"></i>
-                </p>
-                <ul class="course-features">
-                    <li><i class="ri-checkbox-circle-fill"></i> Interactive grammar exercises</li>
-                    <li><i class="ri-checkbox-circle-fill"></i> Common error correction</li>
-                    <li><i class="ri-checkbox-circle-fill"></i> Contextual grammar application</li>
-                </ul>
-            </div>
-
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="ri-global-line"></i>
+                <div class="feature-card">
+                    <div class="feature-number">03</div>
+                    <div class="icon-container">
+                        <i class="ri-chat-smile-2-line"></i>
+                    </div>
+                    <h3>Interactive Learning</h3>
+                    <p>
+                        Engage in real conversations, interactive games, and practical activities that make learning English fun and effective.
+                    </p>
                 </div>
-                <span class="course-badge">Advanced</span>
-                <h3>Advanced English</h3>
-                <p>
-                    <i class="ri-double-quotes-l quotes"></i>
-                    Master the language with our advanced course, perfect for
-                    professionals and academics seeking to refine communication, expand vocabulary.
-                    <i class="ri-double-quotes-r quotes"></i>
-                </p>
-                <ul class="course-features">
-                    <li><i class="ri-checkbox-circle-fill"></i> Business communication skills</li>
-                    <li><i class="ri-checkbox-circle-fill"></i> Academic writing techniques</li>
-                    <li><i class="ri-checkbox-circle-fill"></i> Professional presentation skills</li>
-                </ul>
-            </div>
-
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="ri-team-line"></i>
+                <div class="feature-card">
+                    <div class="feature-number">04</div>
+                    <div class="icon-container">
+                        <i class="ri-earth-line"></i>
+                    </div>
+                    <h3>Cultural Immersion</h3>
+                    <p>
+                        Experience language through cultural activities, international events, and authentic materials from English-speaking countries.
+                    </p>
                 </div>
-                <span class="course-badge">Leadership</span>
-                <h3>Youth Leadership Program</h3>
-                <p>
-                    <i class="ri-double-quotes-l quotes"></i>
-                    Develop leadership qualities, teamwork, and communication skills to
-                    succeed in both academic and professional life.
-                    <i class="ri-double-quotes-r quotes"></i>
-                </p>
-                <ul class="course-features">
-                    <li><i class="ri-checkbox-circle-fill"></i> Public speaking training</li>
-                    <li><i class="ri-checkbox-circle-fill"></i> Team collaboration exercises</li>
-                    <li><i class="ri-checkbox-circle-fill"></i> Critical thinking development</li>
-                </ul>
             </div>
-        </div>
-        
-        <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-number">2,500+</div>
-                <div class="stat-label">Students Trained</div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="200">0</div>
+                    <div class="stat-label">Expert Instructors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15000">0</div>
+                    <div class="stat-label">Students Trained</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">98%</div>
-                <div class="stat-label">Success Rate</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Expert Trainers</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">15</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-        </div>
-        
-        <div class="cta-btn-cont">
-            <a href="courses.html" class="cta-button">Explore All Courses <i class="ri-arrow-right-line"></i></a>
         </div>
     </section>
 
     <script>
-        // Add interactive animations
+        // Animated counters for statistics
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.course-card');
+            const statNumbers = document.querySelectorAll('.stat-number');
             
-            // Add click animation to cards
-            cards.forEach(card => {
+            const animateCounter = (element) => {
+                const target = parseInt(element.getAttribute('data-count'));
+                const duration = 2000; // 2 seconds
+                const step = Math.max(1, Math.floor(target / 60)); // Ensure at least 1
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    element.textContent = current;
+                }, duration / (target / step));
+            };
+            
+            // Trigger counters when in viewport
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statNumbers.forEach(stat => {
+                observer.observe(stat);
+            });
+            
+            // Add click effect to feature cards
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
                 card.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.98)';
+                    this.style.transform = 'translateY(-10px) scale(0.98)';
                     setTimeout(() => {
-                        this.style.transform = '';
+                        this.style.transform = 'translateY(-15px)';
                     }, 150);
                 });
             });
             
-            // Add hover effect to stats numbers
-            const statNumbers = document.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                const originalText = stat.textContent;
-                stat.textContent = '0';
-                
-                let counter = 0;
-                const target = parseInt(originalText);
-                const increment = target / 30;
-                
-                const updateCounter = () => {
-                    if (counter < target) {
-                        counter += increment;
-                        stat.textContent = Math.floor(counter) + (originalText.includes('+') ? '+' : '');
-                        setTimeout(updateCounter, 50);
-                    } else {
-                        stat.textContent = originalText;
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key >= '1' && e.key <= '4') {
+                    const index = parseInt(e.key) - 1;
+                    if (featureCards[index]) {
+                        featureCards[index].click();
                     }
-                };
-                
-                // Start counter when stats are in viewport
-                setTimeout(updateCounter, 1000);
-            });
-            
-            // Add hover effect to CTA button
-            const ctaButton = document.querySelector('.cta-button');
-            ctaButton.addEventListener('mouseenter', function() {
-                this.style.background = 'linear-gradient(to right, #8b5cf6, #3b82f6)';
-            });
-            
-            ctaButton.addEventListener('mouseleave', function() {
-                this.style.background = 'linear-gradient(to right, #3b82f6, #8b5cf6)';
+                }
             });
         });
     </script>

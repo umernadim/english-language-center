@@ -56,11 +56,10 @@ function carouselHandler() {
 
 window.addEventListener("load", carouselHandler);
 
-
 // Learning Cards
 // Add click effect to cards
 function learningCardsHandler() {
-  const cards = document.querySelectorAll('.learn-card');
+  const cards = document.querySelectorAll(".learn-card");
   cards.forEach((card) => {
     card.addEventListener("click", function () {
       this.style.transform = "scale(0.98)";
@@ -73,9 +72,47 @@ function learningCardsHandler() {
 
 learningCardsHandler();
 
+// Animated counters for statistics
+function statshandler() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const statNumbers = document.querySelectorAll(".stat-number");
 
+    const animateCounter = (element) => {
+      const target = parseInt(element.getAttribute("data-count"));
+      const duration = 2000; // 2 seconds
+      const step = Math.max(1, Math.floor(target / 60)); // Ensure at least 1
+      let current = 0;
 
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        element.textContent = current;
+      }, duration / (target / step));
+    };
 
+    // Trigger counters when in viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    statNumbers.forEach((stat) => {
+      observer.observe(stat);
+    });
+  });
+}
+
+statshandler();
 
 // testimonial handler
 function testimonialhandler() {
