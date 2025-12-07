@@ -1400,9 +1400,9 @@ nav #menuBtn {
 
 /* code for the testimonial section  */
 #testimonial-sect {
-    padding: 4rem 6%;
+    padding: 4rem 7%;
     text-align: center;
-    background: var(--bg-color-d);
+    /* background: var(--bg-color-d); */
 }
 
 #testimonial-sect h2 {
@@ -1431,23 +1431,37 @@ nav #menuBtn {
 
 .scroll-hint {
     text-align: center;
-    font-size: 1rem;
-    color: #888;
-    margin-top: 0.5rem;
-    animation: pulse 2s infinite;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
-@keyframes pulse {
+.scroll-hint span {
+    font-size: 1rem;
+    color: var(--li-color);
+    font-weight: 600;
+}
+
+.scroll-hint i {
+    color: #007acc;
+    font-size: 1.3rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
 
     0%,
     100% {
-        opacity: 0.6;
+        transform: translateX(0);
     }
 
     50% {
-        opacity: 1;
+        transform: translateX(10px);
     }
 }
+
 
 .tm-container {
     display: flex;
@@ -1459,20 +1473,19 @@ nav #menuBtn {
 
 .tm-card {
     flex: 0 0 calc((100vw - 4rem - 3rem) / 3);
-    max-width: 350px;
-    height: 230px;
+    max-width: 300px;
+    height: 330px;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-    padding: 1.5rem;
+    padding: 2rem;
     scroll-snap-align: start;
-    /* border-left: 3px solid #007ACC; */
     user-select: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
     transition: all 0.3s ease-in-out;
 }
 
 .tm-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .tm-top {
@@ -1486,8 +1499,14 @@ nav #menuBtn {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 2px solid #555;
+    border: 3px solid var(--highlight-color);
     object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.tm-card:hover img {
+    border: 3px solid #007bff;
+    transform: scale(1.05);
 }
 
 .intro {
@@ -1496,19 +1515,21 @@ nav #menuBtn {
 
 .intro h4 {
     font-size: 1.1rem;
-    color: var(--heading-color);
+    /* color: var(--heading-color); */
+    color: #007acc;
 }
 
 .intro h5 {
     font-size: 0.9rem;
-    color: var(--text-color-d);
+    color: var(--txt-color-xl);
     opacity: 0.7;
 }
 
 .tm-bottom p {
-    font-size: 0.95rem;
+    font-size: 1.07rem;
+    line-height: 1.5;
     text-align: left;
-    color: var(--text-color-d);
+    color: var(--txt-color-xl);
 }
 
 @media (max-width: 768px) {
@@ -1520,11 +1541,8 @@ nav #menuBtn {
 
     .tm-card {
         flex: 0 0 50%;
-        max-width: 300px;
-        height: 270px;
     }
 }
-
 
 
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Center - Enhanced Features Section</title>
+    <title>Language Center - Testimonials</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <style>
         :root {
@@ -31,379 +31,269 @@
             align-items: center;
         }
         
-        #feature-section {
+        #testimonial-sect {
+            padding: 5rem 5%;
+            text-align: center;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
             width: 100%;
             max-width: 1400px;
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
             position: relative;
             overflow: hidden;
         }
         
-        /* Decorative elements */
-        .decorative-dots {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            opacity: 0.05;
-            z-index: 0;
-        }
-        
-        .dots-1 {
-            top: 10%;
-            left: 5%;
-            background-image: radial-gradient(#3b82f6 3px, transparent 3px);
-            background-size: 20px 20px;
-        }
-        
-        .dots-2 {
-            bottom: 10%;
-            right: 5%;
-            background-image: radial-gradient(#8b5cf6 3px, transparent 3px);
-            background-size: 20px 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-        
-        .section-title h2 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            color: var(--heading-color);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 5px;
-            background: linear-gradient(to right, #3b82f6, #8b5cf6);
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 3px;
-        }
-        
-        .underline {
-            height: 5px;
-            width: 100px;
-            background: linear-gradient(to right, #3b82f6, #8b5cf6);
-            margin: 0 auto 2rem;
-            border-radius: 3px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .underline:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-            animation: shimmer 3s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-        
-        .features-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-        }
-        
-        .feature-card {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            border: 1px solid #f1f5f9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-        }
-        
-        .feature-card:before {
-            content: '';
+        /* Decorative element */
+        .testimonial-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6, #10b981);
         }
         
-        .feature-card:hover:before {
-            transform: scaleX(1);
-        }
-        
-        .feature-card:after {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0) 70%);
-            top: -100px;
-            right: -100px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        .feature-card:hover:after {
-            opacity: 1;
-        }
-        
-        .icon-container {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            position: relative;
-            transition: all 0.4s ease;
-        }
-        
-        .feature-card:nth-child(1) .icon-container {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.2));
-            color: #3b82f6;
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
-        }
-        
-        .feature-card:nth-child(2) .icon-container {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));
-            color: #10b981;
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
-        }
-        
-        .feature-card:nth-child(3) .icon-container {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.2));
-            color: #f59e0b;
-            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.15);
-        }
-        
-        .feature-card:nth-child(4) .icon-container {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.2));
-            color: #8b5cf6;
-            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15);
-        }
-        
-        .feature-card:hover .icon-container {
-            transform: translateY(-10px) scale(1.1);
-        }
-        
-        .feature-card i {
-            font-size: 2.8rem;
-            transition: transform 0.4s ease;
-        }
-        
-        .feature-card:hover i {
-            transform: scale(1.1);
-        }
-        
-        .feature-card h3 {
-            font-size: 1.8rem;
+        #testimonial-sect h2 {
+            font-size: 3rem;
             color: var(--heading-color);
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-        
-        .feature-card:hover h3 {
-            color: var(--primary-color);
-        }
-        
-        .feature-card p {
-            color: var(--text-color-d);
-            line-height: 1.7;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            max-width: 300px;
-        }
-        
-        .feature-number {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 40px;
-            height: 40px;
-            background: var(--light-bg);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: 1rem;
             font-weight: 800;
-            color: var(--heading-color);
-            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        #testimonial-sect .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-color-d);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .tm-scroll-wrapper {
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 #f1f5f9;
+            cursor: grab;
+            padding: 2rem 0;
+            margin: 0 -5%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        
+        .tm-scroll-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .tm-scroll-wrapper::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+        
+        .tm-scroll-wrapper::-webkit-scrollbar-thumb {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+        }
+        
+        .tm-container {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+            padding: 1rem 0.5rem;
+        }
+        
+        .tm-card {
+            flex: 0 0 380px;
+            background: white;
+            border-radius: 18px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            user-select: none;
+            border: 1px solid #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tm-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tm-top {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tm-card img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e0f2fe;
             transition: all 0.3s ease;
         }
         
-        .feature-card:hover .feature-number {
-            background: var(--primary-color);
-            color: white;
-            transform: scale(1.1);
+        .tm-card:hover img {
+            border-color: #3b82f6;
+            transform: scale(1.05);
         }
         
-        .feature-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        .intro {
+            text-align: left;
+            flex-grow: 1;
         }
         
-        /* Stats at the bottom */
-        .stats-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 4rem;
-            margin-top: 6rem;
-            padding-top: 4rem;
-            border-top: 1px solid #e2e8f0;
+        .intro h4 {
+            font-size: 1.3rem;
+            color: var(--heading-color);
+            margin-bottom: 0.3rem;
+            font-weight: 700;
         }
         
-        .stat-item {
-            text-align: center;
-            min-width: 180px;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
+        .intro h5 {
+            font-size: 1rem;
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        
+        .course {
+            font-size: 0.9rem;
+            color: var(--text-color-d);
+            font-weight: 500;
+        }
+        
+        .tm-bottom {
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tm-bottom p {
+            font-size: 1.05rem;
+            color: var(--text-color-d);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            position: relative;
+            flex-grow: 1;
+        }
+        
+        .testimonial-date {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: auto;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 1rem;
+        }
+        
+        .scroll-hint {
+            text-align: center;
+            margin-top: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 1rem;
         }
         
-        .stat-number:after {
-            content: '+';
-            font-size: 2rem;
-            margin-left: 2px;
-            color: var(--secondary-color);
-        }
-        
-        .stat-label {
+        .scroll-hint span {
+            font-size: 1rem;
             color: var(--text-color-d);
-            font-size: 1.1rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        }
+        
+        .scroll-hint i {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+        
+        /* Navigation dots */
+        .nav-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 2.5rem;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: var(--primary-color);
+            transform: scale(1.2);
         }
         
         /* Responsive Design */
-        @media (max-width: 1200px) {
-            #feature-section {
-                padding: 5rem 4%;
-            }
-            
-            .section-title h2 {
-                font-size: 2.8rem;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .features-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.5rem;
-            }
-            
-            .stats-container {
-                gap: 3rem;
-            }
-        }
         
         @media (max-width: 768px) {
-            #feature-section {
-                padding: 4rem 3%;
+            #testimonial-sect {
+                padding: 4rem 4%;
+                border-radius: 20px;
             }
             
-            .section-title h2 {
+            .tm-scroll-wrapper {
+                margin: 0 -4%;
+                padding-left: 4%;
+                padding-right: 4%;
+            }
+            
+            .tm-card {
+                flex: 0 0 300px;
+                padding: 2rem;
+            }
+            
+            #testimonial-sect h2 {
                 font-size: 2.2rem;
             }
             
-            .features-container {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-                margin: 0 auto;
+            #testimonial-sect .subtitle {
+                font-size: 1.1rem;
             }
             
-            .feature-card {
-                padding: 2.5rem 1.5rem;
-            }
-            
-            .stats-container {
+            .tm-top {
                 flex-direction: column;
-                align-items: center;
-                gap: 2.5rem;
+                text-align: center;
+                gap: 1rem;
             }
             
-            .stat-item {
-                min-width: 200px;
+            .intro {
+                text-align: center;
             }
+            
+
         }
         
-        @media (max-width: 480px) {
-            #feature-section {
-                padding: 3rem 2%;
-            }
-            
-            .section-title h2 {
-                font-size: 1.9rem;
-            }
-            
-            .feature-card h3 {
-                font-size: 1.5rem;
-            }
-            
-            .icon-container {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .feature-card i {
-                font-size: 2.2rem;
-            }
+        
+        /* Gradient background for some cards */
+        .tm-card:nth-child(2n) {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
         }
         
-        /* Animation for cards on load */
+        /* Animation for cards */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -411,165 +301,365 @@
             }
         }
         
-        .feature-card {
+        .tm-card {
             animation: fadeInUp 0.6s ease forwards;
             opacity: 0;
         }
         
-        .feature-card:nth-child(1) { animation-delay: 0.1s; }
-        .feature-card:nth-child(2) { animation-delay: 0.2s; }
-        .feature-card:nth-child(3) { animation-delay: 0.3s; }
-        .feature-card:nth-child(4) { animation-delay: 0.4s; }
-        
-        /* Pulse animation for icons */
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-        }
-        
-        .icon-container {
-            animation: pulse 2s infinite;
-        }
-        
-        .feature-card:nth-child(1) .icon-container { animation-delay: 0.5s; }
-        .feature-card:nth-child(2) .icon-container { animation-delay: 1s; }
-        .feature-card:nth-child(3) .icon-container { animation-delay: 1.5s; }
-        .feature-card:nth-child(4) .icon-container { animation-delay: 2s; }
+        .tm-card:nth-child(1) { animation-delay: 0.1s; }
+        .tm-card:nth-child(2) { animation-delay: 0.2s; }
+        .tm-card:nth-child(3) { animation-delay: 0.3s; }
+        .tm-card:nth-child(4) { animation-delay: 0.4s; }
+        .tm-card:nth-child(5) { animation-delay: 0.5s; }
+        .tm-card:nth-child(6) { animation-delay: 0.6s; }
+        .tm-card:nth-child(7) { animation-delay: 0.7s; }
     </style>
 </head>
 <body>
-    <section id="feature-section">
-        <!-- Decorative elements -->
-        <div class="decorative-dots dots-1"></div>
-        <div class="decorative-dots dots-2"></div>
+    <section id="testimonial-sect">
+        <div class="testimonial-bg"></div>
         
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Our Language Center</h2>
-                <div class="underline"></div>
+        <h2>What Our Students Say</h2>
+        <div class="underline"></div>
+        <p class="subtitle">
+            Hear from our learners about their experiences and growth with us.
+        </p>
+
+        <div class="tm-scroll-wrapper">
+            <div class="tm-container">
+                <div class="tm-card">
+ 
+                    <div class="tm-top">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616c113a1c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Student photo" />
+                        <div class="intro">
+                            <h4>Sarah Johnson</h4>
+                            <h5>Advanced English Program</h5>
+   
+                        </div>
+                    </div>
+                    <div class="tm-bottom">
+                        <p>
+                            <i class="ri-double-quotes-l quotes"></i>
+                            I went from beginner to advanced in just 6 months! The teachers are incredibly supportive and the interactive classes made learning fun and effective. Highly recommend!
+                            <i class="ri-double-quotes-r quotes"></i>
+                        </p>
+                        <div class="testimonial-date">March 15, 2024</div>
+                    </div>
+                </div>
+                
+                <div class="tm-card">
+
+                    <div class="tm-top">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w-400&q=80" alt="Student photo" />
+                        <div class="intro">
+                            <h4>Michael Chen</h4>
+                            <h5>Business English Course</h5>
+
+                        </div>
+                    </div>
+                    <div class="tm-bottom">
+                        <p>
+                            <i class="ri-double-quotes-l quotes"></i>
+                            The Business English course transformed my communication skills at work. I can now confidently lead meetings and write professional emails. The practical focus was exactly what I needed.
+                            <i class="ri-double-quotes-r quotes"></i>
+                        </p>
+                        <div class="testimonial-date">February 28, 2024</div>
+                    </div>
+                </div>
+                
+                <div class="tm-card">
+       
+                    <div class="tm-top">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Student photo" />
+                        <div class="intro">
+                            <h4>Priya Sharma</h4>
+                            <h5>Spoken English Program</h5>
+
+                        </div>
+                    </div>
+                    <div class="tm-bottom">
+                        <p>
+                            <i class="ri-double-quotes-l quotes"></i>
+                            As a shy person, I never thought I'd be able to speak English confidently. The supportive environment and personalized feedback helped me overcome my fear. Now I can converse fluently!
+                            <i class="ri-double-quotes-r quotes"></i>
+                        </p>
+                        <div class="testimonial-date">April 5, 2024</div>
+                    </div>
+                </div>
+                
+                <div class="tm-card">
+  
+                    <div class="tm-top">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Student photo" />
+                        <div class="intro">
+                            <h4>David Wilson</h4>
+                            <h5>Grammar Mastery Course</h5>
+
+                        </div>
+                    </div>
+                    <div class="tm-bottom">
+                        <p>
+                            <i class="ri-double-quotes-l quotes"></i>
+                            The Grammar Mastery course clarified concepts I've struggled with for years. The practical examples and exercises made everything click. My writing has improved dramatically!
+                            <i class="ri-double-quotes-r quotes"></i>
+                        </p>
+                        <div class="testimonial-date">January 20, 2024</div>
+                    </div>
+                </div>
+                
+                <div class="tm-card">
+          
+                    <div class="tm-top">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Student photo" />
+                        <div class="intro">
+                            <h4>Maria Garcia</h4>
+                            <h5>Youth Leadership Program</h5>
+
+                        </div>
+                    </div>
+                    <div class="tm-bottom">
+                        <p>
+                            <i class="ri-double-quotes-l quotes"></i>
+                            The Youth Leadership Program not only improved my English but also boosted my confidence. I learned public speaking, teamwork, and critical thinking skills that helped me get into my dream college.
+                            <i class="ri-double-quotes-r quotes"></i>
+                        </p>
+                        <div class="testimonial-date">March 10, 2024</div>
+                    </div>
+                </div>
+                
+                <div class="tm-card">
+         
+                    <div class="tm-top">
+                        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Student photo" />
+                        <div class="intro">
+                            <h4>James Lee</h4>
+                            <h5>IELTS Preparation</h5>
+                        </div>
+                    </div>
+                    <div class="tm-bottom">
+                        <p>
+                            <i class="ri-double-quotes-l quotes"></i>
+                            Scored 8.0 on IELTS after just 3 months of preparation! The mock tests, personalized feedback, and exam strategies were invaluable. Couldn't have done it without this center.
+                            <i class="ri-double-quotes-r quotes"></i>
+                        </p>
+                        <div class="testimonial-date">February 15, 2024</div>
+                    </div>
+                </div>
+                
+                <div class="tm-card">
+                
+                    <div class="tm-top">
+                        <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Student photo" />
+                        <div class="intro">
+                            <h4>Sophia Williams</h4>
+                            <h5>Conversational English</h5>
+                        </div>
+                    </div>
+                    <div class="tm-bottom">
+                        <p>
+                            <i class="ri-double-quotes-l quotes"></i>
+                            I moved to an English-speaking country and needed to improve quickly. The conversational practice with native speakers and real-life scenarios prepared me perfectly for daily life here.
+                            <i class="ri-double-quotes-r quotes"></i>
+                        </p>
+                        <div class="testimonial-date">April 2, 2024</div>
+                    </div>
+                </div>
             </div>
-            <div class="features-container">
-                <div class="feature-card">
-                    <div class="feature-number">01</div>
-                    <div class="icon-container">
-                        <i class="ri-presentation-fill"></i>
-                    </div>
-                    <h3>Expert Instructors</h3>
-                    <p>
-                        Learn from native speakers and certified language experts with
-                        years of teaching experience and proven success records.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-number">02</div>
-                    <div class="icon-container">
-                        <i class="ri-macbook-line"></i>
-                    </div>
-                    <h3>Flexible Learning</h3>
-                    <p>
-                        Choose between in-person classes, online sessions, or a hybrid approach that perfectly fits your schedule and learning style.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-number">03</div>
-                    <div class="icon-container">
-                        <i class="ri-chat-smile-2-line"></i>
-                    </div>
-                    <h3>Interactive Learning</h3>
-                    <p>
-                        Engage in real conversations, interactive games, and practical activities that make learning English fun and effective.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-number">04</div>
-                    <div class="icon-container">
-                        <i class="ri-earth-line"></i>
-                    </div>
-                    <h3>Cultural Immersion</h3>
-                    <p>
-                        Experience language through cultural activities, international events, and authentic materials from English-speaking countries.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-number" data-count="200">0</div>
-                    <div class="stat-label">Expert Instructors</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="15000">0</div>
-                    <div class="stat-label">Students Trained</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="98">0</div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="12">0</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-            </div>
+        </div>
+        
+        <div class="scroll-hint">
+            <i class="ri-arrow-left-s-line"></i>
+            <span>Drag or scroll to see more testimonials</span>
+            <i class="ri-arrow-right-s-line"></i>
+        </div>
+        
+        <div class="nav-dots" id="navDots">
+            <!-- Dots will be added by JavaScript -->
         </div>
     </section>
 
     <script>
-        // Animated counters for statistics
-        document.addEventListener('DOMContentLoaded', function() {
-            const statNumbers = document.querySelectorAll('.stat-number');
-            
-            const animateCounter = (element) => {
-                const target = parseInt(element.getAttribute('data-count'));
-                const duration = 2000; // 2 seconds
-                const step = Math.max(1, Math.floor(target / 60)); // Ensure at least 1
-                let current = 0;
+        // Testimonial handler with improved functionality
+        function testimonialhandler() {
+            const scrollWrapper = document.querySelector(".tm-scroll-wrapper");
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            let scrollTimeout;
+
+            // Add grabbing cursor style
+            const style = document.createElement('style');
+            style.textContent = `
+                .grabbing {
+                    cursor: grabbing !important;
+                }
+                .grabbing .tm-card {
+                    pointer-events: none;
+                }
+            `;
+            document.head.appendChild(style);
+
+            scrollWrapper.addEventListener("mousedown", (e) => {
+                isDown = true;
+                scrollWrapper.classList.add("grabbing");
+                startX = e.pageX - scrollWrapper.offsetLeft;
+                scrollLeft = scrollWrapper.scrollLeft;
+            });
+
+            scrollWrapper.addEventListener("mouseleave", () => {
+                isDown = false;
+                scrollWrapper.classList.remove("grabbing");
+            });
+
+            scrollWrapper.addEventListener("mouseup", () => {
+                isDown = false;
+                scrollWrapper.classList.remove("grabbing");
+            });
+
+            scrollWrapper.addEventListener("mousemove", (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - scrollWrapper.offsetLeft;
+                const walk = (x - startX) * 2;
+                scrollWrapper.scrollLeft = scrollLeft - walk;
                 
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    element.textContent = current;
-                }, duration / (target / step));
-            };
+                // Update active dot
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(updateActiveDot, 150);
+            });
+
+            // Touch events for mobile
+            scrollWrapper.addEventListener("touchstart", (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - scrollWrapper.offsetLeft;
+                scrollLeft = scrollWrapper.scrollLeft;
+            });
+
+            scrollWrapper.addEventListener("touchend", () => {
+                isDown = false;
+            });
+
+            scrollWrapper.addEventListener("touchmove", (e) => {
+                if (!isDown) return;
+                const x = e.touches[0].pageX - scrollWrapper.offsetLeft;
+                const walk = (x - startX) * 2;
+                scrollWrapper.scrollLeft = scrollLeft - walk;
+                
+                // Update active dot
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(updateActiveDot, 150);
+            });
+
+            // Create navigation dots
+            function createNavDots() {
+                const container = document.getElementById('navDots');
+                const cards = document.querySelectorAll('.tm-card');
+                
+                container.innerHTML = '';
+                
+                cards.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.className = 'dot';
+                    if (index === 0) dot.classList.add('active');
+                    
+                    dot.addEventListener('click', () => {
+                        scrollToCard(index);
+                    });
+                    
+                    container.appendChild(dot);
+                });
+            }
             
-            // Trigger counters when in viewport
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                        observer.unobserve(entry.target);
+            // Scroll to specific card
+            function scrollToCard(index) {
+                const cards = document.querySelectorAll('.tm-card');
+                if (cards[index]) {
+                    const card = cards[index];
+                    const container = card.parentElement;
+                    const scrollWrapper = container.parentElement;
+                    
+                    const cardLeft = card.offsetLeft;
+                    const wrapperWidth = scrollWrapper.offsetWidth;
+                    const cardWidth = card.offsetWidth;
+                    
+                    scrollWrapper.scrollTo({
+                        left: cardLeft - (wrapperWidth / 2) + (cardWidth / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active dot
+                    updateActiveDot();
+                }
+            }
+            
+            // Update active dot based on scroll position
+            function updateActiveDot() {
+                const scrollWrapper = document.querySelector(".tm-scroll-wrapper");
+                const cards = document.querySelectorAll('.tm-card');
+                const dots = document.querySelectorAll('.dot');
+                
+                if (cards.length === 0 || dots.length === 0) return;
+                
+                const scrollPosition = scrollWrapper.scrollLeft;
+                const wrapperWidth = scrollWrapper.offsetWidth;
+                
+                let activeIndex = 0;
+                let minDistance = Infinity;
+                
+                cards.forEach((card, index) => {
+                    const cardLeft = card.offsetLeft;
+                    const cardWidth = card.offsetWidth;
+                    const cardCenter = cardLeft + (cardWidth / 2);
+                    const wrapperCenter = scrollPosition + (wrapperWidth / 2);
+                    const distance = Math.abs(cardCenter - wrapperCenter);
+                    
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        activeIndex = index;
                     }
                 });
-            }, { threshold: 0.5 });
+                
+                dots.forEach((dot, index) => {
+                    if (index === activeIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
             
-            statNumbers.forEach(stat => {
-                observer.observe(stat);
+            // Initialize dots and update on scroll
+            createNavDots();
+            scrollWrapper.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(updateActiveDot, 150);
             });
             
-            // Add click effect to feature cards
-            const featureCards = document.querySelectorAll('.feature-card');
-            featureCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    this.style.transform = 'translateY(-10px) scale(0.98)';
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    scrollWrapper.scrollBy({ left: -400, behavior: 'smooth' });
+                    updateActiveDot();
+                } else if (e.key === 'ArrowRight') {
+                    scrollWrapper.scrollBy({ left: 400, behavior: 'smooth' });
+                    updateActiveDot();
+                }
+            });
+            
+            // Add click effect to cards
+            document.querySelectorAll('.tm-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (isDown) return; // Don't trigger if dragging
+                    
+                    this.style.transform = 'translateY(-5px) scale(0.99)';
                     setTimeout(() => {
-                        this.style.transform = 'translateY(-15px)';
+                        this.style.transform = 'translateY(-10px)';
                     }, 150);
                 });
             });
-            
-            // Add keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                if (e.key >= '1' && e.key <= '4') {
-                    const index = parseInt(e.key) - 1;
-                    if (featureCards[index]) {
-                        featureCards[index].click();
-                    }
-                }
-            });
-        });
+        }
+
+        window.addEventListener("load", testimonialhandler);
     </script>
 </body>
 </html>
