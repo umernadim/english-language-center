@@ -125,26 +125,26 @@ function courseCardsData() {
     {
       title: "Spoken English",
       descp:
-        "Improve fluency, pronunciation, and confidence through interactive speaking sessions and real-life practice.",
-      p1: "Daily conversation practice",
-      p2: "Accent reduction techniques",
+        "Boost your fluency, pronunciation, and confidence with fun, interactive speaking sessions.",
+      p1: "Practice real conversations every day",
+      p2: "Work on your accent naturally",
       p3: "Real-world scenario training",
     },
     {
       title: "Grammar Mastery",
       descp:
-        "Strengthen your foundation in English grammar with practical examples and engaging exercises that make learning enjoyable.",
-      p1: "Interactive grammar exercises",
-      p2: "Common error correction",
-      p3: "Contextual grammar application",
+        "Build a strong foundation in English grammar with easy-to-understand examples and fun, practical exercises.",
+      p1: "Practice with interactive activities",
+      p2: "Learn from common mistakes",
+      p3: "Use grammar naturally in real-life situations",
     },
     {
       title: "Advanced English",
       descp:
-        "Master the language with our advanced course, perfect for professionals and academics seeking to refine communication, expand vocabulary.",
-      p1: "Business communication skills",
-      p2: "Academic writing techniques",
-      p3: "Professional presentation skills",
+        "Take your English to the next level with our advanced course—perfect for professionals who want to sharpen their communication and grow vocabulary.",
+      p1: "Improve your business communication",
+      p2: "Learn effective academic writing",
+      p3: "Build confident presentation skills",
     },
   ];
 
@@ -179,25 +179,25 @@ function featureshandler() {
     {
       no: "01",
       title: "Expert Instructors",
-      descp: "Learn from native speakers and certified language experts with years of teaching experience and proven success records.",
+      descp: "Learn from native speakers and certified language experts who have years of teaching experience and a proven track record of success.",
       icon: "ri-presentation-fill"
     },
     {
       no: "02",
       title: "Flexible Learning",
-      descp: "Choose between in-person classes, online sessions, or a hybrid approach that perfectly fits your schedule and learning style",
+      descp: "Choose in-person classes, online sessions, or a hybrid approach to suit your convenience and learning style.",
       icon: "ri-macbook-line"
     },
     {
       no: "03",
       title: "Interactive Learning",
-      descp: "Engage in real conversations, interactive games, and practical activities that make learning English fun and effective.",
+      descp: "Participate in real conversations, interactive games, and practical activities that make learning English fun and effective.",
       icon: "ri-chat-smile-2-line"
     },
     {
       no: "04",
       title: "Cultural Immersion",
-      descp: "Experience an international environment of English-learning right from your home country. Learn not just English but cultural references through the lens of native speakers.",
+      descp: "Experience an international English learning environment while living in your own country. Learn not just English, but also cultural contexts from the perspective of native speakers.",
       icon: "ri-earth-line"
     }
 
