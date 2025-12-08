@@ -120,6 +120,32 @@
     left: 100%;
 }
 
+/* code for decorative circles */
+/* Decorative elements */
+.decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    background: #3b82f6;
+    top: 20%;
+    left: 5%;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    background: #8b5cf6;
+    bottom: 10%;
+    right: 5%;
+}
+
+
 
 body {
     height: 100%;
@@ -394,6 +420,8 @@ nav #menuBtn {
     width: 100%;
     min-height: 120vh;
     padding: 6rem 8%;
+    position: relative;
+    overflow: hidden;
 }
 
 #learn-section .section-header {
@@ -476,10 +504,10 @@ nav #menuBtn {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
     z-index: -1;
-    animation: pulse 2s infinite;
+    animation: pulse1 2s infinite;
 }
 
-@keyframes pulse {
+@keyframes pulse1 {
     0% {
         transform: scale(1);
         opacity: 0.8;
@@ -622,10 +650,10 @@ nav #menuBtn {
     font-size: 3.5rem;
     margin-right: 1.3rem;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-    animation: pulse 2s infinite;
+    animation: pulse2 2s infinite;
 }
 
-@keyframes pulse {
+@keyframes pulse2 {
     0% {
         transform: scale(1);
     }
@@ -1052,30 +1080,6 @@ nav #menuBtn {
 }
 
 
-/* Decorative elements */
-.decorative-circle {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.05;
-    z-index: 0;
-}
-
-.circle-1 {
-    width: 200px;
-    height: 200px;
-    background: #3b82f6;
-    top: 20%;
-    left: 5%;
-}
-
-.circle-2 {
-    width: 150px;
-    height: 150px;
-    background: #8b5cf6;
-    bottom: 10%;
-    right: 5%;
-}
-
 /* Responsiveness for Course Section  */
 @media screen and (max-width: 768px) {
     #course-section {
@@ -1324,7 +1328,7 @@ nav #menuBtn {
 }
 
 /* Pulse animation for icons */
-@keyframes pulse {
+@keyframes pulse3 {
     0% {
         box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
     }
@@ -1339,22 +1343,22 @@ nav #menuBtn {
 }
 
 #feature-section .icon-container {
-    animation: pulse 2s infinite;
+    animation: pulse3 2s infinite;
 }
 
-.feature-card:nth-child(1) .icon-container {
+#feature-section .feature-card:nth-child(1) .icon-container {
     animation-delay: 0.5s;
 }
 
-.feature-card:nth-child(2) .icon-container {
+#feature-section .feature-card:nth-child(2) .icon-container {
     animation-delay: 1s;
 }
 
-.feature-card:nth-child(3) .icon-container {
+#feature-section .feature-card:nth-child(3) .icon-container {
     animation-delay: 1.5s;
 }
 
-.feature-card:nth-child(4) .icon-container {
+#feature-section .feature-card:nth-child(4) .icon-container {
     animation-delay: 2s;
 }
 
@@ -1402,7 +1406,7 @@ nav #menuBtn {
 #testimonial-sect {
     padding: 4rem 7%;
     text-align: center;
-    /* background: var(--bg-color-d); */
+    background: var(--bg-color-d);
 }
 
 #testimonial-sect h2 {
@@ -1544,56 +1548,6 @@ nav #menuBtn {
     }
 }
 
-
-
-/* code for CTA section  */
-#cta-section {
-    min-height: 55vh;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cta-container {
-    height: 100%;
-    width: 100%;
-}
-
-.cta-container h2 {
-    font-size: 2rem;
-    color: var(--heading-color);
-    margin-bottom: 0.8rem;
-    font-weight: 700;
-}
-
-.cta-container p {
-    color: var(--text-color-d);
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-}
-
-
-@media screen and (max-width: 768px) {
-    #cta-section {
-        min-height: 70vh;
-    }
-
-    .cta-container {
-        padding: 1.2rem;
-    }
-
-    .cta-container h2 {
-        font-size: 2rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .cta-container p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-    }
-}
 
 
 /* ***********************
@@ -2356,49 +2310,6 @@ nav #menuBtn {
     }
 }
 
-
-/* code for CTA section  */
-#join-journey {
-    text-align: center;
-    min-height: 60vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.join-container h2 {
-    font-size: 2.2rem;
-    color: var(--heading-color);
-    margin-bottom: 0.5rem;
-}
-
-.join-container p {
-    font-size: 1.1rem;
-    color: var(--text-color-d);
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.join-container span {
-    color: #007acc;
-    font-weight: 600;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    #join-journey {
-        padding: 0 1.2rem;
-    }
-
-    .join-container h2 {
-        font-size: 1.8rem;
-    }
-
-    .join-container p {
-        font-size: 1rem;
-    }
-}
 
 
 /************************************
@@ -4374,5 +4285,50 @@ footer .footer-bottom-links li a:hover {
 
     footer .footer-bottom-links li a {
         font-size: 0.9rem;
+    }
+}
+
+
+
+/* code for CTA section  */
+#join-journey {
+    text-align: center;
+    min-height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-container h2 {
+    font-size: 2.2rem;
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+}
+
+.join-container p {
+    font-size: 1.1rem;
+    color: var(--text-color-d);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.join-container span {
+    color: #007acc;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #join-journey {
+        padding: 0 1.2rem;
+    }
+
+    .join-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .join-container p {
+        font-size: 1rem;
     }
 }
