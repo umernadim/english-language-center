@@ -1,702 +1,807 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hope English Language Center - Navbar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    />
     <style>
-        :root {
-            --heading-color: #1e3a8a;
-            --text-color-d: #475569;
-            --primary-color: #3b82f6;
-            --secondary-color: #8b5cf6;
-            --accent-color: #10b981;
-            --light-bg: #f8fafc;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f1f5f9;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        /* Container for demo */
-        .demo-container {
-            padding: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        /* Navbar Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled {
-            padding: 5px 0;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-        
-        /* Logo */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .logo-text .brand-name {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--heading-color);
-            line-height: 1;
-        }
-        
-        .logo-text .tagline {
-            font-size: 0.8rem;
-            color: var(--text-color-d);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Desktop Navigation */
+      :root {
+        --heading-color: #1e3a8a;
+        --text-color-d: #475569;
+        --primary-color: #3b82f6;
+        --secondary-color: #8b5cf6;
+        --accent-color: #10b981;
+        --light-bg: #f8fafc;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f1f5f9;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* Container for demo */
+      .demo-container {
+        padding: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.505);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .navbar.active {
+        background: none;
+        backdrop-filter: none;
+        box-shadow: none;
+      }
+
+      .navbar.scrolled {
+        padding: 5px 0;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2.6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+      }
+
+      /* Logo */
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+
+      .logo.active {
+        opacity: 0;
+      }
+
+      .logo-icon {
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .logo-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+
+      .logo-text .brand-name {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--heading-color);
+        line-height: 1;
+      }
+
+      .logo-text .tagline {
+        font-size: 0.8rem;
+        color: var(--text-color-d);
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+
+      /* Desktop Navigation */
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links li {
+        position: relative;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--heading-color);
+        font-weight: 600;
+        font-size: 1.05rem;
+        padding: 8px 0;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary-color);
+      }
+
+      /* Active link indicator */
+      .nav-links a:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        border-radius: 3px;
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover:after,
+      .nav-links a.active:after {
+        width: 100%;
+      }
+
+      /* Hamburger Menu (Mobile) */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 27px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+      }
+
+      .hamburger span {
+        width: 100%;
+        height: 3px;
+        background: var(--heading-color);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+        transform-origin: left;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg);
+        background: #fff;
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+          background: #fff;
+        transform: rotate(-45deg);
+      }
+
+      /* Mobile Sidebar Menu */
+      .mobile-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: white;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        padding: 100px 30px 40px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+      }
+
+      .mobile-nav.active {
+        left: 0;
+      }
+
+      #mobile-logo{
+        margin-bottom: 30px;
+      }
+
+      .mobile-nav-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .mobile-nav-links a {
+        text-decoration: none;
+        color: var(--heading-color);
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 12px 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid #f1f5f9;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-nav-links a:hover {
+        color: var(--primary-color);
+        padding-left: 10px;
+      }
+
+      .mobile-nav-links a i {
+        font-size: 1.3rem;
+        width: 30px;
+      }
+
+      /* Overlay for mobile menu */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Demo content */
+      .demo-content {
+        margin-top: 100px;
+        padding: 30px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .demo-content h1 {
+        color: var(--heading-color);
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+      }
+
+      .demo-content p {
+        color: var(--text-color-d);
+        line-height: 1.7;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1100px) {
         .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
+          gap: 1.5rem;
         }
-        
-        .nav-links li {
-            position: relative;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--heading-color);
-            font-weight: 600;
-            font-size: 1.05rem;
-            padding: 8px 0;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .nav-links a i {
-            font-size: 1.2rem;
-        }
-        
-        /* Active link indicator */
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            border-radius: 3px;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover:after,
-        .nav-links a.active:after {
-            width: 100%;
-        }
-        
-        /* CTA Button */
+
         .nav-cta {
-            padding: 12px 28px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-radius: 10px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+          padding: 10px 22px;
+          font-size: 0.95rem;
         }
-        
-        .nav-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+      }
+
+      @media (max-width: 992px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
         }
-        
-        /* Hamburger Menu (Mobile) */
+
         .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 1001;
+          display: flex;
         }
-        
-        .hamburger span {
-            width: 100%;
-            height: 3px;
-            background: var(--heading-color);
-            border-radius: 3px;
-            transition: all 0.3s ease;
-            transform-origin: left;
+
+        .nav-container {
+          padding: 0 20px;
+          height: 70px;
         }
-        
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg);
+
+        .navbar.scrolled {
+          padding: 0;
         }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg);
-        }
-        
-        /* Mobile Sidebar Menu */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 85%;
-            max-width: 350px;
-            height: 100vh;
-            background: white;
-            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            padding: 100px 30px 40px;
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-        }
-        
-        .mobile-nav.active {
-            left: 0;
-        }
-        
-        .mobile-nav-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .mobile-nav-links a {
-            text-decoration: none;
-            color: var(--heading-color);
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding: 12px 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 1px solid #f1f5f9;
-            transition: all 0.3s ease;
-        }
-        
-        .mobile-nav-links a:hover {
-            color: var(--primary-color);
-            padding-left: 10px;
-        }
-        
-        .mobile-nav-links a i {
-            font-size: 1.3rem;
-            width: 30px;
-        }
-        
-        .mobile-nav-cta {
-            padding: 15px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-radius: 10px;
-            font-weight: 600;
-            text-decoration: none;
-            text-align: center;
-            margin-top: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 1.1rem;
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
-        }
-        
-        /* Overlay for mobile menu */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* Demo content */
+
         .demo-content {
-            margin-top: 100px;
-            padding: 30px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+          margin-top: 90px;
+          padding: 20px;
         }
-        
+
         .demo-content h1 {
-            color: var(--heading-color);
-            margin-bottom: 20px;
-            font-size: 2.5rem;
+          font-size: 2rem;
         }
-        
-        .demo-content p {
-            color: var(--text-color-d);
-            line-height: 1.7;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+      }
+
+      @media (max-width: 480px) {
+        .nav-container {
+          padding: 0 15px;
         }
-        
-        /* Responsive Design */
-        @media (max-width: 1100px) {
-            .nav-links {
-                gap: 1.5rem;
-            }
-            
-            .nav-cta {
-                padding: 10px 22px;
-                font-size: 0.95rem;
-            }
+
+        .logo-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 1.3rem;
         }
-        
-        @media (max-width: 992px) {
-            .nav-links,
-            .nav-cta {
-                display: none;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-            
-            .nav-container {
-                padding: 0 20px;
-                height: 70px;
-            }
-            
-            .navbar.scrolled {
-                padding: 0;
-            }
-            
-            .demo-content {
-                margin-top: 90px;
-                padding: 20px;
-            }
-            
-            .demo-content h1 {
-                font-size: 2rem;
-            }
+
+        .logo-text .brand-name {
+          font-size: 1.3rem;
         }
-        
-        @media (max-width: 480px) {
-            .nav-container {
-                padding: 0 15px;
-            }
-            
-            .logo-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1.3rem;
-            }
-            
-            .logo-text .brand-name {
-                font-size: 1.3rem;
-            }
-            
-            .logo-text .tagline {
-                font-size: 0.7rem;
-            }
-            
-            .mobile-nav {
-                width: 90%;
-                padding: 90px 20px 30px;
-            }
-            
-            .demo-content {
-                padding: 15px;
-            }
+
+        .logo-text .tagline {
+          font-size: 0.7rem;
         }
-        
-        /* Scroll progress indicator */
-        .scroll-progress {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            transition: width 0.1s ease;
+
+        .mobile-nav {
+          width: 90%;
+          padding: 40px 30px;
         }
-        
-        /* Language selector */
-        .language-selector {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 15px;
-            border-radius: 20px;
-            background: #f1f5f9;
-            cursor: pointer;
-            transition: all 0.3s ease;
+
+        .demo-content {
+          padding: 15px;
         }
-        
-        .language-selector:hover {
-            background: #e2e8f0;
-        }
-        
-        .language-selector i {
-            color: var(--primary-color);
-            font-size: 1.1rem;
-        }
-        
-        .language-selector span {
-            font-weight: 600;
-            color: var(--heading-color);
-        }
-        
-        /* Dropdown for language (optional) */
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            min-width: 150px;
-        }
-        
-        .language-dropdown.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .language-dropdown a {
-            display: block;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: var(--text-color-d);
-            transition: all 0.2s ease;
-        }
-        
-        .language-dropdown a:hover {
-            background: #f8fafc;
-            color: var(--primary-color);
-        }
-        
-        /* For demo purposes, show the dropdown on hover */
-        .language-selector-wrapper {
-            position: relative;
-        }
-        
-        .language-selector-wrapper:hover .language-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+      }
+
+      /* Scroll progress indicator */
+      .scroll-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        transition: width 0.1s ease;
+      }
+
+      /* Language selector */
+      .language-selector {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 15px;
+        border-radius: 20px;
+        background: #f1f5f9;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .language-selector:hover {
+        background: #e2e8f0;
+      }
+
+      .language-selector i {
+        color: var(--primary-color);
+        font-size: 1.1rem;
+      }
+
+      .language-selector span {
+        font-weight: 600;
+        color: var(--heading-color);
+      }
+
+      /* Dropdown for language (optional) */
+      .language-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        min-width: 150px;
+      }
+
+      .language-dropdown.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .language-dropdown a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: var(--text-color-d);
+        transition: all 0.2s ease;
+      }
+
+      .language-dropdown a:hover {
+        background: #f8fafc;
+        color: var(--primary-color);
+      }
+
+      /* For demo purposes, show the dropdown on hover */
+      .language-selector-wrapper {
+        position: relative;
+      }
+
+      .language-selector-wrapper:hover .language-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* .mobile-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      .mobile-logo .logo-icon {
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .mobile-logo .logo-text .brand-name {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--heading-color);
+      }
+
+      .mobile-logo .logo-text .tagline {
+        font-size: 0.8rem;
+        color: var(--text-color-d);
+      } */
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="scroll-progress" id="scrollProgress"></div>
+      <div class="scroll-progress" id="scrollProgress"></div>
+      <div class="dkNav-container">
         <div class="nav-container">
-            <!-- Logo -->
-            <a href="#" class="logo">
-                <div class="logo-icon">H</div>
-                <div class="logo-text">
-                    <div class="brand-name">Hope English</div>
-                    <div class="tagline">Language Center</div>
-                </div>
-            </a>
-            
-            <!-- Desktop Navigation -->
-            <ul class="nav-links">
-                <li><a href="#" class="active"><i class="ri-home-4-line"></i> Home</a></li>
-                <li><a href="#"><i class="ri-book-open-line"></i> Courses</a></li>
-                <li><a href="#"><i class="ri-information-line"></i> About</a></li>
-                <li><a href="#"><i class="ri-team-line"></i> Instructors</a></li>
-                <li><a href="#"><i class="ri-calendar-event-line"></i> Events</a></li>
-                <li><a href="#"><i class="ri-phone-line"></i> Contact</a></li>
-                
-                <!-- Language Selector (Desktop) -->
-                <li class="language-selector-wrapper">
-                    <div class="language-selector">
-                        <i class="ri-global-line"></i>
-                        <span>EN</span>
-                        <i class="ri-arrow-down-s-line"></i>
-                    </div>
-                    <div class="language-dropdown">
-                        <a href="#">English</a>
-                        <a href="#">हिन्दी</a>
-                        <a href="#">Español</a>
-                        <a href="#">Français</a>
-                    </div>
-                </li>
-            </ul>
-            
-            <!-- Desktop CTA Button -->
-            <a href="#" class="nav-cta">
-                <i class="ri-user-add-line"></i> Enroll Now
-            </a>
-            
-            <!-- Mobile Hamburger Menu -->
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+          <!-- Logo -->
+          <a href="#" class="logo">
+            <div class="logo-icon">H</div>
+            <div class="logo-text">
+              <div class="brand-name">Hope English</div>
+              <div class="tagline">Language Center</div>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <ul class="nav-links">
+            <li><a href="index.html" class="active"> Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blogs.html"> Blogs</a></li>
+            <li><a href="quiz.html"> Quiz</a></li>
+            <li><a href="vocubulary.html"> Vocabulary</a></li>
+            <li><a href="courses.html"> Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <!-- Mobile Hamburger Menu -->
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-        
-        <!-- Mobile Sidebar Menu -->
-        <div class="mobile-nav" id="mobileNav">
-            <ul class="mobile-nav-links">
-                <li><a href="#" class="active"><i class="ri-home-4-line"></i> Home</a></li>
-                <li><a href="#"><i class="ri-book-open-line"></i> Courses</a></li>
-                <li><a href="#"><i class="ri-information-line"></i> About</a></li>
-                <li><a href="#"><i class="ri-team-line"></i> Instructors</a></li>
-                <li><a href="#"><i class="ri-calendar-event-line"></i> Events</a></li>
-                <li><a href="#"><i class="ri-phone-line"></i> Contact</a></li>
-                
-                <!-- Language Selector (Mobile) -->
-                <li>
-                    <a href="#" class="language-selector-mobile">
-                        <i class="ri-global-line"></i> Language (EN)
-                    </a>
-                </li>
-            </ul>
-            
-            <!-- Mobile CTA Button -->
-            <a href="#" class="mobile-nav-cta">
-                <i class="ri-user-add-line"></i> Enroll Now
-            </a>
-        </div>
-        
-        <!-- Overlay for mobile menu -->
-        <div class="overlay" id="overlay"></div>
+      </div>
     </nav>
-    
+    <!-- Mobile Sidebar Menu -->
+    <div class="mobile-nav" id="mobileNav">
+      <!-- <div class="mobile-logo">
+          <div class="logo-icon">H</div>
+          <div class="logo-text">
+            <div class="brand-name">Hope English</div>
+            <div class="tagline">Language Center</div>
+          </div>
+        </div> -->
+      <a href="#" class="logo" id="mobile-logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">
+          <div class="brand-name">Hope English</div>
+          <div class="tagline">Language Center</div>
+        </div>
+      </a>
+      <ul class="mobile-nav-links">
+        <li>
+          <a href="index.html" class="active"
+            ><i class="ri-home-4-line"></i> Home</a
+          >
+        </li>
+
+        <li>
+          <a href="about.html"><i class="ri-user-3-line"></i> About</a>
+        </li>
+
+        <li>
+          <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
+        </li>
+
+        <li>
+          <a href="blogs.html"><i class="ri-article-line"></i> Blogs</a>
+        </li>
+
+        <li>
+          <a href="quiz.html"><i class="ri-questionnaire-line"></i> Quiz</a>
+        </li>
+
+        <li>
+          <a href="vocubulary.html"
+            ><i class="ri-book-2-line"></i> Vocabulary</a
+          >
+        </li>
+
+        <li>
+          <a href="courses.html"><i class="ri-book-open-line"></i> Courses</a>
+        </li>
+
+        <li>
+          <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
     <!-- Demo Content -->
     <div class="demo-container">
-        <div class="demo-content">
-            <h1>Hope English Language Center</h1>
-            <p>This is a demo page to showcase the responsive navbar. Scroll down to see the navbar behavior, and resize your browser to see how it adapts to different screen sizes.</p>
-            <p>On larger screens, the navbar displays all navigation items horizontally. On smaller screens, it transforms into a hamburger menu that opens a sidebar from the left.</p>
-            <p>The navbar includes smooth animations, a scroll progress indicator, and a language selector dropdown.</p>
-            
-            <h2 style="margin-top: 30px; color: var(--heading-color);">Features of this Navbar:</h2>
-            <ul style="color: var(--text-color-d); line-height: 1.7; margin-left: 20px; margin-bottom: 20px;">
-                <li>Responsive design that works on all devices</li>
-                <li>Left-side mobile menu with smooth slide animation</li>
-                <li>Scroll progress indicator at the top</li>
-                <li>Language selector with dropdown</li>
-                <li>Active link indicator with gradient underline</li>
-                <li>Sticky navbar with shadow effect on scroll</li>
-                <li>Clean, modern design with gradient accents</li>
-            </ul>
-            
-            <p>Scroll down to see more content and observe how the navbar behaves...</p>
-            
-            <!-- Dummy content to enable scrolling -->
-            <div style="height: 800px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 15px; margin-top: 30px;">
-                <div style="text-align: center; padding: 40px;">
-                    <i class="ri-arrow-down-line" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; display: block;"></i>
-                    <h3 style="color: var(--heading-color);">Scroll back to top to see the navbar in action</h3>
-                </div>
-            </div>
+      <div class="demo-content">
+        <h1>Hope English Language Center</h1>
+        <p>
+          This is a demo page to showcase the responsive navbar. Scroll down to
+          see the navbar behavior, and resize your browser to see how it adapts
+          to different screen sizes.
+        </p>
+        <p>
+          On larger screens, the navbar displays all navigation items
+          horizontally. On smaller screens, it transforms into a hamburger menu
+          that opens a sidebar from the left.
+        </p>
+        <p>
+          The navbar includes smooth animations, a scroll progress indicator,
+          and a language selector dropdown.
+        </p>
+
+        <h2 style="margin-top: 30px; color: var(--heading-color)">
+          Features of this Navbar:
+        </h2>
+        <ul
+          style="
+            color: var(--text-color-d);
+            line-height: 1.7;
+            margin-left: 20px;
+            margin-bottom: 20px;
+          "
+        >
+          <li>Responsive design that works on all devices</li>
+          <li>Left-side mobile menu with smooth slide animation</li>
+          <li>Scroll progress indicator at the top</li>
+          <li>Language selector with dropdown</li>
+          <li>Active link indicator with gradient underline</li>
+          <li>Sticky navbar with shadow effect on scroll</li>
+          <li>Clean, modern design with gradient accents</li>
+        </ul>
+
+        <p>
+          Scroll down to see more content and observe how the navbar behaves...
+        </p>
+
+        <!-- Dummy content to enable scrolling -->
+        <div
+          style="
+            height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+            border-radius: 15px;
+            margin-top: 30px;
+          "
+        >
+          <div style="text-align: center; padding: 40px">
+            <i
+              class="ri-arrow-down-line"
+              style="
+                font-size: 3rem;
+                color: var(--primary-color);
+                margin-bottom: 20px;
+                display: block;
+              "
+            ></i>
+            <h3 style="color: var(--heading-color)">
+              Scroll back to top to see the navbar in action
+            </h3>
+          </div>
         </div>
+      </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get DOM elements
-            const hamburger = document.getElementById('hamburger');
-            const mobileNav = document.getElementById('mobileNav');
-            const overlay = document.getElementById('overlay');
-            const navbar = document.querySelector('.navbar');
-            const scrollProgress = document.getElementById('scrollProgress');
-            const languageSelectors = document.querySelectorAll('.language-selector, .language-selector-mobile');
-            
-            // Toggle mobile menu
-            function toggleMobileMenu() {
-                hamburger.classList.toggle('active');
-                mobileNav.classList.toggle('active');
-                overlay.classList.toggle('active');
-                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-            }
-            
-            // Close mobile menu
-            function closeMobileMenu() {
-                hamburger.classList.remove('active');
-                mobileNav.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-            
-            // Event listeners
-            hamburger.addEventListener('click', toggleMobileMenu);
-            overlay.addEventListener('click', closeMobileMenu);
-            
-            // Close mobile menu when clicking on a link
-            const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', closeMobileMenu);
-            });
-            
-            // Navbar scroll effect
-            window.addEventListener('scroll', function() {
-                // Add/remove scrolled class
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-                
-                // Update scroll progress
-                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (window.scrollY / windowHeight) * 100;
-                scrollProgress.style.width = scrolled + '%';
-            });
-            
-            // Language selector toggle (for mobile)
-            const languageMobile = document.querySelector('.language-selector-mobile');
-            if (languageMobile) {
-                languageMobile.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('Language selector clicked. In a real implementation, this would open a language selection dialog.');
-                });
-            }
-            
-            // Active link management
-            const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // Remove active class from all links
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    
-                    // Add active class to clicked link
-                    this.classList.add('active');
-                    
-                    // For desktop links, prevent default only for demo
-                    if (!this.getAttribute('href') || this.getAttribute('href') === '#') {
-                        e.preventDefault();
-                    }
-                });
-            });
-            
-            // Keyboard shortcuts
-            document.addEventListener('keydown', function(e) {
-                // Escape key closes mobile menu
-                if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
-                    closeMobileMenu();
-                }
-                
-                // M key toggles mobile menu (for testing)
-                if (e.key === 'm' || e.key === 'M') {
-                    toggleMobileMenu();
-                }
-            });
-            
-            // Initialize active link
-            const currentPath = window.location.pathname;
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPath) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // Demo: Add some scrolling animation for the demo content
-            const demoContent = document.querySelector('.demo-content');
-            window.addEventListener('scroll', function() {
-                const scrolled = window.scrollY;
-                const rate = scrolled * -0.2;
-                
-                if (demoContent) {
-                    demoContent.style.transform = `translateY(${rate}px)`;
-                }
-            });
-            
-            // Console message for testing
-            console.log("Navbar loaded successfully!");
-            console.log("💡 Pro tip: Press 'M' to toggle the mobile menu, or 'ESC' to close it.");
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get DOM elements
+        const hamburger = document.getElementById("hamburger");
+        const mobileNav = document.getElementById("mobileNav");
+        const overlay = document.getElementById("overlay");
+        const navbar = document.querySelector(".navbar");
+        const logo = document.querySelector(".logo");
+        const scrollProgress = document.getElementById("scrollProgress");
+        const languageSelectors = document.querySelectorAll(
+          ".language-selector, .language-selector-mobile"
+        );
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+          hamburger.classList.toggle("active");
+          mobileNav.classList.toggle("active");
+          overlay.classList.toggle("active");
+          navbar.classList.toggle("active");
+            logo.classList.toggle("active");
+          document.body.style.overflow = mobileNav.classList.contains("active")
+            ? "hidden"
+            : "";
+        }
+
+        // Close mobile menu
+        function closeMobileMenu() {
+          hamburger.classList.remove("active");
+          mobileNav.classList.remove("active");
+          overlay.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+
+        // Event listeners
+        hamburger.addEventListener("click", toggleMobileMenu);
+        overlay.addEventListener("click", closeMobileMenu);
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll(".mobile-nav-links a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", closeMobileMenu);
         });
+
+        // Navbar scroll effect
+        window.addEventListener("scroll", function () {
+          // Add/remove scrolled class
+          if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+
+          // Update scroll progress
+          const windowHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const scrolled = (window.scrollY / windowHeight) * 100;
+          scrollProgress.style.width = scrolled + "%";
+        });
+
+        // Language selector toggle (for mobile)
+        const languageMobile = document.querySelector(
+          ".language-selector-mobile"
+        );
+        if (languageMobile) {
+          languageMobile.addEventListener("click", function (e) {
+            e.preventDefault();
+            alert(
+              "Language selector clicked. In a real implementation, this would open a language selection dialog."
+            );
+          });
+        }
+
+        // Active link management
+        const navLinks = document.querySelectorAll(
+          ".nav-links a, .mobile-nav-links a"
+        );
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            // Remove active class from all links
+            navLinks.forEach((l) => l.classList.remove("active"));
+
+            // Add active class to clicked link
+            this.classList.add("active");
+
+            // For desktop links, prevent default only for demo
+            if (
+              !this.getAttribute("href") ||
+              this.getAttribute("href") === "#"
+            ) {
+              e.preventDefault();
+            }
+          });
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener("keydown", function (e) {
+          // Escape key closes mobile menu
+          if (e.key === "Escape" && mobileNav.classList.contains("active")) {
+            closeMobileMenu();
+          }
+
+          // M key toggles mobile menu (for testing)
+          if (e.key === "m" || e.key === "M") {
+            toggleMobileMenu();
+          }
+        });
+
+        // Initialize active link
+        const currentPath = window.location.pathname;
+        navLinks.forEach((link) => {
+          if (link.getAttribute("href") === currentPath) {
+            link.classList.add("active");
+          }
+        });
+
+        // Demo: Add some scrolling animation for the demo content
+        const demoContent = document.querySelector(".demo-content");
+        window.addEventListener("scroll", function () {
+          const scrolled = window.scrollY;
+          const rate = scrolled * -0.2;
+
+          if (demoContent) {
+            demoContent.style.transform = `translateY(${rate}px)`;
+          }
+        });
+
+        // Console message for testing
+        console.log("Navbar loaded successfully!");
+        console.log(
+          "💡 Pro tip: Press 'M' to toggle the mobile menu, or 'ESC' to close it."
+        );
+      });
     </script>
-</body>
+  </body>
 </html>
