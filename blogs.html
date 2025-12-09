@@ -11,213 +11,255 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- navbar for smaller screen  -->
-    <div id="ns-container">
-      <aside class="links">
-        <h4>
-          <a href="index.html"><i class="ri-home-4-line"></i> Home</a>
-        </h4>
-          <h4>
-          <a href="about.html"><i class="ri-information-line"></i> About</a>
-        </h4>
-          <h4>
-          <a href="gallery.html"><i class="ri-information-line"></i> Gallery</a>
-        </h4>
-        <h4>
-          <a href="blogs.html"><i class="ri-article-line"></i> Blogs</a>
-        </h4>
-        <h4>
-          <a href="vocubulary.html"><i class="ri-book-open-line"></i> Vocabulary</a>
-        </h4>
-        <h4>
-          <a href="quiz.html"><i class="ri-quill-pen-line"></i> Grammar Quiz</a>
-        </h4>
-        <h4>
-          <a href="courses.html"><i class="ri-information-line"></i> Courses</a>
-        </h4>
-        <h4>
-          <a href="contact.html"><i class="ri-phone-line"></i> Contact Us</a>
-        </h4>
-      </aside>
-    </div>
+    <!--Code for navbar -->
+    <nav class="navbar">
+      <div class="scroll-progress" id="scrollProgress"></div>
+      <div class="dkNav-container">
+        <div class="nav-container">
+          <!-- Logo -->
+          <a href="index.html" class="logo" id="desktop-logo">
+            <div class="logo-icon">H</div>
+            <div class="logo-text">
+              <div class="brand-name">Hope English</div>
+              <div class="tagline">Language Center</div>
+            </div>
+          </a>
 
-    <!-- code for navBar  -->
-    <nav id="navBar">
-      <h3>Hope English Lang Center</h3>
-        <div class="links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="blogs.html">Blogs</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="vocubulary.html">Vocabulary</a>
-        <a href="courses.html">Courses</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
-      <div id="menuBtn">
-        <i class="ri-menu-3-line"></i>
+          <!-- Desktop Navigation -->
+          <ul class="nav-links">
+            <li><a href="index.html" class="active"> Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blogs.html"> Blogs</a></li>
+            <li><a href="quiz.html"> Quiz</a></li>
+            <li><a href="vocabulary.html"> Vocabulary</a></li>
+            <li><a href="courses.html"> Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <!-- Mobile Hamburger Menu -->
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </nav>
+    <!-- Mobile Sidebar Menu -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html" class="logo" id="mobile-logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">
+          <div class="brand-name">Hope English</div>
+          <div class="tagline">Language Center</div>
+        </div>
+      </a>
+      <ul class="mobile-nav-links">
+        <li>
+          <a href="index.html" class="active"
+            ><i class="ri-home-4-line"></i> Home</a
+          >
+        </li>
 
-    <!-- code for hero-section-banner  -->
-    <section id="B-hero-sec">
-      <div class="blog-header">
-        <div class="inner-header flex">
-          <div class="container">
-            <h1>Blogs & Insights</h1>
-            <p>
-              Tips, insights, and resources to help you on your language
-              learning journey
-            </p>
+        <li>
+          <a href="about.html"><i class="ri-user-3-line"></i> About</a>
+        </li>
+
+        <li>
+          <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
+        </li>
+
+        <li>
+          <a href="blogs.html"><i class="ri-article-line"></i> Blogs</a>
+        </li>
+
+        <li>
+          <a href="quiz.html"><i class="ri-questionnaire-line"></i> Quiz</a>
+        </li>
+
+        <li>
+          <a href="vocabulary.html"
+            ><i class="ri-book-2-line"></i> Vocabulary</a
+          >
+        </li>
+
+        <li>
+          <a href="courses.html"><i class="ri-book-open-line"></i> Courses</a>
+        </li>
+
+        <li>
+          <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="wrapper">
+      <!-- code for hero-section-banner  -->
+      <section id="B-hero-sec">
+        <div class="blog-header">
+          <div class="inner-header flex">
+            <div class="container">
+              <h1>Blogs & Insights</h1>
+              <p>
+                Tips, insights, and resources to help you on your language
+                learning journey
+              </p>
               <form class="search-form">
-              <input type="text" class="search-input" placeholder="Search for a post..." />
-              <button type="submit" class="search-button">
-                <i class="ri-search-line"></i>
-              </button>
-            </form>
-            <!-- <a href="#blog-section" class="btn">Read Latest Posts</a> -->
+                <input
+                  type="text"
+                  class="search-input"
+                  placeholder="Search for a post..."
+                />
+                <button type="submit" class="search-button">
+                  <i class="ri-search-line"></i>
+                </button>
+              </form>
+              <!-- <a href="#blog-section" class="btn">Read Latest Posts</a> -->
+            </div>
+          </div>
+          <div>
+            <svg
+              class="waves"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 24 150 28"
+              preserveAspectRatio="none"
+              shape-rendering="auto"
+            >
+              <defs>
+                <path
+                  id="gentle-wave"
+                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+                />
+              </defs>
+              <g class="parallax">
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="0"
+                  fill="rgba(255,255,255,0.7)"
+                />
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="3"
+                  fill="rgba(255,255,255,0.5)"
+                />
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="5"
+                  fill="rgba(255,255,255,0.3)"
+                />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+              </g>
+            </svg>
           </div>
         </div>
-        <div>
-          <svg
-            class="waves"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28"
-            preserveAspectRatio="none"
-            shape-rendering="auto"
-          >
-            <defs>
-              <path
-                id="gentle-wave"
-                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-              />
-            </defs>
-            <g class="parallax">
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="0"
-                fill="rgba(255,255,255,0.7)"
-              />
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="3"
-                fill="rgba(255,255,255,0.5)"
-              />
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="5"
-                fill="rgba(255,255,255,0.3)"
-              />
-              <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-            </g>
-          </svg>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- code for blogs-section  -->
-    <section id="blogs-section">
-      <div class="blog-container">
-        <!-- Blog Posts -->
-        <div class="blog-posts">
-          <!-- Blog Post 1 -->
-          <article class="blog-post">
-            <div class="post-image">
-              <img
-                src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                alt="Language Learning"
-              />
-            </div>
-            <div class="post-content">
-              <div class="post-meta">
-                <span><i class="ri-calendar-fill"></i> October 15, 2023</span>
-                <span><i class="ri-user-fill"></i> Sarah Johnson</span>
-                <span><i class="ri-folder-fill"></i> Learning Tips</span>
+      <!-- code for blogs-section  -->
+      <section id="blogs-section">
+        <div class="blog-container">
+          <!-- Blog Posts -->
+          <div class="blog-posts">
+            <!-- Blog Post 1 -->
+            <article class="blog-post">
+              <div class="post-image">
+                <img
+                  src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Language Learning"
+                />
               </div>
-              <h2 class="post-title">
-                <a href="#"
-                  >5 Effective Strategies for Accelerated Language Learning</a
-                >
-              </h2>
-              <p class="post-excerpt">
-                Discover proven techniques to speed up your language acquisition
-                process and become fluent faster. These methods have helped
-                thousands of students achieve their language goals.
-              </p>
-              <a href="#" class="read-more"
-                >Read More <i class="ri-arrow-right-line"></i
-              ></a>
-            </div>
-          </article>
-
-          <!-- Blog Post 2 -->
-          <article class="blog-post">
-            <div class="post-image">
-              <img
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                alt="Grammar Tips"
-              />
-            </div>
-            <div class="post-content">
-              <div class="post-meta">
-                <span><i class="ri-calendar-fill"></i> October 8, 2023</span>
-                <span><i class="ri-user-fill"></i> Michael Chen</span>
-                <span><i class="ri-folder-fill"></i> Grammar</span>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span><i class="ri-calendar-fill"></i> October 15, 2023</span>
+                  <span><i class="ri-user-fill"></i> Sarah Johnson</span>
+                  <span><i class="ri-folder-fill"></i> Learning Tips</span>
+                </div>
+                <h2 class="post-title">
+                  <a href="#"
+                    >5 Effective Strategies for Accelerated Language Learning</a
+                  >
+                </h2>
+                <p class="post-excerpt">
+                  Discover proven techniques to speed up your language
+                  acquisition process and become fluent faster. These methods
+                  have helped thousands of students achieve their language
+                  goals.
+                </p>
+                <a href="#" class="read-more"
+                  >Read More <i class="ri-arrow-right-line"></i
+                ></a>
               </div>
-              <h2 class="post-title">
-                <a href="#">Common Grammar Mistakes and How to Avoid Them</a>
-              </h2>
-              <p class="post-excerpt">
-                Even advanced learners make these common grammar errors. Learn
-                how to identify and correct them to improve your language
-                accuracy and sound more natural.
-              </p>
-              <a href="#" class="read-more"
-                >Read More <i class="ri-arrow-right-line"></i
-              ></a>
-            </div>
-          </article>
+            </article>
 
-          <!-- Blog Post 3 -->
-          <article class="blog-post">
-            <div class="post-image">
-              <img
-                src="https://images.unsplash.com/photo-1551836026-d5c8c2a22047?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                alt="Cultural Understanding"
-              />
-            </div>
-            <div class="post-content">
-              <div class="post-meta">
-                <span><i class="ri-calendar-fill"></i> October 1, 2023</span>
-                <span><i class="ri-user-fill"></i> Elena Rodriguez</span>
-                <span><i class="ri-folder-fill"></i> Culture</span>
+            <!-- Blog Post 2 -->
+            <article class="blog-post">
+              <div class="post-image">
+                <img
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Grammar Tips"
+                />
               </div>
-              <h2 class="post-title">
-                <a href="#"
-                  >The Importance of Cultural Understanding in Language
-                  Learning</a
-                >
-              </h2>
-              <p class="post-excerpt">
-                Language is more than just words and grammar. Understanding the
-                culture behind a language can dramatically improve your
-                communication skills and cultural competence.
-              </p>
-              <a href="#" class="read-more"
-                >Read More <i class="ri-arrow-right-line"></i
-              ></a>
-            </div>
-          </article>
-        </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span><i class="ri-calendar-fill"></i> October 8, 2023</span>
+                  <span><i class="ri-user-fill"></i> Michael Chen</span>
+                  <span><i class="ri-folder-fill"></i> Grammar</span>
+                </div>
+                <h2 class="post-title">
+                  <a href="#">Common Grammar Mistakes and How to Avoid Them</a>
+                </h2>
+                <p class="post-excerpt">
+                  Even advanced learners make these common grammar errors. Learn
+                  how to identify and correct them to improve your language
+                  accuracy and sound more natural.
+                </p>
+                <a href="#" class="read-more"
+                  >Read More <i class="ri-arrow-right-line"></i
+                ></a>
+              </div>
+            </article>
 
-        <!-- Sidebar -->
-        <aside class="blog-sidebar">
-          <!-- Search Widget -->
-          <!-- <div class="sidebar-widget">
+            <!-- Blog Post 3 -->
+            <article class="blog-post">
+              <div class="post-image">
+                <img
+                  src="https://images.unsplash.com/photo-1551836026-d5c8c2a22047?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Cultural Understanding"
+                />
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span><i class="ri-calendar-fill"></i> October 1, 2023</span>
+                  <span><i class="ri-user-fill"></i> Elena Rodriguez</span>
+                  <span><i class="ri-folder-fill"></i> Culture</span>
+                </div>
+                <h2 class="post-title">
+                  <a href="#"
+                    >The Importance of Cultural Understanding in Language
+                    Learning</a
+                  >
+                </h2>
+                <p class="post-excerpt">
+                  Language is more than just words and grammar. Understanding
+                  the culture behind a language can dramatically improve your
+                  communication skills and cultural competence.
+                </p>
+                <a href="#" class="read-more"
+                  >Read More <i class="ri-arrow-right-line"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="blog-sidebar">
+            <!-- Search Widget -->
+            <!-- <div class="sidebar-widget">
             <h3 class="widget-title">Search</h3>
             <form class="search-form">
               <input type="text" class="search-input" placeholder="Search..." />
@@ -227,92 +269,94 @@
             </form>
           </div> -->
 
-          <!-- Recent Posts Widget -->
-          <div class="sidebar-widget">
-            <h3 class="widget-title">Recent Posts</h3>
-            <ul class="recent-posts">
-              <li class="recent-post">
-                <div class="recent-post-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1542662565-7e4b66bae529?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                    alt="Recent Post"
-                  />
-                </div>
-                <div class="recent-post-content">
-                  <h4>
-                    <a href="#">How to Build a Study Routine That Works</a>
-                  </h4>
-                  <div class="recent-post-date">Sep 25, 2023</div>
-                </div>
-              </li>
-              <li class="recent-post">
-                <div class="recent-post-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&500&q=80"
-                    alt="Recent Post"
-                  />
-                </div>
-                <div class="recent-post-content">
-                  <h4>
-                    <a href="#">The Benefits of Learning a Second Language</a>
-                  </h4>
-                  <div class="recent-post-date">Sep 18, 2023</div>
-                </div>
-              </li>
-              <li class="recent-post">
-                <div class="recent-post-image">
-                  <img
-                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&500&q=80"
-                    alt="Recent Post"
-                  />
-                </div>
-                <div class="recent-post-content">
-                  <h4><a href="#">Overcoming Language Learning Plateaus</a></h4>
-                  <div class="recent-post-date">Sep 10, 2023</div>
-                </div>
-              </li>
-            </ul>
-          </div>
+            <!-- Recent Posts Widget -->
+            <div class="sidebar-widget">
+              <h3 class="widget-title">Recent Posts</h3>
+              <ul class="recent-posts">
+                <li class="recent-post">
+                  <div class="recent-post-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1542662565-7e4b66bae529?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                      alt="Recent Post"
+                    />
+                  </div>
+                  <div class="recent-post-content">
+                    <h4>
+                      <a href="#">How to Build a Study Routine That Works</a>
+                    </h4>
+                    <div class="recent-post-date">Sep 25, 2023</div>
+                  </div>
+                </li>
+                <li class="recent-post">
+                  <div class="recent-post-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&500&q=80"
+                      alt="Recent Post"
+                    />
+                  </div>
+                  <div class="recent-post-content">
+                    <h4>
+                      <a href="#">The Benefits of Learning a Second Language</a>
+                    </h4>
+                    <div class="recent-post-date">Sep 18, 2023</div>
+                  </div>
+                </li>
+                <li class="recent-post">
+                  <div class="recent-post-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&500&q=80"
+                      alt="Recent Post"
+                    />
+                  </div>
+                  <div class="recent-post-content">
+                    <h4>
+                      <a href="#">Overcoming Language Learning Plateaus</a>
+                    </h4>
+                    <div class="recent-post-date">Sep 10, 2023</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
 
-          <!-- Categories Widget -->
-          <div class="sidebar-widget">
-            <h3 class="widget-title">Categories</h3>
-            <ul class="categories-list">
-              <li>
-                <a href="#"
-                  >Learning Tips <span class="category-count">12</span></a
-                >
-              </li>
-              <li>
-                <a href="#">Grammar <span class="category-count">8</span></a>
-              </li>
-              <li>
-                <a href="#"
-                  >Vocabulary <span class="category-count">15</span></a
-                >
-              </li>
-              <li>
-                <a href="#">Culture <span class="category-count">6</span></a>
-              </li>
-              <li>
-                <a href="#"
-                  >Study Resources <span class="category-count">10</span></a
-                >
-              </li>
-            </ul>
-          </div>
-        </aside>
-      </div>
+            <!-- Categories Widget -->
+            <div class="sidebar-widget">
+              <h3 class="widget-title">Categories</h3>
+              <ul class="categories-list">
+                <li>
+                  <a href="#"
+                    >Learning Tips <span class="category-count">12</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#">Grammar <span class="category-count">8</span></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Vocabulary <span class="category-count">15</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#">Culture <span class="category-count">6</span></a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Study Resources <span class="category-count">10</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
 
-      <!-- Pagination -->
-      <div class="pagination">
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#"><i class="ri-arrow-right-s-line"></i></a>
-      </div>
-    </section>
-
+        <!-- Pagination -->
+        <div class="pagination">
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#"><i class="ri-arrow-right-s-line"></i></a>
+        </div>
+      </section>
+    </div>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

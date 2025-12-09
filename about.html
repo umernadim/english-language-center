@@ -12,341 +12,400 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- navbar for smaller screen  -->
-    <div id="ns-container">
-      <aside class="links">
-        <h4>
-          <a href="index.html"><i class="ri-home-4-line"></i> Home</a>
-        </h4>
-        <h4>
-          <a href="about.html"><i class="ri-information-line"></i> About</a>
-        </h4>
-        <h4>
-          <a href="gallery.html"><i class="ri-information-line"></i> Gallery</a>
-        </h4>
-        <h4>
-          <a href="blogs.html"><i class="ri-article-line"></i> Blogs</a>
-        </h4>
-        <h4>
-          <a href="vocubulary.html"
-            ><i class="ri-book-open-line"></i> Vocabulary</a
-          >
-        </h4>
-        <h4>
-          <a href="quiz.html"><i class="ri-quill-pen-line"></i> Grammar Quiz</a>
-        </h4>
-        <h4>
-          <a href="courses.html"><i class="ri-information-line"></i> Courses</a>
-        </h4>
-        <h4>
-          <a href="contact.html"><i class="ri-phone-line"></i> Contact Us</a>
-        </h4>
-      </aside>
-    </div>
-    <!-- code for navbar  -->
-    <nav id="navBar">
-      <h3>Hope English Lang Center</h3>
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="blogs.html">Blogs</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="vocubulary.html">Vocabulary</a>
-        <a href="courses.html">Courses</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
-      <div id="menuBtn">
-        <i class="ri-menu-3-line"></i>
+    <!--Code for navbar -->
+    <nav class="navbar">
+      <div class="scroll-progress" id="scrollProgress"></div>
+      <div class="dkNav-container">
+        <div class="nav-container">
+          <!-- Logo -->
+          <a href="index.html" class="logo" id="desktop-logo">
+            <div class="logo-icon">H</div>
+            <div class="logo-text">
+              <div class="brand-name">Hope English</div>
+              <div class="tagline">Language Center</div>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <ul class="nav-links">
+            <li><a href="index.html" class="active"> Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blogs.html"> Blogs</a></li>
+            <li><a href="quiz.html"> Quiz</a></li>
+            <li><a href="vocabulary.html"> Vocabulary</a></li>
+            <li><a href="courses.html"> Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <!-- Mobile Hamburger Menu -->
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </nav>
-
-    <!-- code for hero-section  -->
-    <section id="B-hero-sec">
-      <div class="about-header">
-        <div class="inner-header flex">
-          <div class="container">
-            <h1>The Journey Behind Our Success</h1>
-            <p>
-              We believe  learning English is more than grammar and vocabulary — it’s about confidence, communication, and connection. Our goal is to help students put forward their mind effortlessly and naturally in real-world situations.
-            </p>
-          <a href="#mission-vision" class="cta-button">Learn more</a>
-          </div>
+    <!-- Mobile Sidebar Menu -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html" class="logo" id="mobile-logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">
+          <div class="brand-name">Hope English</div>
+          <div class="tagline">Language Center</div>
         </div>
-        <div>
-          <svg
-            class="waves"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28"
-            preserveAspectRatio="none"
-            shape-rendering="auto"
+      </a>
+      <ul class="mobile-nav-links">
+        <li>
+          <a href="index.html" class="active"
+            ><i class="ri-home-4-line"></i> Home</a
           >
-            <defs>
-              <path
-                id="gentle-wave"
-                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-              />
-            </defs>
-            <g class="parallax">
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="0"
-                fill="rgba(255,255,255,0.7)"
-              />
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="3"
-                fill="rgba(255,255,255,0.5)"
-              />
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="5"
-                fill="rgba(255,255,255,0.3)"
-              />
-              <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-            </g>
-          </svg>
-        </div>
-      </div>
-    </section>
+        </li>
 
-    <!-- Our Story Section -->
-    <section id="mission-vision">
-      <div class="mv-header">
-        <h2>Our Mission & Vision</h2>
-        <div class="underline"></div>
-      </div>
+        <li>
+          <a href="about.html"><i class="ri-user-3-line"></i> About</a>
+        </li>
 
-      <div class="mv-container">
-        <div class="mv-video">
-          <video
-            autoplay
-            loop
-            controls
-            muted
-            src="assets/videos/about-vdo.mp4"
-            alt="about Hope English language center"
-          ></video>
-        </div>
-        <div class="mv-text">
-          <p>
-            <i class="ri-double-quotes-l quotes"></i> At Hope Language Center, our belief is that a language opens the door to a world of new opportunities, cultures, and connections. We aspire to provide high-quality, accessible language education that empowers individuals to communicate confidently in such an immensely connected world.
-          </p>
-          <p>
-           We were founded in 2017, and since then, we have helped more than 2,000 students to reach their goals in languages thanks to our innovative teaching methods, experienced instructors, and supportive learning environment.
-          </p>
-          <p>
-            Our vision is to become the leading language education center in the region, loved for commitment to excellence and student success. 
-            <i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
-      </div>
-    </section>
+        <li>
+          <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
+        </li>
 
-    <!-- our values section  -->
-    <section id="our-values">
-      <h2>Our Core Values</h2>
-      <div class="underline"></div>
+        <li>
+          <a href="blogs.html"><i class="ri-article-line"></i> Blogs</a>
+        </li>
 
-      <div class="values-container">
-        <div class="value-card">
-          <img
-            src="assets/images/gallery/img15.jpg"
-            alt="Excellence in Education"
-          />
-          <h3>Excellence in Education</h3>
-          <p>
-            <i class="ri-double-quotes-l quotes"></i> We work with our student ‘round the clock to make sure they realize their full potential. <i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
+        <li>
+          <a href="quiz.html"><i class="ri-questionnaire-line"></i> Quiz</a>
+        </li>
 
-        <div class="value-card">
-          <img
-            src="assets/images/gallery/img14.jpg"
-            alt="Student-Centered Learning"
-          />
-          <h3>Student-Centered Learning</h3>
-          <p>
-            <i class="ri-double-quotes-l quotes"></i>  Each student has a different pace and we make sure they work on their own timing utilizing their talents and strengths.<i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
+        <li>
+          <a href="vocabulary.html"
+            ><i class="ri-book-2-line"></i> Vocabulary</a
+          >
+        </li>
 
-        <div class="value-card">
-          <img
-            src="assets/images/gallery/img13.jpg"
-            alt="Continuous Improvement"
-          />
-          <h3>Continuous Improvement</h3>
-          <p>
-            <i class="ri-double-quotes-l quotes"></i> Times are constantly evolving and so are our students which motivates us to constantly develop our teaching methods. <i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
+        <li>
+          <a href="courses.html"><i class="ri-book-open-line"></i> Courses</a>
+        </li>
 
-        <div class="value-card">
-          <img
-            src="assets/images/gallery/img12.jpg"
-            alt="Cultural Connection"
-          />
-          <h3>Cultural Connection</h3>
-          <p>
-            <i class="ri-double-quotes-l quotes"></i> We believe that learning a
-            language means connecting with cultures and people from around the
-            world.<i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
-      </div>
-    </section>
+        <li>
+          <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
 
-    <!-- code for team members  -->
-    <section id="our-team">
-      <h2>Meet Our Team</h2>
-      <div class="underline"></div>
-      <p class="team-intro">
-        <i class="ri-double-quotes-l quotes"></i>
-        Our passionate and experienced instructors are the heart of Hope
-        Language Center. They are dedicated to helping every student gain
-        confidence and achieve fluency.
-        <i class="ri-double-quotes-r quotes"></i>
-      </p>
-
-      <div class="team-container">
-        <div class="team-card">
-          <img src="assets/images/gallery/img1.jpg" alt="Instructor 1" />
-          <h3>ABC Name</h3>
-          <p class="role">Spoken English Instructor</p>
-          <p class="desc">
-            <i class="ri-double-quotes-l quotes"></i>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            quaerat odio veritatis.
-            <i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
-
-        <div class="team-card">
-          <img src="assets/images/gallery/img1.jpg" alt="Instructor 3" />
-          <h3>ABC Name</h3>
-          <p class="role">IELTS Trainer</p>
-          <p class="desc">
-            <i class="ri-double-quotes-l quotes"></i>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-            iste rem excepturi.
-            <i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
-
-        <div class="team-card">
-          <img src="assets/images/gallery/img1.jpg" alt="Instructor 3" />
-          <h3>ABC Name</h3>
-          <p class="role">Creative Writing Coach</p>
-          <p class="desc">
-            <i class="ri-double-quotes-l quotes"></i>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi
-            asperiores ratione voluptate.
-            <i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
-
-        <div class="team-card">
-          <img src="assets/images/gallery/img1.jpg" alt="Instructor 4" />
-          <h3>ABC Name</h3>
-          <p class="role">Public Speaking Mentor</p>
-          <p class="desc">
-            <i class="ri-double-quotes-l quotes"></i>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi,
-            aspernatur deserunt.
-            <i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- code for the achievement section  -->
-    <section id="achievements">
-      <div class="container">
-        <h2>Our Achievements & Highlights</h2>
-        <div class="underline"></div>
-
-        <div class="achievements-grid">
-          <!-- 1 -->
-          <div class="achievement-card">
-            <img
-              src="assets/images/gallery/img18.jpg"
-              alt="Speech Contest"
-              loading="lazy"
-            />
-            <div class="achievement-content">
-              <h3>All Karachi Khatm-e-Nabuwat Speech Contest — 2023</h3>
+    <div class="wrapper">
+      <!-- code for hero-section  -->
+      <section id="B-hero-sec">
+        <div class="about-header">
+          <div class="inner-header flex">
+            <div class="container">
+              <h1>The Journey Behind Our Success</h1>
               <p>
-                <i class="ri-double-quotes-l quotes"></i> We are proud to share
-                that one of our brilliant students secured 1st place in the
-                Prestigious All-Karachi Khatm-e-Nabuwat Speaking Contest! His
-                empowering speech and confidence truly impressed everyone - we
-                congratulate him on this great achievement!
-                <i class="ri-double-quotes-r quotes"></i>
+                We believe learning English is more than grammar and vocabulary
+                — it’s about confidence, communication, and connection. Our goal
+                is to help students put forward their mind effortlessly and
+                naturally in real-world situations.
               </p>
+              <a href="#mission-vision" class="cta-button">Learn more</a>
             </div>
           </div>
-
-          <!-- 2 -->
-          <div class="achievement-card">
-            <img
-              src="assets/images/gallery/img17.jpg"
-              alt="PowerPoint Competition"
-              loading="lazy"
-            />
-            <div class="achievement-content">
-              <h3>PowerPoint Speech Contest — 2025</h3>
-              <p>
-                <i class="ri-double-quotes-l quotes"></i> One of our brilliant
-                students took 1st prize in our PowerPoint Speech Contest and won
-                a laptop for her outstanding performance! Her creativity,
-                confidence, and hard work truly paid off—huge congratulations!
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-
-          <!-- 3 -->
-          <div class="achievement-card">
-            <img
-              src="assets/images/gallery/36.jpg"
-              alt="Convocation Ceremony"
-              loading="lazy"
-            />
-            <div class="achievement-content">
-              <h3>Advance Convocation Ceremony — 2025</h3>
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Our grand annual event celebrated the hard work and achievements
-                of our advanced students, marking another milestone of growth
-                and success at Hope Language Center.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
+          <div>
+            <svg
+              class="waves"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 24 150 28"
+              preserveAspectRatio="none"
+              shape-rendering="auto"
+            >
+              <defs>
+                <path
+                  id="gentle-wave"
+                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+                />
+              </defs>
+              <g class="parallax">
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="0"
+                  fill="rgba(255,255,255,0.7)"
+                />
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="3"
+                  fill="rgba(255,255,255,0.5)"
+                />
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="5"
+                  fill="rgba(255,255,255,0.3)"
+                />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+              </g>
+            </svg>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- code for CTA section  -->
-    <section id="join-journey">
-      <div class="join-container">
-        <h2>Join Our Journey</h2>
+      <!-- Our Story Section -->
+      <section id="mission-vision">
+        <div class="mv-header">
+          <h2>Our Mission & Vision</h2>
+          <div class="underline"></div>
+        </div>
+
+        <div class="mv-container">
+          <div class="mv-video">
+            <video
+              autoplay
+              loop
+              controls
+              muted
+              src="assets/videos/about-vdo.mp4"
+              alt="about Hope English language center"
+            ></video>
+          </div>
+          <div class="mv-text">
+            <p>
+              <i class="ri-double-quotes-l quotes"></i> At Hope Language Center,
+              our belief is that a language opens the door to a world of new
+              opportunities, cultures, and connections. We aspire to provide
+              high-quality, accessible language education that empowers
+              individuals to communicate confidently in such an immensely
+              connected world.
+            </p>
+            <p>
+              We were founded in 2017, and since then, we have helped more than
+              2,000 students to reach their goals in languages thanks to our
+              innovative teaching methods, experienced instructors, and
+              supportive learning environment.
+            </p>
+            <p>
+              Our vision is to become the leading language education center in
+              the region, loved for commitment to excellence and student
+              success.
+              <i class="ri-double-quotes-r quotes"></i>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- our values section  -->
+      <section id="our-values">
+        <h2>Our Core Values</h2>
         <div class="underline"></div>
-        <p>
-          Become a part of <span>Hope English Language Center</span> and grow
-          your confidence, communication, and future. Start learning with us
-          today!
+
+        <div class="values-container">
+          <div class="value-card">
+            <img
+              src="assets/images/gallery/img15.jpg"
+              alt="Excellence in Education"
+            />
+            <h3>Excellence in Education</h3>
+            <p>
+              <i class="ri-double-quotes-l quotes"></i> We work with our student
+              ‘round the clock to make sure they realize their full potential.
+              <i class="ri-double-quotes-r quotes"></i>
+            </p>
+          </div>
+
+          <div class="value-card">
+            <img
+              src="assets/images/gallery/img14.jpg"
+              alt="Student-Centered Learning"
+            />
+            <h3>Student-Centered Learning</h3>
+            <p>
+              <i class="ri-double-quotes-l quotes"></i> Each student has a
+              different pace and we make sure they work on their own timing
+              utilizing their talents and strengths.<i
+                class="ri-double-quotes-r quotes"
+              ></i>
+            </p>
+          </div>
+
+          <div class="value-card">
+            <img
+              src="assets/images/gallery/img13.jpg"
+              alt="Continuous Improvement"
+            />
+            <h3>Continuous Improvement</h3>
+            <p>
+              <i class="ri-double-quotes-l quotes"></i> Times are constantly
+              evolving and so are our students which motivates us to constantly
+              develop our teaching methods.
+              <i class="ri-double-quotes-r quotes"></i>
+            </p>
+          </div>
+
+          <div class="value-card">
+            <img
+              src="assets/images/gallery/img12.jpg"
+              alt="Cultural Connection"
+            />
+            <h3>Cultural Connection</h3>
+            <p>
+              <i class="ri-double-quotes-l quotes"></i> We believe that learning
+              a language means connecting with cultures and people from around
+              the world.<i class="ri-double-quotes-r quotes"></i>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- code for team members  -->
+      <section id="our-team">
+        <h2>Meet Our Team</h2>
+        <div class="underline"></div>
+        <p class="team-intro">
+          <i class="ri-double-quotes-l quotes"></i>
+          Our passionate and experienced instructors are the heart of Hope
+          Language Center. They are dedicated to helping every student gain
+          confidence and achieve fluency.
+          <i class="ri-double-quotes-r quotes"></i>
         </p>
-        <a href="contact.html" class="cta-button">Contact us</a>
-      </div>
-    </section>
 
-    <!-- code for the footer seciton  -->
+        <div class="team-container">
+          <div class="team-card">
+            <img src="assets/images/gallery/img1.jpg" alt="Instructor 1" />
+            <h3>ABC Name</h3>
+            <p class="role">Spoken English Instructor</p>
+            <p class="desc">
+              <i class="ri-double-quotes-l quotes"></i>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio quaerat odio veritatis.
+              <i class="ri-double-quotes-r quotes"></i>
+            </p>
+          </div>
+
+          <div class="team-card">
+            <img src="assets/images/gallery/img1.jpg" alt="Instructor 3" />
+            <h3>ABC Name</h3>
+            <p class="role">IELTS Trainer</p>
+            <p class="desc">
+              <i class="ri-double-quotes-l quotes"></i>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+              iste rem excepturi.
+              <i class="ri-double-quotes-r quotes"></i>
+            </p>
+          </div>
+
+          <div class="team-card">
+            <img src="assets/images/gallery/img1.jpg" alt="Instructor 3" />
+            <h3>ABC Name</h3>
+            <p class="role">Creative Writing Coach</p>
+            <p class="desc">
+              <i class="ri-double-quotes-l quotes"></i>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi
+              asperiores ratione voluptate.
+              <i class="ri-double-quotes-r quotes"></i>
+            </p>
+          </div>
+
+          <div class="team-card">
+            <img src="assets/images/gallery/img1.jpg" alt="Instructor 4" />
+            <h3>ABC Name</h3>
+            <p class="role">Public Speaking Mentor</p>
+            <p class="desc">
+              <i class="ri-double-quotes-l quotes"></i>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi,
+              aspernatur deserunt.
+              <i class="ri-double-quotes-r quotes"></i>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- code for the achievement section  -->
+      <section id="achievements">
+        <div class="container">
+          <h2>Our Achievements & Highlights</h2>
+          <div class="underline"></div>
+
+          <div class="achievements-grid">
+            <!-- 1 -->
+            <div class="achievement-card">
+              <img
+                src="assets/images/gallery/img18.jpg"
+                alt="Speech Contest"
+                loading="lazy"
+              />
+              <div class="achievement-content">
+                <h3>All Karachi Khatm-e-Nabuwat Speech Contest — 2023</h3>
+                <p>
+                  <i class="ri-double-quotes-l quotes"></i> We are proud to
+                  share that one of our brilliant students secured 1st place in
+                  the Prestigious All-Karachi Khatm-e-Nabuwat Speaking Contest!
+                  His empowering speech and confidence truly impressed everyone
+                  - we congratulate him on this great achievement!
+                  <i class="ri-double-quotes-r quotes"></i>
+                </p>
+              </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="achievement-card">
+              <img
+                src="assets/images/gallery/img17.jpg"
+                alt="PowerPoint Competition"
+                loading="lazy"
+              />
+              <div class="achievement-content">
+                <h3>PowerPoint Speech Contest — 2025</h3>
+                <p>
+                  <i class="ri-double-quotes-l quotes"></i> One of our brilliant
+                  students took 1st prize in our PowerPoint Speech Contest and
+                  won a laptop for her outstanding performance! Her creativity,
+                  confidence, and hard work truly paid off—huge congratulations!
+                  <i class="ri-double-quotes-r quotes"></i>
+                </p>
+              </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="achievement-card">
+              <img
+                src="assets/images/gallery/36.jpg"
+                alt="Convocation Ceremony"
+                loading="lazy"
+              />
+              <div class="achievement-content">
+                <h3>Advance Convocation Ceremony — 2025</h3>
+                <p>
+                  <i class="ri-double-quotes-l quotes"></i>
+                  Our grand annual event celebrated the hard work and
+                  achievements of our advanced students, marking another
+                  milestone of growth and success at Hope Language Center.
+                  <i class="ri-double-quotes-r quotes"></i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- code for CTA section  -->
+      <section id="join-journey">
+        <div class="join-container">
+          <h2>Join Our Journey</h2>
+          <div class="underline"></div>
+          <p>
+            Become a part of <span>Hope English Language Center</span> and grow
+            your confidence, communication, and future. Start learning with us
+            today!
+          </p>
+          <a href="contact.html" class="cta-button">Contact us</a>
+        </div>
+      </section>
+
+      <!-- code for the footer seciton  -->
+    </div>
 
     <script src="assets/js/script.js"></script>
   </body>

@@ -11,378 +11,415 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- navbar for smaller screen  -->
-    <div id="ns-container">
-      <aside class="links">
-        <h4>
-          <a href="index.html"><i class="ri-home-4-line"></i> Home</a>
-        </h4>
-        <h4>
-          <a href="about.html"><i class="ri-information-line"></i> About</a>
-        </h4>
-        <h4>
-          <a href="gallery.html"><i class="ri-information-line"></i> Gallery</a>
-        </h4>
-        <h4>
-          <a href="blogs.html"><i class="ri-article-line"></i> Blogs</a>
-        </h4>
-        <h4>
-          <a href="vocubulary.html"
-            ><i class="ri-book-open-line"></i> Vocabulary</a
-          >
-        </h4>
-        <h4>
-          <a href="quiz.html"><i class="ri-quill-pen-line"></i> Grammar Quiz</a>
-        </h4>
-        <h4>
-          <a href="courses.html"><i class="ri-information-line"></i> Courses</a>
-        </h4>
-        <h4>
-          <a href="contact.html"><i class="ri-phone-line"></i> Contact Us</a>
-        </h4>
-      </aside>
-    </div>
+    <!--Code for navbar -->
+    <nav class="navbar">
+      <div class="scroll-progress" id="scrollProgress"></div>
+      <div class="dkNav-container">
+        <div class="nav-container">
+          <!-- Logo -->
+          <a href="index.html" class="logo" id="desktop-logo">
+            <div class="logo-icon">H</div>
+            <div class="logo-text">
+              <div class="brand-name">Hope English</div>
+              <div class="tagline">Language Center</div>
+            </div>
+          </a>
 
-    <!-- nav bar for bigger screen  -->
-    <nav id="navBar">
-      <h3>Hope English Lang Center</h3>
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="blogs.html">Blogs</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="vocubulary.html">Vocabulary</a>
-        <a href="courses.html">Courses</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
-      <div id="menuBtn">
-        <i class="ri-menu-3-line"></i>
+          <!-- Desktop Navigation -->
+          <ul class="nav-links">
+            <li><a href="index.html" class="active"> Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blogs.html"> Blogs</a></li>
+            <li><a href="quiz.html"> Quiz</a></li>
+            <li><a href="vocabulary.html"> Vocabulary</a></li>
+            <li><a href="courses.html"> Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <!-- Mobile Hamburger Menu -->
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </nav>
+    <!-- Mobile Sidebar Menu -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html" class="logo" id="mobile-logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">
+          <div class="brand-name">Hope English</div>
+          <div class="tagline">Language Center</div>
+        </div>
+      </a>
+      <ul class="mobile-nav-links">
+        <li>
+          <a href="index.html" class="active"
+            ><i class="ri-home-4-line"></i> Home</a
+          >
+        </li>
 
-    <!-- code for hero-section-banner  -->
-    <section id="B-hero-sec">
-      <div class="test-header">
-        <div class="inner-header flex">
-          <div class="container">
-            <h1>Every Picture Tells a Story of Growth</h1>
-            <p>See how our students learn, laugh, and achieve together.</p>
+        <li>
+          <a href="about.html"><i class="ri-user-3-line"></i> About</a>
+        </li>
+
+        <li>
+          <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
+        </li>
+
+        <li>
+          <a href="blogs.html"><i class="ri-article-line"></i> Blogs</a>
+        </li>
+
+        <li>
+          <a href="quiz.html"><i class="ri-questionnaire-line"></i> Quiz</a>
+        </li>
+
+        <li>
+          <a href="vocabulary.html"
+            ><i class="ri-book-2-line"></i> Vocabulary</a
+          >
+        </li>
+
+        <li>
+          <a href="courses.html"><i class="ri-book-open-line"></i> Courses</a>
+        </li>
+
+        <li>
+          <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="wrapper">
+      <!-- code for hero-section-banner  -->
+      <section id="B-hero-sec">
+        <div class="test-header">
+          <div class="inner-header flex">
+            <div class="container">
+              <h1>Every Picture Tells a Story of Growth</h1>
+              <p>See how our students learn, laugh, and achieve together.</p>
+            </div>
+          </div>
+          <div>
+            <svg
+              class="waves"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 24 150 28"
+              preserveAspectRatio="none"
+              shape-rendering="auto"
+            >
+              <defs>
+                <path
+                  id="gentle-wave"
+                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+                />
+              </defs>
+              <g class="parallax">
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="0"
+                  fill="rgba(255,255,255,0.7)"
+                />
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="3"
+                  fill="rgba(255,255,255,0.5)"
+                />
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="5"
+                  fill="rgba(255,255,255,0.3)"
+                />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+              </g>
+            </svg>
           </div>
         </div>
-        <div>
-          <svg
-            class="waves"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28"
-            preserveAspectRatio="none"
-            shape-rendering="auto"
-          >
-            <defs>
-              <path
-                id="gentle-wave"
-                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-              />
-            </defs>
-            <g class="parallax">
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="0"
-                fill="rgba(255,255,255,0.7)"
-              />
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="3"
-                fill="rgba(255,255,255,0.5)"
-              />
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="5"
-                fill="rgba(255,255,255,0.3)"
-              />
-              <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-            </g>
-          </svg>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- code for gallery section  -->
-    <section id="gallery-container">
-      <div class="heading gallery-head">
-        <h2>Photo Gallery</h2>
-        <div class="underline"></div>
-      </div>
-      <div class="gallery-box">
-        <div class="gallery-images">
-          <img
-            src="assets/images/gallery/1.jpg"
-            alt="Students performing speech at hope language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/2.jpg"
-            alt="award distribution ceremony"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/3.jpg"
-            alt="award distribution ceremony"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/4.jpg"
-            alt="award distribution ceremony"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/5.jpg"
-            alt="Students attending workshop at english language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/6.jpg"
-            alt="Students attending workshop at english language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/7.jpg"
-            alt="Award distribution event for English course completion"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/8.jpg"
-            alt="Award distribution event for English course completion"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/9.jpg"
-            alt="Award distribution event for English course completion"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/10.jpg"
-            alt="Teacher delivering motivational speech at English language event"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/11.jpg"
-            alt="Teacher delivering motivational speech at English language event"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/12.jpg"
-            alt="Group discussion activity in speaking class"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/13.jpg"
-            alt="Group discussion activity in speaking class"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/14.jpg"
-            alt="Group discussion activity in speaking class"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/15.jpg"
-            alt="Group discussion activity in speaking class"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/16.jpg"
-            alt="Group discussion activity in speaking class"
-            loading="lazy"
-          />
+      <!-- code for gallery section  -->
+      <section id="gallery-container">
+        <div class="heading gallery-head">
+          <h2>Photo Gallery</h2>
+          <div class="underline"></div>
         </div>
+        <div class="gallery-box">
+          <div class="gallery-images">
+            <img
+              src="assets/images/gallery/1.jpg"
+              alt="Students performing speech at hope language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/2.jpg"
+              alt="award distribution ceremony"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/3.jpg"
+              alt="award distribution ceremony"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/4.jpg"
+              alt="award distribution ceremony"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/5.jpg"
+              alt="Students attending workshop at english language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/6.jpg"
+              alt="Students attending workshop at english language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/7.jpg"
+              alt="Award distribution event for English course completion"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/8.jpg"
+              alt="Award distribution event for English course completion"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/9.jpg"
+              alt="Award distribution event for English course completion"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/10.jpg"
+              alt="Teacher delivering motivational speech at English language event"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/11.jpg"
+              alt="Teacher delivering motivational speech at English language event"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/12.jpg"
+              alt="Group discussion activity in speaking class"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/13.jpg"
+              alt="Group discussion activity in speaking class"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/14.jpg"
+              alt="Group discussion activity in speaking class"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/15.jpg"
+              alt="Group discussion activity in speaking class"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/16.jpg"
+              alt="Group discussion activity in speaking class"
+              loading="lazy"
+            />
+          </div>
 
-        <div class="gallery-images">
-          <img
-            src="assets/images/gallery/17.jpg"
-            alt="Group discussion activity in speaking class"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/18.jpg"
-            alt="students attending workshop at language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/19.jpg"
-            alt="student presenting presentation at english language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/20.jpg"
-            alt="students attending workshop at hope english lang center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/21.jpg"
-            alt="student presenting presentation  at hope english language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/22.jpg"
-            alt="student presenting presentation at language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/23.jpg"
-            alt="newspaper discussion activity"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/24.jpg"
-            alt="newspaper discussion activity"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/25.jpg"
-            alt="student performing speech"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/26.jpg"
-            alt="student receiving award"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/27.jpg"
-            alt="student performing speech"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/28.jpg"
-            alt="student receiving award"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/29.jpg"
-            alt="student performing speech"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/30.jpg"
-            alt="students attending speech contest at hope language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/31.jpg"
-            alt="students attending speech contest at hope language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/32.jpg"
-            alt="student performing speech"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/33.jpg"
-            alt="students attending workshop at language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/34.jpg"
-            alt="student presenting presentation"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/35.jpg"
-            alt="students attending workshop at language center"
-            loading="lazy"
-          />
-        </div>
+          <div class="gallery-images">
+            <img
+              src="assets/images/gallery/17.jpg"
+              alt="Group discussion activity in speaking class"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/18.jpg"
+              alt="students attending workshop at language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/19.jpg"
+              alt="student presenting presentation at english language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/20.jpg"
+              alt="students attending workshop at hope english lang center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/21.jpg"
+              alt="student presenting presentation  at hope english language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/22.jpg"
+              alt="student presenting presentation at language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/23.jpg"
+              alt="newspaper discussion activity"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/24.jpg"
+              alt="newspaper discussion activity"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/25.jpg"
+              alt="student performing speech"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/26.jpg"
+              alt="student receiving award"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/27.jpg"
+              alt="student performing speech"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/28.jpg"
+              alt="student receiving award"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/29.jpg"
+              alt="student performing speech"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/30.jpg"
+              alt="students attending speech contest at hope language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/31.jpg"
+              alt="students attending speech contest at hope language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/32.jpg"
+              alt="student performing speech"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/33.jpg"
+              alt="students attending workshop at language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/34.jpg"
+              alt="student presenting presentation"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/35.jpg"
+              alt="students attending workshop at language center"
+              loading="lazy"
+            />
+          </div>
 
-        <div class="gallery-images">
-          <img
-            src="assets/images/gallery/36.jpg"
-            alt="advanced level students group photo"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/37.jpg"
-            alt="award distribution ceremony"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/38.jpg"
-            alt="facilitators group photo"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/39.jpg"
-            alt="teacher is giving motivational speech"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/40.jpg"
-            alt="award receiving moment"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/41.jpg"
-            alt="Celebration of advanced level completion at hope language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/42.jpg"
-            alt="Celebration of advanced level completion at hope language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/43.jpg"
-            alt="Celebration of advanced level completion at hope language center"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/44.jpg"
-            alt="award receiving moment"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/45.jpg"
-            alt="award receiving moment"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/46.jpg"
-            alt="award receiving moment"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/47.jpg"
-            alt="award receiving moment"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/48.jpg"
-            alt="award receiving moment"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/49.jpg"
-            alt="award receiving moment"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/50.jpg"
-            alt="award receiving moment"
-            loading="lazy"
-          />
-          <img
-            src="assets/images/gallery/51.jpg"
-            alt="award receiving moment"
-            loading="lazy"
-          />
+          <div class="gallery-images">
+            <img
+              src="assets/images/gallery/36.jpg"
+              alt="advanced level students group photo"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/37.jpg"
+              alt="award distribution ceremony"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/38.jpg"
+              alt="facilitators group photo"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/39.jpg"
+              alt="teacher is giving motivational speech"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/40.jpg"
+              alt="award receiving moment"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/41.jpg"
+              alt="Celebration of advanced level completion at hope language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/42.jpg"
+              alt="Celebration of advanced level completion at hope language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/43.jpg"
+              alt="Celebration of advanced level completion at hope language center"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/44.jpg"
+              alt="award receiving moment"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/45.jpg"
+              alt="award receiving moment"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/46.jpg"
+              alt="award receiving moment"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/47.jpg"
+              alt="award receiving moment"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/48.jpg"
+              alt="award receiving moment"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/49.jpg"
+              alt="award receiving moment"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/50.jpg"
+              alt="award receiving moment"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/gallery/51.jpg"
+              alt="award receiving moment"
+              loading="lazy"
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <script src="assets/js/script.js"></script>
   </body>

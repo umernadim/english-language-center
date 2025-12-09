@@ -12,696 +12,754 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
   </head>
   <body>
-    <!-- navbar for smaller screen  -->
-    <div id="ns-container">
-      <aside class="links">
-        <h4>
-          <a href="index.html"><i class="ri-home-4-line"></i> Home</a>
-        </h4>
-        <h4>
-          <a href="about.html"><i class="ri-information-line"></i> About</a>
-        </h4>
-        <h4>
-          <a href="gallery.html"><i class="ri-information-line"></i> Gallery</a>
-        </h4>
-        <h4>
-          <a href="blogs.html"><i class="ri-article-line"></i> Blogs</a>
-        </h4>
-        <h4>
-          <a href="vocubulary.html"
-            ><i class="ri-book-open-line"></i> Vocabulary</a
-          >
-        </h4>
-        <h4>
-          <a href="quiz.html"><i class="ri-quill-pen-line"></i> Grammar Quiz</a>
-        </h4>
-        <h4>
-          <a href="courses.html"><i class="ri-information-line"></i> Courses</a>
-        </h4>
-        <h4>
-          <a href="contact.html"><i class="ri-phone-line"></i> Contact Us</a>
-        </h4>
-      </aside>
-    </div>
+    <!--Code for navbar -->
+    <nav class="navbar">
+      <div class="scroll-progress" id="scrollProgress"></div>
+      <div class="dkNav-container">
+        <div class="nav-container">
+          <!-- Logo -->
+          <a href="index.html" class="logo" id="desktop-logo">
+            <div class="logo-icon">H</div>
+            <div class="logo-text">
+              <div class="brand-name">Hope English</div>
+              <div class="tagline">Language Center</div>
+            </div>
+          </a>
 
-    <nav id="navBar">
-      <h3>Hope Engish lang Center</h3>
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="blogs.html">Blogs</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="vocubulary.html">Vocabulary</a>
-        <a href="courses.html">Courses</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
-      <div id="menuBtn">
-        <i class="ri-menu-3-line"></i>
+          <!-- Desktop Navigation -->
+          <ul class="nav-links">
+            <li><a href="index.html" class="active"> Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blogs.html"> Blogs</a></li>
+            <li><a href="quiz.html"> Quiz</a></li>
+            <li><a href="vocabulary.html"> Vocabulary</a></li>
+            <li><a href="courses.html"> Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <!-- Mobile Hamburger Menu -->
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </nav>
+    <!-- Mobile Sidebar Menu -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html" class="logo" id="mobile-logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">
+          <div class="brand-name">Hope English</div>
+          <div class="tagline">Language Center</div>
+        </div>
+      </a>
+      <ul class="mobile-nav-links">
+        <li>
+          <a href="index.html" class="active"
+            ><i class="ri-home-4-line"></i> Home</a
+          >
+        </li>
 
-    <!-- code for hero section  -->
-    <section id="hero-section">
-      <img
-        src="assets/images/carousel/img1.jpg"
-        class="background-img desktop-img"
-        style="opacity: 1"
-        loading="lazy"
-        alt="Celebration of English course completion"
-      />
-      <img
-        src="assets/images/carousel/img2.jpg"
-        class="background-img desktop-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="Celebration of English course completion"
-      />
-      <img
-        src="assets/images/carousel/img3.jpg"
-        class="background-img desktop-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="Celebration of English course completion"
-      />
-      <img
-        src="assets/images/carousel/img4.jpg"
-        class="background-img desktop-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="Celebration of English course completion"
-      />
-      <img
-        src="assets/images/carousel/img5.jpg"
-        class="background-img desktop-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="Celebration of English course completion"
-      />
-      <img
-        src="assets/images/carousel/img6.jpg"
-        class="background-img desktop-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="Celebration of English course completion"
-      />
+        <li>
+          <a href="about.html"><i class="ri-user-3-line"></i> About</a>
+        </li>
 
-      <img
-        src="assets/images/carousel/img7.jpg"
-        class="background-img mobile-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="Teacher's giving motivational speech"
-      />
+        <li>
+          <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
+        </li>
 
-      <img
-        src="assets/images/carousel/img8.jpg"
-        class="background-img mobile-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="student is performing speech at Hope English language center"
-      />
-      <img
-        src="assets/images/carousel/img9.jpg"
-        class="background-img mobile-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="student is performing speech at Hope English language center"
-      />
+        <li>
+          <a href="blogs.html"><i class="ri-article-line"></i> Blogs</a>
+        </li>
 
-      <img
-        src="assets/images/carousel/img10.jpg"
-        class="background-img mobile-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="student is performing speech at Hope English language center"
-      />
-      <img
-        src="assets/images/carousel/img11.jpg"
-        class="background-img mobile-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="student is performing speech at Hope language center"
-      />
+        <li>
+          <a href="quiz.html"><i class="ri-questionnaire-line"></i> Quiz</a>
+        </li>
 
-      <img
-        src="assets/images/carousel/img12.jpg"
-        class="background-img mobile-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="Teacher's giving motivational speech"
-      />
+        <li>
+          <a href="vocabulary.html"
+            ><i class="ri-book-2-line"></i> Vocabulary</a
+          >
+        </li>
 
-      <img
-        src="assets/images/carousel/img13.jpg"
-        class="background-img mobile-img"
-        style="opacity: 0"
-        loading="lazy"
-        alt="Teacher's giving motivational speech"
-      />
+        <li>
+          <a href="courses.html"><i class="ri-book-open-line"></i> Courses</a>
+        </li>
 
-      <div class="text">
-        <h2>Unlock Your Future with the Power of English.</h2>
-        <p>
-          <i class="ri-double-quotes-l quotes"></i>
-          Join us at Hope English language center, where learning is an
-          adventure.
-          With our supportive community and personalized learning pathways, you
-          will be amazed at how quickly you gain confidence and fluency. Join us
-          today and unlock your full potential.
-          <i class="ri-double-quotes-r quotes"></i>
-        </p>
-      </div>
-    </section>
+        <li>
+          <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
+        </li>
+      </ul>
+    </div>
 
-    <!-- Code for What you Learn section -->
-    <section id="learn-section">
-      <!-- Decorative elements -->
-      <div class="decorative-circle circle-1"></div>
-      <div class="decorative-circle circle-2"></div>
-      <div class="section-header">
-        <h2>What You'll Learn</h2>
-        <div class="underline"></div>
-        <p>
-          Whether you're a beginner or improving your fluency — our course
-          adjusts to your level.
-        </p>
-      </div>
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
 
-      <div class="learn-cards">
-        <!-- code is in javascript  -->
-      </div>
+    <div class="wrapper">
+      <!-- code for hero section  -->
+      <section id="hero-section">
+        <img
+          src="assets/images/carousel/img1.jpg"
+          class="background-img desktop-img"
+          style="opacity: 1"
+          loading="lazy"
+          alt="Celebration of English course completion"
+        />
+        <img
+          src="assets/images/carousel/img2.jpg"
+          class="background-img desktop-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="Celebration of English course completion"
+        />
+        <img
+          src="assets/images/carousel/img3.jpg"
+          class="background-img desktop-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="Celebration of English course completion"
+        />
+        <img
+          src="assets/images/carousel/img4.jpg"
+          class="background-img desktop-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="Celebration of English course completion"
+        />
+        <img
+          src="assets/images/carousel/img5.jpg"
+          class="background-img desktop-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="Celebration of English course completion"
+        />
+        <img
+          src="assets/images/carousel/img6.jpg"
+          class="background-img desktop-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="Celebration of English course completion"
+        />
 
-      <div class="cta-btn-cont">
-        <a href="courses.html" class="cta-button">Start your journey Today</a>
-      </div>
-    </section>
+        <img
+          src="assets/images/carousel/img7.jpg"
+          class="background-img mobile-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="Teacher's giving motivational speech"
+        />
 
-    <!-- code for level-test-section  -->
-    <div class="test-container">
-      <section id="test-section">
-        <!-- Decorative floating shapes -->
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
+        <img
+          src="assets/images/carousel/img8.jpg"
+          class="background-img mobile-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="student is performing speech at Hope English language center"
+        />
+        <img
+          src="assets/images/carousel/img9.jpg"
+          class="background-img mobile-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="student is performing speech at Hope English language center"
+        />
 
+        <img
+          src="assets/images/carousel/img10.jpg"
+          class="background-img mobile-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="student is performing speech at Hope English language center"
+        />
+        <img
+          src="assets/images/carousel/img11.jpg"
+          class="background-img mobile-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="student is performing speech at Hope language center"
+        />
+
+        <img
+          src="assets/images/carousel/img12.jpg"
+          class="background-img mobile-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="Teacher's giving motivational speech"
+        />
+
+        <img
+          src="assets/images/carousel/img13.jpg"
+          class="background-img mobile-img"
+          style="opacity: 0"
+          loading="lazy"
+          alt="Teacher's giving motivational speech"
+        />
+
+        <div class="text">
+          <h2>Unlock Your Future with the Power of English.</h2>
+          <p>
+            <i class="ri-double-quotes-l quotes"></i>
+            Join us at Hope English language center, where learning is an
+            adventure. With our supportive community and personalized learning
+            pathways, you will be amazed at how quickly you gain confidence and
+            fluency. Join us today and unlock your full potential.
+            <i class="ri-double-quotes-r quotes"></i>
+          </p>
+        </div>
+      </section>
+
+      <!-- Code for What you Learn section -->
+      <section id="learn-section">
+        <!-- Decorative elements -->
+        <div class="decorative-circle circle-1"></div>
+        <div class="decorative-circle circle-2"></div>
         <div class="section-header">
-          <div class="target-icon">🎯</div>
-          <div class="header-content">
-            <h2>Find Your Level</h2>
-            <p>
-              Just take a quick 3-minute test to find the course that fits you
-              best! You’ll get personalized recommendations based on your
-              current language skills.
-            </p>
-          </div>
+          <h2>What You'll Learn</h2>
+          <div class="underline"></div>
+          <p>
+            Whether you're a beginner or improving your fluency — our course
+            adjusts to your level.
+          </p>
         </div>
 
-        <div class="level-test-content">
-          <div class="test-info">
-            <p>
-              Our smart assessment adjusts to your answers and helps you start
-              learning at the level that’s right for you — no sign-up needed!
-            </p>
+        <div class="learn-cards">
+          <!-- code is in javascript  -->
+        </div>
 
-            <ul class="test-features">
-              <li>
-                <i class="ri-time-fill"></i> Only 3 minutes - 15 quick questions
-              </li>
-              <li>
-                <i class="ri-line-chart-fill"></i> Adaptive testing for accurate
-                results
-              </li>
-              <li>
-                <i class="ri-graduation-cap-fill"></i> Personalized course
-                recommendations
-              </li>
-            </ul>
+        <div class="cta-btn-cont">
+          <a href="courses.html" class="cta-button">Start your journey Today</a>
+        </div>
+      </section>
 
-            <div class="level-badges">
-              <div class="badge beginner">
-                <span class="badge-dot"></span>
-                Beginner (A1)
-              </div>
-              <div class="badge intermediate">
-                <span class="badge-dot"></span>
-                Intermediate (B1)
-              </div>
-              <div class="badge advanced">
-                <span class="badge-dot"></span>
-                Advanced (C1)
-              </div>
-              <div class="badge expert">
-                <span class="badge-dot"></span>
-                Expert (C2)
-              </div>
+      <!-- code for level-test-section  -->
+      <div class="test-container">
+        <section id="test-section">
+          <!-- Decorative floating shapes -->
+          <div class="floating-shape shape-1"></div>
+          <div class="floating-shape shape-2"></div>
+
+          <div class="section-header">
+            <div class="target-icon">🎯</div>
+            <div class="header-content">
+              <h2>Find Your Level</h2>
+              <p>
+                Just take a quick 3-minute test to find the course that fits you
+                best! You’ll get personalized recommendations based on your
+                current language skills.
+              </p>
             </div>
           </div>
 
-          <div class="test-cta">
-            <a href="quiz.html" id="takeTest" class="test-button">
-              <i class="ri-pencil-fill"></i> Take Level Test
-            </a>
-            <p style="margin-top: 15px; opacity: 0.8; font-size: 0.9rem">
-              Free • No sign-up required
-            </p>
+          <div class="level-test-content">
+            <div class="test-info">
+              <p>
+                Our smart assessment adjusts to your answers and helps you start
+                learning at the level that’s right for you — no sign-up needed!
+              </p>
+
+              <ul class="test-features">
+                <li>
+                  <i class="ri-time-fill"></i> Only 3 minutes - 15 quick
+                  questions
+                </li>
+                <li>
+                  <i class="ri-line-chart-fill"></i> Adaptive testing for
+                  accurate results
+                </li>
+                <li>
+                  <i class="ri-graduation-cap-fill"></i> Personalized course
+                  recommendations
+                </li>
+              </ul>
+
+              <div class="level-badges">
+                <div class="badge beginner">
+                  <span class="badge-dot"></span>
+                  Beginner (A1)
+                </div>
+                <div class="badge intermediate">
+                  <span class="badge-dot"></span>
+                  Intermediate (B1)
+                </div>
+                <div class="badge advanced">
+                  <span class="badge-dot"></span>
+                  Advanced (C1)
+                </div>
+                <div class="badge expert">
+                  <span class="badge-dot"></span>
+                  Expert (C2)
+                </div>
+              </div>
+            </div>
+
+            <div class="test-cta">
+              <a href="quiz.html" id="takeTest" class="test-button">
+                <i class="ri-pencil-fill"></i> Take Level Test
+              </a>
+              <p style="margin-top: 15px; opacity: 0.8; font-size: 0.9rem">
+                Free • No sign-up required
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- code for course section  -->
-    <section id="course-section">
-      <!-- Decorative elements -->
-      <div class="decorative-circle circle-1"></div>
-      <div class="decorative-circle circle-2"></div>
-
-      <h2 class="section-title">Our Courses & Programs</h2>
-      <div class="underline"></div>
-      <p class="intro-text">
-        Check out our thoughtfully designed courses that help you speak with
-        confidence, think clearly, and lead with purpose. They're built to
-        support real growth—both in learning and in life.
-      </p>
-
-      <div class="course-container">
-        <!-- data is in javascript  -->
+        </section>
       </div>
 
-      <div class="cta-btn-cont">
-        <a href="courses.html" class="cta-button"
-          >Explore All Courses <i class="ri-arrow-right-line"></i
-        ></a>
-      </div>
-    </section>
+      <!-- code for course section  -->
+      <section id="course-section">
+        <!-- Decorative elements -->
+        <div class="decorative-circle circle-1"></div>
+        <div class="decorative-circle circle-2"></div>
 
-    <!-- code for feature seciton  -->
-    <section id="feature-section">
-      <!-- Decorative elements -->
-      <div class="decorative-dots dots-1"></div>
-      <div class="decorative-dots dots-2"></div>
+        <h2 class="section-title">Our Courses & Programs</h2>
+        <div class="underline"></div>
+        <p class="intro-text">
+          Check out our thoughtfully designed courses that help you speak with
+          confidence, think clearly, and lead with purpose. They're built to
+          support real growth—both in learning and in life.
+        </p>
 
-      <div class="container">
-        <div class="section-title">
-          <h2>Why Choose Our Institute</h2>
-          <div class="underline"></div>
-        </div>
-        <div class="features-container">
+        <div class="course-container">
           <!-- data is in javascript  -->
         </div>
 
-        <div class="stats-container">
-          <div class="stat-item">
-            <div class="stat-number" data-count="15">0</div>
-            <div class="stat-label">Expert Instructors</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="3000">0</div>
-            <div class="stat-label">Students Trained</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="98">0</div>
-            <div class="stat-label">Success Rate</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="10">0</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
+        <div class="cta-btn-cont">
+          <a href="courses.html" class="cta-button"
+            >Explore All Courses <i class="ri-arrow-right-line"></i
+          ></a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- code for the testimonial section  -->
-    <section id="testimonial-sect">
-      <h2>What Our Students Say</h2>
-      <div class="underline"></div>
-      <p class="subtitle">
-        Hear from our learners about their experiences and growth with us.
-      </p>
+      <!-- code for feature seciton  -->
+      <section id="feature-section">
+        <!-- Decorative elements -->
+        <div class="decorative-dots dots-1"></div>
+        <div class="decorative-dots dots-2"></div>
 
-      <div class="tm-scroll-wrapper">
-        <div class="tm-container">
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo"
-              />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo"
-              />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo"
-              />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo"
-              />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo"
-              />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo"
-              />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo"
-              />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="scroll-hint">
-        <i class="ri-arrow-left-s-line"></i>
-        <span>Drag to see more</span>
-        <i class="ri-arrow-right-s-line"></i>
-      </div>
-    </section>
-
-    <!-- code for CTA section  -->
-    <section id="join-journey">
-      <div class="join-container">
-        <h2>Ready to transform your English skills?</h2>
-        <div class="underline"></div>
-        <p>
-          Join <span>Hope English Language Center</span> today and take the
-          first step toward confidence, fluency, and a brighter future.
-        </p>
-        <a href="contact.html" class="cta-button">Contact us</a>
-      </div>
-    </section>
-
-    <!-- code for footer section -->
-    <footer id="footer">
-      <div class="footer-container">
-        <div class="footer-content">
-          <!-- About Column -->
-          <div class="footer-column">
-            <h3>Hope Language Center</h3>
-            <p>
-              We’re here to help you become fluent and feel confident using the
-              language—with real-world skills and cultural understanding. Join a
-              supportive community of learners and start your journey with us
-              today!
-            </p>
-            <div class="social-links">
-              <a href="#"><i class="ri-facebook-fill"></i></a>
-              <a href="#"><i class="ri-tiktok-fill"></i></a>
-            </div>
-          </div>
-
-          <!-- Quick Links Column -->
-          <div class="footer-column">
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-              <li>
-                <a href="index.html"><i class="ri-arrow-right-s-line"></i> Home</a>
-              </li>
-              <li>
-                <a href="about.html"><i class="ri-arrow-right-s-line"></i> About Us</a>
-              </li>
-              <li>
-                <a href="gallery.html"><i class="ri-arrow-right-s-line"></i> Gallery</a>
-              </li>
-              <li>
-                <a href="courses.html"><i class="ri-arrow-right-s-line"></i> Courses</a>
-              </li>
-              <li>
-                <a href="vocubulary.html"><i class="ri-arrow-right-s-line"></i> Vocabulary</a>
-              </li>
-              <li>
-                <a href="blogs.html"><i class="ri-arrow-right-s-line"></i> Blogs</a>
-              </li>
-              <li>
-                <a href="quiz.html"
-                  ><i class="ri-arrow-right-s-line"></i> Grammar Quiz</a
-                >
-              </li>
-
-              <li>
-                <a href="contact.html"><i class="ri-arrow-right-s-line"></i> Contact Us</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Recent Posts Column -->
-          <div class="footer-column">
-            <h3>Recent Posts</h3>
-            <ul class="recent-posts">
-              <li class="recent-post-item">
-                <div class="post-thumb">
-                  <img
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                    alt="Language Learning"
-                  />
-                </div>
-                <div class="post-content">
-                  <div class="post-title">
-                    <a href="#">5 Effective Strategies for Language Learning</a>
-                  </div>
-                  <div class="post-meta">
-                    <div class="post-date">
-                      <i class="ri-calendar-line"></i> Oct 15, 2023
-                    </div>
-                    <div class="post-comments">
-                      <i class="ri-chat-3-line"></i> 12
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="recent-post-item">
-                <div class="post-thumb">
-                  <img
-                    src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                    alt="Grammar Tips"
-                  />
-                </div>
-                <div class="post-content">
-                  <div class="post-title">
-                    <a href="#">Common Grammar Mistakes to Avoid</a>
-                  </div>
-                  <div class="post-meta">
-                    <div class="post-date">
-                      <i class="ri-calendar-line"></i> Oct 8, 2023
-                    </div>
-                    <div class="post-comments">
-                      <i class="ri-chat-3-line"></i> 8
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="recent-post-item">
-                <div class="post-thumb">
-                  <img
-                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                    alt="Cultural Understanding"
-                  />
-                </div>
-                <div class="post-content">
-                  <div class="post-title">
-                    <a href="#"
-                      >The Importance of Cultural Understanding in Language
-                      Learning</a
-                    >
-                  </div>
-                  <div class="post-meta">
-                    <div class="post-date">
-                      <i class="ri-calendar-line"></i> Oct 1, 2023
-                    </div>
-                    <div class="post-comments">
-                      <i class="ri-chat-3-line"></i> 15
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Contact & Newsletter Column -->
-          <div class="footer-column">
-            <h3>Contact Us</h3>
-            <ul class="contact-info">
-              <li>
-                <i class="ri-map-pin-fill"></i>
-                <span
-                  >Street No. 1, Sector 8c Sector 5 Baldia, Karachi,
-                  Pakistan</span
-                >
-              </li>
-              <li>
-                <i class="ri-phone-fill"></i>
-                <span>+92 345 8385764</span>
-              </li>
-              <li>
-                <i class="ri-mail-fill"></i>
-                <span>Rashid.afridi2014@gmail.com</span>
-              </li>
-              <li>
-                <i class="ri-time-fill"></i>
-                <span>Mon - Sat: 3:00 PM - 8:00 PM</span>
-              </li>
-            </ul>
-
-            <div class="newsletter-form">
-              <h3>Newsletter</h3>
-              <p>
-                Subscribe to get updates on new courses and learning resources.
-              </p>
-              <div class="newsletter-input">
-                <input type="email" placeholder="Your email address" />
-                <button class="newsletter-btn">Subscribe</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
         <div class="container">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              &copy; 2023 Hope Language Center. All rights reserved.
+          <div class="section-title">
+            <h2>Why Choose Our Institute</h2>
+            <div class="underline"></div>
+          </div>
+          <div class="features-container">
+            <!-- data is in javascript  -->
+          </div>
+
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-number" data-count="15">0</div>
+              <div class="stat-label">Expert Instructors</div>
             </div>
-            <ul class="footer-bottom-links">
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li>
-                <a href="https://maps.app.goo.gl/GdeHia3Ttgn82nnJA">Sitemap</a>
-              </li>
-            </ul>
+            <div class="stat-item">
+              <div class="stat-number" data-count="3000">0</div>
+              <div class="stat-label">Students Trained</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="98">0</div>
+              <div class="stat-label">Success Rate</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="10">0</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </section>
+
+      <!-- code for the testimonial section  -->
+      <section id="testimonial-sect">
+        <h2>What Our Students Say</h2>
+        <div class="underline"></div>
+        <p class="subtitle">
+          Hear from our learners about their experiences and growth with us.
+        </p>
+
+        <div class="tm-scroll-wrapper">
+          <div class="tm-container">
+            <div class="tm-card">
+              <div class="tm-top">
+                <img
+                  src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
+                  alt="Student photo"
+                />
+                <div class="intro">
+                  <h4>ABC Name</h4>
+                  <h5>Student</h5>
+                </div>
+              </div>
+              <div class="tm-bottom">
+                <p>
+                  <i class="ri-double-quotes-l quotes"></i>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
+                  ea quod earum cumque vel tenetur facilis obcaecati nemo
+                  exercitationem eveniet facere deserunt tempora expedita
+                  doloribus.
+                  <i class="ri-double-quotes-r quotes"></i>
+                </p>
+              </div>
+            </div>
+            <div class="tm-card">
+              <div class="tm-top">
+                <img
+                  src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
+                  alt="Student photo"
+                />
+                <div class="intro">
+                  <h4>ABC Name</h4>
+                  <h5>Student</h5>
+                </div>
+              </div>
+              <div class="tm-bottom">
+                <p>
+                  <i class="ri-double-quotes-l quotes"></i>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
+                  ea quod earum cumque vel tenetur facilis obcaecati nemo
+                  exercitationem eveniet facere deserunt tempora expedita
+                  doloribus.
+                  <i class="ri-double-quotes-r quotes"></i>
+                </p>
+              </div>
+            </div>
+            <div class="tm-card">
+              <div class="tm-top">
+                <img
+                  src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
+                  alt="Student photo"
+                />
+                <div class="intro">
+                  <h4>ABC Name</h4>
+                  <h5>Student</h5>
+                </div>
+              </div>
+              <div class="tm-bottom">
+                <p>
+                  <i class="ri-double-quotes-l quotes"></i>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
+                  ea quod earum cumque vel tenetur facilis obcaecati nemo
+                  exercitationem eveniet facere deserunt tempora expedita
+                  doloribus.
+                  <i class="ri-double-quotes-r quotes"></i>
+                </p>
+              </div>
+            </div>
+            <div class="tm-card">
+              <div class="tm-top">
+                <img
+                  src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
+                  alt="Student photo"
+                />
+                <div class="intro">
+                  <h4>ABC Name</h4>
+                  <h5>Student</h5>
+                </div>
+              </div>
+              <div class="tm-bottom">
+                <p>
+                  <i class="ri-double-quotes-l quotes"></i>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
+                  ea quod earum cumque vel tenetur facilis obcaecati nemo
+                  exercitationem eveniet facere deserunt tempora expedita
+                  doloribus.
+                  <i class="ri-double-quotes-r quotes"></i>
+                </p>
+              </div>
+            </div>
+            <div class="tm-card">
+              <div class="tm-top">
+                <img
+                  src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
+                  alt="Student photo"
+                />
+                <div class="intro">
+                  <h4>ABC Name</h4>
+                  <h5>Student</h5>
+                </div>
+              </div>
+              <div class="tm-bottom">
+                <p>
+                  <i class="ri-double-quotes-l quotes"></i>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
+                  ea quod earum cumque vel tenetur facilis obcaecati nemo
+                  exercitationem eveniet facere deserunt tempora expedita
+                  doloribus.
+                  <i class="ri-double-quotes-r quotes"></i>
+                </p>
+              </div>
+            </div>
+            <div class="tm-card">
+              <div class="tm-top">
+                <img
+                  src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
+                  alt="Student photo"
+                />
+                <div class="intro">
+                  <h4>ABC Name</h4>
+                  <h5>Student</h5>
+                </div>
+              </div>
+              <div class="tm-bottom">
+                <p>
+                  <i class="ri-double-quotes-l quotes"></i>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
+                  ea quod earum cumque vel tenetur facilis obcaecati nemo
+                  exercitationem eveniet facere deserunt tempora expedita
+                  doloribus.
+                  <i class="ri-double-quotes-r quotes"></i>
+                </p>
+              </div>
+            </div>
+            <div class="tm-card">
+              <div class="tm-top">
+                <img
+                  src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
+                  alt="Student photo"
+                />
+                <div class="intro">
+                  <h4>ABC Name</h4>
+                  <h5>Student</h5>
+                </div>
+              </div>
+              <div class="tm-bottom">
+                <p>
+                  <i class="ri-double-quotes-l quotes"></i>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
+                  ea quod earum cumque vel tenetur facilis obcaecati nemo
+                  exercitationem eveniet facere deserunt tempora expedita
+                  doloribus.
+                  <i class="ri-double-quotes-r quotes"></i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-hint">
+          <i class="ri-arrow-left-s-line"></i>
+          <span>Drag to see more</span>
+          <i class="ri-arrow-right-s-line"></i>
+        </div>
+      </section>
+
+      <!-- code for CTA section  -->
+      <section id="join-journey">
+        <div class="join-container">
+          <h2>Ready to transform your English skills?</h2>
+          <div class="underline"></div>
+          <p>
+            Join <span>Hope English Language Center</span> today and take the
+            first step toward confidence, fluency, and a brighter future.
+          </p>
+          <a href="contact.html" class="cta-button">Contact us</a>
+        </div>
+      </section>
+
+      <!-- code for footer section -->
+      <footer id="footer">
+        <div class="footer-container">
+          <div class="footer-content">
+            <!-- About Column -->
+            <div class="footer-column">
+              <h3>Hope Language Center</h3>
+              <p>
+                We’re here to help you become fluent and feel confident using
+                the language—with real-world skills and cultural understanding.
+                Join a supportive community of learners and start your journey
+                with us today!
+              </p>
+              <div class="social-links">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-tiktok-fill"></i></a>
+              </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                <li>
+                  <a href="index.html"
+                    ><i class="ri-arrow-right-s-line"></i> Home</a
+                  >
+                </li>
+                <li>
+                  <a href="about.html"
+                    ><i class="ri-arrow-right-s-line"></i> About Us</a
+                  >
+                </li>
+                <li>
+                  <a href="gallery.html"
+                    ><i class="ri-arrow-right-s-line"></i> Gallery</a
+                  >
+                </li>
+                <li>
+                  <a href="courses.html"
+                    ><i class="ri-arrow-right-s-line"></i> Courses</a
+                  >
+                </li>
+                <li>
+                  <a href="vocubulary.html"
+                    ><i class="ri-arrow-right-s-line"></i> Vocabulary</a
+                  >
+                </li>
+                <li>
+                  <a href="blogs.html"
+                    ><i class="ri-arrow-right-s-line"></i> Blogs</a
+                  >
+                </li>
+                <li>
+                  <a href="quiz.html"
+                    ><i class="ri-arrow-right-s-line"></i> Grammar Quiz</a
+                  >
+                </li>
+
+                <li>
+                  <a href="contact.html"
+                    ><i class="ri-arrow-right-s-line"></i> Contact Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Recent Posts Column -->
+            <div class="footer-column">
+              <h3>Recent Posts</h3>
+              <ul class="recent-posts">
+                <li class="recent-post-item">
+                  <div class="post-thumb">
+                    <img
+                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                      alt="Language Learning"
+                    />
+                  </div>
+                  <div class="post-content">
+                    <div class="post-title">
+                      <a href="#"
+                        >5 Effective Strategies for Language Learning</a
+                      >
+                    </div>
+                    <div class="post-meta">
+                      <div class="post-date">
+                        <i class="ri-calendar-line"></i> Oct 15, 2023
+                      </div>
+                      <div class="post-comments">
+                        <i class="ri-chat-3-line"></i> 12
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="recent-post-item">
+                  <div class="post-thumb">
+                    <img
+                      src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                      alt="Grammar Tips"
+                    />
+                  </div>
+                  <div class="post-content">
+                    <div class="post-title">
+                      <a href="#">Common Grammar Mistakes to Avoid</a>
+                    </div>
+                    <div class="post-meta">
+                      <div class="post-date">
+                        <i class="ri-calendar-line"></i> Oct 8, 2023
+                      </div>
+                      <div class="post-comments">
+                        <i class="ri-chat-3-line"></i> 8
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="recent-post-item">
+                  <div class="post-thumb">
+                    <img
+                      src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                      alt="Cultural Understanding"
+                    />
+                  </div>
+                  <div class="post-content">
+                    <div class="post-title">
+                      <a href="#"
+                        >The Importance of Cultural Understanding in Language
+                        Learning</a
+                      >
+                    </div>
+                    <div class="post-meta">
+                      <div class="post-date">
+                        <i class="ri-calendar-line"></i> Oct 1, 2023
+                      </div>
+                      <div class="post-comments">
+                        <i class="ri-chat-3-line"></i> 15
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact & Newsletter Column -->
+            <div class="footer-column">
+              <h3>Contact Us</h3>
+              <ul class="contact-info">
+                <li>
+                  <i class="ri-map-pin-fill"></i>
+                  <span
+                    >Street No. 1, Sector 8c Sector 5 Baldia, Karachi,
+                    Pakistan</span
+                  >
+                </li>
+                <li>
+                  <i class="ri-phone-fill"></i>
+                  <span>+92 345 8385764</span>
+                </li>
+                <li>
+                  <i class="ri-mail-fill"></i>
+                  <span>Rashid.afridi2014@gmail.com</span>
+                </li>
+                <li>
+                  <i class="ri-time-fill"></i>
+                  <span>Mon - Sat: 3:00 PM - 8:00 PM</span>
+                </li>
+              </ul>
+
+              <div class="newsletter-form">
+                <h3>Newsletter</h3>
+                <p>
+                  Subscribe to get updates on new courses and learning
+                  resources.
+                </p>
+                <div class="newsletter-input">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="newsletter-btn">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                &copy; 2023 Hope Language Center. All rights reserved.
+              </div>
+              <ul class="footer-bottom-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li>
+                  <a href="https://maps.app.goo.gl/GdeHia3Ttgn82nnJA"
+                    >Sitemap</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/home.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
   </body>
 </html>
