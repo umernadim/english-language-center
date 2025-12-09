@@ -145,12 +145,15 @@
     right: 5%;
 }
 
-
-
 body {
     height: 100%;
     width: 100%;
     font-family: var(--roboto);
+}
+
+.wrapper{
+    height: 100vh;
+    width: 100%;
 }
 
 /* code for navBar  */
