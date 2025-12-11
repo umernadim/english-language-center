@@ -129,3 +129,5 @@ function searchFilterHandler() {
 }
 
 window.addEventListener("load", searchFilterHandler);
+
+

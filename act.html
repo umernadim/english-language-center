@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope English - All Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <style>
+        :root {
+            --heading-color: #1e3a8a;
+            --text-color-d: #475569;
+            --primary-color: #3b82f6;
+            --secondary-color: #8b5cf6;
+            --accent-color: #10b981;
+            --light-bg: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f1f5f9;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .all-courses {
+            width: 100%;
+            max-width: 1400px;
+            padding: 5rem 4%;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Decorative elements */
+        .courses-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6, #10b981);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .all-courses h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .all-courses h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+        
+        .underline {
+            height: 5px;
+            width: 100px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            margin: 0 auto 3rem;
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .underline:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        /* Course grid */
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .course-item {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #f1f5f9;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border-top: 5px solid;
+        }
+        
+        /* Different border colors for each course */
+        .course-item:nth-child(1) {
+            border-color: #3b82f6;
+        }
+        
+        .course-item:nth-child(2) {
+            border-color: #10b981;
+        }
+        
+        .course-item:nth-child(3) {
+            border-color: #f59e0b;
+        }
+        
+        .course-item:nth-child(4) {
+            border-color: #8b5cf6;
+        }
+        
+        .course-item:nth-child(5) {
+            border-color: #ef4444;
+        }
+        
+        .course-item:nth-child(6) {
+            border-color: #06b6d4;
+        }
+        
+        .course-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.03) 0%, rgba(59, 130, 246, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .course-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-item:hover:before {
+            opacity: 1;
+        }
+        
+        /* Course icon */
+        .course-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.8rem;
+            font-size: 2.2rem;
+            color: white;
+            position: relative;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-item:hover .course-icon {
+            transform: translateY(-8px) scale(1.1);
+        }
+        
+        .course-item:nth-child(1) .course-icon {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+        }
+        
+        .course-item:nth-child(2) .course-icon {
+            background: linear-gradient(135deg, #10b981, #34d399);
+        }
+        
+        .course-item:nth-child(3) .course-icon {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+        }
+        
+        .course-item:nth-child(4) .course-icon {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+        }
+        
+        .course-item:nth-child(5) .course-icon {
+            background: linear-gradient(135deg, #ef4444, #f87171);
+        }
+        
+        .course-item:nth-child(6) .course-icon {
+            background: linear-gradient(135deg, #06b6d4, #22d3ee);
+        }
+        
+        /* Course title */
+        .course-item h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 1.2rem;
+            line-height: 1.3;
+            transition: color 0.3s ease;
+        }
+        
+        .course-item:hover h3 {
+            color: var(--primary-color);
+        }
+        
+        /* Course description */
+        .course-item p {
+            font-size: 1.05rem;
+            color: var(--text-color-d);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+            position: relative;
+        }
+        
+        .quotes {
+            color: #cbd5e1;
+            font-size: 2rem;
+            position: absolute;
+        }
+        
+        .ri-double-quotes-l {
+            top: -10px;
+            left: -5px;
+        }
+        
+        .ri-double-quotes-r {
+            bottom: -15px;
+            right: -5px;
+        }
+        
+        /* Course features */
+        .course-features {
+            list-style: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #f1f5f9;
+        }
+        
+        .course-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            color: var(--text-color-d);
+        }
+        
+        .course-features i {
+            margin-right: 10px;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+        
+        /* Course footer */
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #f1f5f9;
+        }
+        
+        .course-duration, .course-level {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-color-d);
+        }
+        
+        .course-duration i, .course-level i {
+            color: var(--primary-color);
+        }
+        
+        .course-btn {
+            padding: 10px 22px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+        }
+        
+        .course-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Course badge */
+        .course-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2);
+        }
+        
+        /* Section CTA */
+        .section-cta {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 18px 45px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+        }
+        
+        .cta-button i {
+            margin-left: 10px;
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .course-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .all-courses h2 {
+                font-size: 2.7rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .all-courses {
+                padding: 4rem 3%;
+            }
+            
+            .all-courses h2 {
+                font-size: 2.4rem;
+            }
+            
+            .course-list {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto 4rem;
+            }
+            
+            .course-item {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .all-courses {
+                padding: 3rem 2%;
+                border-radius: 20px;
+            }
+            
+            .all-courses h2 {
+                font-size: 2.2rem;
+            }
+            
+            .course-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+            
+            .course-item h3 {
+                font-size: 1.4rem;
+            }
+            
+            .course-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+            
+            .course-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .all-courses h2 {
+                font-size: 1.9rem;
+            }
+            
+            .course-item {
+                padding: 1.8rem 1.5rem;
+            }
+            
+            .course-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+                border-radius: 15px;
+            }
+            
+            .cta-button {
+                padding: 16px 35px;
+                font-size: 1.1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        /* Animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .course-item {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+        
+        .course-item:nth-child(1) { animation-delay: 0.1s; }
+        .course-item:nth-child(2) { animation-delay: 0.2s; }
+        .course-item:nth-child(3) { animation-delay: 0.3s; }
+        .course-item:nth-child(4) { animation-delay: 0.4s; }
+        .course-item:nth-child(5) { animation-delay: 0.5s; }
+        .course-item:nth-child(6) { animation-delay: 0.6s; }
+        
+        /* Hover effect for icon pulse */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        
+        .course-icon {
+            animation: pulse 2s infinite;
+        }
+        
+        .course-item:nth-child(1) .course-icon { animation-delay: 0.5s; }
+        .course-item:nth-child(2) .course-icon { animation-delay: 1s; }
+        .course-item:nth-child(3) .course-icon { animation-delay: 1.5s; }
+        .course-item:nth-child(4) .course-icon { animation-delay: 2s; }
+        .course-item:nth-child(5) .course-icon { animation-delay: 2.5s; }
+        .course-item:nth-child(6) .course-icon { animation-delay: 3s; }
+        
+        /* Decorative circles */
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.03;
+            z-index: 1;
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary-color);
+            top: 10%;
+            right: 5%;
+        }
+        
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--secondary-color);
+            bottom: 10%;
+            left: 5%;
+        }
+    </style>
+</head>
+<body>
+    <section class="all-courses" id="all-courses">
+        <div class="courses-bg"></div>
+        
+        <!-- Decorative circles -->
+        <div class="decorative-circle circle-1"></div>
+        <div class="decorative-circle circle-2"></div>
+        
+        <div class="container">
+            <h2>Our Courses & Programs</h2>
+            <div class="underline"></div>
+            
+            <div class="course-list">
+                <div class="course-item">
+                    <div class="course-icon">
+                        <i class="ri-chat-3-line"></i>
+                    </div>
+                    <div class="course-badge">Most Popular</div>
+                    <h3>Spoken English</h3>
+                    <p>
+                        <i class="ri-double-quotes-l quotes"></i>
+                        Enhance your communication skills with interactive speaking
+                        sessions, role plays, and real-life conversations. Designed for
+                        learners who want to speak English naturally and confidently in
+                        any situation.
+                        <i class="ri-double-quotes-r quotes"></i>
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="ri-checkbox-circle-fill"></i> Daily conversation practice</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Pronunciation correction</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Real-world scenario training</li>
+                    </ul>
+                    
+                    <div class="course-footer">
+                        <div class="course-info">
+                            <div class="course-duration">
+                                <i class="ri-time-line"></i> 3 Months
+                            </div>
+                            <div class="course-level">
+                                <i class="ri-bar-chart-line"></i> Beginner to Advanced
+                            </div>
+                        </div>
+                        <a href="#" class="course-btn">
+                            Learn More <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <div class="course-icon">
+                        <i class="ri-book-mark-line"></i>
+                    </div>
+                    <h3>Grammar Mastery</h3>
+                    <p>
+                        <i class="ri-double-quotes-l quotes"></i>
+                        Strengthen your foundation with our in-depth grammar program.
+                        Learn essential structures, sentence formation, and advanced
+                        rules through practical examples and exercises.
+                        <i class="ri-double-quotes-r quotes"></i>
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="ri-checkbox-circle-fill"></i> Interactive grammar exercises</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Common error correction</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Contextual grammar application</li>
+                    </ul>
+                    
+                    <div class="course-footer">
+                        <div class="course-info">
+                            <div class="course-duration">
+                                <i class="ri-time-line"></i> 2 Months
+                            </div>
+                            <div class="course-level">
+                                <i class="ri-bar-chart-line"></i> All Levels
+                            </div>
+                        </div>
+                        <a href="#" class="course-btn">
+                            Learn More <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <div class="course-icon">
+                        <i class="ri-team-line"></i>
+                    </div>
+                    <div class="course-badge">Youth Favorite</div>
+                    <h3>Youth Leadership Program</h3>
+                    <p>
+                        <i class="ri-double-quotes-l quotes"></i>
+                        A dynamic course crafted for young learners to build confidence,
+                        improve communication, and develop leadership qualities through
+                        debates, public speaking, and teamwork.
+                        <i class="ri-double-quotes-r quotes"></i>
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="ri-checkbox-circle-fill"></i> Public speaking training</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Team collaboration exercises</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Critical thinking development</li>
+                    </ul>
+                    
+                    <div class="course-footer">
+                        <div class="course-info">
+                            <div class="course-duration">
+                                <i class="ri-time-line"></i> 4 Months
+                            </div>
+                            <div class="course-level">
+                                <i class="ri-bar-chart-line"></i> Intermediate
+                            </div>
+                        </div>
+                        <a href="#" class="course-btn">
+                            Learn More <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <div class="course-icon">
+                        <i class="ri-graduation-cap-line"></i>
+                    </div>
+                    <div class="course-badge">Advanced</div>
+                    <h3>Advanced English</h3>
+                    <p>
+                        <i class="ri-double-quotes-l quotes"></i>
+                        Perfect for professionals and academics, this course refines
+                        your language, presentation, and writing skills to match
+                        international communication standards.
+                        <i class="ri-double-quotes-r quotes"></i>
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="ri-checkbox-circle-fill"></i> Business communication skills</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Academic writing techniques</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Professional presentation skills</li>
+                    </ul>
+                    
+                    <div class="course-footer">
+                        <div class="course-info">
+                            <div class="course-duration">
+                                <i class="ri-time-line"></i> 3 Months
+                            </div>
+                            <div class="course-level">
+                                <i class="ri-bar-chart-line"></i> Advanced
+                            </div>
+                        </div>
+                        <a href="#" class="course-btn">
+                            Learn More <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <div class="course-icon">
+                        <i class="ri-mic-line"></i>
+                    </div>
+                    <h3>Public Speaking & Confidence Building</h3>
+                    <p>
+                        <i class="ri-double-quotes-l quotes"></i>
+                        Overcome stage fear and learn to express your thoughts
+                        effectively. This course includes speaking drills, mock
+                        sessions, and feedback to build a strong public presence.
+                        <i class="ri-double-quotes-r quotes"></i>
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="ri-checkbox-circle-fill"></i> Stage presence training</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Voice modulation exercises</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Audience engagement techniques</li>
+                    </ul>
+                    
+                    <div class="course-footer">
+                        <div class="course-info">
+                            <div class="course-duration">
+                                <i class="ri-time-line"></i> 2 Months
+                            </div>
+                            <div class="course-level">
+                                <i class="ri-bar-chart-line"></i> All Levels
+                            </div>
+                        </div>
+                        <a href="#" class="course-btn">
+                            Learn More <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="course-item">
+                    <div class="course-icon">
+                        <i class="ri-edit-box-line"></i>
+                    </div>
+                    <h3>Creative Writing</h3>
+                    <p>
+                        <i class="ri-double-quotes-l quotes"></i>
+                        Improve your storytelling and writing style with creative
+                        exercises. Learn to write essays, articles, and stories with
+                        structure, clarity, and expression.
+                        <i class="ri-double-quotes-r quotes"></i>
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="ri-checkbox-circle-fill"></i> Creative writing exercises</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Story structure techniques</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Editing and proofreading skills</li>
+                    </ul>
+                    
+                    <div class="course-footer">
+                        <div class="course-info">
+                            <div class="course-duration">
+                                <i class="ri-time-line"></i> 2 Months
+                            </div>
+                            <div class="course-level">
+                                <i class="ri-bar-chart-line"></i> Intermediate
+                            </div>
+                        </div>
+                        <a href="#" class="course-btn">
+                            Learn More <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-cta">
+                <a href="courses.html" class="cta-button">View All Course Details <i class="ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add interactive hover effects to course items
+            const courseItems = document.querySelectorAll('.course-item');
+            
+            courseItems.forEach(item => {
+                // Add click effect
+                item.addEventListener('click', function(e) {
+                    // Don't trigger if clicking on a button
+                    if (!e.target.closest('.course-btn')) {
+                        this.style.transform = 'translateY(-12px) scale(0.98)';
+                        setTimeout(() => {
+                            this.style.transform = 'translateY(-15px)';
+                        }, 150);
+                        
+                        // In a real website, this would navigate to course detail page
+                        if (!this.classList.contains('demo-clicked')) {
+                            this.classList.add('demo-clicked');
+                            console.log(`Navigating to ${this.querySelector('h3').textContent} course page`);
+                        }
+                    }
+                });
+                
+                // Add keyboard navigation
+                item.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        this.click();
+                    }
+                });
+                
+                // Add tabindex for accessibility
+                item.setAttribute('tabindex', '0');
+            });
+            
+            // Course button click effects
+            const courseButtons = document.querySelectorAll('.course-btn');
+            courseButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent parent click
+                    
+                    // Ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size/2;
+                    const y = e.clientY - rect.top - size/2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.7);
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        width: ${size}px;
+                        height: ${size}px;
+                        top: ${y}px;
+                        left: ${x}px;
+                    `;
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                    
+                    // In a real website, this would redirect
+                    console.log(`Enrolling in course...`);
+                });
+            });
+            
+            // Add ripple animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Course badges hover effect
+            const courseBadges = document.querySelectorAll('.course-badge');
+            courseBadges.forEach(badge => {
+                badge.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1) rotate(5deg)';
+                });
+                
+                badge.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
+            
+            // Console message for demo
+            console.log("💡 Pro tip: Click on any course card to see the hover animation!");
+        });
+    </script>
+</body>
+</html>
