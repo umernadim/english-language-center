@@ -99,35 +99,71 @@ function navbarHandler() {
 
 navbarHandler();
 
-// function to handle FAQ section
-function faqHandler() {
-  const faqItems = document.querySelectorAll(".faq-item");
+// function to handle test search bar
+function quizSearchHandler() {
+  document.addEventListener("DOMContentLoaded", function () {
+    // Search functionality
+    const searchInput = document.getElementById("searchInput");
+    const testCards = document.querySelectorAll(".test-card");
 
-  faqItems.forEach((item) => {
-    const question = item.querySelector(".faq-question");
-    question.addEventListener("click", () => {
-      item.classList.toggle("active");
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+
+      testCards.forEach((card) => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const description = card.querySelector("p").textContent.toLowerCase();
+
+        if (
+          searchTerm === "" ||
+          title.includes(searchTerm) ||
+          description.includes(searchTerm)
+        ) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+
+    // Test button click effects
+    const testButtons = document.querySelectorAll(".test-btn");
+
+    testButtons.forEach((button) => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Get test title
+        const testTitle =
+          this.closest(".test-card").querySelector("h3").textContent;
+
+        // Button animation
+        const originalText = this.innerHTML;
+        this.innerHTML = "Starting...";
+        this.style.pointerEvents = "none";
+
+        const card = this.closest(".test-card");
+        card.style.transform = "translateY(-3px) scale(0.99)";
+
+        setTimeout(() => {
+          this.innerHTML = originalText;
+          this.style.pointerEvents = "auto";
+          card.style.transform = "translateY(-5px)";
+
+          console.log(`Starting test: ${testTitle}`);
+          alert(`Starting "${testTitle}" - Good luck!`);
+        }, 800);
+      });
+    });
+
+    // Keyboard shortcut for search
+    document.addEventListener("keydown", function (e) {
+      // Escape clears search
+      if (e.key === "Escape" && document.activeElement === searchInput) {
+        searchInput.value = "";
+        searchInput.dispatchEvent(new Event("input"));
+      }
     });
   });
 }
 
-window.addEventListener("load", faqHandler);
-
-// function to handle test search bar
-function searchFilterHandler() {
-  const searchInput = document.getElementById("searchInput");
-  const testGrid = document.getElementById("testGrid");
-  const cards = testGrid.querySelectorAll(".test-card");
-
-  searchInput.addEventListener("keyup", function () {
-    const filter = this.value.toLowerCase();
-    for (let card of cards) {
-      const title = card.querySelector("h3").textContent.toLowerCase();
-      card.style.display = title.includes(filter) ? "block" : "none";
-    }
-  });
-}
-
-window.addEventListener("load", searchFilterHandler);
-
-
+quizSearchHandler();

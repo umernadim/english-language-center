@@ -1,346 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Courses | Hope English Language Center</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <!--Code for navbar -->
-    <nav class="navbar">
-      <div class="scroll-progress" id="scrollProgress"></div>
-      <div class="dkNav-container">
-        <div class="nav-container">
-          <!-- Logo -->
-          <a href="index.html" class="logo" id="desktop-logo">
-            <div class="logo-icon">H</div>
-            <div class="logo-text">
-              <div class="brand-name">Hope English</div>
-              <div class="tagline">Language Center</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses | Hope English Language Center</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!--Code for navbar -->
+  <nav class="navbar">
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="dkNav-container">
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="index.html" class="logo" id="desktop-logo">
+          <div class="logo-icon">H</div>
+          <div class="logo-text">
+            <div class="brand-name">Hope English</div>
+            <div class="tagline">Language Center</div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="active"> Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="quiz.html"> Quiz</a></li>
+          <li><a href="vocabulary.html"> Vocabulary</a></li>
+          <li><a href="courses.html"> Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <!-- Mobile Hamburger Menu -->
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Mobile Sidebar Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="logo" id="mobile-logo">
+      <div class="logo-icon">H</div>
+      <div class="logo-text">
+        <div class="brand-name">Hope English</div>
+        <div class="tagline">Language Center</div>
+      </div>
+    </a>
+    <ul class="mobile-nav-links">
+      <li>
+        <a href="index.html" class="active"><i class="ri-home-4-line"></i> Home</a>
+      </li>
+
+      <li>
+        <a href="about.html"><i class="ri-user-3-line"></i> About</a>
+      </li>
+
+      <li>
+        <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
+      </li>
+
+      <li>
+        <a href="quiz.html"><i class="ri-questionnaire-line"></i> Quiz</a>
+      </li>
+
+      <li>
+        <a href="vocabulary.html"><i class="ri-book-2-line"></i> Vocabulary</a>
+      </li>
+
+      <li>
+        <a href="courses.html"><i class="ri-book-open-line"></i> Courses</a>
+      </li>
+
+      <li>
+        <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
+      </li>
+    </ul>
+  </div>
+  <!-- Overlay for mobile menu -->
+  <div class="overlay" id="overlay"></div>
+
+  <div class="wrapper">
+    <!-- code for hero-section-banner  -->
+    <section id="B-hero-sec">
+      <div class="course-header">
+        <div class="inner-header flex">
+          <div class="container">
+            <h1>Unlock your Skills</h1>
+            <p>
+              Our comprehensive language courses are designed to help you
+              achieve fluency and cultural understanding. Start your language
+              journey today!
+            </p>
+            <div class="cta-btn-cont">
+              <a href="#all-courses" class="cta-button">Explore Our Courses</a>
             </div>
-          </a>
-
-          <!-- Desktop Navigation -->
-          <ul class="nav-links">
-            <li><a href="index.html" class="active"> Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="blogs.html"> Blogs</a></li>
-            <li><a href="quiz.html"> Quiz</a></li>
-            <li><a href="vocabulary.html"> Vocabulary</a></li>
-            <li><a href="courses.html"> Courses</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <!-- Mobile Hamburger Menu -->
-          <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          </div>
+        </div>
+        <!-- code for Hero Banner  -->
+        <div>
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+          </svg>
         </div>
       </div>
-    </nav>
-    <!-- Mobile Sidebar Menu -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="index.html" class="logo" id="mobile-logo">
-        <div class="logo-icon">H</div>
-        <div class="logo-text">
-          <div class="brand-name">Hope English</div>
-          <div class="tagline">Language Center</div>
+    </section>
+
+    <!-- code for all courses section  -->
+    <section class="all-courses" id="all-courses">
+      <div class="container">
+        <h2>Our Courses & Programs</h2>
+        <div class="underline"></div>
+
+        <div class="course-list">
+            <!-- code is in Javascript  -->
         </div>
-      </a>
-      <ul class="mobile-nav-links">
-        <li>
-          <a href="index.html" class="active"
-            ><i class="ri-home-4-line"></i> Home</a
-          >
-        </li>
 
-        <li>
-          <a href="about.html"><i class="ri-user-3-line"></i> About</a>
-        </li>
+      </div>
+    </section>
 
-        <li>
-          <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
-        </li>
+    <!-- code for the activity section  -->
+    <section id="activity-section">
+      <div class="container">
+        <h2>Activities in Action</h2>
+        <div class="underline"></div>
+        <p class="video-intro">
+          Experience how our students learn, communicate, and grow through
+          engaging, real-life English activities.
+        </p>
 
-        <li>
-          <a href="blogs.html"><i class="ri-article-line"></i> Blogs</a>
-        </li>
-
-        <li>
-          <a href="quiz.html"><i class="ri-questionnaire-line"></i> Quiz</a>
-        </li>
-
-        <li>
-          <a href="vocabulary.html"
-            ><i class="ri-book-2-line"></i> Vocabulary</a
-          >
-        </li>
-
-        <li>
-          <a href="courses.html"><i class="ri-book-open-line"></i> Courses</a>
-        </li>
-
-        <li>
-          <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
-        </li>
-      </ul>
-    </div>
-    <!-- Overlay for mobile menu -->
-    <div class="overlay" id="overlay"></div>
-
-    <div class="wrapper">
-      <!-- code for hero-section-banner  -->
-      <section id="B-hero-sec">
-        <div class="course-header">
-          <div class="inner-header flex">
-            <div class="container">
-              <h1>Unlock your Skills</h1>
-              <p>
-                Our comprehensive language courses are designed to help you
-                achieve fluency and cultural understanding. Start your language
-                journey today!
-              </p>
-              <div class="cta-btn-cont">
-                <a href="#all-courses" class="cta-button"
-                  >Explore Our Courses</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- code for Hero Banner  -->
-          <div>
-            <svg
-              class="waves"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28"
-              preserveAspectRatio="none"
-              shape-rendering="auto"
-            >
-              <defs>
-                <path
-                  id="gentle-wave"
-                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-                />
-              </defs>
-              <g class="parallax">
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="0"
-                  fill="rgba(255,255,255,0.7)"
-                />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="3"
-                  fill="rgba(255,255,255,0.5)"
-                />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="5"
-                  fill="rgba(255,255,255,0.3)"
-                />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-              </g>
-            </svg>
-          </div>
+        <div class="video-grid">
+          <!-- code is in javascript  -->
         </div>
-      </section>
+    </section>
 
-      <!-- code for all courses section  -->
-      <section class="all-courses" id="all-courses">
-        <div class="container">
-          <h2>Our Courses & Programs</h2>
-          <div class="underline"></div>
-          <div class="course-list">
-            <div class="course-item">
-              <div class="course-icon">
-                <i class="ri-chat-3-line"></i>
-              </div>
-              <h3>Spoken English</h3>
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Enhance your communication skills with interactive speaking
-                sessions, role plays, and real-life conversations. Designed for
-                learners who want to speak English naturally and confidently in
-                any situation.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
+    <!-- code for the FAQ section  -->
+    <section id="faq-section">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="underline"></div>
+        <p class="faq-intro">
+          Find answers to some of the most common questions about our English
+          courses.
+        </p>
 
-            <div class="course-item">
-              <div class="course-icon">
-                <i class="ri-book-mark-line"></i>
-              </div>
-              <h3>Grammar Mastery</h3>
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Strengthen your foundation with our in-depth grammar program.
-                Learn essential structures, sentence formation, and advanced
-                rules through practical examples and exercises.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-
-            <div class="course-item">
-              <div class="course-icon">
-                <i class="ri-team-line"></i>
-              </div>
-              <h3>Youth Leadership Program</h3>
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                A dynamic course crafted for young learners to build confidence,
-                improve communication, and develop leadership qualities through
-                debates, public speaking, and teamwork.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-
-            <div class="course-item">
-              <div class="course-icon">
-                <i class="ri-graduation-cap-line"></i>
-              </div>
-              <h3>Advanced English</h3>
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Perfect for professionals and academics, this course refines
-                your language, presentation, and writing skills to match
-                international communication standards.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-
-            <div class="course-item">
-              <div class="course-icon">
-                <i class="ri-mic-line"></i>
-              </div>
-              <h3>Public Speaking & Confidence Building</h3>
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Overcome stage fear and learn to express your thoughts
-                effectively. This course includes speaking drills, mock
-                sessions, and feedback to build a strong public presence.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-
-            <div class="course-item">
-              <div class="course-icon">
-                <i class="ri-edit-box-line"></i>
-              </div>
-              <h3>Creative Writing</h3>
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Improve your storytelling and writing style with creative
-                exercises. Learn to write essays, articles, and stories with
-                structure, clarity, and expression.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
+        <div class="faq">
+      <!-- code is in javascript  -->
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- code for the activity section  -->
-      <section id="activity-section">
-        <div class="container">
-          <h2>Activities in Action</h2>
-          <div class="underline"></div>
-          <p class="video-intro">
-            Experience how our students learn, communicate, and grow through
-            engaging, real-life English activities.
-          </p>
+    <!-- code for CTA section  -->
+    <section id="join-journey">
+      <div class="join-container">
+        <h2>Still have question?</h2>
+        <div class="underline"></div>
+        <p>
+          Need more information or support? Contact us and we’ll assist you.
+        </p>
+        <a href="contact.html" class="cta-button">Send a Message</a>
+      </div>
+    </section>
+  </div>
 
-          <div class="video-grid">
-            <!-- code is in javascript  -->
-        </div>
-      </section>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/courses.js"></script>
+</body>
 
-      <!-- code for the FAQ section  -->
-      <section id="faq-section">
-        <div class="container">
-          <h2>Frequently Asked Questions</h2>
-          <div class="underline"></div>
-          <p class="faq-intro">
-            Find answers to some of the most common questions about our English
-            courses.
-          </p>
-
-          <div class="faq">
-            <div class="faq-item">
-              <button class="faq-question">Who can join these courses?</button>
-              <div class="faq-answer">
-                <p>
-                  Anyone who wants to improve their English skills is welcome —
-                  from school students to professionals seeking better
-                  communication and confidence.
-                </p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question">
-                Are the classes online or on-campus?
-              </button>
-              <div class="faq-answer">
-                <p>
-                  All our classes are conducted on-campus at our center. We
-                  believe in interactive, face-to-face learning that builds
-                  confidence, real communication, and stronger connections among
-                  students.
-                </p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question">
-                What is the duration of each course?
-              </button>
-              <div class="faq-answer">
-                <p>
-                  Each course runs between 6 to 12 weeks, depending on the level
-                  and program type. Flexible timings are also available.
-                </p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question">Do you provide certificates?</button>
-              <div class="faq-answer">
-                <p>
-                  Yes, all participants receive a certificate of completion upon
-                  successfully finishing their course or program.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- code for CTA section  -->
-      <section id="join-journey">
-        <div class="join-container">
-          <h2>Still have question?</h2>
-          <div class="underline"></div>
-          <p>
-            Need more information or support? Contact us and we’ll assist you.
-          </p>
-          <a href="contact.html" class="cta-button">Send a Message</a>
-        </div>
-      </section>
-    </div>
-
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/courses.js"></script>
-  </body>
 </html>
