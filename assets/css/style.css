@@ -1726,7 +1726,7 @@ body {
     color: var(--heading-color);
     margin-top: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.62)),
-        url(/assets/images/carousel/img2.jpg);
+        url(../images/carousel/img4.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -2209,13 +2209,13 @@ body {
     background: var(--background-color);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #activity-section .video-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .video-container {
@@ -2246,26 +2246,27 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
+    opacity: 1;
     transition: 0.3s ease;
     border-radius: 12px 12px 0 0;
 }
 
-.video-container:hover .play-overlay {
+/* .video-container:hover .play-overlay {
     opacity: 1;
-}
+} */
 
 .video-card .play-icon {
     width: 70px;
     height: 70px;
-    background: rgba(255, 255, 255, 0.9);
+    /* background: rgba(255, 255, 255, 0.9); */
+    background: rgba(255, 255, 255, 0.763);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
     transition: 0.3s ease;
-    color: var(--primary-color);
+    color: var(--text-color-d);
 }
 
 .video-container:hover .play-icon {
@@ -2385,7 +2386,7 @@ body {
     color: var(--heading-color);
     margin-top: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.62)),
-        url(/assets/images/carousel/img6.jpg);
+        url(../images/carousel/img6.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -2707,7 +2708,7 @@ body {
     color: var(--heading-color);
     margin-top: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.6)),
-        url(/assets/images/carousel/img4.jpg);
+        url(../images/carousel/img4.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -2885,7 +2886,7 @@ body {
     color: var(--heading-color);
     margin-top: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.62)),
-        url(/assets/images/carousel/img2.jpg);
+        url(../images/carousel/img4.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -3077,6 +3078,17 @@ body {
 /*****************************
         Gallery Page
 /*****************************/
+#B-hero-sec .gallery-header {
+    position: relative;
+    text-align: center;
+    color: var(--heading-color);
+    margin-top: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.62)),
+        url(../images/carousel/img6.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
 /* Code for gallery page  */
 #gallery-container {
     min-height: 150vh;
@@ -3154,7 +3166,7 @@ body {
     color: var(--heading-color);
     margin-top: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.62)),
-        url(/assets/images/carousel/img2.jpg);
+        url(../images/carousel/img3.jpg);
     background-size: cover;
     background-position: center;
 }
