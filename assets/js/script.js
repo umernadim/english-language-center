@@ -17,12 +17,14 @@ function navbarHandler() {
       navbar.classList.toggle("active");
       logo.classList.toggle("active");
       document.body.style.overflow = mobileNav.classList.contains("active")
-        ? "hidden"
+      ? "hidden"
         : "";
     }
 
     // Close mobile menu
     function closeMobileMenu() {
+      navbar.classList.toggle("active");
+      logo.classList.toggle("active");
       hamburger.classList.remove("active");
       mobileNav.classList.remove("active");
       overlay.classList.remove("active");
@@ -58,22 +60,20 @@ function navbarHandler() {
 
     // Active link management
     const navLinks = document.querySelectorAll(
-      ".nav-links a, .mobile-nav-links a"
+      ".navbar .nav-links a, .navbar .mobile-nav-links a"
     );
 
+    const currentPage =
+      window.location.pathname.split("/").pop() || "index.html";
+
     navLinks.forEach((link) => {
-      link.addEventListener("click", function (e) {
-        // Remove active class from all links
-        navLinks.forEach((l) => l.classList.remove("active"));
+      const linkPage = link.getAttribute("href");
 
-        // Add active class to clicked link
-        this.classList.add("active");
-
-        // For desktop links, prevent default only for demo
-        if (!this.getAttribute("href") || this.getAttribute("href") === "#") {
-          e.preventDefault();
-        }
-      });
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
     });
 
     // Initialize active link
