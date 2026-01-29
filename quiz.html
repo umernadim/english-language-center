@@ -10,296 +10,310 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
-    <!--Code for navbar -->
-    <nav class="navbar">
-      <div class="scroll-progress" id="scrollProgress"></div>
-      <div class="dkNav-container">
-        <div class="nav-container">
-          <!-- Logo -->
-          <a href="index.html" class="logo" id="desktop-logo">
-            <div class="logo-icon">H</div>
-            <div class="logo-text">
-              <div class="brand-name">Hope English</div>
-              <div class="tagline">Language Center</div>
-            </div>
-          </a>
 
-          <!-- Desktop Navigation -->
-          <ul class="nav-links">
-            <li><a href="index.html" class="active"> Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="quiz.html"> Quiz</a></li>
-            <li><a href="vocabulary.html"> Vocabulary</a></li>
-            <li><a href="courses.html"> Courses</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <!-- Mobile Hamburger Menu -->
-          <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </div>
-    </nav>
-    <!-- Mobile Sidebar Menu -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="index.html" class="logo" id="mobile-logo">
+  <body>
+    <nav class="fixed-timer">
+      <!-- logo  -->
+      <a href="index.html" class="logo" id="desktop-logo">
         <div class="logo-icon">H</div>
         <div class="logo-text">
           <div class="brand-name">Hope English</div>
           <div class="tagline">Language Center</div>
         </div>
       </a>
-      <ul class="mobile-nav-links">
-        <li>
-          <a href="index.html" class="active"
-            ><i class="ri-home-4-line"></i> Home</a
-          >
-        </li>
-
-        <li>
-          <a href="about.html"><i class="ri-user-3-line"></i> About</a>
-        </li>
-
-        <li>
-          <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
-        </li>
-
-        <li>
-          <a href="quiz.html"><i class="ri-questionnaire-line"></i> Quiz</a>
-        </li>
-
-        <li>
-          <a href="vocabulary.html"
-            ><i class="ri-book-2-line"></i> Vocabulary</a
-          >
-        </li>
-
-        <li>
-          <a href="courses.html"><i class="ri-book-open-line"></i> Courses</a>
-        </li>
-
-        <li>
-          <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Overlay for mobile menu -->
-    <div class="overlay" id="overlay"></div>
-
+      <div class="timer-content">
+        <div class="timer-text">Time Remaining:</div>
+        <div id="time">3:00</div>
+      </div>
+    </nav>
+    <div class="scroll-progress" id="scrollProgress"></div>
     <div class="wrapper">
-      <!-- code for hero-section-banner  -->
-      <section id="B-hero-sec">
-        <div class="test-header">
-          <div class="inner-header flex">
-            <div class="container">
-              <h1>Ready to Test Your Brain?</h1>
-              <p>
-                Select a grammar or vocabulary quiz and see how well you can
-                perform! Perfect for students preparing for real-world English
-                use.
-              </p>
-              <div class="cta-button-cont">
-                <a href="courses.html" class="cta-button"
-                  >Explore Our Courses</a
-                >
+      <section id="quiz-sect">
+        <!-- Main Content -->
+        <div class="container">
+          <!-- Header -->
+          <div class="header">
+            <h1 class="quiz-title">Present Simple Tense</h1>
+            <p class="quiz-description">
+              Choose the correct option to test yourself.
+            </p>
+            <!-- Student Info -->
+            <div class="student-info">
+              <div class="info-card">
+                <h3>
+                  <i class="ri-user-line"></i>Name: <span>Muhammad Umer</span>
+                </h3>
+                <!-- <p id="student-name">
+                <?php echo htmlspecialchars($student_name); ?>
+                 Muhammad Umer
+              </p> -->
+              </div>
+              <div class="info-card">
+                <h3>
+                  <i class="ri-list-ordered-2"></i> Total Questions:
+                  <span>10</span>
+                </h3>
+                <!-- <p id="total-questions">10</p> -->
+              </div>
+              <div class="info-card">
+                <h3>
+                  <i class="ri-hourglass-fill"></i> Duration:
+                  <span>3 Minutes</span>
+                </h3>
+                <!-- <p>3 Minutes</p> -->
               </div>
             </div>
           </div>
-          <div>
-            <svg
-              class="waves"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28"
-              preserveAspectRatio="none"
-              shape-rendering="auto"
+
+          <!-- Questions Container -->
+          <form
+            action="submit.php"
+            method="post"
+            id="quiz-form"
+            class="questions-container"
+          >
+            <input
+              type="hidden"
+              name="test_id"
+              value="<?php echo htmlspecialchars($test_id); ?>"
+            />
+            <input
+              type="hidden"
+              name="student_id"
+              value="<?php echo htmlspecialchars($student_id); ?>"
+            />
+
+            <h2 class="section-title">
+              <i class="ri-question-fill"></i> Questions
+            </h2>
+
+            <?php
+      // This section would be generated by your PHP code
+      // I'm creating 3 sample questions to show the design
+      ?>
+
+            <!-- Question 1 -->
+            <div class="question">
+              <!-- <span class="question-number">1</span> -->
+              <div class="question-text">
+                Which word is the correct translation for "book" in Spanish?
+              </div>
+
+              <div class="options">
+                <div class="two-options">
+                  <div class="option">
+                    <input
+                      type="radio"
+                      id="q1_opt1"
+                      name="ans[1]"
+                      value="1"
+                      required
+                    />
+                    <label for="q1_opt1" class="option-label">
+                      <span class="option-text">Libro</span>
+                    </label>
+                  </div>
+
+                  <div class="option">
+                    <input type="radio" id="q1_opt2" name="ans[1]" value="2" />
+                    <label for="q1_opt2" class="option-label">
+                      <span class="option-text">Casa</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="two-options">
+                  <div class="option">
+                    <input type="radio" id="q1_opt3" name="ans[1]" value="3" />
+                    <label for="q1_opt3" class="option-label">
+                      <span class="option-text">Mesa</span>
+                    </label>
+                  </div>
+
+                  <div class="option">
+                    <input type="radio" id="q1_opt4" name="ans[1]" value="4" />
+                    <label for="q1_opt4" class="option-label">
+                      <span class="option-text">Pluma</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+              <!-- <span class="question-number">2</span> -->
+              <div class="question-text">
+                What is the feminine form of "un amigo" (a friend) in French?
+              </div>
+
+              <div class="options">
+                <div class="two-options">
+                  <div class="option">
+                    <input
+                      type="radio"
+                      id="q2_opt1"
+                      name="ans[2]"
+                      value="5"
+                      required
+                    />
+                    <label for="q2_opt1" class="option-label">
+                      <span class="option-text">Une amie</span>
+                    </label>
+                  </div>
+
+                  <div class="option">
+                    <input type="radio" id="q2_opt2" name="ans[2]" value="6" />
+                    <label for="q2_opt2" class="option-label">
+                      <span class="option-text">Un ami</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="two-options">
+                  <div class="option">
+                    <input type="radio" id="q2_opt3" name="ans[2]" value="7" />
+                    <label for="q2_opt3" class="option-label">
+                      <span class="option-text">Une amigue</span>
+                    </label>
+                  </div>
+
+                  <div class="option">
+                    <input type="radio" id="q2_opt4" name="ans[2]" value="8" />
+                    <label for="q2_opt4" class="option-label">
+                      <span class="option-text">Un amie</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+              <!-- <span class="question-number">3</span> -->
+              <div class="question-text">
+                Which of these is NOT a correct German article for a masculine
+                noun?
+              </div>
+
+              <div class="options">
+                <div class="two-options">
+                  <div class="option">
+                    <input
+                      type="radio"
+                      id="q3_opt1"
+                      name="ans[3]"
+                      value="9"
+                      required
+                    />
+                    <label for="q3_opt1" class="option-label">
+                      <span class="option-text">Der</span>
+                    </label>
+                  </div>
+
+                  <div class="option">
+                    <input type="radio" id="q3_opt2" name="ans[3]" value="10" />
+                    <label for="q3_opt2" class="option-label">
+                      <span class="option-text">Die</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="two-options">
+                  <div class="option">
+                    <input type="radio" id="q3_opt3" name="ans[3]" value="11" />
+                    <label for="q3_opt3" class="option-label">
+                      <span class="option-text">Das</span>
+                    </label>
+                  </div>
+
+                  <div class="option">
+                    <input type="radio" id="q3_opt4" name="ans[3]" value="12" />
+                    <label for="q3_opt4" class="option-label">
+                      <span class="option-text">Den</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- More questions would be generated by PHP here -->
+          </form>
+          <!-- Submit Button -->
+          <div class="submit-section">
+            <button
+              type="submit"
+              form="quiz-form"
+              class="cta-button submit-btn"
             >
-              <defs>
-                <path
-                  id="gentle-wave"
-                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-                />
-              </defs>
-              <g class="parallax">
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="0"
-                  fill="rgba(255,255,255,0.7)"
-                />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="3"
-                  fill="rgba(255,255,255,0.5)"
-                />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="5"
-                  fill="rgba(255,255,255,0.3)"
-                />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-              </g>
-            </svg>
+              <i class="ri-send-plane-fill"></i> Submit Quiz
+            </button>
           </div>
         </div>
-      </section>
 
-      <!-- code for test cards section  -->
-      <section id="test-page">
-        <div class="test-container">
-          <!-- Search Filter -->
-          <div class="search-bar">
-            <h2>Find Your Grammar Test</h2>
-            <div class="underline"></div>
-
-            <div class="search-wrapper">
-              <i class="ri-search-line search-icon"></i>
-              <input
-                type="text"
-                id="searchInput"
-                placeholder="Search grammar topics..."
-              />
-            </div>
-          </div>
-
-          <!-- Code for Test Cards -->
-          <div class="test-grid" id="testGrid">
-            <div class="test-card">
-              <h3>Tenses Practice Test</h3>
-              <p>
-                Test your understanding of verb tenses with practical questions
-                covering present, past, and future tenses.
-              </p>
-              <div class="test-stats">
-                <div class="stat">
-                  <i class="ri-question-line"></i>
-                  <span>10 Questions</span>
-                </div>
-                <div class="stat">
-                  <i class="ri-time-line"></i>
-                  <span>5-8 minutes</span>
-                </div>
-              </div>
-              <a href="#" class="test-btn cta-button"
-                >Take Test <i class="ri-arrow-right-line"></i
-              ></a>
-            </div>
-
-            <div class="test-card">
-              <h3>Prepositions Challenge</h3>
-              <p>
-                Master the use of prepositions in different contexts with this
-                focused practice test.
-              </p>
-              <div class="test-stats">
-                <div class="stat">
-                  <i class="ri-question-line"></i>
-                  <span>12 Questions</span>
-                </div>
-                <div class="stat">
-                  <i class="ri-time-line"></i>
-                  <span>6-9 minutes</span>
-                </div>
-              </div>
-              <a href="#" class="test-btn cta-button"
-                >Take Test <i class="ri-arrow-right-line"></i
-              ></a>
-            </div>
-
-            <div class="test-card">
-              <h3>Parts of Speech Quiz</h3>
-              <p>
-                Identify and classify different parts of speech to strengthen
-                your grammar foundation.
-              </p>
-              <div class="test-stats">
-                <div class="stat">
-                  <i class="ri-question-line"></i>
-                  <span>8 Questions</span>
-                </div>
-                <div class="stat">
-                  <i class="ri-time-line"></i>
-                  <span>4-7 minutes</span>
-                </div>
-              </div>
-              <a href="#" class="test-btn cta-button"
-                >Take Test <i class="ri-arrow-right-line"></i
-              ></a>
-            </div>
-
-            <div class="test-card">
-              <h3>Active & Passive Voice</h3>
-              <p>
-                Practice converting sentences between active and passive voice
-                with clear examples.
-              </p>
-              <div class="test-stats">
-                <div class="stat">
-                  <i class="ri-question-line"></i>
-                  <span>10 Questions</span>
-                </div>
-                <div class="stat">
-                  <i class="ri-time-line"></i>
-                  <span>5-8 minutes</span>
-                </div>
-              </div>
-              <a href="#" class="test-btn cta-button"
-                >Take Test <i class="ri-arrow-right-line"></i
-              ></a>
-            </div>
-
-            <div class="test-card">
-              <h3>Conditional Sentences</h3>
-              <p>
-                Test your knowledge of zero, first, second, third, and mixed
-                conditionals.
-              </p>
-              <div class="test-stats">
-                <div class="stat">
-                  <i class="ri-question-line"></i>
-                  <span>15 Questions</span>
-                </div>
-                <div class="stat">
-                  <i class="ri-time-line"></i>
-                  <span>8-12 minutes</span>
-                </div>
-              </div>
-              <a href="#" class="test-btn cta-button"
-                >Take Test <i class="ri-arrow-right-line"></i
-              ></a>
-            </div>
-
-            <div class="test-card">
-              <h3>Conjunctions & Connectors</h3>
-              <p>
-                Practice using conjunctions and connectors to link ideas
-                smoothly in sentences.
-              </p>
-              <div class="test-stats">
-                <div class="stat">
-                  <i class="ri-question-line"></i>
-                  <span>10 Questions</span>
-                </div>
-                <div class="stat">
-                  <i class="ri-time-line"></i>
-                  <span>6-9 minutes</span>
-                </div>
-              </div>
-              <a href="#" class="test-btn cta-button"
-                >Take Test <i class="ri-arrow-right-line"></i
-              ></a>
-            </div>
-          </div>
+        <!-- Footer -->
+        <div class="footer">
+          <p>© 2023 Language Center. All answers are final once submitted.</p>
         </div>
       </section>
     </div>
-    <script src="assets/js/script.js"></script>
+    <!-- <script>
+    let totalTime = 3 * 60;
+    const timerEl = document.getElementById("time");
+    const form = document.getElementById("quiz-form");
+
+    function startTimer() {
+      let minutes = Math.floor(totalTime / 60);
+      let seconds = totalTime % 60;
+
+      timerEl.textContent =
+        minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+      if (totalTime <= 0) {
+        alert("Time is up! Your quiz will be submitted automatically.");
+        form.submit();
+      }
+
+      totalTime--;
+    }
+
+    // Start the timer
+    setInterval(startTimer, 1000);
+
+    // Initialize the timer display immediately
+    startTimer();
+
+    // Form submission confirmation
+    form.addEventListener("submit", function (e) {
+      // Check if all questions are answered (optional)
+      const radioButtons = document.querySelectorAll(
+        'input[type="radio"]:checked'
+      );
+      const totalQuestions = document.querySelectorAll(".question").length;
+
+      if (radioButtons.length < totalQuestions) {
+        e.preventDefault();
+        const confirmSubmit = confirm(
+          `You have answered ${radioButtons.length} out of ${totalQuestions} questions. Are you sure you want to submit?`
+        );
+
+        if (confirmSubmit) {
+          form.submit();
+        }
+      }
+    });
+
+  </script> -->
+
+    <script>
+      const scrollProgress = document.getElementById("scrollProgress");
+      const wrapper = document.querySelector(".wrapper");
+      window.addEventListener("scroll", function () {
+        const scrolled = window.scrollY;
+        const rate = scrolled * -0.2;
+
+        if (wrapper) {
+          wrapper.style.transform = `translateY(${rate}px)`;
+        }
+      });
+    </script>
   </body>
 </html>

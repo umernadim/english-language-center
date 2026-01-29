@@ -84,7 +84,7 @@ function navbarHandler() {
       }
     });
 
-    // Demo: Add some scrolling animation for the demo content
+    // Code for scrolling animation 
     const wrapper = document.querySelector(".wrapper");
     window.addEventListener("scroll", function () {
       const scrolled = window.scrollY;

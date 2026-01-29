@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student's information | Hope English Language Center</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="st-form-container">
+      <div class="st-box">
+        <h2>Enter Your Details</h2>
+        <p class="subtitle">
+          Please provide your information to begin the language assessment
+        </p>
+
+        <form>
+          <div class="input-field">
+            <input type="hidden" name="test_id" value="<?= $test_id ?>" />
+          </div>
+
+          <div class="input-field">
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter your name" required />
+          </div>
+
+          <div class="input-field">
+            <label>Father's Name</label>
+            <input type="text" placeholder="Enter Father's name" required />
+          </div>
+
+          <button type="submit" class="quiz-btn">Start Quiz</button>
+
+          <span class="go-back-link">
+            <a href="quiz.html"><i class="ri-arrow-left-line"></i> Go Back </a>
+          </span>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

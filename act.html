@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Result</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #2d3748;
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .page-header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+      color: #2d3748;
+      margin-bottom: 10px;
+    }
+
+    /* Result Card */
+    .result-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .student-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .info-item {
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .info-label {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-bottom: 5px;
+    }
+
+    .info-value {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2d3748;
+    }
+
+    /* Score Section */
+    .score-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .score-card {
+      text-align: center;
+      padding: 25px 15px;
+      border-radius: 10px;
+      background: #f8f9fa;
+    }
+
+    .score-card.total {
+      background: #e3f2fd;
+      border-left: 4px solid #4361ee;
+    }
+
+    .score-card.correct {
+      background: #e8f5e9;
+      border-left: 4px solid #4caf50;
+    }
+
+    .score-card.wrong {
+      background: #ffebee;
+      border-left: 4px solid #f44336;
+    }
+
+    .score-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .total .score-number {
+      color: #4361ee;
+    }
+
+    .correct .score-number {
+      color: #4caf50;
+    }
+
+    .wrong .score-number {
+      color: #f44336;
+    }
+
+    .score-label {
+      font-size: 1rem;
+      color: #6c757d;
+    }
+
+    /* Review Section */
+    .review-section {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #2d3748;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    /* Questions Review */
+    .review-question {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #e9ecef;
+    }
+
+    .review-question:last-child {
+      margin-bottom: 0;
+    }
+
+    .question-header {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .question-number {
+      background: #4361ee;
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .question-text {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #2d3748;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    /* Options */
+    .options {
+      margin-left: 15px;
+    }
+
+    .option {
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border-left: 4px solid transparent;
+      background: white;
+    }
+
+    .option.correct {
+      background: #e8f5e9;
+      border-left-color: #4caf50;
+    }
+
+    .option.wrong {
+      background: #ffebee;
+      border-left-color: #f44336;
+    }
+
+    .option-label {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .status {
+      font-size: 0.85rem;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 5px;
+    }
+
+    .correct .status {
+      background: #4caf50;
+      color: white;
+    }
+
+    .wrong .status {
+      background: #f44336;
+      color: white;
+    }
+
+    /* Actions */
+    .action-buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #4361ee;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background: #3a56d4;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #4361ee;
+      color: #4361ee;
+      margin-left: 15px;
+    }
+
+    .btn-outline:hover {
+      background: #f0f3ff;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      color: #6c757d;
+      font-size: 0.9rem;
+      padding: 20px;
+      margin-top: 30px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+      
+      .result-card, .review-section {
+        padding: 20px;
+      }
+      
+      .score-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .student-info {
+        grid-template-columns: 1fr;
+      }
+      
+      .question-text {
+        font-size: 1.1rem;
+      }
+      
+      .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .btn-outline {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0;
+      }
+      
+      .page-header h1 {
+        font-size: 1.7rem;
+      }
+      
+      .question-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .question-number {
+        margin-bottom: 10px;
+      }
+      
+      .options {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="page-header">
+      <h1>📊 Quiz Results</h1>
+      <p>Review your performance and answers</p>
+    </div>
+
+    <!-- Result Card -->
+    <div class="result-card">
+      <!-- Student Info -->
+      <div class="student-info">
+        <div class="info-item">
+          <div class="info-label">Student Name</div>
+          <div class="info-value"><?= htmlspecialchars($student['name']) ?></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Father's Name</div>
+          <div class="info-value"><?= htmlspecialchars($student['father_name']) ?></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Test Date</div>
+          <div class="info-value"><?= date('F j, Y') ?></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Test ID</div>
+          <div class="info-value">#<?= htmlspecialchars($test_id) ?></div>
+        </div>
+      </div>
+
+      <!-- Score Cards -->
+      <div class="score-section">
+        <div class="score-card total">
+          <div class="score-number"><?= $total ?></div>
+          <div class="score-label">Total Questions</div>
+        </div>
+        <div class="score-card correct">
+          <div class="score-number"><?= $correct ?></div>
+          <div class="score-label">Correct Answers</div>
+        </div>
+        <div class="score-card wrong">
+          <div class="score-number"><?= $wrong ?></div>
+          <div class="score-label">Wrong Answers</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Section -->
+    <div class="review-section">
+      <h2 class="section-title">📘 Answer Review</h2>
+
+      <?php
+      $q = mysqli_query($conn, "SELECT * FROM questions WHERE test_id=$test_id");
+      $i = 1;
+      
+      while ($question = mysqli_fetch_assoc($q)) {
+        // Get student's answer
+        $ans = mysqli_fetch_assoc(
+          mysqli_query($conn,
+            "SELECT selected_option_id FROM answers
+             WHERE student_id=$sid AND question_id=".$question['id']
+          )
+        );
+        
+        $selected = $ans['selected_option_id'];
+      ?>
+      <div class="review-question">
+        <div class="question-header">
+          <div class="question-number"><?= $i++ ?></div>
+          <div class="question-text"><?= htmlspecialchars($question['question']) ?></div>
+        </div>
+        
+        <div class="options">
+          <?php
+          $opts = mysqli_query($conn,
+            "SELECT * FROM options WHERE question_id=".$question['id']
+          );
+          
+          while ($opt = mysqli_fetch_assoc($opts)) {
+            $class = "option";
+            $status = "";
+            
+            if ($opt['is_correct']) {
+              $class .= " correct";
+              $status = "Correct Answer";
+            }
+            
+            if ($opt['id'] == $selected && !$opt['is_correct']) {
+              $class .= " wrong";
+              $status = "Your Answer (Incorrect)";
+            } elseif ($opt['id'] == $selected && $opt['is_correct']) {
+              $status = "Your Answer ✓";
+            }
+          ?>
+            <div class="<?= $class ?>">
+              <div class="option-label"><?= htmlspecialchars($opt['option_text']) ?></div>
+              <?php if ($status): ?>
+                <div class="status"><?= $status ?></div>
+              <?php endif; ?>
+            </div>
+          <?php } ?>
+        </div>
+      </div>
+      <?php } ?>
+    </div>
+
+    <!-- Actions -->
+    <div class="action-buttons">
+      <a href="index.php" class="btn">Back to Home</a>
+      <button onclick="window.print()" class="btn btn-outline">Print Results</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>© Language Center. Thank you for taking the test!</p>
+    </div>
+  </div>
+
+  <script>
+    // Add simple animation to score cards
+    document.addEventListener('DOMContentLoaded', function() {
+      const scoreCards = document.querySelectorAll('.score-card');
+      
+      scoreCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 200);
+      });
+      
+      // Highlight correct/wrong answers on hover
+      const options = document.querySelectorAll('.option');
+      options.forEach(option => {
+        option.addEventListener('mouseenter', function() {
+          if (this.classList.contains('correct')) {
+            this.style.boxShadow = '0 0 0 2px rgba(76, 175, 80, 0.3)';
+          } else if (this.classList.contains('wrong')) {
+            this.style.boxShadow = '0 0 0 2px rgba(244, 67, 54, 0.3)';
+          }
+        });
+        
+        option.addEventListener('mouseleave', function() {
+          this.style.boxShadow = 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

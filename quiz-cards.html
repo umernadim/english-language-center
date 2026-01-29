@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grammar-Quizes | Hope English Language Center</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!--Code for navbar -->
+    <nav class="navbar">
+      <div class="scroll-progress" id="scrollProgress"></div>
+      <div class="dkNav-container">
+        <div class="nav-container">
+          <!-- Logo -->
+          <a href="index.html" class="logo" id="desktop-logo">
+            <div class="logo-icon">H</div>
+            <div class="logo-text">
+              <div class="brand-name">Hope English</div>
+              <div class="tagline">Language Center</div>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <ul class="nav-links">
+            <li><a href="index.html" class="active"> Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="quiz-cards.html"> Quiz</a></li>
+            <li><a href="vocabulary.html"> Vocabulary</a></li>
+            <li><a href="courses.html"> Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <!-- Mobile Hamburger Menu -->
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Mobile Sidebar Menu -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html" class="logo" id="mobile-logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">
+          <div class="brand-name">Hope English</div>
+          <div class="tagline">Language Center</div>
+        </div>
+      </a>
+      <ul class="mobile-nav-links">
+        <li>
+          <a href="index.html" class="active"
+            ><i class="ri-home-4-line"></i> Home</a
+          >
+        </li>
+
+        <li>
+          <a href="about.html"><i class="ri-user-3-line"></i> About</a>
+        </li>
+
+        <li>
+          <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
+        </li>
+
+        <li>
+          <a href="quiz-cards.html"><i class="ri-questionnaire-line"></i> Quiz</a>
+        </li>
+
+        <li>
+          <a href="vocabulary.html"
+            ><i class="ri-book-2-line"></i> Vocabulary</a
+          >
+        </li>
+
+        <li>
+          <a href="courses.html"><i class="ri-book-open-line"></i> Courses</a>
+        </li>
+
+        <li>
+          <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="wrapper">
+      <!-- code for hero-section-banner  -->
+      <section id="B-hero-sec">
+        <div class="test-header">
+          <div class="inner-header flex">
+            <div class="container">
+              <h1>Ready to Test Your Brain?</h1>
+              <p>
+                Select a grammar or vocabulary quiz and see how well you can
+                perform! Perfect for students preparing for real-world English
+                use.
+              </p>
+              <div class="cta-button-cont">
+                <a href="courses.html" class="cta-button"
+                  >Explore Our Courses</a
+                >
+              </div>
+            </div>
+          </div>
+          <div>
+            <svg
+              class="waves"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 24 150 28"
+              preserveAspectRatio="none"
+              shape-rendering="auto"
+            >
+              <defs>
+                <path
+                  id="gentle-wave"
+                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+                />
+              </defs>
+              <g class="parallax">
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="0"
+                  fill="rgba(255,255,255,0.7)"
+                />
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="3"
+                  fill="rgba(255,255,255,0.5)"
+                />
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="5"
+                  fill="rgba(255,255,255,0.3)"
+                />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- code for test cards section  -->
+      <section id="test-page">
+        <div class="test-container">
+          <!-- Search Filter -->
+          <div class="search-bar">
+            <h2>Find Your Grammar Test</h2>
+            <div class="underline"></div>
+
+            <div class="search-wrapper">
+              <i class="ri-search-line search-icon"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search grammar topics..."
+              />
+            </div>
+          </div>
+
+          <!-- Code for Test Cards -->
+          <div class="test-grid" id="testGrid">
+            <div class="test-card">
+              <h3>Tenses Practice Test</h3>
+              <p>
+                Test your understanding of verb tenses with practical questions
+                covering present, past, and future tenses.
+              </p>
+              <div class="test-stats">
+                <div class="stat">
+                  <i class="ri-question-line"></i>
+                  <span>10 Questions</span>
+                </div>
+                <div class="stat">
+                  <i class="ri-time-line"></i>
+                  <span>5-8 minutes</span>
+                </div>
+              </div>
+              <a href="#" class="test-btn cta-button"
+                >Take Test <i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+
+            <div class="test-card">
+              <h3>Prepositions Challenge</h3>
+              <p>
+                Master the use of prepositions in different contexts with this
+                focused practice test.
+              </p>
+              <div class="test-stats">
+                <div class="stat">
+                  <i class="ri-question-line"></i>
+                  <span>12 Questions</span>
+                </div>
+                <div class="stat">
+                  <i class="ri-time-line"></i>
+                  <span>6-9 minutes</span>
+                </div>
+              </div>
+              <a href="#" class="test-btn cta-button"
+                >Take Test <i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+
+            <div class="test-card">
+              <h3>Parts of Speech Quiz</h3>
+              <p>
+                Identify and classify different parts of speech to strengthen
+                your grammar foundation.
+              </p>
+              <div class="test-stats">
+                <div class="stat">
+                  <i class="ri-question-line"></i>
+                  <span>8 Questions</span>
+                </div>
+                <div class="stat">
+                  <i class="ri-time-line"></i>
+                  <span>4-7 minutes</span>
+                </div>
+              </div>
+              <a href="#" class="test-btn cta-button"
+                >Take Test <i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+
+            <div class="test-card">
+              <h3>Active & Passive Voice</h3>
+              <p>
+                Practice converting sentences between active and passive voice
+                with clear examples.
+              </p>
+              <div class="test-stats">
+                <div class="stat">
+                  <i class="ri-question-line"></i>
+                  <span>10 Questions</span>
+                </div>
+                <div class="stat">
+                  <i class="ri-time-line"></i>
+                  <span>5-8 minutes</span>
+                </div>
+              </div>
+              <a href="#" class="test-btn cta-button"
+                >Take Test <i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+
+            <div class="test-card">
+              <h3>Conditional Sentences</h3>
+              <p>
+                Test your knowledge of zero, first, second, third, and mixed
+                conditionals.
+              </p>
+              <div class="test-stats">
+                <div class="stat">
+                  <i class="ri-question-line"></i>
+                  <span>15 Questions</span>
+                </div>
+                <div class="stat">
+                  <i class="ri-time-line"></i>
+                  <span>8-12 minutes</span>
+                </div>
+              </div>
+              <a href="#" class="test-btn cta-button"
+                >Take Test <i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+
+            <div class="test-card">
+              <h3>Conjunctions & Connectors</h3>
+              <p>
+                Practice using conjunctions and connectors to link ideas
+                smoothly in sentences.
+              </p>
+              <div class="test-stats">
+                <div class="stat">
+                  <i class="ri-question-line"></i>
+                  <span>10 Questions</span>
+                </div>
+                <div class="stat">
+                  <i class="ri-time-line"></i>
+                  <span>6-9 minutes</span>
+                </div>
+              </div>
+              <a href="#" class="test-btn cta-button"
+                >Take Test <i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
