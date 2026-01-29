@@ -37,6 +37,7 @@ body {
     display: flex;
     font-family: var(--roboto);
     background: var(--bg-color-d);
+    overflow-x: hidden;
 }
 
 /* Sidebar Styles */
@@ -328,6 +329,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     min-width: 600px;
+    overflow-x: auto;
 }
 
 .content-grid th,
@@ -436,14 +438,11 @@ body {
         margin-left: 0;
         transition: margin 0.3s ease;
     }
-
-
-
  
     .content-grid table {
         width: 100%;
         border-collapse: collapse;
-        min-width: 100%;
+        min-width: unset;
     }
     
     /* Content Sections */
@@ -453,10 +452,6 @@ body {
         margin-bottom: 1.5rem;
     }
 
-     .content-grid{
-        overflow: auto;
-     }
-
     .content-grid .card-header {
         margin-bottom: 1.5rem;
     }
@@ -464,16 +459,17 @@ body {
     .content-grid .btn span{
         display: none;
     }
-
-    /* tables */
+    
     .content-grid .table-container {
-        overflow-x: hidden;
+        overflow-x: scroll;
+        width: 280px;
     }
     
     .content-grid table {
         width: 100%;
-        min-width: 600px;
+        min-width: 800px;
         border-collapse: collapse;
+        overflow-x: scroll;
     }
 
     .content-grid th,
