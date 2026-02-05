@@ -36,7 +36,7 @@
           <button type="submit" class="quiz-btn">Start Quiz</button>
 
           <span class="go-back-link">
-            <a href="quiz.html"><i class="ri-arrow-left-line"></i> Go Back </a>
+            <a href="quiz.php"><i class="ri-arrow-left-line"></i> Go Back </a>
           </span>
         </form>
       </div>

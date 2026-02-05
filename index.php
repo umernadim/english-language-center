@@ -13,84 +13,9 @@
   </head>
   <body>
     <!--Code for navbar -->
-    <nav class="navbar">
-      <div class="scroll-progress" id="scrollProgress"></div>
-      <div class="dkNav-container">
-        <div class="nav-container">
-          <!-- Logo -->
-          <a href="index.html" class="logo" id="desktop-logo">
-            <div class="logo-icon">H</div>
-            <div class="logo-text">
-              <div class="brand-name">Hope English</div>
-              <div class="tagline">Language Center</div>
-            </div>
-          </a>
-
-          <!-- Desktop Navigation -->
-          <ul class="nav-links">
-            <li><a href="index.html"> Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="quiz-cards.html"> Quiz</a></li>
-            <li><a href="vocabulary.html"> Vocabulary</a></li>
-            <li><a href="courses.html"> Courses</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <!-- Mobile Hamburger Menu -->
-          <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </div>
-    </nav>
-    <!-- Mobile Sidebar Menu -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="index.html" class="logo" id="mobile-logo">
-        <div class="logo-icon">H</div>
-        <div class="logo-text">
-          <div class="brand-name">Hope English</div>
-          <div class="tagline">Language Center</div>
-        </div>
-      </a>
-      <ul class="mobile-nav-links">
-        <li>
-          <a href="index.html" class="active"
-            ><i class="ri-home-4-line"></i> Home</a
-          >
-        </li>
-
-        <li>
-          <a href="about.html"><i class="ri-user-3-line"></i> About</a>
-        </li>
-
-        <li>
-          <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
-        </li>
-
-        <li>
-          <a href="quiz-cards.html"><i class="ri-questionnaire-line"></i> Quiz</a>
-        </li>
-
-        <li>
-          <a href="vocabulary.html"
-            ><i class="ri-book-2-line"></i> Vocabulary</a
-          >
-        </li>
-
-        <li>
-          <a href="courses.html"><i class="ri-book-open-line"></i> Courses</a>
-        </li>
-
-        <li>
-          <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Overlay for mobile menu -->
-    <div class="overlay" id="overlay"></div>
+    <?php 
+    include 'assets/components/navbar.php';
+    ?>
 
     <div class="wrapper">
       <!-- code for hero section  -->
@@ -224,7 +149,7 @@
         </div>
 
         <div class="cta-btn-cont">
-          <a href="courses.html" class="cta-button">Start your journey Today</a>
+          <a href="courses.php" class="cta-button">Start your journey Today</a>
         </div>
       </section>
 
@@ -290,7 +215,7 @@
             </div>
 
             <div class="test-cta">
-              <a href="quiz-cards.html" id="takeTest" class="test-button">
+              <a href="quiz-cards.php" id="takeTest" class="test-button">
                 <i class="ri-pencil-fill"></i> Take Level Test
               </a>
               <p style="margin-top: 15px; opacity: 0.8; font-size: 0.9rem">
@@ -320,7 +245,7 @@
         </div>
 
         <div class="cta-btn-cont">
-          <a href="courses.html" class="cta-button"
+          <a href="courses.php" class="cta-button"
             >Explore All Courses <i class="ri-arrow-right-line"></i
           ></a>
         </div>
@@ -545,133 +470,14 @@
             Join <span>Hope English Language Center</span> today and take the
             first step toward confidence, fluency, and a brighter future.
           </p>
-          <a href="contact.html" class="cta-button">Contact us</a>
+          <a href="contact.php" class="cta-button">Contact us</a>
         </div>
       </section>
 
       <!-- code for footer section -->
-      <footer>
-        <div class="footer-container">
-          <div class="footer-logo">
-            <a href="index.html" class="logo-container">
-              <div class="footer-icon">H</div>
-              <div class="logo-text">
-                <div class="brand-name">Hope English</div>
-                <div class="tagline">Language Center</div>
-              </div>
-            </a>
-            <p>
-              Empowering students to communicate confidently in English through
-              innovative teaching methods and personalized learning paths.
-            </p>
-            <div class="social-icons">
-              <a href="#" class="social-icon" aria-label="Facebook">
-                <i class="ri-facebook-fill"></i>
-              </a>
-              <a href="#" class="social-icon" aria-label="Tiktok">
-                <i class="ri-tiktok-fill"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Quick Links -->
-          <div class="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-              <li>
-                <a href="index.html"><i class="ri-home-4-line"></i> Home</a>
-              </li>
-              <li>
-                <a href="about.html"
-                  ><i class="ri-user-3-line"></i> About Us</a
-                >
-              </li>
-              <li>
-                <a href="gallery.html"
-                  ><i class="ri-image-2-line"></i> Gallery</a
-                >
-              </li>
-              <li>
-                <a href="quiz.html"
-                  ><i class="ri-team-line"></i> Grammar Quiz</a
-                >
-              </li>
-              <li>
-                <a href="vocabulary.html"
-                  ><i class="ri-questionnaire-line"></i> Vocabulary</a
-                >
-              </li>
-              <li>
-                <a href="courses.html"><i class="ri-book-2-line"></i> Courses</a>
-              </li>
-              <li>
-                <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Contact Information -->
-          <div class="footer-contact">
-            <h3>Contact Info</h3>
-            <ul class="contact-info">
-              <li>
-                <i class="ri-map-pin-line"></i>
-                <span
-                  >Street No. 1, Sector 8c Sector 5 Baldia, Karachi,
-                  Pakistan</span
-                >
-              </li>
-              <li>
-                <i class="ri-phone-line"></i>
-                <span>+92 345 8385764</span>
-              </li>
-              <li>
-                <i class="ri-mail-line"></i>
-                <span>Rashid.afridi2014@gmail.com</span>
-              </li>
-              <li>
-                <i class="ri-time-line"></i>
-                <span> Mon - Sat: 3:00 PM - 8:00 PM </span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Newsletter & Social -->
-          <div class="footer-social">
-            <h3>Stay Updated</h3>
-            <p>
-              Subscribe to our newsletter for the latest course updates,
-              learning tips, and special offers.
-            </p>
-
-            <div class="newsletter">
-              <form class="newsletter-form" id="newsletterForm">
-                <input
-                  type="email"
-                  class="newsletter-input"
-                  placeholder="Your email address"
-                  required
-                />
-                <button type="submit" class="newsletter-btn">
-                  <i class="ri-send-plane-line"></i> Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="copyright">
-            &copy; 2024 Hope English Language Center. All rights reserved.
-          </div>
-          <div class="footer-bottom-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="https://maps.app.goo.gl/GdeHia3Ttgn82nnJA">Sitemap</a>
-          </div>
-        </div>
-      </footer>
+        <?php 
+    include 'assets/components/footer.php';
+    ?>
       
     </div>
 

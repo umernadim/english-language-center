@@ -2,7 +2,7 @@
 <footer>
   <div class="footer-container">
     <div class="footer-logo">
-      <a href="index.html" class="logo-container">
+      <a href="index.php" class="logo-container">
         <div class="footer-icon">H</div>
         <div class="logo-text">
           <div class="brand-name">Hope English</div>
@@ -28,27 +28,27 @@
       <h3>Quick Links</h3>
       <ul>
         <li>
-          <a href="index.html"><i class="ri-home-4-line"></i> Home</a>
+          <a href="index.php"><i class="ri-home-4-line"></i> Home</a>
         </li>
         <li>
-          <a href="about.html"><i class="ri-user-3-line"></i> About Us</a>
+          <a href="about.php"><i class="ri-user-3-line"></i> About Us</a>
         </li>
         <li>
-          <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
+          <a href="gallery.php"><i class="ri-image-2-line"></i> Gallery</a>
         </li>
         <li>
-          <a href="quiz.html"><i class="ri-team-line"></i> Grammar Quiz</a>
+          <a href="quiz-cards.php"><i class="ri-team-line"></i> Grammar Quiz</a>
         </li>
         <li>
-          <a href="vocabulary.html"
+          <a href="vocabulary.php"
             ><i class="ri-questionnaire-line"></i> Vocabulary</a
           >
         </li>
         <li>
-          <a href="courses.html"><i class="ri-book-2-line"></i> Courses</a>
+          <a href="courses.php"><i class="ri-book-2-line"></i> Courses</a>
         </li>
         <li>
-          <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
+          <a href="contact.php"><i class="ri-phone-line"></i> Contact</a>
         </li>
       </ul>
     </div>
@@ -108,8 +108,8 @@
       &copy; 2024 Hope English Language Center. All rights reserved.
     </div>
     <div class="footer-bottom-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.php">Privacy Policy</a>
+      <a href="terms.php">Terms of Service</a>
       <a href="https://maps.app.goo.gl/GdeHia3Ttgn82nnJA">Sitemap</a>
     </div>
   </div>

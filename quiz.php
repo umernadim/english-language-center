@@ -14,7 +14,7 @@
   <body>
     <nav class="fixed-timer">
       <!-- logo  -->
-      <a href="index.html" class="logo" id="desktop-logo">
+      <a href="index.php" class="logo" id="desktop-logo">
         <div class="logo-icon">H</div>
         <div class="logo-text">
           <div class="brand-name">Hope English</div>

@@ -117,7 +117,7 @@
 
         <!-- Actions -->
         <div class="action-buttons cta-btn-cont">
-          <a href="quiz-cards.html" class="btn cta-button">Back to Home</a>
+          <a href="quiz-cards.php" class="btn cta-button">Back to Home</a>
         </div>
 
         <!-- Footer -->
