@@ -1,3 +1,31 @@
+<?php
+session_start();
+include '../config.php';
+if (!isset($_SESSION['admin_id'])) {
+  header('location: login.php');
+  exit;
+}
+
+$teach_count = 'SELECT COUNT(*) AS count FROM teachers';
+$result1 = mysqli_query($connect, $teach_count);
+$teachers_count = mysqli_fetch_assoc($result1)['count'];
+
+$feed_count = 'SELECT COUNT(*) AS count FROM feedback';
+$result2 = mysqli_query($connect, $feed_count);
+$feedback_count = mysqli_fetch_assoc($result2)['count'];
+
+$achieve_count = 'SELECT COUNT(*) AS count FROM achievements';
+$result3 = mysqli_query($connect, $achieve_count);
+$achievements_count = mysqli_fetch_assoc($result3)['count'];
+
+//$quiz_count = 'SELECT COUNT(*) AS count FROM quizzes';
+//$result4 = mysqli_query($connect, $quiz_count);
+//$quizzes_count = mysqli_fetch_assoc($result4)['count'];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,92 +40,15 @@
   </head>
   <body>
     <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <a href="../index.html" class="logo-text"
-          ><h3>Hope Language Center</h3></a
-        >
-      </div>
-
-      <div class="sidebar-menu">
-        <div class="menu-section">
-          <div class="menu-title">Main</div>
-          <ul class="menu-items">
-            <li>
-              <a href="admin-dashboard.html" class="menu-item active">
-                <i class="ri-dashboard-line"></i>
-                <span>Dashboard</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="achievements.html" class="menu-item">
-                <i class="ri-trophy-line"></i>
-                <span>Achievements</span>
-              </a>
-            </li>
-            <li>
-              <a href="teachers.html" class="menu-item">
-                <i class="ri-team-line"></i>
-                <span>Teachers</span>
-              </a>
-            </li>
-            <li>
-              <a href="quiz.html" class="menu-item">
-                <i class="ri-file-text-line"></i>
-                <span>Grammar Quiz</span>
-              </a>
-            </li>
-          
-            <li>
-              <a href="feedback.html" class="menu-item">
-                <i class="ri-message-line"></i>
-                <span>Feedback</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="menu-section">
-          <div class="menu-title">System</div>
-          <ul class="menu-items">
-            <li>
-              <a href="#" class="menu-item">
-                <i class="ri-user-settings-line"></i>
-                <span>Users</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="menu-item">
-                <i class="ri-logout-box-r-line"></i>
-                <span>Logout</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </aside>
+    <?php
+    include 'assets/components/sidebar.php'
+    ?>
 
     <main class="main-content">
       <!-- Top Bar -->
-      <nav class="top-bar">
-        <div class="page-title">
-          <h1>Dashboard</h1>
-          <p>Welcome back, Admin! Here's what's happening today.</p>
-        </div>
-        <div class="top-bar-actions">
-          <div class="user-menu">
-            <div class="user-profile">
-              <div class="user-info">
-                <h4>Muhammad Umer</h4>
-                <p>Administrator</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button class="menu-toggle"><i class="ri-menu-3-line"></i></button>
-      </nav>
-
+     <?php
+    include 'assets/components/navbar.php'
+    ?>
       <!-- Stats Grid -->
       <div class="stats-grid">
         <div class="stat-card">
@@ -105,7 +56,7 @@
             <i class="ri-team-line"></i>
           </div>
           <div class="stat-info">
-            <h3>10</h3>
+            <h3><?php echo $teachers_count; ?></h3>
             <p>Total Teachers</p>
           </div>
         </div>
@@ -115,7 +66,7 @@
             <i class="ri-book-2-line"></i>
           </div>
           <div class="stat-info">
-            <h3>24</h3>
+            <h3>00</h3>
             <p>Grammar Quizes</p>
           </div>
         </div>
@@ -125,7 +76,7 @@
             <i class="ri-trophy-line"></i>
           </div>
           <div class="stat-info">
-            <h3>3</h3>
+            <h3><?php echo $achievements_count; ?></h3>
             <p>Achievements</p>
           </div>
         </div>
@@ -135,7 +86,7 @@
             <i class="ri-message-line"></i>
           </div>
           <div class="stat-info">
-            <h3>5</h3>
+            <h3><?php echo $feedback_count; ?></h3>
             <p>Feedback</p>
           </div>
         </div>

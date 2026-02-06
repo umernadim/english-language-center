@@ -1,3 +1,4 @@
+// code for sidebar handler
 function sidebarHandler() {
   const sidebar = document.querySelector(".sidebar");
   const mainContent = document.querySelector(".main-content");
@@ -20,8 +21,8 @@ function sidebarHandler() {
 
 sidebarHandler();
 
-// code for modal functionality
 
+// code for modal functionality
 document.addEventListener("DOMContentLoaded", function () {
   const addTeacherBtn = document.querySelector(".card-actions .btn");
   const modal = document.getElementById("teacherModal");
@@ -58,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
       closeModal();
     }
   });
-
 
   // Reset form function
   function resetForm() {

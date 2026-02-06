@@ -11,39 +11,34 @@
           <div class="menu-title">Main</div>
           <ul class="menu-items">
             <li>
-              <a href="#" class="menu-item active">
+              <a href="admin-dashboard.php" class="menu-item active">
                 <i class="ri-dashboard-line"></i>
                 <span>Dashboard</span>
               </a>
             </li>
 
             <li>
-              <a href="" class="menu-item">
+              <a href="achievements.php" class="menu-item">
                 <i class="ri-trophy-line"></i>
                 <span>Achievements</span>
               </a>
             </li>
             <li>
-              <a href="#" class="menu-item">
+              <a href="teachers.php" class="menu-item">
                 <i class="ri-team-line"></i>
                 <span>Teachers</span>
               </a>
             </li>
      
             <li>
-              <a href="#" class="menu-item">
+              <a href="quiz.php" class="menu-item">
                 <i class="ri-file-text-line"></i>
                 <span>Grammar Quiz</span>
               </a>
             </li>
+    
             <li>
-              <a href="#" class="menu-item">
-                <i class="ri-chat-ai-line"></i>
-                <span>Post's Comments</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="menu-item">
+              <a href="feedback.php" class="menu-item">
                 <i class="ri-message-line"></i>
                 <span>Feedback</span>
               </a>
@@ -55,13 +50,10 @@
           <div class="menu-title">System</div>
           <ul class="menu-items">
             <li>
-              <a href="#" class="menu-item">
-                <i class="ri-user-settings-line"></i>
-                <span>Users</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="menu-item">
+              <a href="logout.php" class="menu-item"
+              title="logout"
+              onclick="return confirm('Are you sure you want to logout?')"
+              >
                 <i class="ri-logout-box-r-line"></i>
                 <span>Logout</span>
               </a>

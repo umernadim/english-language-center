@@ -502,18 +502,16 @@ body {
 
 
 /**************************
-      Login/ Signup Cage
+      Login page
 **************************/
-.login-container,
-.signup-container {
+.login-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login-box,
-.signup-box {
+.login-box {
     width: 430px;
     background: #fff;
     padding: 35px;
@@ -521,35 +519,30 @@ body {
     box-shadow: var(--box-shadow);
 }
 
-.login-box h2,
-.signup-box h2 {
+.login-box h2 {
     margin: 0 0 0.8rem;
     font-size: 2rem;
     color: var(--txt-color2);
 }
 
-.login-box .subtitle,
-.signup-box .subtitle {
+.login-box .subtitle {
     margin-bottom: 1.8rem;
     color: var(--text-color-d);
     font-size: 0.95rem;
 }
 
-.login-box .input-field,
-.signup-box .input-field {
+.login-box .input-field {
     margin-bottom: 1.1rem;
 }
 
-.login-box .input-field label,
-.signup-box .input-field label {
+.login-box .input-field label {
     display: block;
     font-size: 0.9rem;
     color: var(--text-color-d);
     margin-bottom: 5px;
 }
 
-.login-box .input-field input,
-.signup-box .input-field input {
+.login-box .input-field input {
     width: 100%;
     padding: 12px;
     border: 1px solid #E0E0E0;
@@ -559,13 +552,11 @@ body {
     font-size: 1rem;
 }
 
-.login-box .input-field input:focus,
-.signup-box .input-field input:focus {
+.login-box .input-field input:focus {
     border-color: #267ae7;
 }
 
-.btn-login,
-.btn-signup {
+.btn-login {
     width: 100%;
     padding: 12px;
     background: var(--btn-color);
@@ -581,46 +572,47 @@ body {
     background: var(--btn-hover-color);
 }
 
-.forgot-link,
-.signup-link {
-    display: block;
-    margin-top: 12px;
-    font-size: 1rem;
-    text-align: center;
-    text-decoration: none;
-    color: var(--text-color-d);
+.login-box .input-field input[type="password"] {
+    padding-right: 45px;
 }
 
-.forgot-link a,
-.signup-link a {
-    color: var(--txt-hover-color);
-    text-decoration: none;
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.password-toggle:hover {
+    color: var(--btn-color);
+    background: rgba(0, 123, 255, 0.1);
 }
 
 @media screen and (max-width: 768px) {
 
-    .login-container,
-    .signup-container {
+    .login-container {
         padding: 0 1rem;
     }
 
-    .login-box,
-    .signup-box {
+    .login-box {
         padding: 25px;
     }
 
-    .login-box h2,
-    .signup-box h2 {
+    .login-box h2 {
         font-size: 1.8rem;
     }
 
-    .login-box .subtitle,
-    .signup-box .subtitle {
+    .login-box .subtitle {
         margin-bottom: 1.5rem;
     }
 
-    .login-box .input-field label,
-    .signup-box .input-field label {
+    .login-box .input-field label {
         margin-bottom: 8px;
     }
 }
@@ -829,38 +821,38 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-.modal-overlay .modal-header h2 {
-    font-size: 1.2rem;
-}
+    .modal-overlay .modal-header h2 {
+        font-size: 1.2rem;
+    }
 
-.modal-overlay .close-modal {
-    font-size: 1.8rem;
-}
+    .modal-overlay .close-modal {
+        font-size: 1.8rem;
+    }
 
-.modal-overlay .modal-body {
-    padding: 1rem 1.5rem 0;
-}
+    .modal-overlay .modal-body {
+        padding: 1rem 1.5rem 0;
+    }
 
-.modal-overlay .modal-footer {
-    padding: 0.8rem 1.5rem 1.5rem;
-    gap: 0.75rem;
-}
+    .modal-overlay .modal-footer {
+        padding: 0.8rem 1.5rem 1.5rem;
+        gap: 0.75rem;
+    }
 
-.modal-overlay .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-}
+    .modal-overlay .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
 
-.modal-overlay .form-label {
-    font-size: 0.9rem;
-}
+    .modal-overlay .form-label {
+        font-size: 0.9rem;
+    }
 
-.modal-overlay .form-help {
-    font-size: 0.8rem;
-}
+    .modal-overlay .form-help {
+        font-size: 0.8rem;
+    }
 
-.modal-overlay .file-preview {
-    width: 70px;
-    height: 70px;
-}
+    .modal-overlay .file-preview {
+        width: 70px;
+        height: 70px;
+    }
 }

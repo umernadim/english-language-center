@@ -12,102 +12,15 @@
   </head>
   <body>
     <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <a href="../index.html" class="logo-text"
-          ><h3>Hope Language Center</h3></a
-        >
-      </div>
-
-      <div class="sidebar-menu">
-        <div class="menu-section">
-          <div class="menu-title">Main</div>
-          <ul class="menu-items">
-            <li>
-              <a href="#" class="menu-item active">
-                <i class="ri-dashboard-line"></i>
-                <span>Dashboard</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="menu-item">
-                <i class="ri-trophy-line"></i>
-                <span>Achievements</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="menu-item">
-                <i class="ri-team-line"></i>
-                <span>Teachers</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="menu-item">
-                <i class="ri-article-line"></i>
-                <span>Blog Posts</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="menu-item">
-                <i class="ri-file-text-line"></i>
-                <span>Grammar Quiz</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="menu-item">
-                <i class="ri-chat-ai-line"></i>
-                <span>Post's Comments</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="menu-item">
-                <i class="ri-message-line"></i>
-                <span>Feedback</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="menu-section">
-          <div class="menu-title">System</div>
-          <ul class="menu-items">
-            <li>
-              <a href="#" class="menu-item">
-                <i class="ri-user-settings-line"></i>
-                <span>Users</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="menu-item">
-                <i class="ri-logout-box-r-line"></i>
-                <span>Logout</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </aside>
+     <?php
+    include 'assets/components/sidebar.php'
+    ?>
 
     <main class="main-content">
       <!-- Top Bar -->
-      <nav class="top-bar">
-        <div class="page-title">
-          <h1>Dashboard</h1>
-          <p>Welcome back, Admin! Here's what's happening today.</p>
-        </div>
-
-        <div class="top-bar-actions">
-          <div class="user-menu">
-            <div class="user-profile">
-              <div class="user-info">
-                <h4>Muhammad Umer</h4>
-                <p>Administrator</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+       <?php
+    include 'assets/components/navbar.php'
+    ?>
 
       <!-- Content Grid -->
       <div class="content-grid">
