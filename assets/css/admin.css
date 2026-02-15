@@ -357,6 +357,7 @@ body {
 .content-grid .action-btn {
     width: 32px;
     height: 32px;
+    text-decoration: none;
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -556,7 +557,7 @@ body {
     border-color: #267ae7;
 }
 
-.btn-login {
+.login-box .btn-login {
     width: 100%;
     padding: 12px;
     background: var(--btn-color);
@@ -568,7 +569,7 @@ body {
     transition: 0.3s;
 }
 
-.btn-login:hover {
+.login-box .btn-login:hover {
     background: var(--btn-hover-color);
 }
 
@@ -576,20 +577,29 @@ body {
     padding-right: 45px;
 }
 
-.password-toggle {
+.login-box .password-field {
+    position: relative;
+}
+
+.login-box .password-wrapper {
+    position: relative;
+}
+
+.login-box .password-toggle {
     position: absolute;
     right: 12px;
     top: 50%;
-    transform: translateY(-50%);
+      transform: translateY(-50%);  
     font-size: 18px;
     color: #888;
     cursor: pointer;
     transition: all 0.3s ease;
     padding: 4px;
     border-radius: 4px;
+    display: block;
 }
 
-.password-toggle:hover {
+.login-box .password-toggle:hover {
     color: var(--btn-color);
     background: rgba(0, 123, 255, 0.1);
 }

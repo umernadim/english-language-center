@@ -5,6 +5,6 @@ $_SESSION = array();
 
 session_destroy();
 
-header("Location: http://localhost/php_learning/final-web/admin/login.php");
+header("Location: login.php");
 exit();  
 ?>

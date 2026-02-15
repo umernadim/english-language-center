@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+include '../config.php';
+if (!isset($_SESSION['admin_email'])) {
+  header('location: login.php');
+  exit;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -38,55 +48,68 @@
           </div>
 
           <div class="table-container">
-            <table>
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Description</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
+            <?php
+            include '../config.php';
+            $sql = "SELECT * FROM achievements";
+            $result = mysqli_query($connect, $sql);
+            if (mysqli_num_rows($result)) {
+            ?>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
 
-              <tbody>
-                <tr>
-                  <td>
-                    <div
-                      style="display: flex; align-items: center; gap: 0.5rem">
-                      <div
-                        style="
+                <tbody>
+                  <?php
+                  while ($row = mysqli_fetch_assoc($result)) {
+                  ?>
+                    <tr>
+                      <td>
+                        <div
+                          style="display: flex; align-items: center; gap: 0.5rem">
+                          <div
+                            style="
                             width: 35px;
                             height: 35px;
                             border-radius: 50%;
                             overflow: hidden;
                           ">
-                        <img
-                          src="../assets/images/gallery/img1.jpg"
-                          alt="author"
-                          style="width: 100%; height: 100%; object-fit: cover" />
-                      </div>
-                      <div>
-                        <div style="font-weight: 600">ABC Name</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eum omnis ipsum odio quo corrupti expedita voluptas minima
-                    id porro saepe?
-                  </td>
-                  <td>
-                    <div class="action-buttons">
-                      <div class="action-btn edit" id="update-btn">
-                        <i class="ri-edit-line"></i>
-                      </div>
-                      <div class="action-btn delete">
-                        <i class="ri-delete-bin-line"></i>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                            <img
+                              src=" <?= $row['image_url'] ?> "
+                              alt="author"
+                              style="width: 100%; height: 100%; object-fit: cover" />
+                          </div>
+                          <div>
+                            <div style="font-weight: 600"> <?= $row['title'] ?> </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                         <?= $row['description'] ?> 
+                      </td>
+                      <td>
+                        <div class="action-buttons">
+                          <div class="action-btn edit" id="update-btn">
+                            <i class="ri-edit-line"></i>
+                          </div>
+                          <div class="action-btn delete">
+                            <i class="ri-delete-bin-line"></i>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  <?php
+                  }
+                  ?>
+                </tbody>
+              </table>
+            <?php
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -94,7 +117,7 @@
   </main>
 
   <!--  code for modal functionality -->
-  <div class="modal-overlay" id="teacherModal">
+  <div class="modal-overlay" id="modal">
     <div class="modal-content">
       <div class="modal-header">
         <h2 id="modalTitle">Add Achievement</h2>

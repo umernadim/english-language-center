@@ -8,7 +8,7 @@
     <div class="user-menu">
       <div class="user-profile">
         <div class="user-info">
-          <h4><?php echo $_SESSION['admin_name']; ?></h4>  <!-- ✅ Dynamic name -->
+          <h4><?php echo $_SESSION['admin_name']; ?></h4> 
           <p>Administrator</p>
         </div>
       </div>
