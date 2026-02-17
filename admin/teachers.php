@@ -9,7 +9,6 @@ if (!isset($_SESSION['admin_email'])) {
 
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,7 +40,7 @@ if (!isset($_SESSION['admin_email'])) {
           <div class="card-header">
             <h3>Teachers</h3>
             <div class="card-actions">
-              <button class="btn">
+              <button class="btn" id="add">
                 <i class="ri-add-line"></i>
                 <span>Add Teacher</span>
               </button>
@@ -123,180 +122,54 @@ if (!isset($_SESSION['admin_email'])) {
   </main>
 
   <!--  code for add modal functionality -->
-  <div class="modal-overlay" id="add-modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 id="modalTitle">Add New Teacher</h2>
-        <button class="close-modal" id="closeModal">&times;</button>
-      </div>
+<div class="modal-overlay" id="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="addModalTitle">Add New Teacher</h2>
+      <button class="close-modal" id="closeModal">&times;</button>
+    </div>
 
-      <form id="teacherForm" action="addTeacher.php" method="post" enctype="multipart/form-data">
-        <div class="modal-body">
-          <div class="form-group">
-            <label class="form-label">Teacher Photo</label>
-            <div class="file-input-container">
-              <input
-                type="file"
-                id="photo"
-                accept="image/*"
-                class="form-control"
-                name="photo" />
-              <div class="file-input-label">
-                <i class="ri-upload-cloud-line"></i>
-                <span>Click to upload photo</span>
-              </div>
-            </div>
-            <div class="file-preview" id="photoPreview"></div>
-            <div class="form-help">Recommended size: 300x300px, max 2MB</div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Full Name</label>
-              <input
-                type="text"
-                id="teacherName"
-                class="form-control"
-                placeholder="Enter full name"
-                name="name"
-                required />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Designation</label>
-              <input
-                type="text"
-                id="teacherDesignation"
-                class="form-control"
-                placeholder="e.g., Spoken English Mentor"
-                name="designation"
-                required />
+    <form id="addForm" action="addTeacher.php" method="post" enctype="multipart/form-data">
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Teacher Photo</label>
+          <div class="file-input-container">
+            <input type="file" id="addPhoto" accept="image/*" class="form-control" name="photo" />
+            <div class="file-input-label">
+              <i class="ri-upload-cloud-line"></i>
+              <span>Click to upload photo</span>
             </div>
           </div>
+          <div class="file-preview" id="addPhotoPreview"></div>
+          <div class="form-help">Recommended size: 300x300px, max 2MB</div>
+        </div>
 
+        <div class="form-row">
           <div class="form-group">
-            <label class="form-label">Bio/Description</label>
-            <textarea
-              id="teacherBio"
-              class="form-control"
-              placeholder="Write a brief bio about the teacher..."
-              rows="4"
-              name="bio"></textarea>
-            <div class="form-help">Maximum 100 characters</div>
+            <label class="form-label">Full Name</label>
+            <input type="text" id="addTeacherName" class="form-control" name="name" placeholder="Enter full name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Designation</label>
+            <input type="text" id="addTeacherDesignation" class="form-control" name="designation" placeholder="e.g., Spoken English Mentor" required />
           </div>
         </div>
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" id="cancelBtn">
-            Cancel
-          </button>
-          <button type="submit" class="btn btn-success" id="saveBtn">
-            Save Teacher
-          </button>
+        <div class="form-group">
+          <label class="form-label">Bio/Description</label>
+          <textarea id="addTeacherBio" class="form-control" name="bio" rows="4" placeholder="Write a brief bio about the teacher..."></textarea>
+          <div class="form-help">Maximum 100 characters</div>
         </div>
-      </form>
-    </div>
-  </div>
-
-  <!--  code for update modal functionality -->
-  <div class="modal-overlay" id="update-modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 id="modalTitle">Update Teacher</h2>
-        <button class="close-modal" id="closeModal">&times;</button>
       </div>
-      <?php
-      include '../config.php';
-      $id = $_GET['id'];
-      $sql = "SELECT * FROM teachers WHERE id = {$id}";
-      $result = mysqli_query($connect, $sql);
-      if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-      ?>
 
-          <form id="teacherForm" action="updateTeacher.php" method="post" enctype="multipart/form-data">
-            <div class="modal-body">
-              <div class="form-row">
-                <input type="hidden" name="teacher_id" id="teacherId"
-                  value="<?php echo $row['id'] ?>" />
-              </div>
-              <div class="form-group">
-                <label class="form-label">Teacher Photo</label>
-                <div class="file-input-container">
-                  <input
-                    type="file"
-                    id="photo"
-                    accept="image/*"
-                    class="form-control"
-                    name="photo" />
-                  <div class="file-input-label">
-                    <i class="ri-upload-cloud-line"></i>
-                    <span>Click to upload photo</span>
-                  </div>
-                </div>
-                <div class="file-preview" id="photoPreview">
-                  <?php if (!empty($row['image_url'])) { ?>
-                    <img src="<?php echo $row['image_url']; ?>" alt="Teacher Photo" />
-                  <?php } ?>
-
-
-                </div>
-                <div class="form-help">Recommended size: 300x300px, max 2MB</div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">Full Name</label>
-                  <input
-                    type="text"
-                    id="teacherName"
-                    class="form-control"
-                    placeholder="Enter full name"
-                    name="name"
-                    required
-                    value="<?php echo $row['name'] ?>" />
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label">Designation</label>
-                  <input
-                    type="text"
-                    id="teacherDesignation"
-                    class="form-control"
-                    placeholder="e.g., Spoken English Mentor"
-                    name="designation"
-                    required
-                    value="<?php echo $row['designation'] ?>" />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Bio/Description</label>
-                <textarea
-                  name="bio"
-                  id="teacherBio"
-                  rows="4"><?php echo $row['bio'] ?></textarea>
-                <div class="form-help">Maximum 100 characters</div>
-              </div>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" id="cancelBtn">
-                Cancel
-              </button>
-              <button type="submit" class="btn btn-success" id="saveBtn">
-                Update Teacher
-              </button>
-            </div>
-          </form>
-      <?php
-        }
-      }
-      ?>
-    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="cancelBtn">Cancel</button>
+        <button type="submit" class="btn btn-success" id="saveBtn">Save Teacher</button>
+      </div>
+    </form>
   </div>
+</div>
 
+
+<script src="../assets/js/admin.js"></script></html>
 </body>
-<script src="../assets/js/admin.js"></script>
-
-</html>

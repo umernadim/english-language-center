@@ -95,12 +95,14 @@ if (!isset($_SESSION['admin_email'])) {
 
                       <td>
                         <div class="action-buttons">
-                          <div class="action-btn edit" id="update-btn">
+                          <a href="" class="action-btn edit" id="update-btn">
                             <i class="ri-edit-line"></i>
-                          </div>
-                          <div class="action-btn delete">
+                          </a>
+                          <a href="deleteFeedback.php?id=<?php echo $row['id']; ?>" 
+                          class="action-btn delete"
+                          onclick="return confirm('Are you sure to remove this feedback?')">
                             <i class="ri-delete-bin-line"></i>
-                          </div>
+                          </a>
                         </div>
                       </td>
                     </tr>
@@ -126,12 +128,12 @@ if (!isset($_SESSION['admin_email'])) {
         <button class="close-modal" id="closeModal">&times;</button>
       </div>
 
-      <form id="teacherForm">
+      <form id="teacherForm" method="post" action="addFeedback.php" enctype="multipart/form-data">
         <div class="modal-body">
           <div class="form-group">
             <label class="form-label">Student Photo</label>
             <div class="file-input-container">
-              <input type="file" accept="image/*" class="form-control" />
+              <input type="file" accept="image/*" class="form-control" id="uploadPhoto" name="photo" />
               <div class="file-input-label">
                 <i class="ri-upload-cloud-line"></i>
                 <span>Click to upload photo</span>
@@ -148,7 +150,8 @@ if (!isset($_SESSION['admin_email'])) {
                 type="text"
                 class="form-control"
                 placeholder="Enter full name"
-                required />
+                required
+                name="name" />
             </div>
 
             <div class="form-group">
@@ -157,7 +160,8 @@ if (!isset($_SESSION['admin_email'])) {
                 type="text"
                 class="form-control"
                 placeholder="e.g., Student's profession"
-                required />
+                required
+                name="profession" />
             </div>
           </div>
 
@@ -166,7 +170,8 @@ if (!isset($_SESSION['admin_email'])) {
             <textarea
               class="form-control"
               placeholder="Write a feedback of a Student..."
-              rows="4"></textarea>
+              rows="4"
+              name="feedback"></textarea>
             <div class="form-help">Maximum 200 characters</div>
           </div>
         </div>
@@ -176,7 +181,7 @@ if (!isset($_SESSION['admin_email'])) {
             Cancel
           </button>
           <button type="submit" class="btn btn-success" id="saveBtn">
-            Save Teacher
+            Save Feedback
           </button>
         </div>
       </form>

@@ -166,60 +166,33 @@
         <div class="underline"></div>
 
         <div class="achievements-grid">
-          <!-- 1 -->
+           <?php
+           include 'config.php';
+           $sql = "SELECT * FROM achievements";
+           $result = mysqli_query($connect, $sql);
+           if (mysqli_num_rows($result)) {
+            while($row = mysqli_fetch_assoc($result)){
+          
+           ?>
           <div class="achievement-card">
             <img
-              src="assets/images/gallery/img18.jpg"
+              src="<?php echo $row['image_url'] ?>"
               alt="Speech Contest"
               loading="lazy" />
             <div class="achievement-content">
-              <h3>All Karachi Khatm-e-Nabuwat Speech Contest — 2023</h3>
+              <h3><?php echo $row['title'] ?></h3>
               <p>
-                <i class="ri-double-quotes-l quotes"></i> We are proud to
-                share that one of our brilliant students secured 1st place in
-                the Prestigious All-Karachi Khatm-e-Nabuwat Speaking Contest!
-                His empowering speech and confidence truly impressed everyone
-                - we congratulate him on this great achievement!
+                <i class="ri-double-quotes-l quotes"></i> 
+                <?php echo $row['description'] ?>
                 <i class="ri-double-quotes-r quotes"></i>
               </p>
             </div>
           </div>
+          <?php
+            }
+           }
+          ?>
 
-          <!-- 2 -->
-          <div class="achievement-card">
-            <img
-              src="assets/images/gallery/img17.jpg"
-              alt="PowerPoint Competition"
-              loading="lazy" />
-            <div class="achievement-content">
-              <h3>PowerPoint Speech Contest — 2025</h3>
-              <p>
-                <i class="ri-double-quotes-l quotes"></i> One of our brilliant
-                students took 1st prize in our PowerPoint Speech Contest and
-                won a laptop for her outstanding performance! Her creativity,
-                confidence, and hard work truly paid off—huge congratulations!
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-
-          <!-- 3 -->
-          <div class="achievement-card">
-            <img
-              src="assets/images/gallery/36.jpg"
-              alt="Convocation Ceremony"
-              loading="lazy" />
-            <div class="achievement-content">
-              <h3>Advance Convocation Ceremony — 2025</h3>
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Our grand annual event celebrated the hard work and
-                achievements of our advanced students, marking another
-                milestone of growth and success at Hope Language Center.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

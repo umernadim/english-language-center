@@ -22,108 +22,70 @@ function sidebarHandler() {
 sidebarHandler();
 
 
-// code for add modal functionality
-document.addEventListener("DOMContentLoaded", function () {
-  const addBtn = document.querySelector(".card-actions .btn");
-  const modal = document.getElementById("add-modal");
-  const closeModalBtn = document.getElementById("closeModal");
-  const cancelBtn = document.getElementById("cancelBtn");
 
-  // Add Teacher button click - Modal open
-  if (addBtn) {
-    addBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      modal.style.display = "flex";
-      document.body.style.overflow = "hidden";
-    });
-  }
 
-  // Close modal buttons
-  function closeModal() {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto";
-    resetForm();
-  }
-
-  closeModalBtn.addEventListener("click", closeModal);
-  cancelBtn.addEventListener("click", closeModal);
-
-  // Close modal when clicking outside
-  modal.addEventListener("click", function (e) {
-    if (e.target === modal) {
-      closeModal();
+document.addEventListener('DOMContentLoaded', function() {
+    const addTeacherBtn = document.querySelector('.card-actions .btn');
+    const modal = document.getElementById('modal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const cancelBtn = document.getElementById('cancelBtn');
+    
+    // Add Teacher button click - Modal open
+    if(addTeacherBtn) {
+        addTeacherBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; 
+        });
     }
-  });
-
-  // Reset form function
-  function resetForm() {
-    document.getElementById("teacherForm").reset();
-    document.getElementById("photoPreview").innerHTML = "";
-    document.getElementById("modalTitle").textContent = "Add New Teacher";
-  }
-
-});
-// code for update modal functionality
-document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("update-modal");
-  const closeModalBtn = document.getElementById("closeModal");
-  const cancelBtn = document.getElementById("cancelBtn");
-  const updateBtn = document.querySelector(".actions-buttons #update-btn");
-
-  // Add Teacher button click - Modal open
-  if (updateBtn) {
-    updateBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      modal.style.display = "flex";
-      document.body.style.overflow = "hidden";
-    });
-  }
-
-  // Close modal buttons
-  function closeModal() {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto";
-    resetForm();
-  }
-
-  closeModalBtn.addEventListener("click", closeModal);
-  cancelBtn.addEventListener("click", closeModal);
-
-  // Close modal when clicking outside
-  modal.addEventListener("click", function (e) {
-    if (e.target === modal) {
-      closeModal();
+    
+    // Close modal buttons
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+       // document.getElementById('addPhotoPreview').innerHTML = '';
     }
-  });
-
-  // Reset form function
-  function resetForm() {
-    document.getElementById("teacherForm").reset();
-    document.getElementById("photoPreview").innerHTML = "";
-    document.getElementById("modalTitle").textContent = "Add New Teacher";
-  }
-
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const photoInput = document.getElementById("photo");
-  const photoPreview = document.getElementById("photoPreview");
-
-  // Preview selected image
-  photoInput.addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        photoPreview.innerHTML = `<img src="${e.target.result}" alt="Preview" />`;
-        photoPreview.style.display = "block"; 
-      };
-      reader.readAsDataURL(file);
-    } else {
-      photoPreview.innerHTML = "";
-      photoPreview.style.display = "none";
+    
+    if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if(cancelBtn) cancelBtn.addEventListener('click', closeModal);
+    
+    // Close modal when clicking outside
+    if(modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
     }
-  });
+    
+    
+    // ✅ FIXED PHOTO PREVIEW - Correct IDs
+    const photoInput = document.getElementById('addPhoto');  // ← Correct ID
+    const photoPreview = document.getElementById('addPhotoPreview');  // ← Correct ID
+    
+    if(photoInput && photoPreview) {
+        photoInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            
+            if (file) {
+                // Check file type
+                if (!file.type.startsWith('image/')) {
+                    alert('Please select an image file!');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    photoPreview.innerHTML = `
+                        <img src="${e.target.result}" 
+                             alt="Preview" 
+                             style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; border: 2px solid #e2e8f0;">
+                    `;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                photoPreview.innerHTML = '';
+            }
+        });
+    }
 });

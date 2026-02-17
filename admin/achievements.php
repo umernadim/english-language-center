@@ -79,7 +79,7 @@ if (!isset($_SESSION['admin_email'])) {
                             overflow: hidden;
                           ">
                             <img
-                              src=" <?= $row['image_url'] ?> "
+                              src="../<?= $row['image_url'] ?> "
                               alt="author"
                               style="width: 100%; height: 100%; object-fit: cover" />
                           </div>
@@ -93,12 +93,14 @@ if (!isset($_SESSION['admin_email'])) {
                       </td>
                       <td>
                         <div class="action-buttons">
-                          <div class="action-btn edit" id="update-btn">
+                          <a href="" class="action-btn edit" id="update-btn">
                             <i class="ri-edit-line"></i>
-                          </div>
-                          <div class="action-btn delete">
+                          </a>
+                          <a href="deleteAchievement.php?id=<?php echo $row['id'] ?>" 
+                          class="action-btn delete"
+                          onclick="return confirm('Are you sure to remove this achievement?')">
                             <i class="ri-delete-bin-line"></i>
-                          </div>
+                          </a>
                         </div>
                       </td>
                     </tr>
@@ -124,12 +126,12 @@ if (!isset($_SESSION['admin_email'])) {
         <button class="close-modal" id="closeModal">&times;</button>
       </div>
 
-      <form id="teacherForm">
+      <form id="teacherForm" method="post" action="addAchievement.php" enctype="multipart/form-data">
         <div class="modal-body">
           <div class="form-group">
             <label class="form-label">Achievement Photo</label>
             <div class="file-input-container">
-              <input type="file" accept="image/*" class="form-control" />
+              <input type="file" accept="image/*" class="form-control" name="photo"/>
               <div class="file-input-label">
                 <i class="ri-upload-cloud-line"></i>
                 <span>Click to upload photo</span>
@@ -145,7 +147,8 @@ if (!isset($_SESSION['admin_email'])) {
               type="text"
               class="form-control"
               placeholder="Enter achievement title"
-              required />
+              required 
+              name="title"/>
           </div>
 
           <div class="form-group">
@@ -153,7 +156,8 @@ if (!isset($_SESSION['admin_email'])) {
             <textarea
               class="form-control"
               placeholder="Write a short description about it..."
-              rows="4"></textarea>
+              rows="4"
+              name="description"></textarea>
             <div class="form-help">Maximum 150 characters</div>
           </div>
         </div>

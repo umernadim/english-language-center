@@ -821,7 +821,6 @@ body {
     border-radius: 8px;
     overflow: hidden;
     margin-top: 0.5rem;
-    display: none;
 }
 
 .modal-overlay .file-preview img {
