@@ -93,7 +93,7 @@ if (!isset($_SESSION['admin_email'])) {
                       </td>
                       <td>
                         <div class="action-buttons">
-                          <a href="" class="action-btn edit" id="update-btn">
+                          <a href="updateAchievement.php?id=<?php echo $row['id'] ?>" class="action-btn edit" id="update-btn">
                             <i class="ri-edit-line"></i>
                           </a>
                           <a href="deleteAchievement.php?id=<?php echo $row['id'] ?>" 
@@ -131,13 +131,13 @@ if (!isset($_SESSION['admin_email'])) {
           <div class="form-group">
             <label class="form-label">Achievement Photo</label>
             <div class="file-input-container">
-              <input type="file" accept="image/*" class="form-control" name="photo"/>
+              <input type="file" accept="image/*" id="addPhoto" class="form-control" name="photo"/>
               <div class="file-input-label">
                 <i class="ri-upload-cloud-line"></i>
                 <span>Click to upload photo</span>
               </div>
             </div>
-            <div class="file-preview" id="photoPreview"></div>
+            <div class="file-preview" id="addPhotoPreview"></div>
             <div class="form-help">Recommended size: 300x300px, max 2MB</div>
           </div>
 

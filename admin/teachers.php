@@ -171,5 +171,6 @@ if (!isset($_SESSION['admin_email'])) {
 </div>
 
 
-<script src="../assets/js/admin.js"></script></html>
+<script src="../assets/js/admin.js"></script>
+</html>
 </body>

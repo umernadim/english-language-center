@@ -10,15 +10,14 @@ if (!isset($_SESSION['admin_email'])) {
 // Check if form submitted
 if ($_POST) {
     $id = $_GET['id'];
-    $name = mysqli_real_escape_string($connect, $_POST['name']);
-    $designation = mysqli_real_escape_string($connect, $_POST['designation']);
-    $bio = mysqli_real_escape_string($connect, $_POST['bio']);
+    $title = mysqli_real_escape_string($connect, $_POST['title']);
+    $description = mysqli_real_escape_string($connect, $_POST['description']);
 
     $image_url = ''; // default empty
 
     // Check if new photo uploaded
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-        $upload_dir = '../assets/images/teachers/';
+        $upload_dir = '../assets/images/achievements/';
         if (!file_exists($upload_dir)) {
             mkdir($upload_dir, 0777, true);
         }
@@ -30,7 +29,7 @@ if ($_POST) {
         $allowed = ['jpg', 'jpeg', 'png', 'gif'];
 
         if (in_array($file_ext, $allowed)) {
-            $new_filename = 'teacher_' . time() . '_' . rand(1000, 9999) . '.' . $file_ext;
+            $new_filename = 'achievement_' . time() . '_' . rand(1000, 9999) . '.' . $file_ext;
             $image_url = $upload_dir . $new_filename;
 
             if (!move_uploaded_file($file_tmp, $image_url)) {
@@ -44,19 +43,19 @@ if ($_POST) {
     // Build SQL query
     if ($image_url != '') {
         // Update with new photo
-        $sql = "UPDATE teachers 
-                SET name='{$name}', designation='{$designation}', bio='{$bio}', image_url='{$image_url}' 
+        $sql = "UPDATE achievements 
+                SET title='{$title}', description='{$description}', image_url='{$image_url}' 
                 WHERE id={$id}";
     } else {
         // Update without changing photo
-        $sql = "UPDATE teachers 
-                SET name='{$name}', designation='{$designation}', bio='{$bio}' 
+        $sql = "UPDATE achievements 
+                SET title='{$title}', description='{$description}' 
                 WHERE id={$id}";
     }
 
     if (mysqli_query($connect, $sql)) {
-        echo "Teacher updated successfully!";
-        header("Location: teachers.php");
+        echo "Achievement updated successfully!";
+        header("Location: achievements.php");
         exit;
     } else {
         echo "Error: " . mysqli_error($connect);
@@ -69,11 +68,10 @@ mysqli_close($connect);
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Teacher | Hope English Language Center</title>
+    <title>Update Achievement | Hope English Language Center</title>
     <link
         href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
         rel="stylesheet" />
@@ -85,23 +83,23 @@ mysqli_close($connect);
     <div class="update-page">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="updateModalTitle">Update Teacher</h2>
+                <h2 id="updateModalTitle">Update Achievement</h2>
             </div>
 
             <?php
             include '../config.php';
             $id = $_GET['id'];
-            $sql = "SELECT * FROM teachers WHERE id = {$id}";
+            $sql = "SELECT * FROM achievements WHERE id = {$id}";
             $result = mysqli_query($connect, $sql);
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
             ?>
                     <form id="updateTeacherForm" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <input type="hidden" name="teacher_id" id="teacherId" value="<?php echo $row['id'] ?>" />
+                            <input type="hidden" name="achieve_id" id="" value="<?php echo $row['id'] ?>" />
 
                             <div class="form-group">
-                                <label class="form-label">Teacher Photo</label>
+                                <label class="form-label">Achievement Photo</label>
                                 <div class="file-input-container">
                                     <input type="file" id="updatePhoto" accept="image/*" class="form-control" name="photo" />
                                     <div class="file-input-label">
@@ -111,7 +109,7 @@ mysqli_close($connect);
                                 </div>
                                 <div class="file-preview" id="updatePhotoPreview">
                                     <?php if (!empty($row['image_url'])) { ?>
-                                        <img src="<?php echo $row['image_url']; ?>" alt="Teacher Photo" />
+                                        <img src="../<?php echo $row['image_url']; ?>" alt="Achievement Photo" />
                                     <?php } ?>
                                 </div>
                                 <div class="form-help">Recommended size: 300x300px, max 2MB</div>
@@ -119,25 +117,22 @@ mysqli_close($connect);
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label class="form-label">Full Name</label>
-                                    <input type="text" id="updateTeacherName" class="form-control" name="name" required value="<?php echo $row['name'] ?>" />
+                                    <label class="form-label">Title</label>
+                                    <input type="text" id="" class="form-control" name="title" required value="<?php echo $row['title'] ?>" />
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-label">Designation</label>
-                                    <input type="text" id="updateTeacherDesignation" class="form-control" name="designation" required value="<?php echo $row['designation'] ?>" />
-                                </div>
+                           
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label">Bio/Description</label>
-                                <textarea id="updateTeacherBio" class="form-control" name="bio" rows="4"><?php echo $row['bio'] ?></textarea>
+                                <label class="form-label">Description</label>
+                                <textarea id="" class="form-control" name="description" rows="4"><?php echo $row['description'] ?></textarea>
                                 <div class="form-help">Maximum 100 characters</div>
                             </div>
                         </div>
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" id="updateCancelBtn">Cancel</button>
-                            <button type="submit" class="btn btn-success" id="updateSaveBtn">Update Teacher</button>
+                            <button type="submit" class="btn btn-success" id="updateSaveBtn">Update Achievement</button>
                         </div>
                     </form>
             <?php
