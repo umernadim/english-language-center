@@ -2,42 +2,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Baloo+Bhaijaan+2:wght@400..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap');
 
 :root {
-    --text-color-d: #3b3b3b;
-    --txt-color-l: #ffff;
-    --txt-hover-color: #0860b8;
-    --txt-color2: #003366;
-    --btn-color: linear-gradient(135deg, #4e9eff, #267ae7);
-    --btn-hover-color: linear-gradient(135deg, #5ca7ff, #3c85e0);
-    --bg-color-l: #E0E0E0;
-    --bg-color-d: #F8FAFB;
-    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    --roboto: "Roboto", sans-serif;
-    --satisfy-font: "Satisfy", cursive;
+  --text-color-d: #3b3b3b;
+  --txt-color-l: #ffff;
+  --txt-hover-color: #0860b8;
+  --txt-color2: #003366;
+  --btn-color: linear-gradient(135deg, #4e9eff, #267ae7);
+  --btn-hover-color: linear-gradient(135deg, #5ca7ff, #3c85e0);
+  --bg-color-l: #E0E0E0;
+  --bg-color-d: #F8FAFB;
+  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  --roboto: "Roboto", sans-serif;
+  --satisfy-font: "Satisfy", cursive;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 /* code for scrollbar */
 ::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(169, 168, 168);
-    border-radius: 10px;
+  background: rgb(169, 168, 168);
+  border-radius: 10px;
 }
 
 body {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    font-family: var(--roboto);
-    background: var(--bg-color-d);
-    overflow-x: hidden;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  font-family: var(--roboto);
+  background: var(--bg-color-d);
+  overflow-x: hidden;
 }
 
 .update-page {
@@ -210,6 +210,11 @@ body {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
+
+  .update-page .modal-content {
+    max-width: 430px;
+  }
+
   .update-page .modal-header h2 {
     font-size: 1.2rem;
   }
@@ -241,4 +246,3 @@ body {
     height: 70px;
   }
 }
-

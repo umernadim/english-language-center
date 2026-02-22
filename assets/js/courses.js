@@ -113,37 +113,33 @@ function CourseDataHandler() {
 CourseDataHandler();
 
 // Data for Activities video data
+// poster=${card.posterPath} playsinline
 function videosCardDataHandler() {
   const videosData = [
     {
       title: "Group Discussion",
-      posterPath: "assets/images/carousel/img11.jpg",
-      videoPath: "assets/videos/activity-vdo.mp4",
+      //posterPath: "assets/images/carousel/img11.jpg",
+      videoPath: "assets/videos/discussion.mp4",
     },
     {
-      title: "Debate Session",
-      posterPath: "assets/images/carousel/img11.jpg",
-      videoPath: "assets/videos/activity-vdo.mp4",
+      title: "Extempore",
+      videoPath: "assets/videos/extempore.mp4",
     },
     {
       title: "Powerpoint Presentation",
-      posterPath: "assets/images/carousel/img11.jpg",
-      videoPath: "assets/videos/activity-vdo.mp4",
+      videoPath: "assets/videos/presentation.mp4",
     },
     {
       title: "Public Speaking",
-      posterPath: "assets/images/carousel/img11.jpg",
-      videoPath: "assets/videos/activity-vdo.mp4",
+      videoPath: "assets/videos/public-speaking.mp4",
     },
     {
-      title: "News Paper Discussion",
-      posterPath: "assets/images/carousel/img11.jpg",
-      videoPath: "assets/videos/activity-vdo.mp4",
+      title: "Vocabulary Contest",
+      videoPath: "assets/videos/vocabulary-contest.mp4",
     },
     {
       title: "Role Play Session",
-      posterPath: "assets/images/carousel/img11.jpg",
-      videoPath: "assets/videos/activity-vdo.mp4",
+      videoPath: "assets/videos/youth-leadership-training.mp4",
     },
   ];
 
@@ -152,7 +148,7 @@ function videosCardDataHandler() {
     videoGrid.innerHTML += `
          <div class="video-card">
               <div class="video-container">
-                <video poster=${card.posterPath} playsinline>
+                <video playsinline>
                   <source src=${card.videoPath} type="video/mp4"/>
                 </video>
                 <div class="play-overlay">

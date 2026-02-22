@@ -176,7 +176,7 @@
            ?>
           <div class="achievement-card">
             <img
-              src="<?php echo $row['image_url'] ?>"
+              src="admin/<?php echo $row['image_url'] ?>"
               alt="Speech Contest"
               loading="lazy" />
             <div class="achievement-content">

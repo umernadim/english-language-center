@@ -18,7 +18,7 @@ if ($_POST) {
 
     // Check if new photo uploaded
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-        $upload_dir = '../assets/images/teachers/';
+        $upload_dir = 'assets/images/teachers/';
         if (!file_exists($upload_dir)) {
             mkdir($upload_dir, 0777, true);
         }
@@ -77,7 +77,7 @@ mysqli_close($connect);
     <link
         href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
         rel="stylesheet" />
-          <link rel="stylesheet" href="../assets/css/updateForms.css" />
+    <link rel="stylesheet" href="../assets/css/updateForms.css" />
 </head>
 
 <body>
@@ -136,7 +136,9 @@ mysqli_close($connect);
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" id="updateCancelBtn">Cancel</button>
+                            <button type="button" class="btn btn-danger"
+                                id="updateCancelBtn"
+                                onclick="">Cancel</button>
                             <button type="submit" class="btn btn-success" id="updateSaveBtn">Update Teacher</button>
                         </div>
                     </form>
@@ -146,8 +148,15 @@ mysqli_close($connect);
             ?>
         </div>
     </div>
-    
-<script src="../assets/js/admin.js"></script>
+
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        document.getElementById('updateCancelBtn').addEventListener('click', function() {
+            if (confirm('Are you sure you want to cancel? Changes will not be saved.')) {
+                window.location.href = 'teachers.php';
+            }
+        });
+    </script>
 </body>
 
 </html>

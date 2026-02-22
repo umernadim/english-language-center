@@ -95,9 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const photoInput = document.getElementById("updatePhoto");
   const photoPreview = document.getElementById("updatePhotoPreview");
 
-  console.log("Photo input:", photoInput);
-  console.log("Photo preview:", photoPreview);
-
   if (photoInput && photoPreview) {
     photoInput.addEventListener("change", function (e) {
       const file = e.target.files[0];
@@ -129,10 +126,4 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("❌ Photo input or preview not found!");
   }
 
-  const cancelBtn = document.getElementById("updateCancelBtn");
-  if (cancelBtn) {
-    cancelBtn.addEventListener("click", function () {
-      window.location.href = "teachers.php";
-    });
-  }
 });

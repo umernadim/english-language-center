@@ -17,7 +17,7 @@ if ($_POST) {
 
     // Check if new photo uploaded
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-        $upload_dir = '../assets/images/achievements/';
+        $upload_dir = 'assets/images/achievements/';
         if (!file_exists($upload_dir)) {
             mkdir($upload_dir, 0777, true);
         }
@@ -109,19 +109,17 @@ mysqli_close($connect);
                                 </div>
                                 <div class="file-preview" id="updatePhotoPreview">
                                     <?php if (!empty($row['image_url'])) { ?>
-                                        <img src="../<?php echo $row['image_url']; ?>" alt="Achievement Photo" />
+                                        <img src="<?php echo $row['image_url']; ?>" alt="Achievement Photo" />
                                     <?php } ?>
                                 </div>
                                 <div class="form-help">Recommended size: 300x300px, max 2MB</div>
                             </div>
 
-                            <div class="form-row">
                                 <div class="form-group">
                                     <label class="form-label">Title</label>
                                     <input type="text" id="" class="form-control" name="title" required value="<?php echo $row['title'] ?>" />
                                 </div>
                            
-                            </div>
 
                             <div class="form-group">
                                 <label class="form-label">Description</label>
@@ -131,7 +129,10 @@ mysqli_close($connect);
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" id="updateCancelBtn">Cancel</button>
+                            <button type="button" 
+                            class="btn btn-danger" 
+                            id="updateCancelBtn"
+                            >Cancel</button>
                             <button type="submit" class="btn btn-success" id="updateSaveBtn">Update Achievement</button>
                         </div>
                     </form>
@@ -143,6 +144,13 @@ mysqli_close($connect);
     </div>
     
 <script src="../assets/js/admin.js"></script>
+<script>
+document.getElementById('updateCancelBtn').addEventListener('click', function() {
+    if (confirm('Are you sure you want to cancel? Changes will not be saved.')) {
+        window.location.href = 'achievements.php';
+    }
+});
+</script>
 </body>
 
 </html>

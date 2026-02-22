@@ -18,7 +18,7 @@ if ($_POST) {
     
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
 
-        $upload_dir = '../assets/images/feedback/';
+        $upload_dir = 'assets/images/feedback/';
 
 
         if (!file_exists($upload_dir)) {

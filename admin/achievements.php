@@ -79,7 +79,7 @@ if (!isset($_SESSION['admin_email'])) {
                             overflow: hidden;
                           ">
                             <img
-                              src="../<?= $row['image_url'] ?> "
+                              src="<?= $row['image_url'] ?> "
                               alt="author"
                               style="width: 100%; height: 100%; object-fit: cover" />
                           </div>

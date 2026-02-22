@@ -66,6 +66,7 @@
         <div class="video-grid">
           <!-- code is in javascript  -->
         </div>
+        <a href="" class="cta-button">Explore more</a>
     </section>
 
     <!-- code for the FAQ section  -->

@@ -17,7 +17,7 @@ if ($_POST) {
     
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
 
-        $upload_dir = '../assets/images/teachers/';
+        $upload_dir = 'assets/images/teachers/';
 
 
         if (!file_exists($upload_dir)) {
@@ -52,7 +52,7 @@ if ($_POST) {
     
     if (mysqli_query($connect, $sql)) {
         echo "Teacher added successfully!";
-        header("Location: teachers.php"); // Correct page name
+        header("Location: teachers.php"); 
         exit;
     } else {
         echo "Error: " . mysqli_error($connect);

@@ -16,7 +16,7 @@ if ($_POST) {
     
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
 
-        $upload_dir = '../assets/images/achievements/';
+        $upload_dir = 'assets/images/achievements/';
 
         if (!file_exists($upload_dir)) {
             mkdir($upload_dir, 0777, true);

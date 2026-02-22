@@ -18,7 +18,7 @@ if ($_POST) {
 
     // Check if new photo uploaded
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-        $upload_dir = '../assets/images/feedback/';
+        $upload_dir = 'assets/images/feedback/';
         if (!file_exists($upload_dir)) {
             mkdir($upload_dir, 0777, true);
         }
@@ -110,7 +110,7 @@ mysqli_close($connect);
                                     </div>
                                 </div>
                                 <div class="file-preview" id="updatePhotoPreview">
-                                    <?php if (!empty($row['image_url'])) { ?>
+                                    <?php if (!empty($row['photo_url'])) { ?>
                                         <img src="<?php echo $row['photo_url']; ?>" alt="Student Photo" />
                                     <?php } ?>
                                 </div>
@@ -148,6 +148,13 @@ mysqli_close($connect);
     </div>
 
     <script src="../assets/js/admin.js"></script>
+    <script>
+document.getElementById('updateCancelBtn').addEventListener('click', function() {
+    if (confirm('Are you sure you want to cancel? Changes will not be saved.')) {
+        window.location.href = 'feedback.php';
+    }
+});
+</script>
 </body>
 
 </html>
