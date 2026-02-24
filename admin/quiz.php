@@ -12,7 +12,7 @@ if (!isset($_SESSION['admin_email'])) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grammar Quiz-Data | Hope English Language Center</title>
+    <title>Quizzes-Data | Hope English Language Center</title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -40,7 +40,9 @@ if (!isset($_SESSION['admin_email'])) {
             <div class="card-header">
               <h3>Grammar Quiz</h3>
               <div class="card-actions">
-                <button class="btn">
+                <button class="btn"
+                onclick="window.location.href = 'add-quiz.php'"
+                >
                   <i class="ri-add-line"></i>
                   Add Quiz
                 </button>

@@ -8,7 +8,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <div class="st-form-container">
@@ -33,7 +33,7 @@
             <input type="text" placeholder="Enter Father's name" required />
           </div>
 
-          <button type="submit" class="quiz-btn">Start Quiz</button>
+          <button type="submit" class="quiz-btn btn">Start Quiz</button>
 
           <span class="go-back-link">
             <a href="quiz.php"><i class="ri-arrow-left-line"></i> Go Back </a>

@@ -18,9 +18,9 @@ $achieve_count = 'SELECT COUNT(*) AS count FROM achievements';
 $result3 = mysqli_query($connect, $achieve_count);
 $achievements_count = mysqli_fetch_assoc($result3)['count'];
 
-//$quiz_count = 'SELECT COUNT(*) AS count FROM quizzes';
-//$result4 = mysqli_query($connect, $quiz_count);
-//$quizzes_count = mysqli_fetch_assoc($result4)['count'];
+$quiz_count = 'SELECT COUNT(*) AS count FROM tests';
+$result4 = mysqli_query($connect, $quiz_count);
+$quizzes_count = mysqli_fetch_assoc($result4)['count'];
 
 
 ?>
@@ -66,7 +66,7 @@ $achievements_count = mysqli_fetch_assoc($result3)['count'];
             <i class="ri-book-2-line"></i>
           </div>
           <div class="stat-info">
-            <h3>00</h3>
+            <h3><?php echo $quizzes_count; ?></h3>
             <p>Grammar Quizes</p>
           </div>
         </div>

@@ -1,0 +1,107 @@
+<?php
+include "../config/db.php";
+$tests = mysqli_query($conn, "SELECT * FROM tests");
+
+if (isset($_POST['save'])) {
+    $test_id  = $_POST['test_id'];
+    $question = $_POST['question'];
+
+    mysqli_query(
+        $conn,
+        "INSERT INTO questions (test_id, question)
+     VALUES ($test_id, '$question')"
+    );
+
+    $qid = mysqli_insert_id($conn);
+
+    foreach ($_POST['option'] as $key => $opt) {
+        $is_correct = ($_POST['correct'] == $key) ? 1 : 0;
+        mysqli_query(
+            $conn,
+            "INSERT INTO options (question_id, option_text, is_correct)
+       VALUES ($qid, '$opt', $is_correct)"
+        );
+    }
+
+    echo "<div class='alert success'>Question added successfully!</div>";
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Question | Language Center</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+
+<body>
+    <div class="question-wrapper">
+        <div class="questions-container">
+            <div class="form-card">
+                <div class="card-header">
+                    <h2>Add New Question</h2>
+                </div>
+                <div class="card-body">
+                    <?php if (isset($_POST['save']) && !mysqli_error($connect)): ?>
+                        <div class="alert success">
+                            <i class="fas fa-check-circle"></i> Question added successfully!
+                        </div>
+                    <?php endif; ?>
+
+                    <form method="post" id="questionForm">
+                        <!-- Select Test -->
+                        <div class="form-group">
+                            <label class="form-label"><i class="fas fa-book-open"></i> Select Test</label>
+                            <select name="test_id" class="form-control" required>
+                                <option value="" disabled selected>-- Choose a test --</option>
+                                <?php
+                                mysqli_data_seek($tests, 0); 
+                                while ($t = mysqli_fetch_assoc($tests)) { ?>
+                                    <option value="<?= $t['id'] ?>"><?= htmlspecialchars($t['title']) ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <!-- Question Text -->
+                        <div class="form-group">
+                            <label class="form-label"><i class="ri-question-fill"></i> Question</label>
+                            <input type="text" name="question" class="form-control" placeholder="e.g. What is the capital of France?" required>
+                        </div>
+
+                        <!-- Options -->
+                        <div class="form-group">
+                            <label class="form-label"><i class="ri-list-check"></i> Answer Options</label>
+                            <div class="options-grid">
+                                <?php for ($i = 0; $i < 4; $i++): ?>
+                                    <div class="option-row">
+                                        <input type="text" name="option[]" placeholder="Option <?= $i + 1 ?>" required>
+                                        <label class="radio-custom">
+                                            <input type="radio" name="correct" value="<?= $i ?>" <?= $i === 0 ? 'checked' : '' ?>>
+                                            <span>Correct</span>
+                                        </label>
+                                    </div>
+                                <?php endfor; ?>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <!-- Submit Button -->
+                        <button type="submit" name="save" class="btn">
+                            <i class="fas fa-save"></i> Save Question
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

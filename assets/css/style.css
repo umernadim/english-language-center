@@ -4009,7 +4009,8 @@ Code for the Student'info Form for Quiz
     margin-bottom: 5px;
 }
 
-.st-form-container .input-field input {
+.st-form-container .input-field input,
+.st-form-container .input-field textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #E0E0E0;
@@ -4019,15 +4020,23 @@ Code for the Student'info Form for Quiz
     font-size: 1rem;
 }
 
-.st-form-container .input-field input:focus {
+.st-form-container .input-field input:focus,
+.st-form-container .input-field textarea:focus {
     border-color: #267ae7;
 }
 
-.st-form-container .quiz-btn {
-    width: 100%;
-    padding: 12px;
-    background: var(--btn-color);
+.st-form-container .btns {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.st-form-container .btn {
     color: var(--txt-color-l);
+    display: flex;
+    gap: 1rem;
+    color: var(--txt-color-l);
+    padding: 12px;
     border: none;
     font-size: 16px;
     border-radius: 6px;
@@ -4035,8 +4044,28 @@ Code for the Student'info Form for Quiz
     transition: 0.3s;
 }
 
+.st-form-container .quiz-btn {
+    background: var(--btn-color);
+}
+
 .st-form-container .quiz-btn:hover {
     background: var(--btn-hover-color);
+}
+
+.st-form-container .save-btn {
+    background: #28a745;
+}
+
+.st-form-container .save-btn:hover {
+    background: #218838;
+}
+
+.st-form-container .cancel-btn {
+    background: #dc3545;
+}
+
+.st-form-container .cancel-btn:hover {
+    background: #c82333;
 }
 
 .st-form-container .go-back-link {
