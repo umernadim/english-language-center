@@ -127,3 +127,38 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
+
+// Code for add quiz
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Quiz Modal
+    const addQuizBtn = document.querySelector('.content-card h3 + .card-actions .btn');
+    const quizModal = document.getElementById('quizModal');
+    const closeQuizBtn = document.getElementById('closeQuizModal');
+    const cancelQuizBtn = document.getElementById('cancelQuizBtn');
+    
+    // Open Quiz Modal
+    if (addQuizBtn) {
+        addQuizBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            quizModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Close functions
+    function closeQuizModal() {
+        quizModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.getElementById('quizForm').reset();
+    }
+    
+    if (closeQuizBtn) closeQuizBtn.addEventListener('click', closeQuizModal);
+    if (cancelQuizBtn) cancelQuizBtn.addEventListener('click', closeQuizModal);
+    
+    // Outside click
+    quizModal.addEventListener('click', function(e) {
+        if (e.target === quizModal) closeQuizModal();
+    });
+});

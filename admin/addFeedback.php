@@ -53,7 +53,7 @@ if ($_POST) {
     
     if (mysqli_query($connect, $sql)) {
         echo "feedback added successfully!";
-        header("Location: feedback.php"); // Correct page name
+        header("Location: feedback.php");
         exit;
     } else {
         echo "Error: " . mysqli_error($connect);
