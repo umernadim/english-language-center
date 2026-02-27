@@ -49,6 +49,12 @@ if (!isset($_SESSION['admin_email'])) {
           </div>
 
           <div class="table-container">
+            <?php
+            include '../config.php';
+            $sql = "SELECT * FROM tests";
+            $result = mysqli_query($connect, $sql);
+            if (mysqli_num_rows($result)) {
+            ?>
             <table>
               <thead>
                 <tr>
@@ -59,26 +65,33 @@ if (!isset($_SESSION['admin_email'])) {
                 </tr>
               </thead>
               <tbody>
+                 <?php
+                  while ($row = mysqli_fetch_assoc($result)) {
+                  ?>
                 <tr>
-                  <td>Preposition of Time</td>
+                  <td><?= $row['title'] ?></td>
                   <td>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Illo, iure?
+                   <?= $row['description'] ?>
                   </td>
-                  <td>https//asdfnaifhwe233dsf</td>
+                  <td><?= $row['test_url'] ?></td>
                   <td>
                     <div class="action-buttons">
-                      <div class="action-btn edit">
+                      <a href="update-quiz.php?id=<?php echo $row['id']?>"
+                       class="action-btn edit">
                         <i class="ri-edit-line"></i>
-                      </div>
-                      <div class="action-btn delete">
+                      </a>
+                      <a href="delete-quiz.php?id=<?php echo $row['id']?>" 
+                      class="action-btn delete"
+                      onclick="return confirm('Are you sure, you want to remove this quiz?')">
                         <i class="ri-delete-bin-line"></i>
-                      </div>
+                      </a>
                     </div>
                   </td>
                 </tr>
+                <?php } ?>
               </tbody>
             </table>
+            <?php } ?>
           </div>
         </div>
       </div>
@@ -86,7 +99,7 @@ if (!isset($_SESSION['admin_email'])) {
   </main>
 
   <!-- Code for Add Quiz form -->
-  <div class="quiz-modal" id="quizModal">
+  <div class="a-quiz-modal quiz-modal" id="quizModal">
     <div class="modal-content box">
       <div class="modal-header">
         <h2>Add New Quiz</h2>
@@ -117,6 +130,42 @@ if (!isset($_SESSION['admin_email'])) {
       </form>
     </div>
   </div>
+
+
+  <script>
+    // Code for add quiz
+    document.addEventListener('DOMContentLoaded', function() {
+      // Quiz Modal
+      const addQuizBtn = document.querySelector('.content-card h3 + .card-actions .btn');
+      const quizModal = document.getElementById('quizModal');
+      const closeQuizBtn = document.getElementById('closeQuizModal');
+      const cancelQuizBtn = document.getElementById('cancelQuizBtn');
+
+      // Open Quiz Modal
+      if (addQuizBtn) {
+        addQuizBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          quizModal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        });
+      }
+
+      // Close functions
+      function closeQuizModal() {
+        quizModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.getElementById('quizForm').reset();
+      }
+
+      if (closeQuizBtn) closeQuizBtn.addEventListener('click', closeQuizModal);
+      if (cancelQuizBtn) cancelQuizBtn.addEventListener('click', closeQuizModal);
+
+      // Outside click
+      quizModal.addEventListener('click', function(e) {
+        if (e.target === quizModal) closeQuizModal();
+      });
+    });
+  </script>
 
 </body>
 

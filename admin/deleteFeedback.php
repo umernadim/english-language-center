@@ -8,7 +8,6 @@ if (!isset($_SESSION['admin_email'])) {
 }
 
 $feedback_id = $_GET['id'];
-echo $teacher_id;
 
 $sql = "DELETE FROM feedback WHERE id = {$feedback_id}";
 $result = mysqli_query($connect, $sql);

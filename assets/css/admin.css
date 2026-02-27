@@ -629,7 +629,7 @@ body {
 
 
 /******************************
-    From Modal to add
+    Form Modal to add
 *******************************/
 .modal-overlay {
     display: none;
@@ -872,7 +872,15 @@ body {
 /**************************
     Code to add Quiz
 ***************************/
-.quiz-modal {
+.u-quiz-modal {
+    width: 100%;
+   min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.a-quiz-modal {
     display: none;
     position: fixed;
     top: 0;
@@ -883,7 +891,6 @@ body {
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(2px);
 }
 
 .quiz-modal[style*="display: flex"] {
@@ -898,14 +905,13 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     max-height: 90vh;
     overflow-y: auto;
+    padding: 1.5rem;
 }
 
 .quiz-modal .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 25px 10px;
-    border-bottom: 1px solid #eee;
 }
 
 .quiz-modal .close-modal {
@@ -928,7 +934,7 @@ body {
 }
 
 .quiz-modal .box h2 {
-    margin: 0 0 0.8rem;
+    margin: 0 0 0.6rem;
     font-size: 2rem;
     color: var(--heading-color);
 }
@@ -977,7 +983,7 @@ body {
     display: flex;
     gap: 1rem;
     color: var(--txt-color-l);
-    padding: 12px;
+    padding: 8px 12px;
     border: none;
     font-size: 16px;
     border-radius: 6px;
@@ -1003,13 +1009,12 @@ body {
 
 
 @media screen and (max-width: 768px) {
-
     .quiz-modal {
         padding: 0 1rem;
     }
 
     .quiz-modal .box {
-        padding: 25px;
+        max-width: 100%;
     }
 
     .quiz-modal .box h2 {
