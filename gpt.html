@@ -1,770 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hope English Language Center - Navbar</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
-    />
-    <style>
-      :root {
-        --heading-color: #1e3a8a;
-        --text-color-d: #475569;
-        --primary-color: #3b82f6;
-        --secondary-color: #8b5cf6;
-        --accent-color: #10b981;
-        --light-bg: #f8fafc;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      body {
-        background-color: #f1f5f9;
-        min-height: 100vh;
-        overflow-x: hidden;
-      }
-
-      /* Container for demo */
-      .demo-container {
-        padding: 20px;
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-
-      /* Navbar Styles */
-      .navbar {
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.505);
-        backdrop-filter: blur(12px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        transition: all 0.3s ease;
-      }
-
-      .navbar.active {
-        background: none;
-        backdrop-filter: none;
-        box-shadow: none;
-      }
-
-      .navbar.scrolled {
-        padding: 5px 0;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2.6rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 80px;
-      }
-
-      /* Logo */
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-      }
-
-      .logo.active {
-        opacity: 0;
-      }
-
-      .logo-icon {
-        width: 45px;
-        height: 45px;
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.5rem;
-        font-weight: 700;
-      }
-
-      .logo-text {
-        display: flex;
-        flex-direction: column;
-        gap: 0.15rem;
-      }
-
-      .logo-text .brand-name {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--heading-color);
-        line-height: 1;
-      }
-
-      .logo-text .tagline {
-        font-size: 0.8rem;
-        color: var(--text-color-d);
-        font-weight: 500;
-        letter-spacing: 0.5px;
-      }
-
-      /* Desktop Navigation */
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        list-style: none;
-      }
-
-      .nav-links li {
-        position: relative;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--heading-color);
-        font-weight: 600;
-        font-size: 1.05rem;
-        padding: 8px 0;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .nav-links a:hover {
-        color: var(--primary-color);
-      }
-
-      /* Active link indicator */
-      .nav-links a:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background: linear-gradient(
-          to right,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        border-radius: 3px;
-        transition: width 0.3s ease;
-      }
-
-      .nav-links a:hover:after,
-      .nav-links a.active:after {
-        width: 100%;
-      }
-
-      /* Hamburger Menu (Mobile) */
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 27px;
-        height: 21px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        z-index: 1001;
-      }
-
-      .hamburger span {
-        width: 100%;
-        height: 3px;
-        background: var(--heading-color);
-        border-radius: 3px;
-        transition: all 0.3s ease;
-        transform-origin: left;
-      }
-
-      .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg);
-        background: #fff;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Hope English Language Center</title>
+  <!-- Google Fonts (matching your theme) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text-color-d: #3b3b3b;
+      --txt-color2: #003366;
+      --bg-color-d: #F8FAFB;
+      --roboto: "Roboto", sans-serif;
     }
-    
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    
-    .hamburger.active span:nth-child(3) {
-          background: #fff;
-        transform: rotate(-45deg);
-      }
 
-      /* Mobile Sidebar Menu */
-      .mobile-nav {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 80%;
-        max-width: 300px;
-        height: 100vh;
-        background: white;
-        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-        transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        padding: 100px 30px 40px;
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-      }
+    body {
+      font-family: var(--roboto);
+      background-color: var(--bg-color-d);
+      color: var(--text-color-d);
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
 
-      .mobile-nav.active {
-        left: 0;
-      }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-      #mobile-logo{
-        margin-bottom: 30px;
-      }
+    h1 {
+      font-size: 2.2rem;
+      color: var(--txt-color2);
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
 
-      .mobile-nav-links {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-      }
+    .last-updated {
+      color: #6c757d;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e0e0e0;
+    }
 
-      .mobile-nav-links a {
-        text-decoration: none;
-        color: var(--heading-color);
-        font-size: 1.2rem;
-        font-weight: 600;
-        padding: 12px 0;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        border-bottom: 1px solid #f1f5f9;
-        transition: all 0.3s ease;
-      }
+    h2 {
+      font-size: 1.5rem;
+      color: var(--txt-color2);
+      margin: 25px 0 15px;
+      font-weight: 500;
+    }
 
-      .mobile-nav-links a:hover {
-        color: var(--primary-color);
-        padding-left: 10px;
-      }
+    p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
 
-      .mobile-nav-links a i {
-        font-size: 1.3rem;
-        width: 30px;
-      }
+    ul {
+      margin: 10px 0 20px 20px;
+    }
 
-      /* Overlay for mobile menu */
-      .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 998;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
+    li {
+      margin-bottom: 5px;
+    }
 
-      .overlay.active {
-        opacity: 1;
-        visibility: visible;
-      }
+    hr {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 30px 0;
+    }
 
-      /* Demo content */
-      .demo-content {
-        margin-top: 100px;
-        padding: 30px;
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      }
+    .contact-info {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #f0f3f7;
+      border-left: 4px solid var(--txt-color2);
+    }
 
-      .demo-content h1 {
-        color: var(--heading-color);
-        margin-bottom: 20px;
-        font-size: 2.5rem;
-      }
+    .contact-info p {
+      margin-bottom: 5px;
+    }
 
-      .demo-content p {
-        color: var(--text-color-d);
-        line-height: 1.7;
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-      }
+    .footer-note {
+      margin-top: 40px;
+      text-align: center;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
 
-      /* Responsive Design */
-      @media (max-width: 1100px) {
-        .nav-links {
-          gap: 1.5rem;
-        }
+    .footer-note a {
+      color: var(--txt-color2);
+      text-decoration: none;
+    }
 
-        .nav-cta {
-          padding: 10px 22px;
-          font-size: 0.95rem;
-        }
-      }
+    .footer-note a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <div class="last-updated">Last Updated: March 1, 2025</div>
 
-      @media (max-width: 992px) {
-        .nav-links,
-        .nav-cta {
-          display: none;
-        }
+    <p>Welcome to <strong>Hope English Language Center</strong>. We respect the privacy of our students and visitors.</p>
 
-        .hamburger {
-          display: flex;
-        }
+    <h2>1. Information Collection</h2>
+    <p>Our website does not require users to create accounts or log in.</p>
+    <p>For quizzes, we use Google Forms. Any information submitted through Google Forms is handled according to Google's own Privacy Policy. We do not directly store or manage quiz submission data on our website servers.</p>
 
-        .nav-container {
-          padding: 0 20px;
-          height: 70px;
-        }
+    <h2>2. Website Content</h2>
+    <p>This website provides information related to our language center, courses, and activities.</p>
 
-        .navbar.scrolled {
-          padding: 0;
-        }
+    <h2>3. Gallery and Images</h2>
+    <p>Our gallery page may contain images from classes, events, or academic activities. If any individual wishes to request removal of an image, they may contact us directly.</p>
 
-        .demo-content {
-          margin-top: 90px;
-          padding: 20px;
-        }
+    <h2>4. Third-Party Services</h2>
+    <p>We may use third-party services such as:</p>
+    <ul>
+      <li>Google Forms (for quizzes)</li>
+    </ul>
+    <p>These services operate under their own privacy policies.</p>
 
-        .demo-content h1 {
-          font-size: 2rem;
-        }
-      }
+    <h2>5. Data Security</h2>
+    <p>We take reasonable steps to ensure our website is secure. However, no internet-based service is completely risk-free.</p>
 
-      @media (max-width: 480px) {
-        .nav-container {
-          padding: 0 15px;
-        }
+    <h2>6. Newsletter</h2>
+    <p>If users subscribe to our newsletter, their email address will only be used to send updates related to our language center. We do not share subscriber information with third parties.</p>
 
-        .logo-icon {
-          width: 40px;
-          height: 40px;
-          font-size: 1.3rem;
-        }
+    <h2>7. Contact Us</h2>
+    <p>If you have any questions regarding this Privacy Policy, please contact us at:</p>
 
-        .logo-text .brand-name {
-          font-size: 1.3rem;
-        }
-
-        .logo-text .tagline {
-          font-size: 0.7rem;
-        }
-
-        .mobile-nav {
-          width: 90%;
-          padding: 40px 30px;
-        }
-
-        .demo-content {
-          padding: 15px;
-        }
-      }
-
-      /* Scroll progress indicator */
-      .scroll-progress {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background: linear-gradient(
-          to right,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        transition: width 0.1s ease;
-      }
-
-      /* Language selector */
-      .language-selector {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 15px;
-        border-radius: 20px;
-        background: #f1f5f9;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .language-selector:hover {
-        background: #e2e8f0;
-      }
-
-      .language-selector i {
-        color: var(--primary-color);
-        font-size: 1.1rem;
-      }
-
-      .language-selector span {
-        font-weight: 600;
-        color: var(--heading-color);
-      }
-
-      /* Dropdown for language (optional) */
-      .language-dropdown {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        padding: 10px 0;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
-        min-width: 150px;
-      }
-
-      .language-dropdown.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .language-dropdown a {
-        display: block;
-        padding: 10px 20px;
-        text-decoration: none;
-        color: var(--text-color-d);
-        transition: all 0.2s ease;
-      }
-
-      .language-dropdown a:hover {
-        background: #f8fafc;
-        color: var(--primary-color);
-      }
-
-      /* For demo purposes, show the dropdown on hover */
-      .language-selector-wrapper {
-        position: relative;
-      }
-
-      .language-selector-wrapper:hover .language-dropdown {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="scroll-progress" id="scrollProgress"></div>
-      <div class="dkNav-container">
-        <div class="nav-container">
-          <!-- Logo -->
-          <a href="#" class="logo">
-            <div class="logo-icon">H</div>
-            <div class="logo-text">
-              <div class="brand-name">Hope English</div>
-              <div class="tagline">Language Center</div>
-            </div>
-          </a>
-
-          <!-- Desktop Navigation -->
-          <ul class="nav-links">
-            <li><a href="index.html" class="active"> Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="blogs.html"> Blogs</a></li>
-            <li><a href="quiz.html"> Quiz</a></li>
-            <li><a href="vocubulary.html"> Vocabulary</a></li>
-            <li><a href="courses.html"> Courses</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <!-- Mobile Hamburger Menu -->
-          <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </div>
-    </nav>
-    <!-- Mobile Sidebar Menu -->
-    <div class="mobile-nav" id="mobileNav">
-      <!-- <div class="mobile-logo">
-          <div class="logo-icon">H</div>
-          <div class="logo-text">
-            <div class="brand-name">Hope English</div>
-            <div class="tagline">Language Center</div>
-          </div>
-        </div> -->
-      <a href="#" class="logo" id="mobile-logo">
-        <div class="logo-icon">H</div>
-        <div class="logo-text">
-          <div class="brand-name">Hope English</div>
-          <div class="tagline">Language Center</div>
-        </div>
-      </a>
-      <ul class="mobile-nav-links">
-        <li>
-          <a href="index.html" class="active"
-            ><i class="ri-home-4-line"></i> Home</a
-          >
-        </li>
-
-        <li>
-          <a href="about.html"><i class="ri-user-3-line"></i> About</a>
-        </li>
-
-        <li>
-          <a href="gallery.html"><i class="ri-image-2-line"></i> Gallery</a>
-        </li>
-
-        <li>
-          <a href="blogs.html"><i class="ri-article-line"></i> Blogs</a>
-        </li>
-
-        <li>
-          <a href="quiz.html"><i class="ri-questionnaire-line"></i> Quiz</a>
-        </li>
-
-        <li>
-          <a href="vocubulary.html"
-            ><i class="ri-book-2-line"></i> Vocabulary</a
-          >
-        </li>
-
-        <li>
-          <a href="courses.html"><i class="ri-book-open-line"></i> Courses</a>
-        </li>
-
-        <li>
-          <a href="contact.html"><i class="ri-phone-line"></i> Contact</a>
-        </li>
-      </ul>
+    <div class="contact-info">
+      <p><strong>Email:</strong> info@hopeenglish.com</p>
+      <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+      <p><strong>Phone:</strong> +1 234 567 890</p>
     </div>
 
-    <!-- Overlay for mobile menu -->
-    <div class="overlay" id="overlay"></div>
+    <hr>
 
-    <!-- Demo Content -->
-    <div class="demo-container">
-      <div class="demo-content">
-        <h1>Hope English Language Center</h1>
-        <p>
-          This is a demo page to showcase the responsive navbar. Scroll down to
-          see the navbar behavior, and resize your browser to see how it adapts
-          to different screen sizes.
-        </p>
-        <p>
-          On larger screens, the navbar displays all navigation items
-          horizontally. On smaller screens, it transforms into a hamburger menu
-          that opens a sidebar from the left.
-        </p>
-        <p>
-          The navbar includes smooth animations, a scroll progress indicator,
-          and a language selector dropdown.
-        </p>
-
-        <h2 style="margin-top: 30px; color: var(--heading-color)">
-          Features of this Navbar:
-        </h2>
-        <ul
-          style="
-            color: var(--text-color-d);
-            line-height: 1.7;
-            margin-left: 20px;
-            margin-bottom: 20px;
-          "
-        >
-          <li>Responsive design that works on all devices</li>
-          <li>Left-side mobile menu with smooth slide animation</li>
-          <li>Scroll progress indicator at the top</li>
-          <li>Language selector with dropdown</li>
-          <li>Active link indicator with gradient underline</li>
-          <li>Sticky navbar with shadow effect on scroll</li>
-          <li>Clean, modern design with gradient accents</li>
-        </ul>
-
-        <p>
-          Scroll down to see more content and observe how the navbar behaves...
-        </p>
-
-        <!-- Dummy content to enable scrolling -->
-        <div
-          style="
-            height: 800px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f8fafc;
-            border-radius: 15px;
-            margin-top: 30px;
-          "
-        >
-          <div style="text-align: center; padding: 40px">
-            <i
-              class="ri-arrow-down-line"
-              style="
-                font-size: 3rem;
-                color: var(--primary-color);
-                margin-bottom: 20px;
-                display: block;
-              "
-            ></i>
-            <h3 style="color: var(--heading-color)">
-              Scroll back to top to see the navbar in action
-            </h3>
-          </div>
-        </div>
-      </div>
+    <div class="footer-note">
+      <p>&copy; 2025 Hope English Language Center. All rights reserved. | <a href="#">Back to Home</a></p>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Get DOM elements
-        const hamburger = document.getElementById("hamburger");
-        const mobileNav = document.getElementById("mobileNav");
-        const overlay = document.getElementById("overlay");
-        const navbar = document.querySelector(".navbar");
-        const logo = document.querySelector(".logo");
-        const scrollProgress = document.getElementById("scrollProgress");
-        const languageSelectors = document.querySelectorAll(
-          ".language-selector, .language-selector-mobile"
-        );
-
-        // Toggle mobile menu
-        function toggleMobileMenu() {
-          hamburger.classList.toggle("active");
-          mobileNav.classList.toggle("active");
-          overlay.classList.toggle("active");
-          navbar.classList.toggle("active");
-            logo.classList.toggle("active");
-          document.body.style.overflow = mobileNav.classList.contains("active")
-            ? "hidden"
-            : "";
-        }
-
-        // Close mobile menu
-        function closeMobileMenu() {
-          hamburger.classList.remove("active");
-          mobileNav.classList.remove("active");
-          overlay.classList.remove("active");
-          document.body.style.overflow = "";
-        }
-
-        // Event listeners
-        hamburger.addEventListener("click", toggleMobileMenu);
-        overlay.addEventListener("click", closeMobileMenu);
-
-        // Close mobile menu when clicking on a link
-        const mobileLinks = document.querySelectorAll(".mobile-nav-links a");
-        mobileLinks.forEach((link) => {
-          link.addEventListener("click", closeMobileMenu);
-        });
-
-        // Navbar scroll effect
-        window.addEventListener("scroll", function () {
-          // Add/remove scrolled class
-          if (window.scrollY > 50) {
-            navbar.classList.add("scrolled");
-          } else {
-            navbar.classList.remove("scrolled");
-          }
-
-          // Update scroll progress
-          const windowHeight =
-            document.documentElement.scrollHeight -
-            document.documentElement.clientHeight;
-          const scrolled = (window.scrollY / windowHeight) * 100;
-          scrollProgress.style.width = scrolled + "%";
-        });
-
-        // Language selector toggle (for mobile)
-        const languageMobile = document.querySelector(
-          ".language-selector-mobile"
-        );
-        if (languageMobile) {
-          languageMobile.addEventListener("click", function (e) {
-            e.preventDefault();
-            alert(
-              "Language selector clicked. In a real implementation, this would open a language selection dialog."
-            );
-          });
-        }
-
-        // Active link management
-        const navLinks = document.querySelectorAll(
-          ".nav-links a, .mobile-nav-links a"
-        );
-
-        navLinks.forEach((link) => {
-          link.addEventListener("click", function (e) {
-            // Remove active class from all links
-            navLinks.forEach((l) => l.classList.remove("active"));
-
-            // Add active class to clicked link
-            this.classList.add("active");
-
-            // For desktop links, prevent default only for demo
-            if (
-              !this.getAttribute("href") ||
-              this.getAttribute("href") === "#"
-            ) {
-              e.preventDefault();
-            }
-          });
-        });
-
-        // Keyboard shortcuts
-        document.addEventListener("keydown", function (e) {
-          // Escape key closes mobile menu
-          if (e.key === "Escape" && mobileNav.classList.contains("active")) {
-            closeMobileMenu();
-          }
-
-          // M key toggles mobile menu (for testing)
-          if (e.key === "m" || e.key === "M") {
-            toggleMobileMenu();
-          }
-        });
-
-        // Initialize active link
-        const currentPath = window.location.pathname;
-        navLinks.forEach((link) => {
-          if (link.getAttribute("href") === currentPath) {
-            link.classList.add("active");
-          }
-        });
-
-        // Demo: Add some scrolling animation for the demo content
-        const demoContent = document.querySelector(".demo-content");
-        window.addEventListener("scroll", function () {
-          const scrolled = window.scrollY;
-          const rate = scrolled * -0.2;
-
-          if (demoContent) {
-            demoContent.style.transform = `translateY(${rate}px)`;
-          }
-        });
-
-        // Console message for testing
-        console.log("Navbar loaded successfully!");
-        console.log(
-          "💡 Pro tip: Press 'M' to toggle the mobile menu, or 'ESC' to close it."
-        );
-      });
-    </script>
-  </body>
+  </div>
+</body>
 </html>

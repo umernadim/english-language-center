@@ -105,7 +105,7 @@
   <!-- Footer Bottom -->
   <div class="footer-bottom">
     <div class="copyright">
-      &copy; 2024 Hope English Language Center. All rights reserved.
+      &copy; 2026 Hope English Language Center. All rights reserved.
     </div>
     <div class="footer-bottom-links">
       <a href="privacy.php">Privacy Policy</a>

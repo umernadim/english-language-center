@@ -847,7 +847,6 @@ body {
     position: relative;
     z-index: 2;
     margin-top: 2rem;
-    /* background-color: red; */
 }
 
 #test-section .test-info {
@@ -2194,8 +2193,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    background: red;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 #activity-section .video-card {
@@ -3095,7 +3093,6 @@ body {
     align-items: center;
     text-align: center;
     padding: 5rem;
-    /* background: red; */
 }
 
 #gallery-container h2 {
@@ -3106,13 +3103,10 @@ body {
     margin-bottom: 0.5rem;
 }
 
-
 #gallery-container .gallery-box {
     display: flex;
     flex-direction: row;
-    /* gap: 15px; */
     justify-content: space-between;
-    /* justify-content: center; */
 }
 
 .gallery-images {
@@ -3965,3 +3959,79 @@ footer .back-to-top:hover {
     }
 }
 
+/*****************************
+    Code for privacy pages
+******************************/
+.privacy-page {
+    line-height: 1.6;
+    padding: 150px 20px 60px;
+}
+
+.privacy-page .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.privacy-page h1 {
+    font-size: 2.2rem;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.privacy-page .last-updated {
+    color: var(--li-color);
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.privacy-page h2 {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin: 25px 0 15px;
+    font-weight: 500;
+}
+
+.privacy-page p {
+    margin-bottom: 15px;
+    color: var(--txt-color-xl);
+    font-size: 1rem;
+}
+
+.privacy-page ul {
+    margin: 10px 0 20px 20px;
+}
+
+.privacy-page li {
+    margin-bottom: 5px;
+    color: var(--li-color);
+}
+
+.privacy-page hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 30px 0;
+}
+
+.privacy-page .contact-info {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f0f3f7;
+    border-left: 4px solid var(--txt-color2);
+}
+
+.privacy-page .contact-info p {
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .privacy-page h1 {
+    font-size: 1.8rem;
+}
+    .privacy-page h2 {
+    font-size: 1.3rem;
+    margin: 20px 0 5px;
+}
+}
