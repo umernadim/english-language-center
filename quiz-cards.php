@@ -4,7 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grammar-Quizes | Hope English Language Center</title>
+  <title>English Grammar Quiz | Hope English Language Center</title>
+
+  <meta name="description" content="Practice with our English grammar quiz. Test your knowledge, improve accuracy, and build confidence with Hope English Language Center." />
+  <meta name="keywords" content="English grammar quiz, online English test, English practice quiz, language center online test" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="English Grammar Quiz | Hope English Language Center" />
+  <meta property="og:description" content="Take our online English grammar quiz and test your skills. Improve confidence and fluency with Hope English Language Center in Baldia Town, Karachi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com/quiz.php" />
+  <meta property="og:image" content="https://yourwebsite.com/assets/images/gallery/14.jpg" />
   <link
     href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
     rel="stylesheet" />

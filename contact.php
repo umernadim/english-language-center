@@ -4,7 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Hope English language Center</title>
+  <title>Contact Hope English Language Center</title>
+
+  <meta name="description" content="Get in touch with Hope English Language Center in Baldia Town, Karachi for course details, admissions, and spoken English classes." />
+
+  <meta name="keywords" content="Contact English institute Karachi, English classes Baldia Town, language center Karachi" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact Hope English Language Center | Baldia Town, Karachi" />
+  <meta property="og:description" content="Get in touch with Hope English Language Center for admissions, course details, and spoken English classes in Baldia Town, Karachi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com/contact.php" />
+  <meta property="og:image" content="https://yourwebsite.com/assets/images/carousel/img1.jpg" />
   <link
     href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
     rel="stylesheet" />
@@ -31,9 +42,9 @@
           </div>
         </div>
         <!-- code for the SVG waves -->
-          <?php 
-    include 'assets/components/banner.php';
-    ?>
+        <?php
+        include 'assets/components/banner.php';
+        ?>
       </div>
     </section>
 

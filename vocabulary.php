@@ -4,7 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vocabulary | Hope Language Center</title>
+  <title>Daily English Vocabulary | Hope English Language Center</title>
+
+  <meta name="description" content="Learn daily English vocabulary, word meanings, and improve language skills with Hope English Language Center in Baldia Town, Karachi." />
+
+  <meta name="keywords" content="English vocabulary, daily English words, word meanings practice, vocabulary improvement course Karachi" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Daily English Vocabulary & Word Meanings | Hope English Language Center Karachi" />
+  <meta property="og:description" content="Improve your English vocabulary with daily words and meanings. Practice and build confidence with Hope English Language Center in Baldia Town, Karachi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com/vocabulary.php" />
+  <meta property="og:image" content="https://yourwebsite.com/assets/images/gallery/carousel/img3.jpg" />
   <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
     rel="stylesheet" />

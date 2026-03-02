@@ -4,7 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery | Hope English Language Center</title>
+  <title>Student Activities Gallery | Hope English Language Center Karachi</title>
+
+<meta name="description" content="Explore our student activities, classroom moments, and academic events at Hope English Language Center in Baldia Town, Karachi." />
+
+<meta name="keywords" content="English institute gallery Karachi, student activities Baldia Town, classroom events Karachi, language center photos Karachi" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Student Activities Gallery | Hope English Language Center Karachi" />
+<meta property="og:description" content="Explore classroom activities, student achievements, and academic events at Hope English Language Center in Baldia Town, Karachi." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yourwebsite.com/gallery.php" />
+<meta property="og:image" content="https://yourwebsite.com/assets/images/gallery/img13.jpg" />
   <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
     rel="stylesheet" />

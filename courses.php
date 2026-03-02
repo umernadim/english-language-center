@@ -4,7 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Courses | Hope English Language Center</title>
+  <title>English Courses in Karachi | Hope English Language Center</title>
+
+  <meta name="description" content="Looking for English courses in Karachi? Hope English Language Center offers spoken English, grammar, and communication classes in Baldia Town for all levels." />
+  <meta name="keywords" content="English courses Karachi, spoken English classes Baldia Town, grammar course Karachi, communication skills course Karachi, English institute Baldia Town" />
+  <meta name="author" content="Hope English Language Center" />
+
+  <link rel="canonical" href="https://yourwebsite.com/" />
+  <link rel="icon" type="image/png" href="assets/images/logo.jpeg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="English Courses in Baldia Town, Karachi | Hope English Language Center" />
+  <meta property="og:description" content="Join our English language courses in Baldia Town, Karachi. Improve spoken English, grammar, and communication skills with expert guidance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com/courses.php" />
+  <meta property="og:image" content="https://yourwebsite.com/assets/images/gallery/23.jpg" />
+
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -12,9 +27,9 @@
 
 <body>
   <!--Code for navbar -->
-    <?php 
-    include 'assets/components/navbar.php';
-    ?>
+  <?php
+  include 'assets/components/navbar.php';
+  ?>
 
   <div class="wrapper">
     <!-- code for hero-section-banner  -->
@@ -34,9 +49,9 @@
           </div>
         </div>
         <!-- code for Hero Banner  -->
-          <?php 
-    include 'assets/components/banner.php';
-    ?>
+        <?php
+        include 'assets/components/banner.php';
+        ?>
       </div>
     </section>
 
@@ -47,7 +62,7 @@
         <div class="underline"></div>
 
         <div class="course-list">
-            <!-- code is in Javascript  -->
+          <!-- code is in Javascript  -->
         </div>
 
       </div>
@@ -80,7 +95,7 @@
         </p>
 
         <div class="faq">
-      <!-- code is in javascript  -->
+          <!-- code is in javascript  -->
         </div>
       </div>
     </section>
@@ -97,7 +112,7 @@
       </div>
     </section>
 
-      <?php 
+    <?php
     include 'assets/components/footer.php';
     ?>
 

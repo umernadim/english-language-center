@@ -4,7 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Hope English Language Center</title>
+  <title>About Hope English Language Center</title>
+  <meta name="description" content="Learn about Hope English Language Center in Baldia Town, Karachi. Discover our mission, teaching approach, and commitment to building confident speakers." />
+
+  <meta name="keywords" content="About Hope English Language Center, English institute Baldia Town Karachi, language center mission Karachi, spoken English institute Karachi" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Hope English Language Center" />
+  <meta property="og:description" content="Discover our mission, teaching methods, and commitment to helping students build confidence and fluency in English." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com/about.php" />
+  <meta property="og:image" content="https://yourwebsite.com/assets/images/gallery/43.jpg" />
   <link
     href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
     rel="stylesheet" />
@@ -166,31 +176,31 @@
         <div class="underline"></div>
 
         <div class="achievements-grid">
-           <?php
-           include 'config.php';
-           $sql = "SELECT * FROM achievements";
-           $result = mysqli_query($connect, $sql);
-           if (mysqli_num_rows($result)) {
-            while($row = mysqli_fetch_assoc($result)){
-          
-           ?>
-          <div class="achievement-card">
-            <img
-              src="admin/<?php echo $row['image_url'] ?>"
-              alt="Speech Contest"
-              loading="lazy" />
-            <div class="achievement-content">
-              <h3><?php echo $row['title'] ?></h3>
-              <p>
-                <i class="ri-double-quotes-l quotes"></i> 
-                <?php echo $row['description'] ?>
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
+          <?php
+          include 'config.php';
+          $sql = "SELECT * FROM achievements";
+          $result = mysqli_query($connect, $sql);
+          if (mysqli_num_rows($result)) {
+            while ($row = mysqli_fetch_assoc($result)) {
+
+          ?>
+              <div class="achievement-card">
+                <img
+                  src="admin/<?php echo $row['image_url'] ?>"
+                  alt="Speech Contest"
+                  loading="lazy" />
+                <div class="achievement-content">
+                  <h3><?php echo $row['title'] ?></h3>
+                  <p>
+                    <i class="ri-double-quotes-l quotes"></i>
+                    <?php echo $row['description'] ?>
+                    <i class="ri-double-quotes-r quotes"></i>
+                  </p>
+                </div>
+              </div>
           <?php
             }
-           }
+          }
           ?>
 
         </div>

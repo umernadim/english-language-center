@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terms & Conditions | Hope English Language Center</title>
+    <meta name="description" content="Review the Terms and Conditions of Hope English Language Center regarding course enrollment, website usage, and student policies." />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"

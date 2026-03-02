@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy | Hope English Language Center</title>
+    <meta name="description" content="Read the Privacy Policy of Hope English Language Center to understand how we collect, use, and protect your personal information." />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
