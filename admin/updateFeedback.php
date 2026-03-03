@@ -77,6 +77,7 @@ mysqli_close($connect);
     <link
         href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
         rel="stylesheet" />
+        <meta name="robots" content="noindex, nofollow" />
     <link rel="stylesheet" href="../assets/css/updateForms.css" />
 </head>
 

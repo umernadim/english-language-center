@@ -138,7 +138,7 @@ function videosCardDataHandler() {
       videoPath: "assets/videos/vocabulary-contest.mp4",
     },
     {
-      title: "Role Play Session",
+      title: "Youth Leadership training",
       videoPath: "assets/videos/youth-leadership-training.mp4",
     },
   ];
@@ -165,42 +165,7 @@ function videosCardDataHandler() {
 
 videosCardDataHandler();
 
-// code for Video Handler
-// function videohandler() {
-//   document.addEventListener("DOMContentLoaded", () => {
-//     const containers = document.querySelectorAll(".video-container");
 
-//     containers.forEach((container) => {
-//       const video = container.querySelector("video");
-//       const overlay = container.querySelector(".play-overlay");
-
-//       // Click only on overlay or its icon
-//       overlay.addEventListener("click", () => {
-//         if (video.paused) {
-//           video.play();
-//         } else {
-//           video.pause();
-//         }
-//       });
-
-//       // Hide overlay when playing
-//       video.addEventListener("play", () => {
-//         overlay.style.opacity = "0";
-//       });
-
-//       // Show overlay when paused or ended
-//       video.addEventListener("pause", () => {
-//         overlay.style.opacity = "1";
-//       });
-
-//       video.addEventListener("ended", () => {
-//         overlay.style.opacity = "1";
-//       });
-//     });
-//   });
-// }
-
-// videohandler();
 
 function videohandler() {
   document.addEventListener("DOMContentLoaded", () => {

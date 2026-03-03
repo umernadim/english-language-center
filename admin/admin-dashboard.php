@@ -32,6 +32,7 @@ $quizzes_count = mysqli_fetch_assoc($result4)['count'];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin-Dashboard | Hope English Language Center</title>
+    <meta name="robots" content="noindex, nofollow" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"

@@ -1,17 +1,4 @@
 // // code for carousel
-// function carouselHandler() {
-//   const images = document.querySelectorAll(".background-img");
-//   let current = 0;
-
-//   setInterval(() => {
-//     images[current].style.opacity = 0;
-//     current = (current + 1) % images.length;
-//     images[current].style.opacity = 1;
-//   }, 3000);
-// }
-
-// window.addEventListener("load", carouselHandler);
-
 function carouselHandler() {
   let images;
   if (window.innerWidth >= 768) {

@@ -1716,7 +1716,7 @@ body {
     color: var(--heading-color);
     margin-top: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.62)),
-        url(../images/carousel/img4.jpg);
+        url(../images/carousel/img14.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -2702,7 +2702,7 @@ body {
     color: var(--heading-color);
     margin-top: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.6)),
-        url(../images/carousel/img4.jpg);
+        url(../images/carousel/img1.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -2880,7 +2880,8 @@ body {
     color: var(--heading-color);
     margin-top: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.62)),
-        url(../images/carousel/img4.jpg);
+        url(../images/carousel/img3.jpg);
+
     background-size: cover;
     background-position: center;
 }
@@ -3078,7 +3079,8 @@ body {
     color: var(--heading-color);
     margin-top: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.62)),
-        url(../images/carousel/img6.jpg);
+        url(../images/carousel/img16.jpg);
+
     background-size: cover;
     background-position: center;
 }
@@ -3156,7 +3158,7 @@ body {
     color: var(--heading-color);
     margin-top: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.62)),
-        url(../images/carousel/img3.jpg);
+        url(../images/carousel/img15.jpg);
     background-size: cover;
     background-position: center;
 }

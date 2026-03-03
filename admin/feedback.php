@@ -13,7 +13,8 @@ if (!isset($_SESSION['admin_email'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feedback-Data | Hope English Language Center</title>
+  <title>Feedback Panel | Hope English Language Center</title>
+  <meta name="robots" content="noindex, nofollow" />
   <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
     rel="stylesheet" />

@@ -74,6 +74,7 @@ mysqli_close($connect);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Teacher | Hope English Language Center</title>
+    <meta name="robots" content="noindex, nofollow" />
     <link
         href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
         rel="stylesheet" />

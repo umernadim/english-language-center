@@ -16,7 +16,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email'
             $_SESSION['admin_id'] = $row['id'];
             $_SESSION['admin_email'] = $row['email'];
             $_SESSION['admin_name'] = $row['full_name'];
-            header('Location: http://localhost/php_learning/final-web/admin/admin-dashboard.php');
+            header('Location:admin-dashboard.php');
             exit;
         } else {
             $error = "Wrong email/password!";
@@ -36,6 +36,7 @@ mysqli_close($connect);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login | Hope English Language Center</title>
+    <meta name="robots" content="noindex, nofollow" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/admin.css" />
 </head>
