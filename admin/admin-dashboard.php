@@ -91,6 +91,27 @@ $quizzes_count = mysqli_fetch_assoc($result4)['count'];
             <p>Feedback</p>
           </div>
         </div>
+        <div class="stat-card">
+          <div class="stat-icon testimonial">
+            <i class="ri-message-3-line"></i>
+          </div>
+          <div class="stat-info">
+            <h3>0</h3>
+            <p>Messages</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon testimonial">
+            <i class="ri-mail-line"></i>
+          </div>
+          <div class="stat-info">
+            <h3>0</h3>
+            <p>Emails</p>
+          </div>
+        </div>
+
+
+
       </div>
     </main>
 

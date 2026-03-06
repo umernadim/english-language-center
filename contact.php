@@ -1,3 +1,26 @@
+<?php
+if ($_POST) {
+  include 'config.php';
+
+  $name = mysqli_real_escape_string($connect, $_POST['name']);
+  $email = mysqli_real_escape_string($connect, $_POST['email']);
+  $message = mysqli_real_escape_string($connect, $_POST['message']);
+
+  $sql = "INSERT INTO messages (name, email, message) VALUES('$name', '$email', '$message')";
+
+  $result = mysqli_query($connect, $sql);
+
+  if ($result) {
+    header("Location: contact.php?success=1");
+    exit;
+  } else {
+    header("Location: contact.php?error=1");
+    exit;
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,17 +82,20 @@
             We’d love to hear from you.
           </p>
 
-          <form>
+          <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
             <div class="form-grid">
               <div class="form-group">
                 <label>Name</label>
-                <input type="text" placeholder="Your full name" required />
+                <input type="text"
+                  name="name"
+                  placeholder="Your full name" required />
               </div>
 
               <div class="form-group">
                 <label>Email Address</label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="Your email address"
                   required />
               </div>
@@ -79,6 +105,7 @@
               <label>Message</label>
               <textarea
                 rows="5"
+                name="message"
                 placeholder="Write your message..."
                 required></textarea>
             </div>
@@ -137,6 +164,19 @@
     ?>
 
   </div>
+  <?php if (isset($_GET['success'])): ?>
+    <script>
+      alert("Thank you! Your message has been submitted.");
+    </script>
+  <?php endif; ?>
+
+  <?php if (isset($_GET['error'])): ?>
+    <script>
+      alert("Something went wrong, please try again.");
+    </script>
+  <?php endif; ?>
+
+
   <script src="assets/js/script.js"></script>
 </body>
 

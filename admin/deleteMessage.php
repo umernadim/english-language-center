@@ -7,10 +7,10 @@ if (!isset($_SESSION['admin_email'])) {
     exit;
 }
 
-$teacher_id = $_GET['id'];
+$message_id = $_GET['id'];
 
-$sql = "DELETE FROM teachers WHERE id = {$teacher_id}";
+$sql = "DELETE FROM messages WHERE id = {$message_id}";
 $result = mysqli_query($connect, $sql);
-header("location: teachers.php");
+header("location: messages.php");
 
 ?>

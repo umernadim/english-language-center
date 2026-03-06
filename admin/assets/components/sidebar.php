@@ -43,6 +43,19 @@
                 <span>Feedback</span>
               </a>
             </li>
+            <li>
+              <a href="messages.php" class="menu-item">
+                <i class="ri-message-3-line"></i>
+                <span>Messages</span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="menu-item">
+                <i class="ri-mail-line"></i>
+                <span>Newletter</span>
+              </a>
+            </li>
+
           </ul>
         </div>
 
