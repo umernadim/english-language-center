@@ -22,6 +22,10 @@ $quiz_count = 'SELECT COUNT(*) AS count FROM tests';
 $result4 = mysqli_query($connect, $quiz_count);
 $quizzes_count = mysqli_fetch_assoc($result4)['count'];
 
+$msg_count = 'SELECT COUNT(*) AS count FROM messages WHERE replied = 0';
+$result5 = mysqli_query($connect, $msg_count);
+$messages_count = mysqli_fetch_assoc($result5)['count'];
+
 
 ?>
 
@@ -96,7 +100,7 @@ $quizzes_count = mysqli_fetch_assoc($result4)['count'];
             <i class="ri-message-3-line"></i>
           </div>
           <div class="stat-info">
-            <h3>0</h3>
+            <h3><?php echo $messages_count; ?> </h3>
             <p>Messages</p>
           </div>
         </div>

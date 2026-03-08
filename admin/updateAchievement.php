@@ -68,15 +68,17 @@ mysqli_close($connect);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Achievement | Hope English Language Center</title>
+    <link rel="icon" type="image/png" href="../assets/images/logo.jpeg" />
     <meta name="robots" content="noindex, nofollow" />
     <link
         href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
         rel="stylesheet" />
-          <link rel="stylesheet" href="../assets/css/updateForms.css" />
+    <link rel="stylesheet" href="../assets/css/updateForms.css" />
 </head>
 
 <body>
@@ -116,11 +118,11 @@ mysqli_close($connect);
                                 <div class="form-help">Recommended size: 300x300px, max 2MB</div>
                             </div>
 
-                                <div class="form-group">
-                                    <label class="form-label">Title</label>
-                                    <input type="text" id="" class="form-control" name="title" required value="<?php echo $row['title'] ?>" />
-                                </div>
-                           
+                            <div class="form-group">
+                                <label class="form-label">Title</label>
+                                <input type="text" id="" class="form-control" name="title" required value="<?php echo $row['title'] ?>" />
+                            </div>
+
 
                             <div class="form-group">
                                 <label class="form-label">Description</label>
@@ -130,10 +132,9 @@ mysqli_close($connect);
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" 
-                            class="btn btn-danger" 
-                            id="updateCancelBtn"
-                            >Cancel</button>
+                            <button type="button"
+                                class="btn btn-danger"
+                                id="updateCancelBtn">Cancel</button>
                             <button type="submit" class="btn btn-success" id="updateSaveBtn">Update Achievement</button>
                         </div>
                     </form>
@@ -143,15 +144,15 @@ mysqli_close($connect);
             ?>
         </div>
     </div>
-    
-<script src="../assets/js/admin.js"></script>
-<script>
-document.getElementById('updateCancelBtn').addEventListener('click', function() {
-    if (confirm('Are you sure you want to cancel? Changes will not be saved.')) {
-        window.location.href = 'achievements.php';
-    }
-});
-</script>
+
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        document.getElementById('updateCancelBtn').addEventListener('click', function() {
+            if (confirm('Are you sure you want to cancel? Changes will not be saved.')) {
+                window.location.href = 'achievements.php';
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -1,21 +1,44 @@
 <?php
 session_start();
 include '../config.php';
+
 if (!isset($_SESSION['admin_email'])) {
-  header('location: login.php');
-  exit;
+    header('location: login.php');
+    exit;
 }
 
 $limit = 10;
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $offset = ($page - 1) * $limit;
 
-$sql = "SELECT * FROM messages ORDER BY created_at DESC LIMIT $limit OFFSET $offset";
+// ✅ SINGLE FILTER QUERY - Always use this
+$filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
+
+$whereClause = "";
+$params = [];
+switch ($filter) {
+    case 'new':
+        $whereClause = "WHERE is_read = 0 AND replied = 0";
+        break;
+    case 'read':
+        $whereClause = "WHERE is_read = 1 AND replied = 0";
+        break;
+    case 'replied':
+        $whereClause = "WHERE replied = 1";
+        break;
+    default:
+        $whereClause = ""; 
+}
+
+// Main query with filter + pagination
+$sql = "SELECT * FROM messages $whereClause ORDER BY created_at DESC LIMIT $limit OFFSET $offset";
 $result = mysqli_query($connect, $sql);
 
-$countResult = mysqli_query($connect, "SELECT COUNT(*) AS total FROM messages");
-$rowCount = mysqli_fetch_assoc($countResult);
-$totalMessages = $rowCount['total'];
+// ✅ Total count with SAME filter
+$countSql = "SELECT COUNT(*) AS total FROM messages $whereClause";
+$countResult = mysqli_query($connect, $countSql);
+$totalRow = mysqli_fetch_assoc($countResult);
+$totalMessages = $totalRow['total'];
 $totalPages = ceil($totalMessages / $limit);
 ?>
 
@@ -25,8 +48,10 @@ $totalPages = ceil($totalMessages / $limit);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="../assets/images/logo.jpeg" />
   <title>Messages Panel | Hope English Language Center</title>
   <meta name="robots" content="noindex, nofollow" />
+
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/admin.css" />
 </head>
@@ -41,6 +66,12 @@ $totalPages = ceil($totalMessages / $limit);
         <div class="content-card">
           <div class="card-header">
             <h3>Messages</h3>
+            <div class="filters">
+              <a href="?filter=all" class="<?= ($filter == 'all') ? 'active' : '' ?>">All</a>
+              <a href="?filter=new" class="<?= ($filter == 'new') ? 'active' : '' ?>">New</a>
+              <a href="?filter=read" class="<?= ($filter == 'read') ? 'active' : '' ?>">Read</a>
+              <a href="?filter=replied" class="<?= ($filter == 'replied') ? 'active' : '' ?>">Replied</a>
+            </div>
           </div>
 
           <div class="table-container">
@@ -69,8 +100,8 @@ $totalPages = ceil($totalMessages / $limit);
                       </td>
                       <td>
                         <div class="action-buttons">
-                          <a href="replyMessage.php?id=<?= $row['id'] ?>" class="action-btn edit">
-                            <i class="ri-send-ins-line"></i>
+                          <a href="replyMsgForm.php?id=<?= $row['id'] ?>" class="action-btn edit replyBtn">
+                            <i class="ri-send-plane-fill"></i>
                           </a>
                           <a href="deleteMessage.php?id=<?= $row['id'] ?>" class="action-btn delete"
                             onclick="return confirm('Are you sure to delete this message?')">
@@ -103,6 +134,7 @@ $totalPages = ceil($totalMessages / $limit);
       </div>
     </div>
   </main>
+
 </body>
 
 </html>
