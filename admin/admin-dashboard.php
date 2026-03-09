@@ -26,6 +26,10 @@ $msg_count = 'SELECT COUNT(*) AS count FROM messages WHERE replied = 0';
 $result5 = mysqli_query($connect, $msg_count);
 $messages_count = mysqli_fetch_assoc($result5)['count'];
 
+$sub_count = 'SELECT COUNT(*) AS count FROM subscribers';
+$result6 = mysqli_query($connect, $sub_count);
+$subscribers_count = mysqli_fetch_assoc($result6)['count'];
+
 
 ?>
 
@@ -109,7 +113,7 @@ $messages_count = mysqli_fetch_assoc($result5)['count'];
             <i class="ri-mail-line"></i>
           </div>
           <div class="stat-info">
-            <h3>0</h3>
+            <h3><?php echo $subscribers_count; ?></h3>
             <p>Emails</p>
           </div>
         </div>

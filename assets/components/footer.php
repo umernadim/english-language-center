@@ -87,9 +87,10 @@
       </p>
 
       <div class="newsletter">
-        <form class="newsletter-form" id="newsletterForm">
+        <form class="newsletter-form" id="newsletterForm" method="post" action="subscribe.php">
           <input
             type="email"
+            name="email"
             class="newsletter-input"
             placeholder="Your email address"
             required
@@ -111,6 +112,7 @@
       <a href="privacy.php">Privacy Policy</a>
       <a href="terms.php">Terms of Service</a>
       <a href="https://maps.app.goo.gl/GdeHia3Ttgn82nnJA">Sitemap</a>
+
     </div>
   </div>
 </footer>

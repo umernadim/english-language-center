@@ -50,9 +50,9 @@
               </a>
             </li>
             <li>
-              <a href="" class="menu-item">
+              <a href="subscribersData.php" class="menu-item">
                 <i class="ri-mail-line"></i>
-                <span>Newletter</span>
+                <span>Subscribers</span>
               </a>
             </li>
 
