@@ -118,53 +118,28 @@
       </p>
 
       <div class="team-container">
-        <div class="team-card">
-          <img src="assets/images/gallery/img1.jpg" alt="Instructor 1" />
-          <h3>ABC Name</h3>
-          <p class="role">Spoken English Instructor</p>
-          <p class="desc">
-            <i class="ri-double-quotes-l quotes"></i>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Distinctio quaerat odio veritatis.
-            <i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
+        <?php
+        include 'config.php';
+        $sql = "SELECT * FROM teachers";
+        $result = mysqli_query($connect, $sql);
+        if (mysqli_num_rows($result)) {
+          while ($row = mysqli_fetch_assoc($result)) {
 
-        <div class="team-card">
-          <img src="assets/images/gallery/img1.jpg" alt="Instructor 3" />
-          <h3>ABC Name</h3>
-          <p class="role">IELTS Trainer</p>
-          <p class="desc">
-            <i class="ri-double-quotes-l quotes"></i>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-            iste rem excepturi.
-            <i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
-
-        <div class="team-card">
-          <img src="assets/images/gallery/img1.jpg" alt="Instructor 3" />
-          <h3>ABC Name</h3>
-          <p class="role">Creative Writing Coach</p>
-          <p class="desc">
-            <i class="ri-double-quotes-l quotes"></i>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi
-            asperiores ratione voluptate.
-            <i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
-
-        <div class="team-card">
-          <img src="assets/images/gallery/img1.jpg" alt="Instructor 4" />
-          <h3>ABC Name</h3>
-          <p class="role">Public Speaking Mentor</p>
-          <p class="desc">
-            <i class="ri-double-quotes-l quotes"></i>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi,
-            aspernatur deserunt.
-            <i class="ri-double-quotes-r quotes"></i>
-          </p>
-        </div>
+        ?>
+            <div class="team-card">
+              <img src="admin/<?= $row['image_url'] ?> " alt="Instructor" />
+              <h3><?= $row['name'] ?> </h3>
+              <p class="role"><?= $row['designation'] ?></p>
+              <p class="desc">
+                <i class="ri-double-quotes-l quotes"></i>
+                <?= $row['bio'] ?> 
+                <i class="ri-double-quotes-r quotes"></i>
+              </p>
+            </div>
+        <?php
+          }
+        }
+        ?>
       </div>
     </section>
 

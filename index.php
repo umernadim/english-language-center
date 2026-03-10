@@ -299,153 +299,35 @@
 
       <div class="tm-scroll-wrapper">
         <div class="tm-container">
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo" />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
+          <?php
+          include 'config.php';
+          $sql = "SELECT * FROM feedback";
+          $result = mysqli_query($connect, $sql);
+          if (mysqli_num_rows($result)) {
+            while ($row = mysqli_fetch_assoc($result)) {
+          ?>
+              <div class="tm-card">
+                <div class="tm-top">
+                  <img
+                    src="admin/<?= $row['photo_url'] ?> "
+                    alt="Student photo" />
+                  <div class="intro">
+                    <h4> <?= $row['name'] ?> </h4>
+                    <h5><?= $row['profession'] ?> </h5>
+                  </div>
+                </div>
+                <div class="tm-bottom">
+                  <p>
+                    <i class="ri-double-quotes-l quotes"></i>
+                   <?= $row['feedback'] ?> 
+                    <i class="ri-double-quotes-r quotes"></i>
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo" />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo" />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo" />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo" />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo" />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
-          <div class="tm-card">
-            <div class="tm-top">
-              <img
-                src="https://i.pinimg.com/736x/2d/d5/a0/2dd5a0880d528f5fe704ebe825e503ee.jpg"
-                alt="Student photo" />
-              <div class="intro">
-                <h4>ABC Name</h4>
-                <h5>Student</h5>
-              </div>
-            </div>
-            <div class="tm-bottom">
-              <p>
-                <i class="ri-double-quotes-l quotes"></i>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
-                ea quod earum cumque vel tenetur facilis obcaecati nemo
-                exercitationem eveniet facere deserunt tempora expedita
-                doloribus.
-                <i class="ri-double-quotes-r quotes"></i>
-              </p>
-            </div>
-          </div>
+          <?php
+            }
+          }
+          ?>
         </div>
       </div>
 

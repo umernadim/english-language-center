@@ -69,119 +69,36 @@
 
         <!-- Code for Test Cards -->
         <div class="test-grid" id="testGrid">
-          <div class="test-card">
-            <h3>Tenses Practice Test</h3>
-            <p>
-              Test your understanding of verb tenses with practical questions
-              covering present, past, and future tenses.
-            </p>
-            <div class="test-stats">
-              <div class="stat">
-                <i class="ri-question-line"></i>
-                <span>10 Questions</span>
-              </div>
-              <div class="stat">
-                <i class="ri-time-line"></i>
-                <span>5-8 minutes</span>
-              </div>
-            </div>
-            <a href="#" class="test-btn cta-button">Take Test <i class="ri-arrow-right-line"></i></a>
-          </div>
+          <?php
+          include 'config.php';
+          $sql = "SELECT * FROM tests";
+          $result = mysqli_query($connect, $sql);
+          if (mysqli_num_rows($result)) {
+            while ($row = mysqli_fetch_assoc($result)) {
 
-          <div class="test-card">
-            <h3>Prepositions Challenge</h3>
-            <p>
-              Master the use of prepositions in different contexts with this
-              focused practice test.
-            </p>
-            <div class="test-stats">
-              <div class="stat">
-                <i class="ri-question-line"></i>
-                <span>12 Questions</span>
+          ?>
+              <div class="test-card">
+                <h3><?= $row['title'] ?> </h3>
+                <p>
+                <?= $row['description'] ?> 
+                </p>
+                <div class="test-stats">
+                  <div class="stat">
+                    <i class="ri-question-line"></i>
+                    <span>10-15 Questions</span>
+                  </div>
+                  <div class="stat">
+                    <i class="ri-time-line"></i>
+                    <span>4-6 minutes</span>
+                  </div>
+                </div>
+                <a href="<?= $row['test_url'] ?> " class="test-btn cta-button">Take Test <i class="ri-arrow-right-line"></i></a>
               </div>
-              <div class="stat">
-                <i class="ri-time-line"></i>
-                <span>6-9 minutes</span>
-              </div>
-            </div>
-            <a href="#" class="test-btn cta-button">Take Test <i class="ri-arrow-right-line"></i></a>
-          </div>
+          <?php
+            }
+          }
 
-          <div class="test-card">
-            <h3>Parts of Speech Quiz</h3>
-            <p>
-              Identify and classify different parts of speech to strengthen
-              your grammar foundation.
-            </p>
-            <div class="test-stats">
-              <div class="stat">
-                <i class="ri-question-line"></i>
-                <span>8 Questions</span>
-              </div>
-              <div class="stat">
-                <i class="ri-time-line"></i>
-                <span>4-7 minutes</span>
-              </div>
-            </div>
-            <a href="#" class="test-btn cta-button">Take Test <i class="ri-arrow-right-line"></i></a>
-          </div>
-
-          <div class="test-card">
-            <h3>Active & Passive Voice</h3>
-            <p>
-              Practice converting sentences between active and passive voice
-              with clear examples.
-            </p>
-            <div class="test-stats">
-              <div class="stat">
-                <i class="ri-question-line"></i>
-                <span>10 Questions</span>
-              </div>
-              <div class="stat">
-                <i class="ri-time-line"></i>
-                <span>5-8 minutes</span>
-              </div>
-            </div>
-            <a href="#" class="test-btn cta-button">Take Test <i class="ri-arrow-right-line"></i></a>
-          </div>
-
-          <div class="test-card">
-            <h3>Conditional Sentences</h3>
-            <p>
-              Test your knowledge of zero, first, second, third, and mixed
-              conditionals.
-            </p>
-            <div class="test-stats">
-              <div class="stat">
-                <i class="ri-question-line"></i>
-                <span>15 Questions</span>
-              </div>
-              <div class="stat">
-                <i class="ri-time-line"></i>
-                <span>8-12 minutes</span>
-              </div>
-            </div>
-            <a href="#" class="test-btn cta-button">Take Test <i class="ri-arrow-right-line"></i></a>
-          </div>
-
-          <div class="test-card">
-            <h3>Conjunctions & Connectors</h3>
-            <p>
-              Practice using conjunctions and connectors to link ideas
-              smoothly in sentences.
-            </p>
-            <div class="test-stats">
-              <div class="stat">
-                <i class="ri-question-line"></i>
-                <span>10 Questions</span>
-              </div>
-              <div class="stat">
-                <i class="ri-time-line"></i>
-                <span>6-9 minutes</span>
-              </div>
-            </div>
-            <a href="#" class="test-btn cta-button">Take Test <i class="ri-arrow-right-line"></i></a>
-          </div>
+          ?>
         </div>
       </div>
     </section>

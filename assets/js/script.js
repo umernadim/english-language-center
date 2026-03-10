@@ -125,35 +125,39 @@ function quizSearchHandler() {
       });
     });
 
-    // Test button click effects
-    const testButtons = document.querySelectorAll(".test-btn");
-
-    testButtons.forEach((button) => {
-      button.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        // Get test title
-        const testTitle =
-          this.closest(".test-card").querySelector("h3").textContent;
-
-        // Button animation
-        const originalText = this.innerHTML;
-        this.innerHTML = "Starting...";
-        this.style.pointerEvents = "none";
-
-        const card = this.closest(".test-card");
-        card.style.transform = "translateY(-3px) scale(0.99)";
-
-        setTimeout(() => {
-          this.innerHTML = originalText;
-          this.style.pointerEvents = "auto";
-          card.style.transform = "translateY(-5px)";
-
-          console.log(`Starting test: ${testTitle}`);
-          alert(`Starting "${testTitle}" - Good luck!`);
-        }, 800);
-      });
+    
+    // Test buttons
+    const testButtons = document.querySelectorAll('.test-btn[data-url]');
+    
+    testButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // ✅ Get URL from data attribute
+            const testUrl = this.dataset.url;
+            const testTitle = this.closest(".test-card").querySelector("h3").textContent;
+            
+            // Button animation
+            const originalText = this.innerHTML;
+            this.innerHTML = "Starting...";
+            this.style.pointerEvents = "none";
+            
+            const card = this.closest(".test-card");
+            card.style.transform = "translateY(-3px) scale(0.99)";
+            
+            // ✅ Navigate after animation
+            setTimeout(() => {
+                this.innerHTML = originalText;
+                this.style.pointerEvents = "auto";
+                card.style.transform = "";
+                
+                console.log(`Starting test: ${testTitle}`);
+                if (confirm(`Starting "${testTitle}" - Good luck!`)) {
+                    window.open(testUrl, '_blank'); // New tab
+                    // OR window.location.href = testUrl; // Same tab
+                }
+            }, 800);
+        });
     });
+
 
     // Keyboard shortcut for search
     document.addEventListener("keydown", function (e) {
