@@ -3,8 +3,8 @@ session_start();
 include '../config.php';
 
 if (!isset($_SESSION['admin_email'])) {
-    header('location: login.php');
-    exit;
+  header('location: login.php');
+  exit;
 }
 
 $limit = 10;
@@ -17,17 +17,17 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
 $whereClause = "";
 $params = [];
 switch ($filter) {
-    case 'new':
-        $whereClause = "WHERE is_read = 0 AND replied = 0";
-        break;
-    case 'read':
-        $whereClause = "WHERE is_read = 1 AND replied = 0";
-        break;
-    case 'replied':
-        $whereClause = "WHERE replied = 1";
-        break;
-    default:
-        $whereClause = ""; 
+  case 'new':
+    $whereClause = "WHERE is_read = 0 AND replied = 0";
+    break;
+  case 'read':
+    $whereClause = "WHERE is_read = 1 AND replied = 0";
+    break;
+  case 'replied':
+    $whereClause = "WHERE replied = 1";
+    break;
+  default:
+    $whereClause = "";
 }
 
 // Main query with filter + pagination
@@ -67,10 +67,14 @@ $totalPages = ceil($totalMessages / $limit);
           <div class="card-header">
             <h3>Messages</h3>
             <div class="filters">
-              <a href="?filter=all" class="<?= ($filter == 'all') ? 'active' : '' ?>">All</a>
-              <a href="?filter=new" class="<?= ($filter == 'new') ? 'active' : '' ?>">New</a>
-              <a href="?filter=read" class="<?= ($filter == 'read') ? 'active' : '' ?>">Read</a>
-              <a href="?filter=replied" class="<?= ($filter == 'replied') ? 'active' : '' ?>">Replied</a>
+              <form method="get" action="">
+                <select name="filter" onchange="this.form.submit()">
+                  <option value="all" <?= ($filter == 'all') ? 'selected' : '' ?>>All</option>
+                  <option value="new" <?= ($filter == 'new') ? 'selected' : '' ?>>New</option>
+                  <option value="read" <?= ($filter == 'read') ? 'selected' : '' ?>>Read</option>
+                  <option value="replied" <?= ($filter == 'replied') ? 'selected' : '' ?>>Replied</option>
+                </select>
+              </form>
             </div>
           </div>
 
@@ -134,6 +138,8 @@ $totalPages = ceil($totalMessages / $limit);
       </div>
     </div>
   </main>
+
+  <script src="../assets/js/admin.js"></script>
 
 </body>
 

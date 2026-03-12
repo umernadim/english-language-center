@@ -71,7 +71,7 @@ $subscribers_count = mysqli_fetch_assoc($result6)['count'];
         </div>
 
         <div class="stat-card">
-          <div class="stat-icon courses">
+          <div class="stat-icon quizes">
             <i class="ri-book-2-line"></i>
           </div>
           <div class="stat-info">
@@ -100,7 +100,7 @@ $subscribers_count = mysqli_fetch_assoc($result6)['count'];
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon testimonial">
+          <div class="stat-icon messages">
             <i class="ri-message-3-line"></i>
           </div>
           <div class="stat-info">
@@ -109,12 +109,12 @@ $subscribers_count = mysqli_fetch_assoc($result6)['count'];
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon testimonial">
+          <div class="stat-icon subscribers">
             <i class="ri-mail-line"></i>
           </div>
           <div class="stat-info">
             <h3><?php echo $subscribers_count; ?></h3>
-            <p>Emails</p>
+            <p>Subscribers</p>
           </div>
         </div>
 
