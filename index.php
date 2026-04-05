@@ -300,7 +300,7 @@
       <div class="tm-scroll-wrapper">
         <div class="tm-container">
           <?php
-          include 'config.php';
+          include 'admin/config.php';
           $sql = "SELECT * FROM feedback";
           $result = mysqli_query($connect, $sql);
           if (mysqli_num_rows($result)) {

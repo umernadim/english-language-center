@@ -1,9 +1,9 @@
 <?php
 session_start();
-include '../config.php';
+include 'config.php';
 
 if (!isset($_SESSION['admin_email'])) {
-    header('location: login.php');
+    header('location: index.php');
     exit;
 }
 
@@ -49,7 +49,7 @@ if ($_POST) {
             <p class="subtitle">Update quiz information.</p>
 
             <?php
-            include '../config.php';
+            include 'config.php';
             $id = $_GET['id'];
             $sql = "SELECT * FROM tests WHERE id = $id";
             $result = mysqli_query($connect, $sql);

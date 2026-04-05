@@ -70,7 +70,7 @@
         <!-- Code for Test Cards -->
         <div class="test-grid" id="testGrid">
           <?php
-          include 'config.php';
+          include 'admin/config.php';
           $sql = "SELECT * FROM tests";
           $result = mysqli_query($connect, $sql);
           if (mysqli_num_rows($result)) {

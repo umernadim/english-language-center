@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-include '../config.php';
+include 'config.php';
 if (!isset($_SESSION['admin_email'])) {
-  header('location: login.php');
+  header('location: index.php');
   exit;
 }
 ?>
@@ -50,7 +50,7 @@ if (!isset($_SESSION['admin_email'])) {
 
           <div class="table-container">
             <?php
-            include '../config.php';
+            include 'config.php';
             $sql = "SELECT * FROM achievements";
             $result = mysqli_query($connect, $sql);
             if (mysqli_num_rows($result)) {

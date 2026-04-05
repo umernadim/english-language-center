@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include 'admin/config.php';
 
 if (isset($_GET['email'])) {
     $email = mysqli_real_escape_string($connect, $_GET['email']);

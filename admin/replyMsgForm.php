@@ -1,8 +1,8 @@
 <?php
 session_start();
-include '../config.php';
+include 'config.php';
 if (!isset($_SESSION['admin_email'])) {
-  header('location: login.php');
+  header('location: index.php');
   exit;
 }
 
@@ -37,7 +37,7 @@ $row1 = mysqli_fetch_assoc($result1);
             <p class="subtitle">Type your reply below. It will be sent directly to the sender’s email.</p>
 
             <?php
-            include '../config.php';
+            include 'config.php';
             $id = $_GET['id'];
             $sql = "SELECT * FROM messages WHERE id = {$id}";
             $result = mysqli_query($connect, $sql);

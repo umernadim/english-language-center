@@ -1,9 +1,9 @@
 <?php
 session_start();
-include '../config.php';
+include 'config.php';
 
 if (!isset($_SESSION['admin_email'])) {
-    header('location: login.php');
+    header('location: index.php');
     exit;
 }
 
@@ -90,7 +90,7 @@ mysqli_close($connect);
             </div>
 
             <?php
-            include '../config.php';
+            include 'config.php';
             $id = $_GET['id'];
             $sql = "SELECT * FROM achievements WHERE id = {$id}";
             $result = mysqli_query($connect, $sql);

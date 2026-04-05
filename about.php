@@ -119,7 +119,7 @@
 
       <div class="team-container">
         <?php
-        include 'config.php';
+        include 'admin/config.php';
         $sql = "SELECT * FROM teachers";
         $result = mysqli_query($connect, $sql);
         if (mysqli_num_rows($result)) {
@@ -152,7 +152,7 @@
 
         <div class="achievements-grid">
           <?php
-          include 'config.php';
+          include 'admin/config.php';
           $sql = "SELECT * FROM achievements";
           $result = mysqli_query($connect, $sql);
           if (mysqli_num_rows($result)) {

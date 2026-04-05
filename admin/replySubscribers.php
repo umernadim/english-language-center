@@ -1,8 +1,8 @@
 <?php
 session_start();
-include '../config.php';
+include 'config.php';
 if (!isset($_SESSION['admin_email'])) {
-  header('location: login.php');
+  header('location: index.php');
   exit;
 }
 

@@ -1,6 +1,6 @@
 <?php
 if ($_POST) {
-  include 'config.php';
+  include 'admin/config.php';
 
   $name = mysqli_real_escape_string($connect, $_POST['name']);
   $email = mysqli_real_escape_string($connect, $_POST['email']);
